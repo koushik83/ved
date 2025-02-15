@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>रामशलाका प्रश्नावली</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FDF4E7; /* Light cream background like reference */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #D35400; /* Orange color from reference */
+            font-size: 28px;
+            margin: 20px 0;
+        }
+
+        .header-container {
+            background-color: #D35400; /* Orange header background */
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        
+        
+
+        .answer-section {
+            margin: 10px 0;
+        }
+
+        .section-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #D35400;
+            margin-bottom: 5px;
+        }
+
+        .section-content {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        
+
+
+        td {
+            border: 1px solid #E8E8E8;
+            padding: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        td:hover {
+            background-color: #D35400; /* Orange hover color */
+            color: white;
+        }
+
+        #result {
+            display: none;
+            margin: 20px auto;
+            padding: 15px;
+            
+            
+            
+            max-width: 500px;
+            font-size: 18px;
+            
+        }
+
+        button {
+            background-color: #D35400; /* Orange button color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #A04000; /* Darker orange on hover */
+        }
+
+        @media (max-width: 768px) {
+            .table-container {
+                padding: 10px;
+            }
+
+            td {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            #result {
+                font-size: 16px;
+                margin: 15px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            td {
+                padding: 5px;
+                font-size: 12px;
+            }
+
+            .table-container {
+                padding: 5px;
+            }
+
+            #result {
+                font-size: 14px;
+                margin: 10px;
+            }
+        }
+
+        .info-text {
+            color: #666;
+            font-size: 16px;
+            margin: 15px 0;
+        }
+
+        .section-divider {
+            border-top: 2px solid #D35400;
+            margin: 30px auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+        <h1 style='font-size: 28px; color: black;'>
+            <span style='background-color: #ff9933; padding: 5px; border-radius: 5px;'>🕉️</span>
+            रामशलाका प्रश्नावली
+            <span style='background-color: #ff9933; padding: 5px; border-radius: 5px;'>🕉️</span>
+        </h1>
+        
+        <p>कोई एक अक्षर चुनें और अपना उत्तर प्राप्त करें।</p>
+        <div class="table-container">
+        <table>
+            <tbody>
+                <script>
+                    let letters = [
+                    ["सु", "प्र", "उ", "बि", "हो", "मु", "ग","ब", "सु", "नु", "बि", "घ", "धि", "इ", "द"],
+                        ["र", "रु", "फ", "सि", "सि", "रें", "बस","है", "मं", "ल", "न", "ल", "य", "न", "अं"],
+                        ["सुज", "सो", "ग", "सु", "कु", "मम","स", "ग", "त", "न", "ई", "ल", "धा", "बे", "नो"],
+                        ["त्य", "र", "न", "कु", "जो", "म", "रि","र", "र", "अ", "की", "हो", "सं", "रा", "य"],
+                        ["पु", "सु", "थ", "सी", "जे", "इ", "ग","म", "सं", "क", "रे", "हो", "स", "स", "नि"],
+                        ["त", "र", "त", "र", "स", "इ", "ह","ब", "ब", "प", "चि", "स", "य", "स", "तु"],
+                        ["म", "का", "ा", "र", "र", "मा", "मि","मी", "म्हा", "ा", "जा", "हू", "हीं", "ा", "जू"],
+                        ["ता", "रा", "रे", "री", "हृ", "का", "फ","खा", "जि", "ई", "र", "रा", "पू", "द", "ल"],
+                        ["नि", "को", "मि", "गो", "न", "मु","जि", "य", "ने", "मनि", "क", "ज", "प", "स", "ल"],
+                        ["हि", "रा", "म", "स", "रि", "ग", "द","न", "ष", "म", "खि", "जि", "मनि", "त", "जं"],
+                        ["सिं", "मु", "न", "न", "कौ", "मि","निज", "र", "ग", "धु", "ख", "सु", "का", "स", "र"],
+                        ["गु", "क", "म", "अ", "ध", "नि","म", "ल", "ा", "न", "ब", "ती", "न", "रि", "भ"],
+                        ["ना", "पु", "व", "अ", "ढा", "र", "त","का", "ए", "तु", "र", "न", "नु", "व", "थ"],
+                        ["सि", "ह", "सु", "म्ह", "रा", "र", "स","हिं", "र", "त", "न", "ष", "ा", "ज", "ा"],
+                        ["र", "सा", "ा", "ला", "धी", "ा","री", "जा", "हू", "हीं", "षा", "जू", "ई", "रा", "रे"]
+                    ];
+                    
+                    for (let i = 0; i< letters.length; i++) {
+                        document.write(`<tr>`);
+                        for (let j = 0; j < letters[i].length; j++) {
+                            document.write(`<td class='grid-item' data-answer='उत्तर ${i * letters[i].length + j + 1}'>${letters[i][j]}</td>`);
+
+                        }
+                        document.write(`</tr>`);
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="result"></div>
+    <button id="explanation-btn">🔍 Detailed Explanation of Chaupai</button>
+
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+        item.addEventListener('click', function () {
+            let cellNumber = parseInt(this.getAttribute('data-answer').replace('उत्तर ', ''));
+            let remainder = (cellNumber - 1) % 9;
+            let index = remainder;
+
+            let answers = [
+                { id: "chaupai-1" },
+                { id: "chaupai-2" },
+                { id: "chaupai-3" },
+                { id: "chaupai-4" },
+                { id: "chaupai-5" },
+                { id: "chaupai-6" },
+                { id: "chaupai-7" },
+                { id: "chaupai-8" },
+                { id: "chaupai-9" }
+            ];
+
+            let chaupaiTexts = [
+                {
+                    श्लोक: 'सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥',
+                    स्रोत: 'यह चौपाई बालकाण्ड में श्री सीता जी के गौरी पूजन के प्रसंग में है। गौरी जी ने श्री सीता जी को आशीर्वाद दिया है।',
+                    फल: 'प्रश्नकर्ता का प्रश्न उत्तम है, कार्य सिद्ध होगा।'
+                },
+                {
+                    श्लोक: 'प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥',
+                    स्रोत: 'यह चौपाई सुन्दरकाण्ड में श्री हनुमान जी के लंका में प्रवेश करने के समय की है।',
+                    फल: 'भगवान का स्मरण करते हुए कार्य आरम्भ करो, सफलता मिलेगी।'
+                },
+                {
+                    श्लोक: 'उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥',
+                    स्रोत: 'यह चौपाई बालकाण्ड के आरम्भ में सत्संग वर्णन के प्रसंग में है।',
+                    फल: 'इस कार्य में भलाई नहीं है। कार्य की सफलता में संदेह है।'
+                },
+                {
+                    श्लोक: 'बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥',
+                    स्रोत: 'यह चौपाई बालकाण्ड के आरम्भ में सत्संग वर्णन के प्रसंग में है।',
+                    फल: 'खोटे मनुष्यों का संग छोड़ दो। कार्य पूर्ण होने में संदेह है।'
+                },
+                {
+                    श्लोक: 'होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥',
+                    स्रोत: 'यह चौपाई श्रीरामचरितमानस में अयोध्या काण्ड में भरत जी के कथन में है।',
+                    फल: 'सब कुछ भगवान के अनुसार ही होगा, चिंता न करें।'
+                },
+                {
+                    श्लोक: 'मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥',
+                    स्रोत: 'यह चौपाई बालकाण्ड में संत-समाजरूपी तीर्थ के वर्णन में है।',
+                    फल: 'प्रश्न उत्तम है। कार्य सिद्ध होगा।'
+                },
+                {
+                    श्लोक: 'गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥',
+                    स्रोत: 'यह चौपाई श्री हनुमान जी के लंका में प्रवेश करने के समय की है।',
+                    फल: 'प्रश्न बहुत श्रेष्ठ है। कार्य सफल होगा।'
+                },
+                {
+                    श्लोक: 'बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥',
+                    स्रोत: 'यह चौपाई लंकाकाण्ड में रावण की मृत्यु के पश्चात मन्दोदरी के विलाप के प्रसंग में है।',
+                    फल: 'कार्य पूर्ण होने में संदेह है।'
+                },
+                {
+                    श्लोक: 'सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥',
+                    स्रोत: 'यह चौपाई बालकाण्ड में पुष्पवाटिका से पुष्प लाने पर विश्वामित्र जी का आशीर्वाद है।',
+                    फल: 'प्रश्न बहुत उत्तम है। कार्य सिद्ध होगा।'
+                }
+            ];
+
+            let selectedChaupai = answers[index];
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+            <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; border: 2px solid #A04000; border-radius: 5px;">
+                <div class="answer-header" style="color: #A04000; font-weight: bold;">श्लोक</div>
+                <div class="answer-content">${chaupaiTexts[index].श्लोक}</div>
+            </div>
+            <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; border: 2px solid #A04000; border-radius: 5px;">
+                <div class="answer-header" style="color: #A04000; font-weight: bold;">स्रोत</div>
+                <div class="answer-content">${chaupaiTexts[index].स्रोत}</div>
+            </div>
+            <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; 
+                border: 2px solid ${[0,1,4,5,6,8].includes(index) ? '#4CAF50' : '#FF5733'}; 
+                border-radius: 5px; 
+                background-color: ${[0,1,4,5,6,8].includes(index) ? '#E8F5E9' : '#FFF3EF'};">
+                <div class="answer-header" style="color: ${[0,1,4,5,6,8].includes(index) ? '#2E7D32' : '#D32F2F'}; font-weight: bold;">फल</div>
+                <div class="answer-content">${chaupaiTexts[index].फल}</div>
+            </div>
+        `;
+            resultDiv.style.display = "block";
+
+            let explanationBtn = document.getElementById("explanation-btn");
+            explanationBtn.style.display = "inline-block";
+
+            resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            explanationBtn.onclick = function () {
+                document.getElementById(selectedChaupai.id).scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+    });
+});
+
+    </script>
+
+    <br>
+    <button id="newQuestion" style="margin-top: 20px; padding: 10px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none;">नया प्रश्न पूछें</button>
+
+    <script>
+        document.getElementById('newQuestion').addEventListener('click', function () {
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('result').style.display = "none";
+            document.getElementById('explanation-btn').style.display = "none";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+
+</body>
+    <!-- Ram Prashnavali Information Section -->
+<div style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+    
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 15px;">
+        Shri Ram Prashnavali – Divine Guidance from Shri Ramcharitmanas
+    </h2>
+
+    <p><strong>Introduction: The Power of Shri Ram Prashnavali</strong></p>
+    <p>
+        Shri Ram Prashnavali has been a sacred tool of divine guidance for centuries, offering clarity and wisdom to those who seek answers. Rooted in the Ramcharitmanas, it carries the direct blessings of Lord Ram and helps devotees find solutions through faith and surrender.
+    </p>
+
+    <p>
+        Devotees also seek guidance through other Prashnavalis, such as those dedicated to Sai Baba, Durga, and Hanuman. However, Shri Ram Prashnavali remains deeply connected to the divine wisdom of Lord Ram, guiding seekers with profound spiritual insights.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Shri Ram Shalaka and Its Connection to Shri Ramcharitmanas</strong></p>
+    <p>
+        Shri Ram Shalaka Prashnavali originates from the sacred scripture Ramcharitmanas, composed by Goswami Tulsidas in the 16th century. Each chaupai (verse) in the Prashnavali is derived from Ramcharitmanas, ensuring that the guidance received is deeply spiritual and authentic.
+    </p>
+
+    <p>
+        This divine practice has been relied upon by saints and devotees for ages, reinforcing its role as a source of wisdom and direction.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>How Shri Ram Shalaka Prashnavali Works</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li><b>Prepare Yourself:</b> Sit in a peaceful place, close your eyes, and chant "Shri Ram" with devotion.</li>
+        <li><b>Focus on Your Question:</b> Think about an important decision, concern, or guidance you seek.</li>
+        <li><b>Seek Lord Ram’s Blessings:</b> Mentally surrender your doubts to Him.</li>
+        <li><b>Choose a Letter:</b> Each letter corresponds to a specific chaupai (verse) from Ramcharitmanas.</li>
+        <li><b>Interpret the Answer with Faith:</b> Reflect on the meaning of the chosen verse with sincerity.</li>
+    </ul>
+
+    <p>
+        Many devotees feel an instant connection to their selected chaupai, realizing that it aligns perfectly with their current situation.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Common Questions Answered by Shri Ram Prashnavali</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li><b>Career Choices:</b> "Should I accept this job or pursue another opportunity?"</li>
+        <li><b>Family Matters:</b> "How can I resolve conflicts at home?"</li>
+        <li><b>Relationships:</b> "Is this the right person for me?"</li>
+        <li><b>Spiritual Growth:</b> "How can I strengthen my connection to Lord Ram?"</li>
+        <li><b>Overcoming Challenges:</b> "What should I do in difficult times?"</li>
+    </ul>
+
+    <p>
+        Shri Ram Shalaka Prashnavali offers deep spiritual insights that often require meditation and self-reflection.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Why Does Shri Ram Prashnavali Work?</strong></p>
+    <p>Many devotees describe miraculous experiences where their selected chaupai feels like a personal message from Lord Ram.</p>
+
+    <ul style="padding-left: 20px;">
+        <li><b>Divine Timing:</b> The right message arrives at the right moment.</li>
+        <li><b>Sacred Energy:</b> The verses carry the vibrations of Lord Ram’s blessings.</li>
+        <li><b>Faith & Surrender:</b> Those who truly surrender find answers beyond logic.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Conclusion: Surrendering to Lord Ram’s Divine Will</strong></p>
+    <p>
+        Shri Ram Prashnavali is not just a method of seeking answers—it is an invitation to walk the path of devotion. Lord Ram’s infinite wisdom ensures that every seeker receives the right guidance at the right time.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "When you trust Lord Ram completely, He clears all obstacles and leads you to the right path."
+    </p>
+
+    <p>
+        For those who approach with pure devotion, Shri Ram Shalaka Prashnavali is more than an answer—it is a divine embrace from Lord Ram Himself.
+    </p>
+
+</div>
+
+<!-- Back to Prashnavali Button (Aligned with Text) -->
+<div style="text-align: right; width: 100%; max-width: 800px; margin: auto; margin-top: 20px;">
+    <button class="back-to-prashnavali" style="
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        display: inline-block;
+    ">
+        🔙 Back to Prashnavali
+    </button>
+</div>
+
+<script>
+    // Attach event listeners to all "Back to Prashnavali" buttons
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+    
+
+<!-- Chaupai 1 Explanation Section -->
+<div id="chaupai-1" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+    
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 1 – Divine Blessings of Goddess Parvati
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">📜 सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This Chaupai appears in the Bala Kanda of Ramcharitmanas. It is set during the Gauri Puja episode, 
+        where Mata Sita fervently prays to Goddess Parvati for Lord Ram as her husband. Witnessing her unwavering 
+        devotion, Goddess Parvati is moved and grants her divine blessings.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Listen, Sita, my blessing is true. Worship with sincerity, and your wishes shall be fulfilled."
+    </p>
+
+    <p>
+        This verse reflects the assurance of divine blessings. It signifies that a devotee’s true and heartfelt prayers 
+        never go unanswered when made with faith and devotion.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Faith and Devotion – Goddess Parvati assures that sincere prayers always bear fruit.</li>
+        <li>Law of Karma – The verse reinforces the idea that dedication and purity in actions lead to positive outcomes.</li>
+        <li>Blessings of the Divine Feminine – Those who seek guidance from Maa Parvati or Goddess Durga are assured of protection and success.</li>
+        <li>Power of Sankalp (Determination) – Just as Mata Sita’s resolve led to her union with Lord Ram, one's determined prayers can shape destiny.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai teaches that when prayers are made with pure intentions and complete surrender, divine forces 
+        bless the seeker abundantly. It reminds us that faith and patience are the key ingredients of success.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "The Divine always listens to a sincere heart. Pray with faith, and you shall receive blessings beyond expectations."
+    </p>
+</div>
+
+<!-- Back to Prashnavali Button (Aligned with Text) -->
+<div style="text-align: right; width: 100%; max-width: 800px; margin: auto; margin-top: 20px;">
+    <button class="back-to-prashnavali" style="
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        display: inline-block;
+    ">
+        🔙 Back to Prashnavali
+    </button>
+</div>
+
+<script>
+    // Attach event listeners to all "Back to Prashnavali" buttons
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-2" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 2 – Entering Lanka with Lord Ram in Heart
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">📜 प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>📖 Context:</strong></p>
+    <p>
+        This chaupai appears in <strong>Sundarkand</strong> of <i>Shri Ramcharitmanas</i>. It is spoken when <strong>Hanuman Ji</strong> enters Lanka, carrying <strong>Lord Ram in his heart</strong>, ready to complete his divine mission.  
+        Hanuman Ji was sent by <strong>Shri Ram</strong> to search for <strong>Mata Sita</strong>, and before stepping into Lanka, he took Lord Ram’s name as his guiding force.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>🔹 Meaning:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Enter the city and complete all tasks, while keeping Lord Ram, the King of Kosala, in your heart."
+    </p>
+
+    <p>
+        The verse emphasizes that <strong>one should keep faith in God while performing duties</strong>.  
+        Hanuman Ji was about to face the powerful forces of Ravana, but he <strong>was fearless</strong> because he had unwavering faith in Lord Ram.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>🔹 Spiritual Significance:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li><strong>Faith Before Action:</strong> Before entering any difficult situation, <strong>keeping faith in God ensures success</strong>. Just like Hanuman Ji, we must remember that divine strength is always with us.</li>
+        <li><strong>Courage Against All Odds:</strong> Lanka was heavily guarded, yet Hanuman Ji <strong>boldly entered</strong>. This teaches us to <strong>overcome challenges with confidence and devotion</strong>.</li>
+        <li><strong>Surrender to the Divine:</strong> The verse highlights the importance of <strong>surrendering to God's will</strong> while executing responsibilities.</li>
+        <li><strong>Universal Message:</strong> Whether it’s <strong>career, exams, business, or personal life</strong>, one should <strong>start any task with faith</strong> in the Almighty.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>🔹 Life Lessons from this Chaupai:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li><strong>Self-Confidence & Faith:</strong> Hanuman Ji reminds us that <strong>when we carry faith, nothing is impossible</strong>.</li>
+        <li><strong>Mental Strength in Difficulties:</strong> Before entering a challenging phase in life, one should <strong>prepare mentally and spiritually</strong>.</li>
+        <li><strong>God is Always with You:</strong> If Hanuman Ji, the most powerful devotee, <strong>needed divine remembrance</strong>, then we too must <strong>seek divine guidance</strong> in our daily tasks.</li>
+        <li><strong>Karma (Action) & Bhakti (Devotion):</strong> This chaupai beautifully blends <strong>devotion with responsibility</strong>, teaching that both should go hand in hand.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>🌟 Inspirational Thought:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "No matter how difficult the situation, if you carry faith in your heart, success is guaranteed."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <!-- Back to Prashnavali Button -->
+    <div style="text-align: right; width: 100%; max-width: 800px; margin: auto; margin-top: 20px;">
+        <button class="back-to-prashnavali" style="
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff9933;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+        ">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+<div id="chaupai-3" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 3 – The Consequences of Evil Actions
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">📜 उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context:</strong></p>
+    <p>
+        This chaupai appears in Bala Kanda of Shri Ramcharitmanas. It describes how evil deeds and bad company lead to destruction.  
+        It mentions Kalnemi and Ravana, two figures from Hindu scriptures who ultimately met their downfall due to their deceit and arrogance.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "In the end, evil cannot sustain. Just like Kalnemi and Ravana, wrongdoers meet their inevitable downfall."
+    </p>
+
+    <p>
+        This verse highlights that evil forces, no matter how powerful they appear, are ultimately doomed to perish.  
+        Kalnemi tried to deceive Hanuman Ji but was exposed and destroyed. Similarly, Ravana, despite his immense power, could not escape the consequences of his wrongdoing.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Karma and Justice – Every action has consequences. Evil deeds will never lead to lasting success.</li>
+        <li>Power of Truth – Lies and deception can bring temporary victory, but truth always prevails.</li>
+        <li>The Fall of Arrogance – Ravana, despite his intelligence and strength, fell due to his ego. This teaches us to remain humble.</li>
+        <li>Beware of Bad Company – Just as Kalnemi tried to mislead Hanuman Ji, we must be cautious of people who influence us negatively.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from this Chaupai:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Integrity Wins in the End – Even if honesty faces challenges, it will eventually lead to success.</li>
+        <li>Pride Leads to Destruction – No matter how talented or successful one is, ego can cause downfall.</li>
+        <li>Beware of Deception – Like Hanuman Ji, we must develop wisdom to identify deceit and not fall for false words.</li>
+        <li>Stay on the Path of Dharma – This chaupai reminds us to choose righteousness over shortcuts.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Inspirational Thought:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "No matter how powerful evil may seem, it can never stand against the force of truth and righteousness."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <!-- Back to Prashnavali Button -->
+    <div style="text-align: right; width: 100%; max-width: 800px; margin: auto; margin-top: 20px;">
+        <button class="back-to-prashnavali" style="
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff9933;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+        ">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-4" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 4 – The Influence of Good and Bad Company
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">📜 बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context:</strong></p>
+    <p>
+        This chaupai appears in **Bala Kanda** of Shri Ramcharitmanas. It describes how even noble and virtuous people can fall into bad company due to fate, 
+        but just like a **precious gem remains unchanged even when placed among snakes**, a truly righteous person retains their inner goodness despite external negativity.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "By fate, even the wise may fall into bad company, but just as a gem retains its brilliance despite being among snakes,  
+        a truly noble person never loses their goodness."
+    </p>
+
+    <p>
+        This verse reassures that unfavorable circumstances or negative surroundings cannot alter the true nature of a person who has strong moral values.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Goodness Cannot Be Destroyed – A noble heart remains pure, even in adverse conditions.</li>
+        <li>Power of Inner Strength – Like a snake’s venom cannot harm a divine gem, negativity cannot overpower true wisdom.</li>
+        <li>Resisting Negative Influences – No matter where life places us, we must not lose our true essence.</li>
+        <li>Understanding Destiny – Sometimes, fate tests even the best people, but they shine through challenges.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from this Chaupai:</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Stay Strong in Adversity – No situation should make us lose our integrity.</li>
+        <li>True Character Remains Unchanged – A person’s real nature does not depend on external influences.</li>
+        <li>Be Like the Gem – Remain unaffected by negativity around you.</li>
+        <li>Choose Your Company Wisely – Avoid bad company, but if destiny puts you in it, stay firm in your righteousness.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Inspirational Thought:</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "External situations may change, but true goodness is like a divine gem—unaffected, pure, and radiant."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <!-- Back to Prashnavali Button -->
+    <div style="text-align: right; width: 100%; max-width: 800px; margin: auto; margin-top: 20px;">
+        <button class="back-to-prashnavali" style="
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff9933;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+        ">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-5" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 5 – Surrendering to the Divine Will
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This chaupai is from Ayodhya Kanda in Shri Ramcharitmanas. It is spoken by Bharat while addressing his ministers and well-wishers.  
+        He reminds them that everything in this world happens as per Lord Ram’s divine plan, and no amount of debate or human logic can alter destiny.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Whatever Lord Ram has written in destiny will happen. Why then, engage in unnecessary arguments and disputes?"
+    </p>
+
+    <p>
+        This chaupai conveys the idea that human effort, while essential, must be coupled with trust in divine will.  
+        One should not be restless or overly anxious about outcomes because all events unfold as per God's greater plan.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Trust in Divine Plan – Nothing happens outside Lord Ram’s will. Trusting this brings inner peace.</li>
+        <li>Balance of Effort and Faith – Perform duties sincerely, but surrender results to God.</li>
+        <li>Avoiding Overthinking – Overanalyzing situations leads to stress. Acceptance brings clarity.</li>
+        <li>Destiny is Unchangeable – The script of life is written by the divine; one must flow with it rather than resist.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai teaches the importance of patience, surrender, and acceptance. It reminds us that no matter how much we plan and strategize, the final outcome is always in divine hands.  
+        True peace is found in trusting Lord Ram’s will and focusing on righteous actions rather than worrying about the results.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Surrender your worries to Lord Ram. The path he has chosen for you is the best, even if you do not understand it now."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <div style="text-align: right;">
+        <button onclick="document.querySelector('h1').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+            style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none; border-radius: 5px;">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+<div id="chaupai-6" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 6 – The Glory of Saints and Their Blessings
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This chaupai is from Bala Kanda in Shri Ramcharitmanas. It describes the greatness of saints and their company,  
+        which is considered more auspicious than even the holiest of pilgrimage sites. Saints, with their purity, wisdom, and selflessness,  
+        serve as the living embodiment of divine blessings and bring ultimate peace to those who seek their guidance.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "The company of saints is full of joy and auspiciousness, just as a holy pilgrimage site is sacred in this world."
+    </p>
+
+    <p>
+        This verse highlights that being in the presence of enlightened souls purifies the heart and mind,  
+        leading one towards spiritual growth. Associating with saints is considered equivalent,  
+        if not greater, than visiting sacred places because their wisdom and divine energy transform lives.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>The Importance of Satsang – Being in the company of saints helps in spiritual upliftment and purification of the mind.</li>
+        <li>Living Pilgrimage – Unlike a physical pilgrimage, where one only visits a holy site, a saint’s presence provides constant spiritual elevation.</li>
+        <li>Transformation Through Wisdom – Saints help seekers understand the deeper meaning of life and guide them towards the right path.</li>
+        <li>Removal of Sins – Like a pilgrimage washes away sins, the words and blessings of saints cleanse the soul.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai teaches that **spiritual progress is best achieved by being in the company of realized souls**.  
+        Saints guide seekers with love, wisdom, and patience, making the path of devotion easier.  
+        Instead of merely traveling to sacred places, one should strive to be in the presence of those  
+        who have realized divine truth, as their blessings help in overcoming obstacles in life.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Seek the company of saints, for their words illuminate the soul and bring true peace."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <div style="text-align: right;">
+        <button onclick="document.querySelector('h1').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+            style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none; border-radius: 5px;">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-7" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 7 – The Power of Divine Grace and Miracles
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This chaupai appears in the Sundara Kanda of Shri Ramcharitmanas.  
+        It emphasizes the miraculous powers of divine grace, showing how impossible things become possible  
+        through the intervention of the Supreme. The verse reminds us that when the Lord wills, poison turns into nectar,  
+        enemies become friends, and the impossible becomes achievable.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Poison turns into nectar, enemies become allies, the vast ocean shrinks to the size of a cow's hoofprint, and fire becomes cool."
+    </p>
+
+    <p>
+        This verse highlights the boundless power of divine intervention.  
+        It reassures that no matter how difficult a situation may seem, God's grace can transform  
+        it into something beneficial. Just as fire can become cool and an ocean can shrink,  
+        all difficulties can be removed by faith in the divine.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Faith in the Divine – When we surrender completely, the Lord removes all obstacles and turns hardship into ease.</li>
+        <li>The Nature of Miracles – What seems impossible to the human mind is effortless for divine power.</li>
+        <li>Transformation Through Bhakti – A sincere devotee's prayers have the ability to change the course of destiny.</li>
+        <li>Victory Over Negativity – Enemies, whether internal (doubts, fears) or external, can be transformed through divine grace.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai teaches that nothing is impossible when one has unwavering faith in God.  
+        Even the worst situations can turn into blessings. Those who walk the path of devotion  
+        should never fear challenges because divine grace has the power to turn  
+        suffering into joy, enemies into friends, and difficulties into ease.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Surrender your worries, for when God intervenes, the impossible becomes possible."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <div style="text-align: right;">
+        <button onclick="document.querySelector('h1').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+            style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none; border-radius: 5px;">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-8" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 8 – The True Test of Wisdom and Humility
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This chaupai appears in the Lanka Kanda of Shri Ramcharitmanas when Mandodari, the wife of Ravana,  
+        mourns his downfall. She reflects on how even the most powerful deities—Varuna (God of Water),  
+        Kubera (God of Wealth), Indra (King of Gods), and Vayu (Wind God)—act wisely and do not engage  
+        in battles that cannot be won. However, Ravana's arrogance made him ignore wisdom, leading to his defeat.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Even Varuna, Kubera, Indra, and Vayu refrain from fighting when a battle cannot be won."
+    </p>
+
+    <p>
+        This verse emphasizes that true strength lies not just in bravery but in wisdom. The greatest beings  
+        in the universe do not engage in pointless battles, understanding that retreating at the right moment  
+        is sometimes the wisest decision. Ravana, blinded by ego, refused to accept reality and perished  
+        as a result. This chaupai warns against arrogance and highlights the importance of discernment.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Wisdom in Decision-Making – Not every battle must be fought; sometimes, stepping back is the best strategy.</li>
+        <li>The Danger of Ego – Even the most powerful beings recognize their limits, but arrogance leads to downfall.</li>
+        <li>Strength in Discernment – True courage lies in knowing when to fight and when to withdraw.</li>
+        <li>Lessons from Ravana – Ignoring wise counsel and acting out of pride leads to destruction.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai reminds us that blind bravery is not true courage. The greatest warriors and leaders  
+        understand the importance of strategy and wisdom. In life, there are moments when stepping back,  
+        reassessing, and making informed choices are more valuable than rushing into action.  
+        It teaches us that arrogance leads to failure, while wisdom ensures success.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "True strength lies not in never retreating, but in knowing when to fight and when to walk away."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <div style="text-align: right;">
+        <button onclick="document.querySelector('h1').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+            style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none; border-radius: 5px;">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+<div id="chaupai-9" style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+        Chaupai 9 – Fulfillment of Wishes Through Divine Grace
+    </h2>
+
+    <h3 style="color: #ff9933; font-size: 22px; text-align: center;">सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥</h3>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Context</strong></p>
+    <p>
+        This chaupai appears in the Bala Kanda of Shri Ramcharitmanas during the episode where Maharishi Vishwamitra blesses King Dasharatha. After receiving the flowers brought from the sacred garden by Shri Ram and Lakshman, the sage assures that all noble wishes will be fulfilled. It reflects the divine blessings showered upon those who seek the Lord’s guidance with devotion.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Meaning</strong></p>
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "Your heartfelt desires shall bear fruit. Lord Ram and Lakshman have heard them and are pleased."
+    </p>
+
+    <p>
+        This verse signifies that when wishes are pure and aligned with righteousness, divine grace ensures their fulfillment. The presence of Shri Ram and Lakshman symbolizes that God listens to the sincere prayers of devotees and grants them blessings accordingly.
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Spiritual Significance</strong></p>
+
+    <ul style="padding-left: 20px;">
+        <li>Faith and Patience – True desires are fulfilled in divine timing when one surrenders to the Lord.</li>
+        <li>Divine Grace – The presence of Shri Ram and Lakshman assures protection and the removal of obstacles.</li>
+        <li>Purity of Intentions – Only selfless and righteous desires find fulfillment through devotion.</li>
+        <li>Hearing the Devotee’s Call – This chaupai reassures that Lord Ram always listens to His devotees.</li>
+    </ul>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p><strong>Life Lessons from This Chaupai</strong></p>
+
+    <p>
+        This chaupai teaches that sincere devotion and faith never go in vain. If one’s desires are aligned with righteousness and Dharma, Lord Ram ensures their fulfillment. It inspires patience and trust in divine grace, reminding us that even if outcomes take time, they will always be in our best interest.
+    </p>
+
+    <p style="text-align: center; font-size: 20px; font-weight: bold; color: #ff9933;">
+        "When the Lord hears the sincere call of a devotee, no wish remains unfulfilled."
+    </p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <div style="text-align: right;">
+        <button onclick="document.querySelector('h1').scrollIntoView({ behavior: 'smooth', block: 'start' })"
+            style="padding: 10px 15px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none; border-radius: 5px;">
+            🔙 Back to Prashnavali
+        </button>
+    </div>
+
+</div>
+<script>
+    // Attach event listener to the back button
+    document.querySelectorAll('.back-to-prashnavali').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelector("h1").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दिव्य प्रश्नावली</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FDF4E7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #D35400;
+            font-size: 36px;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            width: 300px;
+            height: 450px; /* Fixed height for consistency */
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background-position: center;
+            background-size: 80%; /* Reduced size to fit within borders */
+            background-repeat: no-repeat;
+            background-color: #f8f8f8;
+            padding: 0; /* Removed padding */
+            box-sizing: border-box;
+            border-bottom: 3px solid #D35400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            color: #D35400;
+            font-size: 24px;
+            margin: 0 0 5px 0;
+        }
+
+        .card-title-en {
+            color: #666;
+            font-size: 16px;
+            margin: 0 0 15px 0;
+        }
+
+        .card-description {
+            color: #333;
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            line-height: 1.5;
+        }
+
+        .card-description-en {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                padding: 10px;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 350px;
+                height: auto; /* Allow height to be flexible on mobile */
+            }
+
+            .card-image {
+                height: 200px; /* Slightly smaller on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <span style="background-color: #ff9933; padding: 5px 10px; border-radius: 5px;">🕉️</span>
+            दिव्य प्रश्नावली
+            <span style="background-color: #ff9933; padding: 5px 10px; border-radius: 5px;">🕉️</span>
+        </h1>
+        <p class="subtitle">अपनी जिज्ञासाओं का समाधान पाने के लिए किसी एक प्रश्नावली का चयन करें</p>
+    </div>
+
+    <div class="cards-container">
+        <div class="card" onclick="window.location.href='prash.html'">
+            <div class="card-image" style="background-image: url('images/ram.webp')"></div>
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">श्री राम प्रश्नावली</h2>
+                    <p class="card-title-en">Shri Ram Prashnavali</p>
+                    <p class="card-description">श्रीराम चरित मानस से दिव्य मार्गदर्शन प्राप्त करें</p>
+                    <p class="card-description-en">Seek divine guidance from Shri Ramcharitmanas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='sai-prashnavali.html'">
+            <div class="card-image" style="background-image: url('images/sai.webp')"></div>
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">श्री साईं प्रश्नावली</h2>
+                    <p class="card-title-en">Shri Sai Prashnavali</p>
+                    <p class="card-description">साईं बाबा के आशीर्वाद से जीवन का मार्गदर्शन पाएं</p>
+                    <p class="card-description-en">Life guidance with Sai Baba's blessings</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='hanuman-prashnavali.html'">
+            <div class="card-image" style="background-image: url('images/hanuman.webp')"></div>
+            <div class="card-content">
+                <div>
+                    <h2 class="card-title">श्री हनुमान प्रश्नावली</h2>
+                    <p class="card-title-en">Shri Hanuman Prashnavali</p>
+                    <p class="card-description">श्री हनुमान जी की कृपा से समाधान प्राप्त करें</p>
+                    <p class="card-description-en">Find solutions with Lord Hanuman's grace</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
