@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री साई प्रश्नावली - Shri Sai Prashnavali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FDF4E7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .nav-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .header-container {
+            background-color: #FF9933;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .instruction-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .input-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin: 10px;
+            border: 2px solid #FF9933;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #FF9933;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #E88822;
+        }
+
+        .answer-box {
+            background-color: white;
+            border: 2px solid #FF9933;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .answer-box h3 {
+            color: #FF9933;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #FF9933;
+            padding-bottom: 10px;
+        }
+
+        .answer-content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .learn-more {
+            color: #FF9933;
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        .assurances {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 3px solid #FF9933;
+            background-color: #FFF9F0;
+        }
+
+        .assurances ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .assurances li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .assurances li:before {
+            content: "•";
+            color: #FF9933;
+            position: absolute;
+            left: 0;
+        }
+
+        .om-symbol {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            input[type="number"] {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <a href="index.html" class="nav-link">
+            Back to Main Page
+        </a>
+        <h1>
+            <span class="om-symbol">🕉️</span>
+            श्री साई प्रश्नावली
+            <span class="om-symbol">🕉️</span>
+        </h1>
+        <div>Shri Sai Prashnavali</div>
+    </div>
+
+    <div class="container">
+        <div class="instruction-box">
+            <h2 style="color: #FF9933;">How to Seek Baba's Guidance:</h2>
+            <ol>
+                <li>Sit peacefully and remember Sai Baba with devotion</li>
+                <li>Think of your question or concern clearly in your mind</li>
+                <li>Ask Baba to guide you with a number between 1 to 720</li>
+                <li>Enter the first number that comes to your mind</li>
+            </ol>
+        </div>
+
+        <div class="input-section">
+            <div>
+                <input type="number" id="numberInput" min="1" max="720" placeholder="Enter number (1-720)">
+                <button onclick="getAnswer()">Ask Sai Baba</button>
+            </div>
+            <div class="error" id="error">Please enter a number between 1 and 720</div>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <div class="info-section">
+        <h2 style="color: #FF9933;">About Sai Baba of Shirdi</h2>
+        <p>Shirdi Sai Baba remains a popular saint and is worshipped mainly in Maharashtra, Andhra Pradesh, Gujarat, Karnataka and of course world over. He is revered by both Hindu and Muslim devotees. His teachings emphasized moral code of love, forgiveness, helping others, charity, contentment, inner peace, and devotion to God and guru.</p>
+        
+        <p>Sri Sai Baba left his physical body in October 15, 1918, but he is believed to be with us even more now than he was earlier...</p>
+        
+        <div class="learn-more" onclick="toggleAssurances()">Learn more about Sai Baba's Assurances →</div>
+        
+        <div class="assurances" id="assurances">
+            <h3>Assurances made by Sai Baba to his devotees:</h3>
+            <ul>
+                <li>Whosoever puts their feet on Shirdi soil, their sufferings will come to an end.</li>
+                <li>The wretched and miserable will rise to joy and happiness as soon as they climb the steps of my Samadhi.</li>
+                <li>I shall be ever active and vigorous even after leaving this earthly body.</li>
+                <li>My tomb shall bless and speak to the needs of my devotees.</li>
+                <li>I shall be active and vigorous even from my tomb.</li>
+                <li>My mortal remains will speak from my tomb.</li>
+                <li>I am ever living to help and guide all who come to me, who surrender to me and who seek refuge in me.</li>
+                <li>If you look to me, I look to you.</li>
+                <li>If you cast your burden on me, I shall surely bear it.</li>
+                <li>If you seek my advice and help, it shall be given to you at once.</li>
+                <li>There shall be no want in the house of my devotee.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleAssurances() {
+            const assurances = document.getElementById('assurances');
+            assurances.style.display = assurances.style.display === 'none' ? 'block' : 'none';
+        }
+        const answers = {
+            1: "Auspicious function will take place. Sorrow will vanish. Desired work will be completed.",
+            2: "You will pass the examination. You will succeed by getting help from the Southern direction.",
+            3: "You will be happy in life by blessings of parents.",
+            4: "Vices will be covered, virtues will be valued. You may worship of Lord Shiva, Lord Dattatraya.",
+            5: "Remember Shree Sainath, you will be free from obstacles: Chant the words 'Sai Samarth' which will benefit within 21 days. You may see Lord Shiva in your dream.",
+            6: "You will meet someone. You will get back the thing lost. You will have chance of travel.",
+            7: "Remember your favorite God. Due to it calamity will disappear. Start new work without thinking of any benefit.",
+            8: "Resort to legal action and get victory over enemy. If you have faith in Shree Saibaba you will get immediate experience. You will be profited by distribution of wheat flour.",
+            9: "People will discuss about you. You will have to take little effort and your sorrow will end with the blessings of Shree Sai.",
+            10: "Slowly your sorrows will end. You will be freed form difficulties and diseases.",
+            11: "After surrendering to Shree Sainath immediately, you will acquire pleasure. You will have pleasure of work fulfillment. You will pass exam. You will get job.",
+            12: "Your subconscious mind cannot be recognized, be determined. Try your self and you will get success.",
+            13: "You will achieve great things. Old things will be more profitable.",
+            14: "Be careful in day to day affairs. You will secure success. Friends advise will be profitable.",
+            15: "You will have collection. You will get new thing. You will gain by donations. You will receive important letters from close people.",
+            16: "Do not try alone. With cooperation of others work will be completed. You will get fame.",
+            17: "Take care of your documents. You will gain thereby. You will get assistance from friends. By giving importance to others, you will have big achievements and chance of traveling.",
+            18: "Dispute will take place. Devotion to Lord Dattatraya done earlier will he helpful.",
+            19: "You may fall sick. Meditate. There is a chance of naming ceremony taking place in the house.",
+            20: "You may visit religious places with friends. You will get mental peace.",
+            21: "Your work will be done with the help of people of other religion. Act according to prior intimation. Work will be completed.",
+            22: "You will visit holy places. Auspicious things will take place. You will gain.",
+            23: "Avoid controversy. Surrender to Preceptor (Guru).",
+            24: "Disputes will be settled. You will get back your former glory, rights.",
+            25: "New plans will be drawn. You will gain fame. Mistake will be realized. You will learn new things. You will succeed.",
+            26: "Remain calm, that is beneficial. Sorrow will end.",
+            27: "You will succeed beyond imagination. Remember Shree Sai. You will get fame, you will be free from worries.",
+            28: "You will get help from friends. Will recover from disease. Share the work and you will succeed.",
+            29: "You will opt for writing. Success in work. Will receive help from many persons.",
+            30: "You will secure success and be free from worries through the blessings of Shree Sai. You will recover from disease.",
+            31: "You will take interest in the natural life. You will visit temples with religious persons. Remembrance of Shree Sainath will bring happiness. You will achieve success.",
+            32: "A child will be born. Worries in life will disappear. Additional work will bring wealth. You will get blessings of Shree Sai.",
+            33: "Be away form bad company. Your interest in material life will end. Avoid controversy. You will achieve success.",
+            34: "If you surrender to Shree Saibaba all worries will vanish and you will achieve success in no time.",
+            35: "Be humble otherwise nobody will be with you. Control yourself. Avoid physical fighting.",
+            36: "Be quiet. Remember Shree Sainath. Enemies will disappear.",
+            37: "Do not differentiate. You will not gain through bad intentions. Remember Shree Sainath and start working. Success is yours.",
+            38: "You will get job for survival. It will end into happiness.",
+            39: "You will succeed in job. You will experience the greatness of Shree Sainath's blessings.",
+            40: "You will succeed if you remember Shree Sai. Your worries will end. You will hear good news.",
+            41: "One after another tensions will start. Though it is a bad period, you will meet a saintly person very soon and you will succeed.",
+            42: "Reading and writing of religious books will be done. Religious activity will take place and auspicious things will happen.",
+            43: "You will visit religious places like Shirdi and meet a holy person, you will succeed very soon.",
+            44: "Sree Saibaba knows all the things hence surrender to him then he will relieve you from worries and bring success. The desired things will happen in the morning and afternoon.",
+            45: "Very soon you will have a chance to visit Shirdi and Shree Sai Baba. You will get success.",
+            46: "You will gain in seven days. Meditate. You will have darshan of Pandurang of Pandharpur, believe that Shree Saibaba is there. Experience it.",
+            47: "You will have darshan of your desired God. You will get idol or photo of God. Worship it. You will get mental peace, wealth and happiness.",
+            48: "The religious activity carried on by ancestors is stopped. Start it again. Very soon auspicious function will take place. You will get success. Remember Shree Sai.",
+            49: "Do not differentiate. You will get some thing. You will succeed.",
+            50: "You will gain through a youngster. New introduction will take place. You will see that you will gain on Sunday coming after the day of your question."
+        };
+
+        function getAnswer() {
+            const input = document.getElementById('numberInput');
+            const error = document.getElementById('error');
+            const result = document.getElementById('result');
+            const number = parseInt(input.value);
+
+            if (isNaN(number) || number < 1 || number > 720) {
+                error.style.display = 'block';
+                result.style.display = 'none';
+                return;
+            }
+
+            error.style.display = 'none';
+            result.style.display = 'block';
+            
+            const answer = answers[number];
+            result.innerHTML = `
+                <div class="answer-box">
+                    <h3>Seek Sai Baba's Guidance</h3>
+                    <div class="answer-content">
+                        ${answer || 'Invalid number'}
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
