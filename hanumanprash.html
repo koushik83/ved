@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fffbea;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+                   
+        .container {
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          overflow: visible; /* Changed from hidden to show full triangle */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .chakra-container {
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Responsive title */
+        h1 {
+          font-size: 24px;
+          padding: 0 10px;
+          word-wrap: break-word;
+        }
+
+        .message-display {
+          width: 90%;
+          max-width: 300px;
+          margin: 0 auto;
+          font-size: 16px;
+          background-color: #f9f9f9;
+        }
+
+        /* Button styling */
+       .ask-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px auto;
+        display: block;
+        width: 90%;
+        max-width: 300px;
+        }
+
+        svg {
+          width: 100%;
+          max-width: 600px;
+          height: 80vh;
+          display: block;
+          
+          transform-origin: center;
+}
+
+        /* Media Queries */
+@media screen and (max-height: 700px) {
+    .chakra-container {
+        padding: 0;
+        width: 95%;
+    }
+    
+    svg {
+      transform: scale(0.9);
+      transform-origin: center;
+      width: 95vw;
+      height: 65vh;
+    }
+    
+    svg text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    svg {
+        height: 55vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .chakra-container {
+        width: 100%;
+    }
+    
+    svg {
+        transform: scale(0.8);
+        margin: -10% 0; /* Compensate for scale */  
+        width: 100%;
+        height: 50vh;
+        transform-origin: center;
+        margin: 0 auto;
+    }
+    
+    svg text {
+        font-size: 10px;
+    }
+    
+    .message-display {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    h1 {
+          font-size: 18px;
+          padding: 0 10px;
+          word-wrap: break-word;
+        }
+
+}
+
+@media screen and (max-width: 360px) {
+    svg text {
+        font-size: 9px;
+    }
+    
+    .chakra-container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    svg {
+        width: 98vw;
+        transform: scale(0.7);
+        margin: -15% 0; /* Compensate for scale */
+        height: 45vh;
+    }
+    h1 {
+          font-size: 12px;
+          padding: 0 10px;
+          word-wrap: break-word;
+        }
+
+}
+
+/* Message and button styles */
+.message-display {
+    width: 90%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid #d4af37;
+
+}
+
+.ask-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #d4af37;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto;
+    
+}
+        .cell {
+            cursor: pointer;
+            fill: transparent;
+        }
+        .cell:hover {
+             fill: #ce6767;
+        }
+        .debug-stroke {
+            stroke: rgba(154, 78, 78, 0.1);
+            stroke-width: 0.5;
+        } 
+        .clickable-group {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <h1 >
+    <span style='background-color: #ff9933; padding: 5px; border-radius: 5px;'>🕉️</span>
+    Hanuman Prashnavali
+    <span style='background-color: #ff9933; padding: 5px; border-radius: 5px;'>🕉️</span>
+</h1>
+
+<p> Click on a number in the grid below and get divine guidance from Lord Hanuman</p>
+
+<div class="container">
+  <div class="chakra-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 420 380">
+  <!-- Main triangle and grid stays same -->
+  <path d="M200 346.41 L0 0 L400 0 Z" fill="#ffebee" stroke="black" stroke-width="2"/>
+  
+  <!-- All grid lines stay same -->
+  <path d="M28.57 49.49 L371.43 49.49" stroke="black" stroke-width="1"/>
+  <path d="M57.14 98.97 L342.86 98.97" stroke="black" stroke-width="1"/>
+  <path d="M85.71 148.46 L314.29 148.46" stroke="black" stroke-width="1"/>
+  <path d="M114.29 197.95 L285.71 197.95" stroke="black" stroke-width="1"/>
+  <path d="M142.86 247.43 L257.14 247.43" stroke="black" stroke-width="1"/>
+  <path d="M171.43 296.92 L228.57 296.92" stroke="black" stroke-width="1"/>
+  
+  <path d="M57.14 0 L228.57 296.92" stroke="black" stroke-width="1"/>
+  <path d="M114.29 0 L257.14 247.43" stroke="black" stroke-width="1"/>
+  <path d="M171.43 0 L285.71 197.95" stroke="black" stroke-width="1"/>
+  <path d="M228.57 0 L314.29 148.46" stroke="black" stroke-width="1"/>
+  <path d="M285.71 0 L342.86 98.97" stroke="black" stroke-width="1"/>
+  <path d="M342.86 0 L371.43 49.49" stroke="black" stroke-width="1"/>
+  
+  <path d="M342.86 0 L171.43 296.92" stroke="black" stroke-width="1"/>
+  <path d="M285.71 0 L142.86 247.43" stroke="black" stroke-width="1"/>
+  <path d="M228.57 0 L114.29 197.95" stroke="black" stroke-width="1"/>
+  <path d="M171.43 0 L85.71 148.46" stroke="black" stroke-width="1"/>
+  <path d="M114.29 0 L57.14 98.97" stroke="black" stroke-width="1"/>
+  <path d="M57.14 0 L28.57 49.49" stroke="black" stroke-width="1"/>
+
+  <!-- First row -->
+  <g class="clickable-group" onclick="displayMessage(1)">
+    <path class="cell debug-stroke" d="M0 0 L28.57 49.49 L57.14 0 Z"/>
+    <text x="28" y="25" text-anchor="middle" font-size="14" class="clickable-text">01</text>
+</g>
+<g class="clickable-group" onclick="displayMessage(23)">
+  <path class="cell debug-stroke" d="M57.14 0 L85.71 49.49 L28.57 49.49 Z"/>
+  <text x="57" y="25" text-anchor="middle" font-size="14" class="clickable-text">23</text>
+</g>
+<g class="clickable-group" onclick="displayMessage(43)">
+  <path class="cell debug-stroke" d="M57.14 0  L85.71 49.49 L114.29  0 Z"/>
+  <text x="85" y="25" text-anchor="middle" font-size="14" class="clickable-text">43</text>
+</g>
+<g class="clickable-group" onclick="displayMessage(15)">
+  <path class="cell debug-stroke" d="M85.71 49.49 L114.29 0 L142.86 49.49 Z"/>
+  <text x="114" y="25" text-anchor="middle" font-size="14">15</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(32)">
+<path class="cell debug-stroke" d="M142.86 49.49 L114.29  0 L171.43 0 Z"/>
+<text x="142" y="25" text-anchor="middle" font-size="14">32</text>
+</g>
+  
+<g class="clickable-group" onclick="displayMessage(48)">
+<path class="cell debug-stroke" d="M142.86 49.49 L171.43 0 L200 49.49  0 Z"/>
+<text x="171" y="25" text-anchor="middle" font-size="14">48</text>
+</g>
+ 
+<g class="clickable-group" onclick="displayMessage(21)">
+  <path class="cell debug-stroke" d="M200 49.49  L228.57 0 L171.43 0 Z"/>
+  <text x="199" y="25" text-anchor="middle" font-size="14">21</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(9)">
+  <path class="cell debug-stroke" d="M257.14 49.49  L228.57 0 L200 49.49 Z"/>
+  <text x="228" y="25" text-anchor="middle" font-size="14">09</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(35)">
+  <path class="cell debug-stroke" d="M257.14 49.49  L228.57 0 L285.71 0 Z"/>
+  <text x="256" y="25" text-anchor="middle" font-size="14">35</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(30)">
+  <path class="cell debug-stroke" d="M257.14 49.49  L285.71 0 L314.29 49.49 Z"/>
+  <text x="285" y="25" text-anchor="middle" font-size="14">30</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(12)">
+  <path class="cell debug-stroke" d="M314.29 49.49  L285.71 0 L342.86 0 Z"/>
+  <text x="313" y="25" text-anchor="middle" font-size="14">12</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(22)">
+  <path class="cell debug-stroke" d="M314.29 49.49 L342.86 0 L371.43 49.49 Z"/>
+  <text x="342" y="25" text-anchor="middle" font-size="14">22</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(4)">
+  <path class="cell debug-stroke" d="M342.86 0 L400 0 L371.43 49.49 Z"/>
+<text x="370" y="25" text-anchor="middle" font-size="14">04</text>
+</g>
+
+  <!-- Second row -->
+  <g class="clickable-group" onclick="displayMessage(49)">
+    <path class="cell debug-stroke" d="M57.14 98.97 L85.71 49.49 L28.57 49.49 Z"/>
+  <text x="57" y="75" text-anchor="middle" font-size="14">49</text>
+ </g>
+
+ <g class="clickable-group" onclick="displayMessage(36)">
+  <path class="cell debug-stroke" d="M57.14 98.97 L85.71 49.49 L114.29 98.97 Z"/>
+  <text x="85" y="75" text-anchor="middle" font-size="14">36</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(42)">
+  <path class="cell debug-stroke" d="M114.29 98.97 L85.71 49.49 L142.86 49.49 Z"/>
+  <text x="114" y="75" text-anchor="middle" font-size="14">42</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(20)">
+  <path class="cell debug-stroke" d="M114.29 98.97 L171.43 98.97 L142.86 49.49 Z"/>
+  <text x="142" y="75" text-anchor="middle" font-size="14">20</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(6)">
+  <path class="cell debug-stroke" d="M171.43  98.97 L142.86 49.49 L200 49.49  Z"/>
+  <text x="171" y="75" text-anchor="middle" font-size="14">06</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(47)">
+  <path class="cell debug-stroke" d="M171.43  98.97 L228.57 98.97 L200 49.49  Z"/>
+  <text x="199" y="75" text-anchor="middle" font-size="14">47</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(38)">
+  <path class="cell debug-stroke" d="M228.57 98.97  L200 49.49 L257.14 49.49   Z"/>
+  <text x="228" y="75" text-anchor="middle" font-size="14">38</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(13)">
+  <path class="cell debug-stroke" d="M228.57 98.97  L285.71 98.97 L257.14 49.49   Z"/>
+  <text x="256" y="75" text-anchor="middle" font-size="14">13</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(41)">
+  <path class="cell debug-stroke" d="M285.71 98.97 L257.14 49.49 L314.29 49.49   Z"/>
+  <text x="285" y="75" text-anchor="middle" font-size="14">41</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(37)">
+  <path class="cell debug-stroke" d="M285.71 98.97 L314.29 49.49 L342.86 98.97   Z"/>
+  <text x="313" y="75" text-anchor="middle" font-size="14">37</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(19)">
+  <path class="cell debug-stroke" d="M342.86 98.97 L314.29 49.49 L371.43 49.49   Z"/>
+  <text x="342" y="75" text-anchor="middle" font-size="14">19</text>
+</g>
+
+  <!-- Third row -->
+  <g class="clickable-group" onclick="displayMessage(8)">
+    <path class="cell debug-stroke" d="M85.71 148.46 L114.29 98.97 L57.14 98.97   Z"/>
+    <text x="85" y="125" text-anchor="middle" font-size="14">08</text>
+  </g>
+  <g class="clickable-group" onclick="displayMessage(24)">
+    <path class="cell debug-stroke" d="M85.71 148.46 L114.29 98.97 L142.86 148.46   Z"/>
+    <text x="114" y="125" text-anchor="middle" font-size="14">24</text>
+  </g>
+
+  <g class="clickable-group" onclick="displayMessage(31)">
+    <path class="cell debug-stroke" d="M142.86 148.46 L114.29 98.97 L171.43 98.97  Z"/>
+     <text x="142" y="125" text-anchor="middle" font-size="14">31</text>
+</g>
+
+<g class="clickable-group" onclick="displayMessage(16)">
+    <path class="cell debug-stroke" d="M142.86 148.46 L171.43 98.97 L200 148.46   Z"/>
+    <text x="171" y="125" text-anchor="middle" font-size="14">
