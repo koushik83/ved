@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>श्री साई प्रश्नावली - Shri Sai Prashnavali</title>
-    <meta name="description" content="श्री साईं प्रश्नावली से पाएं दिव्य मार्गदर्शन। Get divine guidance through Sai Prashnavali">
-    <meta property="og:title" content="श्री साईं प्रश्नावली - Sai Prashnavali">
+    <title>Ask Sai Baba Questions & Get Divine Answers | Sai Question Answer</title>
+    <meta name="description" content="Ask questions to Sai Baba and get instant answers through Sai Prashnavali. Get guidance from Shirdi Sai Baba for life decisions, yes/no questions, and divine blessings.">
+    <meta property="og:title" content="Ask Sai Baba Questions - Get Direct Answers | Sai Prashnavali">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,6 +26,36 @@
             font-size: 16px;
             opacity: 0.9;
             transition: opacity 0.3s;
+        }
+
+        .quick-questions {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+    .question-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+    .example-btn {
+            background-color: #FFF3E0;
+            color: #FF9933;
+            border: 1px solid #FF9933;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+    .example-btn:hover {
+            background-color: #FF9933;
+            color: white;
         }
 
         .nav-link:hover {
@@ -198,13 +228,31 @@
 
     <div class="container">
         <div class="instruction-box">
-            <h2 style="color: #FF9933;">How to Seek Baba's Guidance:</h2>
+            <h2 style="color: #FF9933;">Ask Questions to Sai Baba:</h2>
             <ol>
-                <li>Sit peacefully and remember Sai Baba with devotion</li>
-                <li>Think of your question or concern clearly in your mind</li>
-                <li>Ask Baba to guide you with a number between 1 to 720</li>
-                <li>Enter the first number that comes to your mind</li>
+                <li>First meditate on Sai Baba for 2 minutes</li>
+                <li>You can ask about:
+                    <ul>
+                        <li>Yes/No decisions</li>
+                        <li>Career guidance</li>
+                        <li>Marriage/Love</li>
+                        <li>Business decisions</li>
+                        <li>Life problems</li>
+                    </ul>
+                </li>
+                <li>Think of your question clearly</li>
+                <li>With complete faith, ask for a number (1-720)</li>
             </ol>
+        </div>
+
+        <div class="quick-questions">
+            <h3 style="color: #FF9933;">Popular Questions to Ask Sai Baba:</h3>
+            <div class="question-examples">
+                <button onclick="setExample('Should I take this job offer?')" class="example-btn">About Job</button>
+                <button onclick="setExample('Is this relationship good for me?')" class="example-btn">About Relationship</button>
+                <button onclick="setExample('Will my business succeed?')" class="example-btn">About Business</button>
+                <button onclick="setExample('Should I relocate?')" class="example-btn">About Moving</button>
+            </div>
         </div>
 
         <div class="input-section">
@@ -374,7 +422,11 @@
     }
     </script>
 
-
+<script>
+    function setExample(question) {
+        alert("Think about: " + question + "\nNow ask Sai Baba for a number between 1-720");
+    }
+    </script>
 
 </body>
 </html>
