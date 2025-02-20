@@ -146,6 +146,21 @@
             color: #333;
         }
 
+        .number-select {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin: 10px;
+            border: 2px solid #FF9933;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .number-select:focus {
+            outline: none;
+            border-color: #E88822;
+        }
+
         .info-section {
             background-color: white;
             border-radius: 8px;
@@ -155,6 +170,27 @@
             text-align: left;
             max-width: 800px;
         }
+
+        .help-text {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+.number-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin: 10px;
+            border: 2px solid #FF9933;
+            border-radius: 4px;
+        }
+
+    .number-input:focus {
+                outline: none;
+                border-color: #E88822;
+        }
+
 
         .learn-more {
             color: #FF9933;
@@ -254,14 +290,15 @@
                 <button onclick="setExample('Should I relocate?')" class="example-btn">About Moving</button>
             </div>
         </div>
-
-        <div class="input-section">
+        <<div class="input-section">
             <div>
-                <input type="number" id="numberInput" min="1" max="720" placeholder="Enter number (1-720)">
+                <input type="number" id="numberInput" placeholder="Enter number" class="number-input">
                 <button onclick="getAnswer()">Ask Sai Baba</button>
             </div>
-            <div class="error" id="error">Please enter a number between 1 and 720</div>
+            <div class="help-text">Please enter a number between 1 and 720</div>
+            <div class="error" id="error" style="display: none; color: red; margin-top: 5px;">Invalid number. Please enter a number between 1 and 720</div>
         </div>
+
 
         <div id="result"></div>
 
@@ -390,9 +427,9 @@
             const answer = answers[number];
             result.innerHTML = `
                 <div class="answer-box">
-                    <h3>Seek Sai Baba's Guidance</h3>
+                    <h3>Sai Baba's Guidance</h3>
                     <div class="answer-content">
-                        ${answer || 'Invalid number'}
+                        ${answer || 'Please try another number'}
                     </div>
                 </div>
             `;
