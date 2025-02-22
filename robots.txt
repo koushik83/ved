@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
 Sitemap: https://vedprashnavali.com/sitemap.xml
+
+# Add this for AI bot access
+User-agent: GPTBot
+Allow: /
