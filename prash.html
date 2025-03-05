@@ -18,6 +18,48 @@
     <meta name="twitter:description" content="Ask your questions and receive divine guidance through Ram Prashnavali, based on the sacred Shri Ramcharitmanas.">
     <meta name="twitter:image" content="https://vedprashnavali.com/images/ram-prashnavali.jpg">
     <style>
+
+.ram-card {
+    background-color: #fff8e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-left: 5px solid #ff9800;
+    text-align: left; /* Ensure all content is left-aligned */
+  }
+  
+  .ram-card h3 {
+    color: #e65100;
+    margin-top: 0;
+    margin-bottom: 15px; /* Add consistent spacing below heading */
+    font-size: 18px;
+    text-align: left; /* Explicitly set heading alignment */
+  }
+  
+  .ram-card ol {
+    list-style-position: outside;
+    padding-left: 5px;
+    margin-bottom: 0;
+    margin-top: 0; /* Remove default top margin */
+  }
+  
+  .ram-card li {
+    padding: 5px 0;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .ram-card {
+      max-width: 95%;
+      padding: 15px;
+    }
+    
+    .ram-card ol {
+      padding-left: 25px; /* Slightly less padding on mobile */
+    }
+  }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -217,7 +259,16 @@
          <!-- Add this where you want the translate button to appear -->
          <div id="google_translate_element"></div>
         
-        <p>Select a letter from the grid below and get answer to your question</p>
+          <!-- Add this where you want the translate button to appear -->
+  <div class="ram-card">
+    <h3>Divine Guidance from Lord Ram</h3>
+    <ol style="list-style-position: inside;">
+      <li>Begin by praying sincerely to Lord Ram</li>
+      <li>Focus clearly on your question in your mind</li>
+      <li>Click on any letter in the grid below that you feel drawn to</li>
+      <li>Scroll down to reveal your divine guidance</li>
+    </ol>
+  </div>
         <div class="table-container">
         <table translate="no">
             <tbody>
@@ -296,69 +347,70 @@
             ];
 
             let chaupaiTexts = [
-                {
-                    चौपाई: 'सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥',
-                    स्रोत: 'यह चौपाई बालकाण्ड में श्री सीता जी के गौरी पूजन के प्रसंग में है। गौरी जी ने श्री सीता जी को आशीर्वाद दिया है।',
-                    फल: 'प्रश्नकर्ता का प्रश्न उत्तम है, कार्य सिद्ध होगा।'
-                },
-                {
-                    चौपाई: 'प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥',
-                    स्रोत: 'यह चौपाई सुन्दरकाण्ड में श्री हनुमान जी के लंका में प्रवेश करने के समय की है।',
-                    फल: 'भगवान का स्मरण करते हुए कार्य आरम्भ करो, सफलता मिलेगी।'
-                },
-                {
-                    चौपाई: 'उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥',
-                    स्रोत: 'यह चौपाई बालकाण्ड के आरम्भ में सत्संग वर्णन के प्रसंग में है।',
-                    फल: 'इस कार्य में भलाई नहीं है। कार्य की सफलता में संदेह है।'
-                },
-                {
-                    चौपाई: 'बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥',
-                    स्रोत: 'यह चौपाई बालकाण्ड के आरम्भ में सत्संग वर्णन के प्रसंग में है।',
-                    फल: 'खोटे मनुष्यों का संग छोड़ दो। कार्य पूर्ण होने में संदेह है।'
-                },
-                {
-                    चौपाई: 'होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥',
-                    स्रोत: 'यह चौपाई श्रीरामचरितमानस में अयोध्या काण्ड में भरत जी के कथन में है।',
-                    फल: 'सब कुछ भगवान के अनुसार ही होगा, चिंता न करें।'
-                },
-                {
-                    चौपाई: 'मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥',
-                    स्रोत: 'यह चौपाई बालकाण्ड में संत-समाजरूपी तीर्थ के वर्णन में है।',
-                    फल: 'प्रश्न उत्तम है। कार्य सिद्ध होगा।'
-                },
-                {
-                    चौपाई: 'गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥',
-                    स्रोत: 'यह चौपाई श्री हनुमान जी के लंका में प्रवेश करने के समय की है।',
-                    फल: 'प्रश्न बहुत श्रेष्ठ है। कार्य सफल होगा।'
-                },
-                {
-                    चौपाई: 'बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥',
-                    स्रोत: 'यह चौपाई लंकाकाण्ड में रावण की मृत्यु के पश्चात मन्दोदरी के विलाप के प्रसंग में है।',
-                    फल: 'कार्य पूर्ण होने में संदेह है।'
-                },
-                {
-                    चौपाई: 'सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥',
-                    स्रोत: 'यह चौपाई बालकाण्ड में पुष्पवाटिका से पुष्प लाने पर विश्वामित्र जी का आशीर्वाद है।',
-                    फल: 'प्रश्न बहुत उत्तम है। कार्य सिद्ध होगा।'
-                }
-            ];
+    {
+        चौपाई: 'सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥',
+        स्रोत: 'This chaupai is from Bal Kand, during the scene of Sita Ji’s Gauri Puja. Goddess Gauri blesses Sita Ji.',
+        फल: 'The seeker’s question is auspicious, and the task will be accomplished successfully.'
+    },
+    {
+        चौपाई: 'प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥',
+        स्रोत: 'This chaupai is from Sundar Kand, when Hanuman Ji enters Lanka.',
+        फल: 'Begin your work while remembering the Lord, and success will follow.'
+    },
+    {
+        चौपाई: 'उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥',
+        स्रोत: 'This chaupai appears at the beginning of Bal Kand, in the context of Satsang (holy company).',
+        फल: 'This task is not beneficial. There is doubt about its success.'
+    },
+    {
+        चौपाई: 'बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥',
+        स्रोत: 'This chaupai is from the beginning of Bal Kand, describing the effects of good and bad company.',
+        फल: 'Avoid the company of wicked individuals. There is uncertainty in task completion.'
+    },
+    {
+        चौपाई: 'होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥',
+        स्रोत: 'This chaupai is from Ayodhya Kand, spoken by Bharat Ji.',
+        फल: 'Everything will happen as per God’s will, so do not worry.'
+    },
+    {
+        चौपाई: 'मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥',
+        स्रोत: 'This chaupai is from Bal Kand, describing the presence of saints as a holy pilgrimage.',
+        फल: 'The question is excellent. The task will be accomplished successfully.'
+    },
+    {
+        चौपाई: 'गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥',
+        स्रोत: 'This chaupai is from Sundar Kand, when Hanuman Ji enters Lanka.',
+        फल: 'This is a very auspicious question. The task will be successful.'
+    },
+    {
+        चौपाई: 'बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥',
+        स्रोत: 'This chaupai is from Lanka Kand, during Mandodari’s lament after Ravan’s death.',
+        फल: 'There is uncertainty in task completion.'
+    },
+    {
+        चौपाई: 'सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥',
+        स्रोत: 'This chaupai is from Bal Kand, when Vishwamitra Ji blesses after receiving flowers from Pushp Vatika.',
+        फल: 'The question is highly auspicious. The task will be accomplished successfully.'
+    }
+];
+
 
             let selectedChaupai = answers[index];
             let resultDiv = document.getElementById('result');
             resultDiv.innerHTML = `
             <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; border: 2px solid #A04000; border-radius: 5px;">
-                <div class="answer-header" style="color: #A04000; font-weight: bold;">चौपाई</div>
+                <div class="answer-header" style="color: #A04000; font-weight: bold;">Chaupai</div>
                 <div class="answer-content">${chaupaiTexts[index].चौपाई}</div>
             </div>
             <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; border: 2px solid #A04000; border-radius: 5px;">
-                <div class="answer-header" style="color: #A04000; font-weight: bold;">स्रोत</div>
+                <div class="answer-header" style="color: #A04000; font-weight: bold;">Source</div>
                 <div class="answer-content">${chaupaiTexts[index].स्रोत}</div>
             </div>
             <div class="answer-box" style="padding: 15px; margin: 15px 0; width: 90%; text-align: left; 
                 border: 2px solid ${[0,1,4,5,6,8].includes(index) ? '#4CAF50' : '#FF5733'}; 
                 border-radius: 5px; 
                 background-color: ${[0,1,4,5,6,8].includes(index) ? '#E8F5E9' : '#FFF3EF'};">
-                <div class="answer-header" style="color: ${[0,1,4,5,6,8].includes(index) ? '#2E7D32' : '#D32F2F'}; font-weight: bold;">फल</div>
+                <div class="answer-header" style="color: ${[0,1,4,5,6,8].includes(index) ? '#2E7D32' : '#D32F2F'}; font-weight: bold;">Answer</div>
                 <div class="answer-content">${chaupaiTexts[index].फल}</div>
             </div>
         `;
@@ -375,10 +427,10 @@
     });
 });
 
-    </script>
+    </script>   
 
     <br>
-    <button id="newQuestion" style="margin-top: 20px; padding: 10px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none;">नया प्रश्न पूछें</button>
+    <button id="newQuestion" style="margin-top: 20px; padding: 10px; font-size: 16px; cursor: pointer; background-color: #ff9933; color: white; border: none;">Ask a new Question</button>
 
     <script>
         document.getElementById('newQuestion').addEventListener('click', function () {
@@ -412,6 +464,125 @@
     }
     </script>
 </body>
+<!-- Ram Prashnavali FAQs -->
+<div style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
+
+    <h2 style="text-align: center; color: #ff9933; font-size: 28px; font-weight: bold; margin-bottom: 15px;">
+        Shri Ram Prashnavali – Frequently Asked Questions
+    </h2>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+    <p>1️⃣ What is Ram Prashnavali?</p>
+    <p>Shri Ram Prashnavali is an ancient spiritual method used to seek divine guidance from Lord Ram. Derived from the Ramcharitmanas, it helps devotees receive answers based on Lord Ram’s wisdom.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>2️⃣ How does Ram Prashnavali work?</p>
+    <p>To use Ram Prashnavali, one must focus on a question, mentally seek Lord Ram’s blessings, and select a letter in the Shalaka grid. The corresponding verse from the Ramcharitmanas provides divine insight.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>3️⃣ What are the benefits of Ram Prashnavali?</p>
+    <p>Spiritual guidance based on Lord Ram’s wisdom.<br>
+       Mental peace and clarity.<br>
+       Strengthens faith and devotion.<br>
+       Easy and accessible online.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>4️⃣ Is Ram Prashnavali accurate?</p>
+    <p>Yes, Ram Prashnavali is a time-tested spiritual tool. It is based on faith and devotion, offering answers that align with Lord Ram’s divine wisdom.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>5️⃣ Can I use Ram Prashnavali daily?</p>
+    <p>Yes, many devotees consult Ram Prashnavali daily for guidance in life decisions, seeking blessings from Lord Ram.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>6️⃣ Is there a digital version of Ram Prashnavali?</p>
+    <p>Yes, you can access Ram Prashnavali online at <a href="https://vedprashnavali.com" target="_blank" style="color: #ff6600; text-decoration: none; font-weight: bold;">VedPrashnavali.com</a>, where you can experience an interactive, clickable Prashnavali for instant divine answers.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>7️⃣ What is the history of Ram Prashnavali?</p>
+    <p>Ram Prashnavali originates from the Ramcharitmanas by Goswami Tulsidas, composed in the 16th century. It has been used for centuries by devotees and saints for divine guidance.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>8️⃣ How is Ram Prashnavali different from Hanuman Prashnavali?</p>
+    <p>Ram Prashnavali provides guidance based on Lord Ram’s wisdom.<br>
+       Hanuman Prashnavali is associated with courage and strength, offering guidance through Lord Hanuman’s blessings.<br>
+       Both are powerful tools for spiritual insight and divine wisdom.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>9️⃣ Can non-Hindus use Ram Prashnavali?</p>
+    <p>Yes, Ram Prashnavali is open to everyone seeking divine wisdom. It is not limited by religion and is accessible to all who have faith in Lord Ram’s blessings.</p>
+
+    <hr style="border: none; border-top: 1px dashed #ff9933; margin: 15px 0;">
+
+    <p>🔟 How do I get the best results from Ram Prashnavali?</p>
+    <p>Purify your mind through meditation or prayer.<br>
+       Ask your question sincerely with faith in Lord Ram.<br>
+       Trust the divine answer and follow it with devotion.</p>
+
+    <hr style="border: none; border-top: 2px solid #ff9933; margin: 20px 0;">
+
+</div>
+
+<!-- FAQ Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Ram Prashnavali?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shri Ram Prashnavali is an ancient divination method that provides spiritual guidance through the wisdom of Lord Ram. It is derived from the Ramcharitmanas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Ram Prashnavali work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You focus on a question, seek Lord Ram's blessings, and select a letter in the Shalaka grid. The corresponding verse from the Ramcharitmanas provides divine insight."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the benefits of using Ram Prashnavali?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ram Prashnavali offers spiritual guidance, mental peace, strengthens faith, and is easy to use online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Ram Prashnavali accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it has been used for centuries. It is based on faith and devotion, offering divine wisdom from Lord Ram."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Ram Prashnavali daily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many devotees use Ram Prashnavali daily for motivation, wisdom, and life decisions."
+      }
+    }
+  ]
+}
+</script>
+
+
     <!-- Ram Prashnavali Information Section -->
 <div style="max-width: 900px; margin: auto; padding: 20px; font-size: 18px; color: #333; font-family: Arial, sans-serif; line-height: 1.8; text-align: justify;">
     
