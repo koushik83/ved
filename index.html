@@ -235,5 +235,29 @@
             </div>
         </a>
     </div>
+        <!-- Install App Script (Place before closing body tag) -->
+        <script>
+            let installPrompt;
+      
+            window.addEventListener("beforeinstallprompt", (event) => {
+              event.preventDefault();
+              installPrompt = event;
+      
+              let installBtn = document.createElement("button");
+              installBtn.innerText = "Install App";
+              installBtn.style = "position:fixed; bottom:20px; right:20px; padding:10px; background:#ffcc00; border:none; cursor:pointer;";
+              document.body.appendChild(installBtn);
+      
+              installBtn.addEventListener("click", () => {
+                installPrompt.prompt();
+                installPrompt.userChoice.then((choice) => {
+                  if (choice.outcome === "accepted") {
+                    console.log("App Installed");
+                  }
+                  installBtn.remove();
+                });
+              });
+            });
+          </script>
 </body>
 </html>
