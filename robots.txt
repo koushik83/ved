@@ -1,7 +1,15 @@
 User-agent: *
 Allow: /
-Sitemap: https://vedprashnavali.com/sitemap.xml
 
-# Add this for AI bot access
-User-agent: GPTBot
+# Prevent duplicate content issues by blocking HTML access where clean URLs are preferred
+Disallow: /*.html$
+
+# Block access to unnecessary files
+Disallow: /sw.js
+
+# Allow Google to index everything (helps with quick reindexing)
+User-agent: Googlebot
 Allow: /
+
+# Sitemap location
+Sitemap: https://vedprashnavali.com/sitemap.xml
