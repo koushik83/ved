@@ -11,5 +11,10 @@ Disallow: /sw.js
 User-agent: Googlebot
 Allow: /
 
+# Allow Bing 
+User-agent: Bingbot
+Allow: /
+
+
 # Sitemap location
 Sitemap: https://vedprashnavali.com/sitemap.xml
