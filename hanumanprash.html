@@ -681,135 +681,115 @@
         // Hardcoded Messages for 1-49
 
         const hanumanMessages = {
-            1: { title: "जय सियाराम, जय जय सियाराम।", message1: "Chakra number 1 clicked", message2: "Your wishes will be fulfilled. Have patience and stay devoted to your path. **(Yes)**" },
-            2: { title: "राम नाम मनिदीप धरु जीह देहरीं द्वार।", message1: "Chakra number 2 clicked", message2: "Success will come after some obstacles. Keep faith in divine timing. **(Yes)**" },
-            3: { title: "होइहि सोइ जो राम रचि राखा।", message1: "Chakra number 3 clicked", message2: "A positive change is coming in your life. Welcome it with open arms. **(Yes)**" },
-            4: { title: "कवन सो काज कठिन जग माहीं।", message1: "Chakra number 4 clicked", message2: "Current situation will improve gradually. Trust in the divine plan. **(Yes)**" },
-            5: { title: "राम काज करिबे को आतुर।", message1: "Chakra number 5 clicked", message2: "There may be delays, but success is assured through perseverance. **(Yes)**" },
-            6: { title: "नाथ सकल मुद मंगल दाता।", message1: "Chakra number 6 clicked", message2: "Good news will come soon. Stay positive and maintain faith. **(Yes)**" },
-            7: { title: "भूत पिशाच निकट नहिं आवे।", message1: "Chakra number 7 clicked", message2: "Victory over enemies and obstacles is assured with divine protection. **(Yes)**" },
-            8: { title: "प्रबिसि नगर कीजे सब काजा।", message1: "Chakra number 8 clicked", message2: "Start your work confidently, success assured. **(Yes)**" },
-            9: { title: "भय प्रगट कृपाला दीनदयाला।", message1: "Chakra number 9 clicked", message2: "Your worries will fade, divine grace is with you. **(Yes)**" },
-            10: { title: "संकट कटै मिटै सब पीरा।", message1: "Chakra number 10 clicked", message2: "Troubles will end, good times are coming. **(Yes)**" },
-            11: { title: "तुलसीदास सदा हरि चेरा।", message1: "Chakra number 11 clicked", message2: "Dedication and faith will bring positive results. **(Yes)**" },
-            12: { title: "जो सत बार पाठ कर कोई।", message1: "Chakra number 12 clicked", message2: "If done with devotion, success is certain. **(Yes)**" },
-            13: { title: "नहिं दरिद्र कोई दुखी न दीना।", message1: "Chakra number 13 clicked", message2: "Current circumstances are unfavorable, wait. **(No)**" },
-            14: { title: "इहां न कछु मोह माया न व्यापा।", message1: "Chakra number 14 clicked", message2: "Detachment is needed before proceeding. **(No)**" },
-            15: { title: "जथा लाभ संतोष सदा मन।", message1: "Chakra number 15 clicked", message2: "Be patient; the right time hasn’t come. **(No)**" },
-            16: { title: "प्रभु की कृपा भयउ सब काजू।", message1: "Chakra number 16 clicked", message2: "Divine grace ensures success. **(Yes)**" },
-            17: { title: "भृगु पद गहि हृदयँ धरि धीर।", message1: "Chakra number 17 clicked", message2: "Stay strong, success is coming. **(Yes)**" },
-            18: { title: "मोर मनोरथ जानि हरषाई।", message1: "Chakra number 18 clicked", message2: "Your desires will be fulfilled soon. **(Yes)**" },
-            19: { title: "तब जनक पायस देवन जाई।", message1: "Chakra number 19 clicked", message2: "Partial success, proceed with care. **(Wait)**" },
-            20: { title: "विनय करउँ कर जोरि मनावउँ।", message1: "Chakra number 20 clicked", message2: "More effort is required before success. **(No)**" },
-            21: { title: "संकट मोचन नाम तिहारो।", message1: "Chakra number 21 clicked", message2: "Hanuman will remove your obstacles. **(Yes)**" },
-            22: { title: "जय जय जय हनुमान गोसाई।", message1: "Chakra number 22 clicked", message2: "A strong **Yes!** Favorable signs. **(Yes)**" },
-            23: { title: "गइ अकाजु बिप्र गहि पाँए।", message1: "Chakra number 23 clicked", message2: "Avoid this step now, not ideal. **(No)**" },
-            24: { title: "हनुमत कृपा पाई हनुमान।", message1: "Chakra number 24 clicked", message2: "You have divine protection. **(Yes)**" },
-            25: { title: "भवसागर बिनु भजन न तरे।", message1: "Chakra number 25 clicked", message2: "Focus on prayers before proceeding. **(No)**" },
-            26: { title: "रामकथा सुन्दर कर गाई।", message1: "Chakra number 26 clicked", message2: "Good results with spiritual growth. **(Yes)**" },
-            27: { title: "त्राहि त्राहि अरुनासुर गावै।", message1: "Chakra number 27 clicked", message2: "Caution! Obstacles ahead. **(No)**" },
-            28: { title: "रघुकुल रीति सदा चलि आई।", message1: "Chakra number 28 clicked", message2: "Maintain righteousness; success is near. **(Yes)**" },
-            29: { title: "हनुमान लंका में प्रगटे।", message1: "Chakra number 29 clicked", message2: "Overcome obstacles with courage. **(Yes)**" },
+            1: { title: "जय सियाराम, जय जय सियाराम।", message2: "Your wishes will be fulfilled. Have patience and stay devoted to your path. (Yes)" },
+            2: { title: "राम नाम मनिदीप धरु जीह देहरीं द्वार।", message2: "Success will come after some obstacles. Keep faith in divine timing. (Yes)" },
+            3: { title: "होइहि सोइ जो राम रचि राखा।", message2: "A positive change is coming in your life. Welcome it with open arms. (Yes)" },
+            4: { title: "कवन सो काज कठिन जग माहीं।", message2: "Current situation will improve gradually. Trust in the divine plan. (Yes)" },
+            5: { title: "राम काज करिबे को आतुर।", message2: "There may be delays, but success is assured through perseverance. (Yes)" },
+            6: { title: "नाथ सकल मुद मंगल दाता।", message2: "Good news will come soon. Stay positive and maintain faith. (Yes)" },
+            7: { title: "भूत पिशाच निकट नहिं आवे।", message2: "Victory over enemies and obstacles is assured with divine protection. (Yes)" },
+            8: { title: "प्रबिसि नगर कीजे सब काजा।", message2: "Start your work confidently, success assured. (Yes)" },
+            9: { title: "भय प्रगट कृपाला दीनदयाला।", message2: "Your worries will fade, divine grace is with you. (Yes)" },
+            10: { title: "संकट कटै मिटै सब पीरा।", message2: "Troubles will end, good times are coming. (Yes)" },
+            11: { title: "तुलसीदास सदा हरि चेरा।", message2: "Dedication and faith will bring positive results. (Yes)" },
+            12: { title: "जो सत बार पाठ कर कोई।", message2: "If done with devotion, success is certain. (Yes)" },
+            13: { title: "नहिं दरिद्र कोई दुखी न दीना।", message2: "Current circumstances are unfavorable, wait. (No)" },
+            14: { title: "इहां न कछु मोह माया न व्यापा।", message2: "Detachment is needed before proceeding. (No)" },
+            15: { title: "जथा लाभ संतोष सदा मन।", message2: "Be patient; the right time hasn’t come. (No)" },
+            16: { title: "प्रभु की कृपा भयउ सब काजू।", message2: "Divine grace ensures success. (Yes)" },
+            17: { title: "भृगु पद गहि हृदयँ धरि धीर।", message2: "Stay strong, success is coming. (Yes)" },
+            18: { title: "मोर मनोरथ जानि हरषाई।", message2: "Your desires will be fulfilled soon. (Yes)" },
+            19: { title: "तब जनक पायस देवन जाई।", message2: "Partial success, proceed with care. (Wait)" },
+            20: { title: "विनय करउँ कर जोरि मनावउँ।", message2: "More effort is required before success. (No)" },
+            21: { title: "संकट मोचन नाम तिहारो।", message2: "Hanuman will remove your obstacles. (Yes)" },
+            22: { title: "जय जय जय हनुमान गोसाई।", message2: "A strong Yes! Favorable signs. (Yes)" },
+            23: { title: "गइ अकाजु बिप्र गहि पाँए।", message2: "Avoid this step now, not ideal. (No)" },
+            24: { title: "हनुमत कृपा पाई हनुमान।", message2: "You have divine protection. (Yes)" },
+            25: { title: "भवसागर बिनु भजन न तरे।", message2: "Focus on prayers before proceeding. (No)" },
+            26: { title: "रामकथा सुन्दर कर गाई।", message2: "Good results with spiritual growth. (Yes)" },
+            27: { title: "त्राहि त्राहि अरुनासुर गावै।", message2: "Caution! Obstacles ahead. (No)" },
+            28: { title: "रघुकुल रीति सदा चलि आई।", message2: "Maintain righteousness; success is near. (Yes)" },
+            29: { title: "हनुमान लंका में प्रगटे।", message2: "Overcome obstacles with courage. (Yes)" },
 
             30: {
                 "title": "सिया राममय सब जग जानी।",
-                "message1": "Chakra number 30 clicked",
-                "message2": "Everything is under divine will. Success is near. **(Yes)**"
+                "message2": "Everything is under divine will. Success is near. (Yes)"
             },
             31: {
                 "title": "रामहि केवल प्रेमु पियारा।",
-                "message1": "Chakra number 31 clicked",
-                "message2": "Devotion and love will lead to fulfillment. **(Yes)**"
+                "message2": "Devotion and love will lead to fulfillment. (Yes)"
             },
             32: {
                 "title": "जासु कृपा नहिं कृपा कराही।",
-                "message1": "Chakra number 32 clicked",
-                "message2": "Your efforts need divine grace before success. **(No)**"
+                "message2": "Your efforts need divine grace before success. (No)"
             },
             33: {
                 "title": "बिनु सत्संग विवेक न होई।",
-                "message1": "Chakra number 33 clicked",
-                "message2": "You need wisdom from good company before deciding. **(Wait)**"
+                "message2": "You need wisdom from good company before deciding. (Wait)"
             },
             34: {
                 "title": "सोइ जानहि जेहि देहु जनाई।",
-                "message1": "Chakra number 34 clicked",
-                "message2": "The truth will be revealed at the right time. **(Wait)**"
+                "message2": "The truth will be revealed at the right time. (Wait)"
             },
             35: {
                 "title": "नहिं दरिद्र कोई दुखी न दीना।",
-                "message1": "Chakra number 35 clicked",
-                "message2": "Material and emotional stability will come soon. **(Yes)**"
+                "message2": "Material and emotional stability will come soon. (Yes)"
             },
             36: {
                 "title": "जथालाभ संतोष सदा मन।",
-                "message1": "Chakra number 36 clicked",
-                "message2": "Be content with what is given, more will follow. **(Yes)**"
+                "message2": "Be content with what is given, more will follow. (Yes)"
             },
             37: {
                 "title": "जो प्रभु दीनदयाल कहावा।",
-                "message1": "Chakra number 37 clicked",
-                "message2": "Your prayers will be answered soon. **(Yes)**"
+                "message2": "Your prayers will be answered soon. (Yes)"
             },
             38: {
                 "title": "जय जय जय धुनि होई।",
-                "message1": "Chakra number 38 clicked",
-                "message2": "Victory and success are assured. **(Yes)**"
+                "message2": "Victory and success are assured. (Yes)"
             },
             39: {
                 "title": "संतन को करि बिपति सहाई।",
-                "message1": "Chakra number 39 clicked",
-                "message2": "Difficulties will be removed by divine intervention. **(Yes)**"
+                "message2": "Difficulties will be removed by divine intervention. (Yes)"
             },
             40: {
                 "title": "राम बिनु के करै सहाय।",
-                "message1": "Chakra number 40 clicked",
-                "message2": "You need to trust in divine help for success. **(Yes)**"
+                "message2": "You need to trust in divine help for success. (Yes)"
             },
             41: {
                 "title": "बिनु सत्संग विवेक न होई।",
-                "message1": "Chakra number 41 clicked",
-                "message2": "Seek guidance from wise people before deciding. **(Wait)**"
+                "message2": "Seek guidance from wise people before deciding. (Wait)"
             },
             42: {
                 "title": "पवन तनय बल पवन समाना।",
-                "message1": "Chakra number 42 clicked",
-                "message2": "Strength and energy are in your favor. Move ahead. **(Yes)**"
+                "message2": "Strength and energy are in your favor. Move ahead. (Yes)"
             },
             43: {
                 "title": "धीरज धरहु संग साहस।",
-                "message1": "Chakra number 43 clicked",
-                "message2": "Patience and courage will lead to victory. **(Yes)**"
+                "message2": "Patience and courage will lead to victory. (Yes)"
             },
             44: {
                 "title": "अब कि कृपा राम करि होई।",
-                "message1": "Chakra number 44 clicked",
-                "message2": "A positive turn of events is near. **(Yes)**"
+                "message2": "A positive turn of events is near. (Yes)"
             },
             45: {
                 "title": "हनुमान लंका में प्रगटे।",
-                "message1": "Chakra number 45 clicked",
-                "message2": "Overcome obstacles with courage. **(Yes)**"
+                "message2": "Overcome obstacles with courage. (Yes)"
             },
             46: {
                 "title": "रघुकुल रीति सदा चलि आई।",
-                "message1": "Chakra number 46 clicked",
-                "message2": "Maintain righteousness, and success will come. **(Yes)**"
+                "message2": "Maintain righteousness, and success will come. (Yes)"
             },
             47: {
                 "title": "शरणागत कहुं कृपा सागर।",
-                "message1": "Chakra number 47 clicked",
-                "message2": "You are under divine protection. Move forward. **(Yes)**"
+                "message2": "You are under divine protection. Move forward. (Yes)"
             },
             48: {
                 "title": "रामकथा सुन्दर कर गाई।",
-                "message1": "Chakra number 48 clicked",
-                "message2": "Success through spiritual devotion and sincerity. **(Yes)**"
+                "message2": "Success through spiritual devotion and sincerity. (Yes)"
             },
             49: {
                 "title": "भवसागर बिनु भजन न तरे।",
-                "message1": "Chakra number 49 clicked",
-                "message2": "Spiritual efforts are required before success. **(No)**"
+                "message2": "Spiritual efforts are required before success. (No)"
             }
         };
 
@@ -817,9 +797,8 @@
             const messageDisplay = document.getElementById('messageDisplay');
             messageDisplay.innerHTML =
                 `
-        <strong>🔱  <br> ${hanumanMessages[number].title} <br><br>
-        <strong>📖  <br> <em>${hanumanMessages[number].message1}</em> <br><br>
-        <strong>🌟  <br> ${hanumanMessages[number].message2}
+        <strong>🔱  <br> ${hanumanMessages[number].title} <br><br></strong>
+        <strong>🌟  <br> ${hanumanMessages[number].message2}</strong>
     `;
             messageDisplay.style.display = "block";
 
