@@ -170,7 +170,10 @@
             box-sizing: border-box;
             border: 3px solid #ff9933;
             border-radius: 22px;
-            background: white;
+            background-color: white;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
             color: #333;
             font-family: inherit;
             cursor: pointer;
@@ -491,6 +494,7 @@
             $('total').textContent = e.rounds * MALA + e.count;
             $('lifetime').textContent = state.lifetime[state.name] || 0;
             $('hint').hidden = e.count > 0 || e.rounds > 0;
+            $('tap').style.backgroundImage = isOther ? 'none' : 'linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(/images/' + state.name + '.webp)';
             $('customName').hidden = !isOther;
             $('feedback').textContent = state.feedback ? '🔔 Sound on' : '🔕 Sound off';
             var buttons = document.querySelectorAll('.name');
