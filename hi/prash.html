@@ -28,6 +28,7 @@
         gtag('config', 'G-32DZ0S3QTT');
     </script>
     <script src="/app-events.js" defer></script>
+    <script src="/share-card.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4804498427753837"
      crossorigin="anonymous"></script>
     <style>
@@ -286,7 +287,9 @@
             if (chosen === null) { return; }
             if (typeof window.vedTrack === 'function') { window.vedTrack('share', { method: 'whatsapp', content_type: 'ram', lang: 'hi' }); }
             var c = RAM[chosen];
-            window.open('https://wa.me/?text=' + encodeURIComponent(L.shareText + NL + NL + c.verse + NL + c.result + NL + NL + 'https://vedprashnavali.com/hi/prash'));
+            var text = L.shareText + NL + NL + c.verse + NL + c.result;
+            var fallback = function () { window.open('https://wa.me/?text=' + encodeURIComponent(text + NL + NL + 'https://vedprashnavali.com/hi/prash')); };
+            if (window.vedShareCard) { window.vedShareCard({ title: 'राम शलाका प्रश्नावली', image: '/images/ram.webp', url: 'https://vedprashnavali.com/hi/prash', text: text, verse: c.verse, meaning: c.source, result: c.result, tone: c.good ? 'good' : 'caution' }).then(function (ok) { if (!ok) { fallback(); } }); } else { fallback(); }
         });
         document.getElementById('again').addEventListener('click', function () {
             result.style.display = 'none'; result.innerHTML = ''; chosen = null; document.getElementById('actions').hidden = true;

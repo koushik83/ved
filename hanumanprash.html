@@ -316,18 +316,8 @@
         gtag('config', 'G-32DZ0S3QTT');
     </script>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,es,fr,de,hi,bn,te,ta,mr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="/app-events.js" defer></script>
+    <script src="/share-card.js" defer></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4804498427753837"
      crossorigin="anonymous"></script>
 </head>
@@ -367,8 +357,6 @@
         <span style='background-color: #ff9933; padding: 5px; border-radius: 5px;'>🕉️</span>
     </h1>
     
-      <!-- Add this where you want the translate button to appear -->
-      <div id="google_translate_element"></div>
     <div class="hanuman-card">
         <h3>Divine Guidance from Lord Hanuman in YES NO Format</h3>
         <ol style="list-style-position: inside;">
@@ -809,6 +797,7 @@
         };
 
         function displayMessage(number) {
+            window.vedLastAnswer = { verse: hanumanMessages[number].title, meaning: '', result: hanumanMessages[number].message2, tone: /\(Yes\)\s*$/.test(hanumanMessages[number].message2) ? 'good' : (/\(No\)\s*$/.test(hanumanMessages[number].message2) ? 'caution' : 'wait') };
             const messageDisplay = document.getElementById('messageDisplay');
             messageDisplay.innerHTML =
                 `
@@ -1367,7 +1356,13 @@
 
             switch (platform) {
                 case 'whatsapp':
-                    window.open(`https://wa.me/?text=${encodeURIComponent(text + '\n\n' + url)}`);
+                    if (window.vedShareCard && window.vedLastAnswer) {
+                        window.vedShareCard(Object.assign({ title: 'Hanuman Prashnavali', image: '/images/hanuman.webp', url: url, text: text }, window.vedLastAnswer)).then(function (shared) {
+                            if (!shared) { window.open(`https://wa.me/?text=${encodeURIComponent(text + '\n\n' + url)}`); }
+                        });
+                    } else {
+                        window.open(`https://wa.me/?text=${encodeURIComponent(text + '\n\n' + url)}`);
+                    }
                     break;
                 case 'facebook':
                     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
