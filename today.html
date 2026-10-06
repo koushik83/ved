@@ -213,6 +213,13 @@
             color: white;
         }
 
+        .earlier {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin: 0 0 12px;
+        }
+
         .streak {
             text-align: center;
             font-weight: bold;
@@ -272,6 +279,7 @@
 
         <section class="card" id="answerCard" hidden>
             <h2 id="answerHeading">Your Guidance for Today</h2>
+            <p class="earlier" id="earlierNote" hidden>You received this guidance earlier today. It stays the same until midnight.</p>
             <p class="verse" id="answerVerse" lang="hi" translate="no"></p>
             <p class="source" id="answerSource"></p>
             <p class="guidance" id="answerText"></p>
@@ -280,7 +288,7 @@
                 <button type="button" class="btn btn-whatsapp" id="shareAnswer">Share on WhatsApp</button>
             </div>
             <p class="streak" id="streakLine"></p>
-            <p class="tomorrow">Come back tomorrow for new guidance. Today's answer stays here until midnight.</p>
+            <p class="tomorrow">Come back tomorrow for new guidance. Your answer for today will not change until midnight.</p>
         </section>
 
         <section class="card">
@@ -295,7 +303,7 @@
 
         <section class="card">
             <h2>How Today's Guidance Works</h2>
-            <p>Today's Guidance gives you one answer each day, and nothing is shown until you choose. When you choose Shri Ram or Hanuman Ji, the page picks one answer by chance from the same answers used in the <a href="/prash">Ram Shalaka Prashnavali</a> and the <a href="/hanumanprash">Hanuman Prashnavali</a> on this site. The answer stays on this page until midnight, and a new one is ready the next day.</p>
+            <p>Today's Guidance gives you one answer each day, and nothing is shown until you choose. When you choose Shri Ram or Hanuman Ji, the page picks one answer by chance from the same answers used in the <a href="/prash">Ram Shalaka Prashnavali</a> and the <a href="/hanumanprash">Hanuman Prashnavali</a> on this site. Choose again later the same day and you will see the same answer. A new one is ready the next day.</p>
             <p>Your answer and your count of days are saved in this browser, on your device. Your question is never typed in or sent anywhere. The <a href="/privacy">Privacy Policy</a> explains the usage statistics the site collects.</p>
             <p>This is a devotional practice. For important decisions, use your own judgment and seek qualified advice.</p>
         </section>
@@ -422,6 +430,7 @@
         var now = new Date();
         var today = dateKey(now);
         var longDate = now.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        var memory = null;   // today's answer for this visit, in case the browser blocks storage
 
         function answerFor(entry) {
             if (entry.deity === 'ram') {
@@ -436,7 +445,7 @@
                      moreHref: '/hanumanprash', moreLabel: 'Open Hanuman Prashnavali' };
         }
 
-        function showAnswer(entry) {
+        function showAnswer(entry, drawnEarlier) {
             var answer = answerFor(entry);
             $('answerHeading').textContent = 'Your Guidance for Today from ' + answer.from;
             $('answerVerse').textContent = answer.verse;
@@ -452,18 +461,24 @@
             $('shareAnswer').onclick = function () {
                 share('🕉️ My guidance for today from ' + answer.from + ':\n\n' + answer.verse + '\n' + answer.text, 'daily_answer');
             };
-            $('askCard').hidden = true;
+            $('earlierNote').hidden = !drawnEarlier;
             $('answerCard').hidden = false;
         }
 
         function draw(deity) {
-            var previous = readStore();
+            var previous = readStore() || memory;
+            if (isValid(previous) && previous.date === today) {
+                showAnswer(previous, true);
+                $('answerCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return;
+            }
             var yesterday = dateKey(new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1));
             var streak = previous && previous.date === yesterday && previous.streak > 0 ? previous.streak + 1 : 1;
             var id = deity === 'ram' ? pick(RAM.length) + 1 : pick(Object.keys(HANUMAN).length) + 1;
             var entry = { date: today, deity: deity, id: id, streak: streak };
+            memory = entry;
             writeStore(entry);
-            showAnswer(entry);
+            showAnswer(entry, false);
             $('answerCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
             track('daily_draw', { deity: deity, answer_id: String(id), streak: streak });
         }
@@ -473,7 +488,6 @@
 
             var saved = readStore();
             var answered = isValid(saved) && saved.date === today;
-            if (answered) { showAnswer(saved); }
             track('daily_view', { state: answered ? 'answered' : 'new', streak: answered ? saved.streak : 0 });
 
             var buttons = document.querySelectorAll('.deity');
