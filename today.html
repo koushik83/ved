@@ -224,13 +224,6 @@
             color: white;
         }
 
-        .streak {
-            text-align: center;
-            font-weight: bold;
-            color: #A04000;
-            margin: 14px 0 4px;
-        }
-
         .tomorrow {
             text-align: center;
             color: #666;
@@ -296,7 +289,6 @@
                 <a class="btn btn-outline" id="answerMore" href="/prash">About this chaupai</a>
                 <button type="button" class="btn btn-whatsapp" id="shareAnswer">Share on WhatsApp</button>
             </div>
-            <p class="streak" id="streakLine"></p>
             <p class="tomorrow">This guidance stays the same until midnight. Come back tomorrow for new guidance.</p>
         </section>
 
@@ -468,7 +460,6 @@
             $('answerText').className = 'guidance' + (g.tone === 'patience' ? '' : ' ' + g.tone);
             $('answerMore').href = g.moreHref || '/prash';
             $('answerMore').hidden = !g.moreHref;
-            $('streakLine').textContent = entry.streak > 1 ? '🔥 ' + entry.streak + ' days in a row' : 'Day 1. Come back tomorrow to start a streak.';
             $('shareAnswer').onclick = function () {
                 track('share', { method: 'whatsapp', content_type: 'daily_answer' });
                 var text = '🕉️ Today\'s guidance from ' + NAMES[deity] + ':\n\n' + g.verse + '\n' + g.text;
