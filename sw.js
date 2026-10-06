@@ -1,5 +1,5 @@
 // Service Worker with proper fetch handling and safety checks
-const CACHE_NAME = 'static-v3';
+const CACHE_NAME = 'static-v4';
 const HTML_EXT_REGEX = /\/(saibabaprash|hanumanprash|prash)\.html$/;
 
 self.addEventListener("install", (event) => {
@@ -11,6 +11,7 @@ self.addEventListener("install", (event) => {
         '/hanumanprash',
         '/prash',
         '/today',
+        '/jaap',
         '/app-events.js'
       ]);
     })

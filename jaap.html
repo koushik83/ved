@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naam Jaap Counter | Digital Mala of 108 for Ram Naam and Mantra Jaap</title>
+    <link rel="canonical" href="https://vedprashnavali.com/jaap" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="description" content="Free online naam jaap counter. Tap to count Ram Naam, the Hanuman mantra or Om Sai Ram on a digital mala of 108. Your count is saved on your device.">
+    <meta property="og:title" content="Naam Jaap Counter | Digital Mala of 108 for Ram Naam and Mantra Jaap">
+    <meta property="og:description" content="Free online naam jaap counter. Tap to count Ram Naam, the Hanuman mantra or Om Sai Ram on a digital mala of 108. Your count is saved on your device.">
+    <meta property="og:url" content="https://vedprashnavali.com/jaap">
+    <meta property="og:type" content="website">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-32DZ0S3QTT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-32DZ0S3QTT');
+    </script>
+    <script src="/app-events.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4804498427753837"
+     crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FDF4E7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 10px;
+            padding: 10px 8px;
+            border-bottom: 2px solid #ff9933;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 7px 13px;
+            font-size: 15px;
+            white-space: nowrap;
+            border-radius: 20px;
+            background: white;
+            border: 1px solid #ff9933;
+        }
+
+        .top-nav a.home {
+            font-weight: bold;
+        }
+
+        .wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 15px 10px;
+        }
+
+        h1 {
+            color: #D35400;
+            font-size: 28px;
+            line-height: 1.3;
+            text-align: center;
+            margin: 25px 0 5px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .card h2 {
+            color: #D35400;
+            font-size: 21px;
+            margin: 0 0 12px;
+        }
+
+        .card a {
+            color: #A04000;
+        }
+
+        .updated {
+            text-align: center;
+            color: #666;
+            margin: 0 0 10px;
+        }
+
+        .card h3 {
+            color: #A04000;
+            font-size: 17px;
+            margin: 18px 0 6px;
+        }
+
+        .card p {
+            margin: 0 0 12px;
+        }
+
+        .card ul,
+        .card ol {
+            margin: 0 0 12px;
+            padding-left: 22px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 14px 0 10px;
+        }
+
+        .name {
+            font-family: inherit;
+            font-size: 17px;
+            padding: 9px 16px;
+            border-radius: 22px;
+            border: 1px solid #ff9933;
+            background: white;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .name.selected {
+            background: #ff9933;
+            color: white;
+            font-weight: bold;
+        }
+
+        .custom {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 18px;
+            padding: 10px 12px;
+            margin: 0 0 10px;
+            border: 1px solid #ff9933;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 46vh;
+            max-height: 520px;
+            margin: 0 0 14px;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            border: 3px solid #ff9933;
+            border-radius: 22px;
+            background: white;
+            color: #333;
+            font-family: inherit;
+            cursor: pointer;
+            touch-action: manipulation;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tap:active {
+            background: #FFF3E0;
+            transform: scale(0.99);
+        }
+
+        .mantra {
+            font-size: 34px;
+            line-height: 1.3;
+            color: #A04000;
+            font-weight: bold;
+        }
+
+        .roman {
+            font-size: 15px;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        .count {
+            font-size: 84px;
+            line-height: 1;
+            font-weight: bold;
+            color: #D35400;
+            margin-top: 14px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .of {
+            font-size: 16px;
+            color: #777;
+            margin-top: 6px;
+        }
+
+        .hint {
+            position: absolute;
+            bottom: 14px;
+            font-size: 15px;
+            color: #999;
+        }
+
+        .done {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 19px;
+            background: rgba(255, 243, 224, 0.96);
+            color: #A04000;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 0 0 12px;
+        }
+
+        .stats span {
+            display: block;
+            font-size: 26px;
+            font-weight: bold;
+            color: #A04000;
+        }
+
+        .stats small {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .tools {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 6px;
+        }
+
+        .small {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 8px 14px;
+            min-height: 40px;
+            border-radius: 20px;
+            border: 1px solid #A04000;
+            background: white;
+            color: #A04000;
+            cursor: pointer;
+        }
+
+        .note p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this jaap counter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free to use, with no sign-up and no login."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the counter work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After you have opened it once, it also works without an internet connection. Installing it as an app from the Install App button makes this reliable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is my count saved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On your own device, in your browser. It is never sent to us. Clearing the site's data in your browser removes it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I count a mantra that is not listed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tap Other and type any name or mantra. The text stays on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many malas should I do in a day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no fixed rule. Many devotees take a sankalp of a set number of malas each day, such as one, five or eleven, and keep it up without a break."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="/" class="home">🏠 Home</a>
+        <a href="/today">🌅 Today</a>
+        <a href="/jaap">📿 Jaap</a>
+        <a href="/prash">🕉️ Ram Shalaka</a>
+        <a href="/hanumanprash">⚡ Hanuman</a>
+        <a href="/saibabaprash">🙏 Sai Baba</a>
+    </nav>
+
+    <main class="wrap">
+        <h1>📿 नाम जप - Naam Jaap Counter</h1>
+
+        <div class="names" role="group" aria-label="Choose a name">
+            <button type="button" class="name" data-name="ram" lang="hi" translate="no">राम</button>
+            <button type="button" class="name" data-name="hanuman" lang="hi" translate="no">ॐ हं हनुमते नमः</button>
+            <button type="button" class="name" data-name="sai" lang="hi" translate="no">ॐ साईं राम</button>
+            <button type="button" class="name" data-name="other">Other</button>
+        </div>
+        <input type="text" id="customName" class="custom" maxlength="60" placeholder="Type a name or mantra" autocomplete="off" hidden>
+
+        <button type="button" class="tap" id="tap" aria-label="Count one">
+            <span class="mantra" id="mantra" lang="hi" translate="no"></span>
+            <span class="roman" id="roman"></span>
+            <span class="count" id="count">0</span>
+            <span class="of">of 108</span>
+            <span class="hint" id="hint">Tap to count</span>
+            <span class="done" id="done" hidden>माला पूर्ण 🙏</span>
+        </button>
+
+        <div class="stats">
+            <div><span id="rounds">0</span><small>malas today</small></div>
+            <div><span id="total">0</span><small>today</small></div>
+            <div><span id="lifetime">0</span><small>all time</small></div>
+        </div>
+
+        <div class="tools">
+            <button type="button" class="small" id="undo">Undo</button>
+            <button type="button" class="small" id="feedback">🔔 Sound on</button>
+            <button type="button" class="small" id="reset">Reset today</button>
+        </div>
+
+        <section class="card">
+            <h2>What Is Naam Jaap?</h2>
+            <p>Naam jaap (नाम जप) is the repetition of a divine name or mantra, such as Ram, said quietly or aloud with attention. Devotees traditionally count the repetitions on a japa mala of 108 beads, moving one bead for each name. This jaap counter does the same work on your phone: one tap is one bead, and after 108 taps one mala is complete.</p>
+        </section>
+
+        <section class="card">
+            <h2>Why 108?</h2>
+            <p>A japa mala has 108 beads and one guru bead, the sumeru, which marks the start and end of a round. The number 108 is held sacred in Hindu tradition, and one full round of the mala is counted as 108 repetitions. Counting in malas makes it easy to keep a daily sankalp, such as one, five or eleven malas.</p>
+        </section>
+
+        <section class="card">
+            <h2>How to Use This Jaap Counter</h2>
+            <ol>
+                <li>Choose राम for Ram Naam jaap, ॐ हं हनुमते नमः for Hanuman Ji, ॐ साईं राम for Sai Baba, or tap Other and type any name or mantra.</li>
+                <li>Say the name and tap the screen once for each repetition. The count rises to 108, then one mala is added and the count starts again.</li>
+                <li>Your malas for today, today's total and your all-time total are saved on your phone. Undo removes one tap, and Reset clears today's count for the chosen name.</li>
+                <li>A soft chime and a vibration mark the end of each mala. Turn them off with the bell button when you chant in a quiet place.</li>
+                <li>Tap Install App to keep the counter on your home screen. It then works without an internet connection, and the screen stays on while you count.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Ram Naam Jaap</h2>
+            <p>Ram Naam jaap is the most widely practised naam jaap among devotees of Shri Ram. In Shri Ramcharitmanas, Goswami Tulsidas describes the name of Ram as a jewel-lamp placed at the doorway of the tongue, bringing light within and without. Many devotees chant राम or the full taraka mantra, श्री राम जय राम जय जय राम, and count their malas each day. For guidance from Shri Ram on a question, see the <a href="/prash">Ram Shalaka Prashnavali</a>.</p>
+        </section>
+
+        <section class="card">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Is this jaap counter free?</h3>
+            <p>Yes. It is free to use, with no sign-up and no login.</p>
+            <h3>Does the counter work offline?</h3>
+            <p>Yes. After you have opened it once, it also works without an internet connection. Installing it as an app from the Install App button makes this reliable.</p>
+            <h3>Where is my count saved?</h3>
+            <p>On your own device, in your browser. It is never sent to us. Clearing the site's data in your browser removes it.</p>
+            <h3>Can I count a mantra that is not listed?</h3>
+            <p>Yes. Tap Other and type any name or mantra. The text stays on your device.</p>
+            <h3>How many malas should I do in a day?</h3>
+            <p>There is no fixed rule. Many devotees take a sankalp of a set number of malas each day, such as one, five or eleven, and keep it up without a break.</p>
+        </section>
+        <section class="card note">
+            <p>Your counts are saved in this browser, on your device. The <a href="/privacy">Privacy Policy</a> explains the usage statistics the site collects.</p>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 25px 15px; margin-top: 40px; background-color: #FDF4E7; border-top: 2px solid #ff9933; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.9; color: #555;">
+        <div>
+            <a href="/" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Home</a>
+            <a href="/today" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Today's Guidance</a>
+            <a href="/jaap" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Jaap Counter</a>
+            <a href="/about" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">About</a>
+            <a href="/contact" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Contact</a>
+            <a href="/privacy" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Privacy Policy</a>
+        </div>
+        <div>Ved Prashnavali &middot; Delhi, India &middot; <a href="mailto:vedicprashnavali@gmail.com" style="color: #A04000; text-decoration: none;">vedicprashnavali@gmail.com</a></div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        var MALA = 108;
+        var STORE_KEY = 'ved_jaap_v1';
+        var NAMES = {
+            ram: { hi: 'राम', en: 'Ram' },
+            hanuman: { hi: 'ॐ हं हनुमते नमः', en: 'Om Han Hanumate Namah' },
+            sai: { hi: 'ॐ साईं राम', en: 'Om Sai Ram' },
+            other: { hi: '', en: '' }
+        };
+
+        function $(id) { return document.getElementById(id); }
+        function track(name, params) { if (typeof window.vedTrack === 'function') { window.vedTrack(name, params); } }
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        function dateKey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+
+        var state = { date: dateKey(new Date()), name: 'ram', custom: '', feedback: true, today: {}, lifetime: {} };
+        var started = false;
+        var doneTimer = null;
+        var lock = null;
+        var audio = null;
+
+        function load() {
+            var saved = null;
+            try { saved = JSON.parse(localStorage.getItem(STORE_KEY)); } catch (e) { saved = null; }
+            if (!saved || typeof saved !== 'object') { return; }
+            if (NAMES[saved.name]) { state.name = saved.name; }
+            if (typeof saved.custom === 'string') { state.custom = saved.custom.slice(0, 60); }
+            if (saved.feedback === false) { state.feedback = false; }
+            if (saved.lifetime && typeof saved.lifetime === 'object') { state.lifetime = saved.lifetime; }
+            if (saved.date === state.date && saved.today && typeof saved.today === 'object') { state.today = saved.today; }
+        }
+
+        function save() {
+            try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { /* storage blocked: counts last for this visit */ }
+        }
+
+        // Counts reset at midnight; the all-time total is kept
+        function ensureToday() {
+            var now = dateKey(new Date());
+            if (now !== state.date) { state.date = now; state.today = {}; }
+        }
+
+        function entry() {
+            var e = state.today[state.name];
+            if (!e || typeof e.count !== 'number' || typeof e.rounds !== 'number') { e = { count: 0, rounds: 0 }; state.today[state.name] = e; }
+            return e;
+        }
+
+        function render() {
+            var e = entry();
+            var isOther = state.name === 'other';
+            var hi = isOther ? state.custom.trim() : NAMES[state.name].hi;
+            $('mantra').textContent = hi || 'Type a name above';
+            $('roman').textContent = isOther ? '' : NAMES[state.name].en;
+            $('count').textContent = e.count;
+            $('rounds').textContent = e.rounds;
+            $('total').textContent = e.rounds * MALA + e.count;
+            $('lifetime').textContent = state.lifetime[state.name] || 0;
+            $('hint').hidden = e.count > 0 || e.rounds > 0;
+            $('customName').hidden = !isOther;
+            $('feedback').textContent = state.feedback ? '🔔 Sound on' : '🔕 Sound off';
+            var buttons = document.querySelectorAll('.name');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.toggle('selected', buttons[i].getAttribute('data-name') === state.name);
+            }
+        }
+
+        function buzz(ms) {
+            if (!state.feedback) { return; }
+            try { if (navigator.vibrate) { navigator.vibrate(ms); } } catch (e) { /* ignore */ }
+        }
+
+        // A soft two-note chime at the end of each mala, made in the browser so no sound file is needed
+        function chime() {
+            if (!state.feedback) { return; }
+            try {
+                var Ctx = window.AudioContext || window.webkitAudioContext;
+                if (!Ctx) { return; }
+                audio = audio || new Ctx();
+                if (audio.state === 'suspended') { audio.resume(); }
+                var t = audio.currentTime;
+                [[880, 0.2], [1320, 0.08]].forEach(function (note) {
+                    var o = audio.createOscillator(), g = audio.createGain();
+                    o.type = 'sine'; o.frequency.value = note[0];
+                    g.gain.setValueAtTime(0.0001, t);
+                    g.gain.exponentialRampToValueAtTime(note[1], t + 0.02);
+                    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.2);
+                    o.connect(g); g.connect(audio.destination);
+                    o.start(t); o.stop(t + 1.3);
+                });
+            } catch (e) { /* ignore */ }
+        }
+
+        // Keep the screen on while counting
+        function keepAwake() {
+            try {
+                if (navigator.wakeLock && !lock) {
+                    navigator.wakeLock.request('screen').then(function (l) {
+                        lock = l; l.addEventListener('release', function () { lock = null; });
+                    }).catch(function () { /* not allowed: fine */ });
+                }
+            } catch (e) { /* ignore */ }
+        }
+
+        function tap() {
+            ensureToday();
+            var e = entry();
+            if (!started) { started = true; track('jaap_start', { name: state.name }); keepAwake(); }
+            e.count += 1;
+            state.lifetime[state.name] = (state.lifetime[state.name] || 0) + 1;
+            if (e.count >= MALA) {
+                e.count = 0;
+                e.rounds += 1;
+                $('done').hidden = false;
+                clearTimeout(doneTimer);
+                doneTimer = setTimeout(function () { $('done').hidden = true; }, 1500);
+                chime();
+                buzz(200);
+                track('jaap_round', { name: state.name, rounds: e.rounds });
+            } else {
+                buzz(15);
+            }
+            save();
+            render();
+        }
+
+        function undo() {
+            var e = entry();
+            if (e.count > 0) { e.count -= 1; }
+            else if (e.rounds > 0) { e.rounds -= 1; e.count = MALA - 1; }
+            else { return; }
+            state.lifetime[state.name] = Math.max(0, (state.lifetime[state.name] || 0) - 1);
+            save();
+            render();
+        }
+
+        function reset() {
+            var e = entry();
+            if (e.count === 0 && e.rounds === 0) { return; }
+            if (!window.confirm("Reset today's count for this name?")) { return; }
+            state.today[state.name] = { count: 0, rounds: 0 };
+            save();
+            render();
+        }
+
+        function choose(name) {
+            state.name = name;
+            save();
+            render();
+            if (name === 'other') { $('customName').focus(); }
+        }
+
+        function start() {
+            load();
+            ensureToday();
+            $('customName').value = state.custom;
+            render();
+
+            $('tap').addEventListener('click', tap);
+            $('undo').addEventListener('click', undo);
+            $('reset').addEventListener('click', reset);
+            $('feedback').addEventListener('click', function () { state.feedback = !state.feedback; save(); render(); });
+            $('customName').addEventListener('input', function () { state.custom = this.value.slice(0, 60); save(); render(); });
+
+            var buttons = document.querySelectorAll('.name');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function () { choose(this.getAttribute('data-name')); });
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.target && event.target.tagName === 'INPUT') { return; }
+                if (event.key === ' ' || event.key === 'Enter') { event.preventDefault(); tap(); }
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden) { ensureToday(); render(); if (started) { keepAwake(); } }
+            });
+        }
+
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
+    })();
+    </script>
+
+    <!-- Install app button -->
+    <script>
+        let installPrompt;
+      
+        window.addEventListener("beforeinstallprompt", (event) => {
+          event.preventDefault();
+          installPrompt = event;
+      
+          // Check if PWA is already installed
+          if (window.matchMedia("(display-mode: standalone)").matches) {
+            return; // Do not show the install button if already installed
+          }
+      
+          let installBtn = document.createElement("button");
+          installBtn.innerText = "Install App";
+          installBtn.style = `
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #FFA726; /* Light Saffron */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s;
+            z-index: 9999;
+          `;
+      
+          document.body.appendChild(installBtn);
+      
+          installBtn.addEventListener("mouseover", () => {
+            installBtn.style.background = "#FB8C00"; /* Slightly darker saffron */
+            installBtn.style.transform = "translateX(-50%) scale(1.05)";
+          });
+      
+          installBtn.addEventListener("mouseleave", () => {
+            installBtn.style.background = "#FFA726"; /* Original saffron */
+            installBtn.style.transform = "translateX(-50%) scale(1)";
+          });
+      
+          installBtn.addEventListener("click", () => {
+            installPrompt.prompt();
+            installPrompt.userChoice.then((choice) => {
+              if (choice.outcome === "accepted") {
+                console.log("App Installed");
+                installBtn.remove(); // Remove button after install
+              } else {
+                console.log("User dismissed the install prompt");
+                installBtn.style.display = "none"; // Hide if dismissed
+              }
+            });
+          });
+      
+          // Hide button if user installs via browser menu
+          window.addEventListener("appinstalled", () => {
+            console.log("PWA Installed");
+            installBtn.remove();
+          });
+        });
+      </script>
+</body>
+</html>
