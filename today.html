@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Today's Guidance | Ask Shri Ram or Hanuman Ji About Your Day</title>
+    <title>Today's Guidance from Shri Ram and Hanuman Ji | How Will Your Day Be?</title>
     <link rel="canonical" href="https://vedprashnavali.com/today" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <meta name="description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today. Free, and new every day.">
-    <meta property="og:title" content="Today's Guidance | Ask Shri Ram or Hanuman Ji About Your Day">
-    <meta property="og:description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today. Free, and new every day.">
+    <meta name="description" content="See how your day is going to be with today's guidance from Shri Ram or Hanuman Ji. Free, and new every day.">
+    <meta property="og:title" content="Today's Guidance from Shri Ram and Hanuman Ji | How Will Your Day Be?">
+    <meta property="og:description" content="See how your day is going to be with today's guidance from Shri Ram or Hanuman Ji. Free, and new every day.">
     <meta property="og:url" content="https://vedprashnavali.com/today">
     <meta property="og:type" content="website">
 
@@ -111,6 +111,22 @@
             margin: 0 0 12px;
         }
 
+        .tone {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #A04000;
+            margin: 0 0 12px;
+        }
+
+        .tone.good {
+            color: #2E7D32;
+        }
+
+        .tone.caution {
+            color: #C62828;
+        }
+
         .source {
             color: #555;
             margin: 0 0 12px;
@@ -133,11 +149,6 @@
         .guidance.caution {
             border-color: #FF5733;
             background: #FFF3EF;
-        }
-
-        .steps {
-            margin: 0 0 16px;
-            padding-left: 22px;
         }
 
         .deity-row {
@@ -213,13 +224,6 @@
             color: white;
         }
 
-        .earlier {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            margin: 0 0 12px;
-        }
-
         .streak {
             text-align: center;
             font-weight: bold;
@@ -259,41 +263,36 @@
         <p class="date" id="todayDate"></p>
 
         <section class="card" id="askCard">
-            <h2>Ask About Your Day</h2>
-            <ol class="steps">
-                <li>Pray sincerely and bring your day, or one question about it, to mind</li>
-                <li>Choose Shri Ram or Hanuman Ji below</li>
-                <li>Receive one answer for today. A new one is ready tomorrow</li>
-            </ol>
+            <h2>How Will Your Day Be?</h2>
             <div class="deity-row">
                 <button type="button" class="deity" data-deity="ram">
                     <img src="/images/ram.webp" alt="" width="48" height="48">
-                    <span>Ask Shri Ram</span>
+                    <span>Shri Ram's Guidance</span>
                 </button>
                 <button type="button" class="deity" data-deity="hanuman">
                     <img src="/images/hanuman.webp" alt="" width="48" height="48">
-                    <span>Ask Hanuman Ji</span>
+                    <span>Hanuman Ji's Guidance</span>
                 </button>
             </div>
         </section>
 
         <section class="card" id="answerCard" hidden>
             <h2 id="answerHeading">Your Guidance for Today</h2>
-            <p class="earlier" id="earlierNote" hidden>You received this guidance earlier today. It stays the same until midnight.</p>
+            <p class="tone" id="answerTone"></p>
             <p class="verse" id="answerVerse" lang="hi" translate="no"></p>
             <p class="source" id="answerSource"></p>
             <p class="guidance" id="answerText"></p>
             <div class="actions">
-                <a class="btn btn-outline" id="answerMore" href="/prash">Detailed explanation</a>
+                <a class="btn btn-outline" id="answerMore" href="/prash">About this chaupai</a>
                 <button type="button" class="btn btn-whatsapp" id="shareAnswer">Share on WhatsApp</button>
             </div>
             <p class="streak" id="streakLine"></p>
-            <p class="tomorrow">Come back tomorrow for new guidance. Your answer for today will not change until midnight.</p>
+            <p class="tomorrow">This guidance stays the same until midnight. Come back tomorrow for new guidance.</p>
         </section>
 
         <section class="card">
-            <h2>Have Another Question?</h2>
-            <p>Today's Guidance gives one answer a day. For any other question, use the full prashnavali.</p>
+            <h2>Have a Question?</h2>
+            <p>Today's Guidance is only about your day. To ask a question, use the prashnavali.</p>
             <div class="tools">
                 <a class="btn btn-outline" href="/prash">🕉️ Ram Shalaka Prashnavali</a>
                 <a class="btn btn-outline" href="/hanumanprash">⚡ Hanuman Prashnavali</a>
@@ -303,8 +302,9 @@
 
         <section class="card">
             <h2>How Today's Guidance Works</h2>
-            <p>Today's Guidance gives you one answer each day, and nothing is shown until you choose. When you choose Shri Ram or Hanuman Ji, the page picks one answer by chance from the same answers used in the <a href="/prash">Ram Shalaka Prashnavali</a> and the <a href="/hanumanprash">Hanuman Prashnavali</a> on this site. Choose again later the same day and you will see the same answer. A new one is ready the next day.</p>
-            <p>Your answer and your count of days are saved in this browser, on your device. Your question is never typed in or sent anywhere. The <a href="/privacy">Privacy Policy</a> explains the usage statistics the site collects.</p>
+            <p>Today's Guidance tells you how your day is going to be. Nothing is shown until you tap Shri Ram or Hanuman Ji.</p>
+            <p>The page then picks one message by chance. For Shri Ram it is one of the nine chaupais of the <a href="/prash">Ram Shalaka Prashnavali</a> with its meaning. For Hanuman Ji it is one of the messages of the <a href="/hanumanprash">Hanuman Prashnavali</a>. Each stays the same until midnight, and new guidance is ready the next day.</p>
+            <p>Your guidance and your count of days are saved in this browser, on your device. The <a href="/privacy">Privacy Policy</a> explains the usage statistics the site collects.</p>
             <p>This is a devotional practice. For important decisions, use your own judgment and seek qualified advice.</p>
         </section>
     </main>
@@ -324,73 +324,75 @@
     (function () {
         'use strict';
 
-        // The same texts as the Ram Shalaka Prashnavali (/prash) and the Hanuman Prashnavali (/hanumanprash).
-        // If an answer is edited on those pages, edit it here too.
+        // Texts copied from the Ram Shalaka Prashnavali (/prash) and the Hanuman Prashnavali (/hanumanprash).
+        // If a chaupai, its meaning or a message is edited on those pages, edit it here too.
         var RAM = [
-            {"verse":"सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥","source":"This chaupai is from Bal Kand, during the scene of Sita Ji’s Gauri Puja. Goddess Gauri blesses Sita Ji.","result":"The seeker’s question is auspicious, and the task will be accomplished successfully.","good":true},
-            {"verse":"प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥","source":"This chaupai is from Sundar Kand, when Hanuman Ji enters Lanka.","result":"Begin your work while remembering the Lord, and success will follow.","good":true},
-            {"verse":"उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥","source":"This chaupai appears at the beginning of Bal Kand, in the context of Satsang (holy company).","result":"This task is not beneficial. There is doubt about its success.","good":false},
-            {"verse":"बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥","source":"This chaupai is from the beginning of Bal Kand, describing the effects of good and bad company.","result":"Avoid the company of wicked individuals. There is uncertainty in task completion.","good":false},
-            {"verse":"होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥","source":"This chaupai is from Ayodhya Kand, spoken by Bharat Ji.","result":"Everything will happen as per God’s will, so do not worry.","good":true},
-            {"verse":"मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥","source":"This chaupai is from Bal Kand, describing the presence of saints as a holy pilgrimage.","result":"The question is excellent. The task will be accomplished successfully.","good":true},
-            {"verse":"गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥","source":"This chaupai is from Sundar Kand, when Hanuman Ji enters Lanka.","result":"This is a very auspicious question. The task will be successful.","good":true},
-            {"verse":"बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥","source":"This chaupai is from Lanka Kand, during Mandodari’s lament after Ravan’s death.","result":"There is uncertainty in task completion.","good":false},
-            {"verse":"सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥","source":"This chaupai is from Bal Kand, when Vishwamitra Ji blesses after receiving flowers from Pushp Vatika.","result":"The question is highly auspicious. The task will be accomplished successfully.","good":true}
+            {"verse":"सुनु सिय सत्य असीस हमारी। पूजहि मन कामना तुम्हारी॥","meaning":"Listen, Sita, my blessing is true. Worship with sincerity, and your wishes shall be fulfilled.","lesson":"The Divine always listens to a sincere heart. Pray with faith, and you shall receive blessings beyond expectations.","good":true},
+            {"verse":"प्रबिसि नगर कीजे सब काजा। हृदय राखि कोसलपुर राजा॥","meaning":"Enter the city and complete all tasks, while keeping Lord Ram, the King of Kosala, in your heart.","lesson":"No matter how difficult the situation, if you carry faith in your heart, success is guaranteed.","good":true},
+            {"verse":"उघरें अंत न होइ निबाहू। कालनेमि जिमि रावन राहू॥","meaning":"In the end, evil cannot sustain. Just like Kalnemi and Ravana, wrongdoers meet their inevitable downfall.","lesson":"No matter how powerful evil may seem, it can never stand against the force of truth and righteousness.","good":false},
+            {"verse":"बिधि बस सुजन कुसंगत परहीं। फनि मनि सम निज गुन अनुसरहीं॥","meaning":"By fate, even the wise may fall into bad company, but just as a gem retains its brilliance despite being among snakes, a truly noble person never loses their goodness.","lesson":"External situations may change, but true goodness is like a divine gem—unaffected, pure, and radiant.","good":false},
+            {"verse":"होइहै सोई जो राम रचि राखा। को करि तरक बढ़ावहिं साखा॥","meaning":"Whatever Lord Ram has written in destiny will happen. Why then, engage in unnecessary arguments and disputes?","lesson":"Surrender your worries to Lord Ram. The path he has chosen for you is the best, even if you do not understand it now.","good":true},
+            {"verse":"मुद मंगलमय संत समाजू। जिमि जग जंगम तीरथ राजू॥","meaning":"The company of saints is full of joy and auspiciousness, just as a holy pilgrimage site is sacred in this world.","lesson":"Seek the company of saints, for their words illuminate the soul and bring true peace.","good":true},
+            {"verse":"गरल सुधा रिपु करय मिताई। गोपद सिंधु अनल सितलाई॥","meaning":"Poison turns into nectar, enemies become allies, the vast ocean shrinks to the size of a cow's hoofprint, and fire becomes cool.","lesson":"Surrender your worries, for when God intervenes, the impossible becomes possible.","good":true},
+            {"verse":"बरुन कुबेर सुरेस समीरा। रन सनमुख धरि काह न धीरा॥","meaning":"Even Varuna, Kubera, Indra, and Vayu refrain from fighting when a battle cannot be won.","lesson":"True strength lies not in never retreating, but in knowing when to fight and when to walk away.","good":false},
+            {"verse":"सुफल मनोरथ होहुँ तुम्हारे। रामु लखनु सुनि भए सुखारे॥","meaning":"Your heartfelt desires shall bear fruit. Lord Ram and Lakshman have heard them and are pleased.","lesson":"When the Lord hears the sincere call of a devotee, no wish remains unfulfilled.","good":true}
         ];
         var HANUMAN = {
-            "1": {"verse":"जय सियाराम, जय जय सियाराम।","result":"Your wishes will be fulfilled. Have patience and stay devoted to your path. (Yes)"},
-            "2": {"verse":"राम नाम मनिदीप धरु जीह देहरीं द्वार।","result":"Success will come after some obstacles. Keep faith in divine timing. (Yes)"},
-            "3": {"verse":"होइहि सोइ जो राम रचि राखा।","result":"A positive change is coming in your life. Welcome it with open arms. (Yes)"},
-            "4": {"verse":"कवन सो काज कठिन जग माहीं।","result":"Current situation will improve gradually. Trust in the divine plan. (Yes)"},
-            "5": {"verse":"राम काज करिबे को आतुर।","result":"There may be delays, but success is assured through perseverance. (Yes)"},
-            "6": {"verse":"नाथ सकल मुद मंगल दाता।","result":"Good news will come soon. Stay positive and maintain faith. (Yes)"},
-            "7": {"verse":"भूत पिशाच निकट नहिं आवे।","result":"Victory over enemies and obstacles is assured with divine protection. (Yes)"},
-            "8": {"verse":"प्रबिसि नगर कीजे सब काजा।","result":"Start your work confidently, success assured. (Yes)"},
-            "9": {"verse":"भय प्रगट कृपाला दीनदयाला।","result":"Your worries will fade, divine grace is with you. (Yes)"},
-            "10": {"verse":"संकट कटै मिटै सब पीरा।","result":"Troubles will end, good times are coming. (Yes)"},
-            "11": {"verse":"तुलसीदास सदा हरि चेरा।","result":"Dedication and faith will bring positive results. (Yes)"},
-            "12": {"verse":"जो सत बार पाठ कर कोई।","result":"If done with devotion, success is certain. (Yes)"},
-            "13": {"verse":"नहिं दरिद्र कोई दुखी न दीना।","result":"Current circumstances are unfavorable, wait. (No)"},
-            "14": {"verse":"इहां न कछु मोह माया न व्यापा।","result":"Detachment is needed before proceeding. (No)"},
-            "15": {"verse":"जथा लाभ संतोष सदा मन।","result":"Be patient; the right time hasn’t come. (No)"},
-            "16": {"verse":"प्रभु की कृपा भयउ सब काजू।","result":"Divine grace ensures success. (Yes)"},
-            "17": {"verse":"भृगु पद गहि हृदयँ धरि धीर।","result":"Stay strong, success is coming. (Yes)"},
-            "18": {"verse":"मोर मनोरथ जानि हरषाई।","result":"Your desires will be fulfilled soon. (Yes)"},
-            "19": {"verse":"तब जनक पायस देवन जाई।","result":"Partial success, proceed with care. (Wait)"},
-            "20": {"verse":"विनय करउँ कर जोरि मनावउँ।","result":"More effort is required before success. (No)"},
-            "21": {"verse":"संकट मोचन नाम तिहारो।","result":"Hanuman will remove your obstacles. (Yes)"},
-            "22": {"verse":"जय जय जय हनुमान गोसाई।","result":"A strong Yes! Favorable signs. (Yes)"},
-            "23": {"verse":"गइ अकाजु बिप्र गहि पाँए।","result":"Avoid this step now, not ideal. (No)"},
-            "24": {"verse":"हनुमत कृपा पाई हनुमान।","result":"You have divine protection. (Yes)"},
-            "25": {"verse":"भवसागर बिनु भजन न तरे।","result":"Focus on prayers before proceeding. (No)"},
-            "26": {"verse":"रामकथा सुन्दर कर गाई।","result":"Good results with spiritual growth. (Yes)"},
-            "27": {"verse":"त्राहि त्राहि अरुनासुर गावै।","result":"Caution! Obstacles ahead. (No)"},
-            "28": {"verse":"रघुकुल रीति सदा चलि आई।","result":"Maintain righteousness; success is near. (Yes)"},
-            "29": {"verse":"हनुमान लंका में प्रगटे।","result":"Overcome obstacles with courage. (Yes)"},
-            "30": {"verse":"सिया राममय सब जग जानी।","result":"Everything is under divine will. Success is near. (Yes)"},
-            "31": {"verse":"रामहि केवल प्रेमु पियारा।","result":"Devotion and love will lead to fulfillment. (Yes)"},
-            "32": {"verse":"जासु कृपा नहिं कृपा कराही।","result":"Your efforts need divine grace before success. (No)"},
-            "33": {"verse":"बिनु सत्संग विवेक न होई।","result":"You need wisdom from good company before deciding. (Wait)"},
-            "34": {"verse":"सोइ जानहि जेहि देहु जनाई।","result":"The truth will be revealed at the right time. (Wait)"},
-            "35": {"verse":"नहिं दरिद्र कोई दुखी न दीना।","result":"Material and emotional stability will come soon. (Yes)"},
-            "36": {"verse":"जथालाभ संतोष सदा मन।","result":"Be content with what is given, more will follow. (Yes)"},
-            "37": {"verse":"जो प्रभु दीनदयाल कहावा।","result":"Your prayers will be answered soon. (Yes)"},
-            "38": {"verse":"जय जय जय धुनि होई।","result":"Victory and success are assured. (Yes)"},
-            "39": {"verse":"संतन को करि बिपति सहाई।","result":"Difficulties will be removed by divine intervention. (Yes)"},
-            "40": {"verse":"राम बिनु के करै सहाय।","result":"You need to trust in divine help for success. (Yes)"},
-            "41": {"verse":"बिनु सत्संग विवेक न होई।","result":"Seek guidance from wise people before deciding. (Wait)"},
-            "42": {"verse":"पवन तनय बल पवन समाना।","result":"Strength and energy are in your favor. Move ahead. (Yes)"},
-            "43": {"verse":"धीरज धरहु संग साहस।","result":"Patience and courage will lead to victory. (Yes)"},
-            "44": {"verse":"अब कि कृपा राम करि होई।","result":"A positive turn of events is near. (Yes)"},
-            "45": {"verse":"हनुमान लंका में प्रगटे।","result":"Overcome obstacles with courage. (Yes)"},
-            "46": {"verse":"रघुकुल रीति सदा चलि आई।","result":"Maintain righteousness, and success will come. (Yes)"},
-            "47": {"verse":"शरणागत कहुं कृपा सागर।","result":"You are under divine protection. Move forward. (Yes)"},
-            "48": {"verse":"रामकथा सुन्दर कर गाई।","result":"Success through spiritual devotion and sincerity. (Yes)"},
-            "49": {"verse":"भवसागर बिनु भजन न तरे।","result":"Spiritual efforts are required before success. (No)"}
+            "1": {"verse":"जय सियाराम, जय जय सियाराम।","text":"Your wishes will be fulfilled. Have patience and stay devoted to your path.","tone":"good"},
+            "2": {"verse":"राम नाम मनिदीप धरु जीह देहरीं द्वार।","text":"Success will come after some obstacles. Keep faith in divine timing.","tone":"good"},
+            "3": {"verse":"होइहि सोइ जो राम रचि राखा।","text":"A positive change is coming in your life. Welcome it with open arms.","tone":"good"},
+            "4": {"verse":"कवन सो काज कठिन जग माहीं।","text":"Current situation will improve gradually. Trust in the divine plan.","tone":"good"},
+            "5": {"verse":"राम काज करिबे को आतुर।","text":"There may be delays, but success is assured through perseverance.","tone":"good"},
+            "6": {"verse":"नाथ सकल मुद मंगल दाता।","text":"Good news will come soon. Stay positive and maintain faith.","tone":"good"},
+            "7": {"verse":"भूत पिशाच निकट नहिं आवे।","text":"Victory over enemies and obstacles is assured with divine protection.","tone":"good"},
+            "8": {"verse":"प्रबिसि नगर कीजे सब काजा।","text":"Start your work confidently, success assured.","tone":"good"},
+            "9": {"verse":"भय प्रगट कृपाला दीनदयाला।","text":"Your worries will fade, divine grace is with you.","tone":"good"},
+            "10": {"verse":"संकट कटै मिटै सब पीरा।","text":"Troubles will end, good times are coming.","tone":"good"},
+            "11": {"verse":"तुलसीदास सदा हरि चेरा।","text":"Dedication and faith will bring positive results.","tone":"good"},
+            "12": {"verse":"जो सत बार पाठ कर कोई।","text":"If done with devotion, success is certain.","tone":"good"},
+            "13": {"verse":"नहिं दरिद्र कोई दुखी न दीना।","text":"Current circumstances are unfavorable, wait.","tone":"caution"},
+            "14": {"verse":"इहां न कछु मोह माया न व्यापा।","text":"Detachment is needed before proceeding.","tone":"caution"},
+            "15": {"verse":"जथा लाभ संतोष सदा मन।","text":"Be patient; the right time hasn’t come.","tone":"caution"},
+            "16": {"verse":"प्रभु की कृपा भयउ सब काजू।","text":"Divine grace ensures success.","tone":"good"},
+            "17": {"verse":"भृगु पद गहि हृदयँ धरि धीर।","text":"Stay strong, success is coming.","tone":"good"},
+            "18": {"verse":"मोर मनोरथ जानि हरषाई।","text":"Your desires will be fulfilled soon.","tone":"good"},
+            "19": {"verse":"तब जनक पायस देवन जाई।","text":"Partial success, proceed with care.","tone":"patience"},
+            "20": {"verse":"विनय करउँ कर जोरि मनावउँ।","text":"More effort is required before success.","tone":"caution"},
+            "21": {"verse":"संकट मोचन नाम तिहारो।","text":"Hanuman will remove your obstacles.","tone":"good"},
+            "22": {"verse":"जय जय जय हनुमान गोसाई।","text":"Favorable signs.","tone":"good"},
+            "23": {"verse":"गइ अकाजु बिप्र गहि पाँए।","text":"Avoid this step now, not ideal.","tone":"caution"},
+            "24": {"verse":"हनुमत कृपा पाई हनुमान।","text":"You have divine protection.","tone":"good"},
+            "25": {"verse":"भवसागर बिनु भजन न तरे।","text":"Focus on prayers before proceeding.","tone":"caution"},
+            "26": {"verse":"रामकथा सुन्दर कर गाई।","text":"Good results with spiritual growth.","tone":"good"},
+            "27": {"verse":"त्राहि त्राहि अरुनासुर गावै।","text":"Caution! Obstacles ahead.","tone":"caution"},
+            "28": {"verse":"रघुकुल रीति सदा चलि आई।","text":"Maintain righteousness; success is near.","tone":"good"},
+            "29": {"verse":"हनुमान लंका में प्रगटे।","text":"Overcome obstacles with courage.","tone":"good"},
+            "30": {"verse":"सिया राममय सब जग जानी।","text":"Everything is under divine will. Success is near.","tone":"good"},
+            "31": {"verse":"रामहि केवल प्रेमु पियारा।","text":"Devotion and love will lead to fulfillment.","tone":"good"},
+            "32": {"verse":"जासु कृपा नहिं कृपा कराही।","text":"Your efforts need divine grace before success.","tone":"caution"},
+            "33": {"verse":"बिनु सत्संग विवेक न होई।","text":"You need wisdom from good company before deciding.","tone":"patience"},
+            "34": {"verse":"सोइ जानहि जेहि देहु जनाई।","text":"The truth will be revealed at the right time.","tone":"patience"},
+            "35": {"verse":"नहिं दरिद्र कोई दुखी न दीना।","text":"Material and emotional stability will come soon.","tone":"good"},
+            "36": {"verse":"जथालाभ संतोष सदा मन।","text":"Be content with what is given, more will follow.","tone":"good"},
+            "37": {"verse":"जो प्रभु दीनदयाल कहावा।","text":"Your prayers will be answered soon.","tone":"good"},
+            "38": {"verse":"जय जय जय धुनि होई।","text":"Victory and success are assured.","tone":"good"},
+            "39": {"verse":"संतन को करि बिपति सहाई।","text":"Difficulties will be removed by divine intervention.","tone":"good"},
+            "40": {"verse":"राम बिनु के करै सहाय।","text":"You need to trust in divine help for success.","tone":"good"},
+            "41": {"verse":"बिनु सत्संग विवेक न होई।","text":"Seek guidance from wise people before deciding.","tone":"patience"},
+            "42": {"verse":"पवन तनय बल पवन समाना।","text":"Strength and energy are in your favor. Move ahead.","tone":"good"},
+            "43": {"verse":"धीरज धरहु संग साहस।","text":"Patience and courage will lead to victory.","tone":"good"},
+            "44": {"verse":"अब कि कृपा राम करि होई।","text":"A positive turn of events is near.","tone":"good"},
+            "45": {"verse":"हनुमान लंका में प्रगटे।","text":"Overcome obstacles with courage.","tone":"good"},
+            "46": {"verse":"रघुकुल रीति सदा चलि आई।","text":"Maintain righteousness, and success will come.","tone":"good"},
+            "47": {"verse":"शरणागत कहुं कृपा सागर।","text":"You are under divine protection. Move forward.","tone":"good"},
+            "48": {"verse":"रामकथा सुन्दर कर गाई।","text":"Success through spiritual devotion and sincerity.","tone":"good"},
+            "49": {"verse":"भवसागर बिनु भजन न तरे।","text":"Spiritual efforts are required before success.","tone":"caution"}
         };
 
         var STORE_KEY = 'ved_daily_v1';
         var PAGE_URL = 'https://vedprashnavali.com/today';
+        var NAMES = { ram: 'Shri Ram', hanuman: 'Hanuman Ji' };
+        var TONES = { good: 'A favourable day', caution: 'A day for caution', patience: 'A day for patience' };
 
         function $(id) { return document.getElementById(id); }
         function track(name, params) { if (typeof window.vedTrack === 'function') { window.vedTrack(name, params); } }
@@ -402,13 +404,12 @@
         }
 
         function writeStore(value) {
-            try { localStorage.setItem(STORE_KEY, JSON.stringify(value)); } catch (e) { /* storage blocked: the answer lasts for this visit */ }
+            try { localStorage.setItem(STORE_KEY, JSON.stringify(value)); } catch (e) { /* storage blocked: kept for this visit only */ }
         }
 
-        function isValid(entry) {
-            if (!entry || typeof entry.id !== 'number') { return false; }
-            if (entry.deity === 'ram') { return entry.id >= 1 && entry.id <= RAM.length; }
-            return entry.deity === 'hanuman' && Object.prototype.hasOwnProperty.call(HANUMAN, entry.id);
+        function validId(deity, id) {
+            if (typeof id !== 'number') { return false; }
+            return deity === 'ram' ? id >= 1 && id <= RAM.length : Object.prototype.hasOwnProperty.call(HANUMAN, id);
         }
 
         // Fair pick of a whole number from 0 to count - 1
@@ -422,77 +423,79 @@
             return Math.floor(Math.random() * count);
         }
 
-        function share(text, contentType) {
-            track('share', { method: 'whatsapp', content_type: contentType });
-            window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n\n' + PAGE_URL));
-        }
-
         var now = new Date();
         var today = dateKey(now);
         var longDate = now.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-        var memory = null;   // today's answer for this visit, in case the browser blocks storage
+        var memory = null;   // today's guidance for this visit, in case the browser blocks storage
 
-        function answerFor(entry) {
-            if (entry.deity === 'ram') {
-                var chaupai = RAM[entry.id - 1];
-                return { from: 'Shri Ram', verse: chaupai.verse, source: chaupai.source, text: chaupai.result,
-                         tone: chaupai.good ? 'good' : 'caution',
-                         moreHref: '/prash#chaupai-' + entry.id, moreLabel: 'Detailed explanation' };
-            }
-            var message = HANUMAN[entry.id];
-            var tone = /\(Yes\)\s*$/.test(message.result) ? 'good' : (/\(No\)\s*$/.test(message.result) ? 'caution' : '');
-            return { from: 'Hanuman Ji', verse: message.verse, source: '', text: message.result, tone: tone,
-                     moreHref: '/hanumanprash', moreLabel: 'Open Hanuman Prashnavali' };
+        // Today's saved guidance as { date, streak, ram, hanuman }, or null. Also reads the first version's single-entry format.
+        function todaysEntry(saved) {
+            if (!saved || saved.date !== today) { return null; }
+            var entry = { date: today, streak: saved.streak > 0 ? saved.streak : 1 };
+            var ram = saved.deity === 'ram' ? saved.id : saved.ram;
+            var hanuman = saved.deity === 'hanuman' ? saved.id : saved.hanuman;
+            if (validId('ram', ram)) { entry.ram = ram; }
+            if (validId('hanuman', hanuman)) { entry.hanuman = hanuman; }
+            return entry.ram || entry.hanuman ? entry : null;
         }
 
-        function showAnswer(entry, drawnEarlier) {
-            var answer = answerFor(entry);
-            $('answerHeading').textContent = 'Your Guidance for Today from ' + answer.from;
-            $('answerVerse').textContent = answer.verse;
-            $('answerSource').textContent = answer.source;
-            $('answerSource').hidden = !answer.source;
-            $('answerText').textContent = answer.text;
-            $('answerText').className = 'guidance' + (answer.tone ? ' ' + answer.tone : '');
-            $('answerMore').href = answer.moreHref;
-            $('answerMore').textContent = answer.moreLabel;
-            $('streakLine').textContent = entry.streak > 1
-                ? '🔥 ' + entry.streak + ' days in a row'
-                : 'Day 1. Come back tomorrow to start a streak.';
+        function guidanceFor(deity, id) {
+            if (deity === 'ram') {
+                var chaupai = RAM[id - 1];
+                return { verse: chaupai.verse, meaning: chaupai.meaning, text: chaupai.lesson, tone: chaupai.good ? 'good' : 'caution',
+                         moreHref: '/prash#chaupai-' + id };
+            }
+            var message = HANUMAN[id];
+            return { verse: message.verse, meaning: '', text: message.text, tone: message.tone, moreHref: '' };
+        }
+
+        function show(deity, entry) {
+            var g = guidanceFor(deity, entry[deity]);
+            $('answerHeading').textContent = 'Your Guidance for Today from ' + NAMES[deity];
+            $('answerTone').textContent = TONES[g.tone];
+            $('answerTone').className = 'tone ' + g.tone;
+            $('answerVerse').textContent = g.verse;
+            $('answerSource').textContent = g.meaning;
+            $('answerSource').hidden = !g.meaning;
+            $('answerText').textContent = g.text;
+            $('answerText').className = 'guidance' + (g.tone === 'patience' ? '' : ' ' + g.tone);
+            $('answerMore').href = g.moreHref || '/prash';
+            $('answerMore').hidden = !g.moreHref;
+            $('streakLine').textContent = entry.streak > 1 ? '🔥 ' + entry.streak + ' days in a row' : 'Day 1. Come back tomorrow to start a streak.';
             $('shareAnswer').onclick = function () {
-                share('🕉️ My guidance for today from ' + answer.from + ':\n\n' + answer.verse + '\n' + answer.text, 'daily_answer');
+                track('share', { method: 'whatsapp', content_type: 'daily_answer' });
+                var text = '🕉️ Today\'s guidance from ' + NAMES[deity] + ':\n\n' + g.verse + '\n' + g.text;
+                window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n\n' + PAGE_URL));
             };
-            $('earlierNote').hidden = !drawnEarlier;
             $('answerCard').hidden = false;
+            $('answerCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function draw(deity) {
-            var previous = readStore() || memory;
-            if (isValid(previous) && previous.date === today) {
-                showAnswer(previous, true);
-                $('answerCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                return;
+        // Each of the two has its own guidance for the day: shown again if already drawn, otherwise drawn now
+        function reveal(deity) {
+            var saved = readStore() || memory;
+            var entry = todaysEntry(saved);
+            if (!entry) {
+                var yesterday = dateKey(new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1));
+                entry = { date: today, streak: saved && saved.date === yesterday && saved.streak > 0 ? saved.streak + 1 : 1 };
             }
-            var yesterday = dateKey(new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1));
-            var streak = previous && previous.date === yesterday && previous.streak > 0 ? previous.streak + 1 : 1;
-            var id = deity === 'ram' ? pick(RAM.length) + 1 : pick(Object.keys(HANUMAN).length) + 1;
-            var entry = { date: today, deity: deity, id: id, streak: streak };
-            memory = entry;
-            writeStore(entry);
-            showAnswer(entry, false);
-            $('answerCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            track('daily_draw', { deity: deity, answer_id: String(id), streak: streak });
+            if (!entry[deity]) {
+                entry[deity] = deity === 'ram' ? pick(RAM.length) + 1 : pick(Object.keys(HANUMAN).length) + 1;
+                memory = entry;
+                writeStore(entry);
+                track('daily_draw', { deity: deity, answer_id: String(entry[deity]), streak: entry.streak });
+            }
+            show(deity, entry);
         }
 
         function start() {
             $('todayDate').textContent = longDate;
-
-            var saved = readStore();
-            var answered = isValid(saved) && saved.date === today;
-            track('daily_view', { state: answered ? 'answered' : 'new', streak: answered ? saved.streak : 0 });
+            var entry = todaysEntry(readStore());
+            track('daily_view', { state: entry ? 'answered' : 'new', streak: entry ? entry.streak : 0 });
 
             var buttons = document.querySelectorAll('.deity');
             for (var i = 0; i < buttons.length; i++) {
-                buttons[i].addEventListener('click', function () { draw(this.getAttribute('data-deity')); });
+                buttons[i].addEventListener('click', function () { reveal(this.getAttribute('data-deity')); });
             }
 
             // A page left open past midnight starts the new day when it is looked at again
