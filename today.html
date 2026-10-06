@@ -9,9 +9,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <meta name="description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today, plus the chaupai of the day from Shri Ramcharitmanas. Free and new every day.">
+    <meta name="description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today. Free, and new every day.">
     <meta property="og:title" content="Today's Guidance | Ask Shri Ram or Hanuman Ji About Your Day">
-    <meta property="og:description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today, plus the chaupai of the day from Shri Ramcharitmanas. Free and new every day.">
+    <meta property="og:description" content="Ask Shri Ram or Hanuman Ji about your day and receive one answer for today. Free, and new every day.">
     <meta property="og:url" content="https://vedprashnavali.com/today">
     <meta property="og:type" content="website">
 
@@ -283,16 +283,6 @@
             <p class="tomorrow">Come back tomorrow for new guidance. Today's answer stays here until midnight.</p>
         </section>
 
-        <section class="card" id="chaupaiCard">
-            <h2>Chaupai of the Day</h2>
-            <p class="verse" id="dayVerse" lang="hi" translate="no"></p>
-            <p class="source" id="daySource"></p>
-            <div class="actions">
-                <a class="btn btn-outline" id="dayMore" href="/prash">Read the meaning</a>
-                <button type="button" class="btn btn-whatsapp" id="shareVerse">Share on WhatsApp</button>
-            </div>
-        </section>
-
         <section class="card">
             <h2>Have Another Question?</h2>
             <p>Today's Guidance gives one answer a day. For any other question, use the full prashnavali.</p>
@@ -305,8 +295,7 @@
 
         <section class="card">
             <h2>How Today's Guidance Works</h2>
-            <p><strong>Ask About Your Day</strong> gives you one answer each day. When you choose Shri Ram or Hanuman Ji, the page picks one answer by chance from the same answers used in the <a href="/prash">Ram Shalaka Prashnavali</a> and the <a href="/hanumanprash">Hanuman Prashnavali</a> on this site. The answer stays on this page until midnight, and a new one is ready the next day.</p>
-            <p><strong>Chaupai of the Day</strong> shows one of the nine chaupais of the Ram Shalaka Prashnavali from Shri Ramcharitmanas. It changes at midnight, and everyone sees the same chaupai on the same date.</p>
+            <p>Today's Guidance gives you one answer each day, and nothing is shown until you choose. When you choose Shri Ram or Hanuman Ji, the page picks one answer by chance from the same answers used in the <a href="/prash">Ram Shalaka Prashnavali</a> and the <a href="/hanumanprash">Hanuman Prashnavali</a> on this site. The answer stays on this page until midnight, and a new one is ready the next day.</p>
             <p>Your answer and your count of days are saved in this browser, on your device. Your question is never typed in or sent anywhere. The <a href="/privacy">Privacy Policy</a> explains the usage statistics the site collects.</p>
             <p>This is a devotional practice. For important decisions, use your own judgment and seek qualified advice.</p>
         </section>
@@ -399,7 +388,6 @@
         function track(name, params) { if (typeof window.vedTrack === 'function') { window.vedTrack(name, params); } }
         function pad(n) { return (n < 10 ? '0' : '') + n; }
         function dateKey(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-        function dayNumber(d) { return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
 
         function readStore() {
             try { return JSON.parse(localStorage.getItem(STORE_KEY)) || null; } catch (e) { return null; }
@@ -482,16 +470,6 @@
 
         function start() {
             $('todayDate').textContent = longDate;
-
-            // Chaupai of the day: the same for everyone on the same calendar date
-            var index = dayNumber(now) % RAM.length;
-            var chaupai = RAM[index];
-            $('dayVerse').textContent = chaupai.verse;
-            $('daySource').textContent = chaupai.source;
-            $('dayMore').href = '/prash#chaupai-' + (index + 1);
-            $('shareVerse').onclick = function () {
-                share('🕉️ Chaupai of the day, ' + longDate + ':\n\n' + chaupai.verse, 'daily_chaupai');
-            };
 
             var saved = readStore();
             var answered = isValid(saved) && saved.date === today;
