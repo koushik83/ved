@@ -1,5 +1,5 @@
 // Service Worker with proper fetch handling and safety checks
-const CACHE_NAME = 'static-v1';
+const CACHE_NAME = 'static-v2';
 const HTML_EXT_REGEX = /\/(saibabaprash|hanumanprash|prash)\.html$/;
 
 self.addEventListener("install", (event) => {
@@ -9,14 +9,21 @@ self.addEventListener("install", (event) => {
         '/',
         '/saibabaprash',
         '/hanumanprash',
-        '/prash'
+        '/prash',
+        '/today',
+        '/app-events.js'
       ]);
     })
   );
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(self.clients.claim());
+  // Remove caches left by earlier versions, then take control of open pages
+  event.waitUntil(
+    caches.keys()
+      .then(names => Promise.all(names.filter(name => name !== CACHE_NAME).map(name => caches.delete(name))))
+      .then(() => self.clients.claim())
+  );
   console.log("Service Worker Activated");
 });
 
