@@ -1,0 +1,31 @@
+# Ved Prashnavali
+
+> Free devotional tools in English and Hindi: the Ram Shalaka, Hanuman and Sai Baba prashnavalis (traditional question-and-answer charts), a daily reading, and a naam jaap counter. Run from Delhi, India. No login, no fees.
+
+A prashnavali is a Hindu practice for seeking guidance on a question: the seeker prays, holds the question in mind, and chooses a letter or number from a sacred chart; the chart leads to a verse or saying read as the answer.
+
+## Tools
+
+- [Ram Shalaka Prashnavali](https://vedprashnavali.com/prash): a 225-letter chart from Shri Ramcharitmanas leading to one of nine chaupais, each with its source, meaning and whether it is favourable. Hindi version: https://vedprashnavali.com/hi/prash
+- [Hanuman Prashnavali](https://vedprashnavali.com/hanumanprash): a chakra of 49 numbers, each with a verse and a yes-or-no answer. Hindi version: https://vedprashnavali.com/hi/hanumanprash
+- [Sai Baba Prashnavali](https://vedprashnavali.com/saibabaprash): 720 numbered answers for devotees of Shirdi Sai Baba.
+- [Today's Guidance](https://vedprashnavali.com/today): one reading a day from Shri Ram or Hanuman Ji.
+- [Naam Jaap Counter](https://vedprashnavali.com/jaap): a digital mala of 108 for counting jaap, with an explanation of the practice.
+
+## Articles
+
+- [What a prashnavali is and how to ask](https://vedprashnavali.com/)
+- [Sai Baba of Shirdi: life and stories](https://vedprashnavali.com/sai-baba-ask-questions-answers)
+- [Timeline of Sai Baba's life, 1838 to 1918](https://vedprashnavali.com/shirdisaibaba)
+- [Sai Baba's teachings and worship](https://vedprashnavali.com/sai-baba-teachings-worship)
+
+## Downloads
+
+- [Ram Shalaka Prashnavali PDF](https://vedprashnavali.com/pdf/ram-shalaka-prashnavali.pdf): the chart and all nine answers.
+- [Hanuman Prashnavali PDF](https://vedprashnavali.com/pdf/hanuman-prashnavali.pdf): the chakra and all 49 answers.
+
+## About
+
+- [About](https://vedprashnavali.com/about), [Contact](https://vedprashnavali.com/contact), [Privacy Policy](https://vedprashnavali.com/privacy), [Terms of Use](https://vedprashnavali.com/terms)
+- Cite as: Ved Prashnavali, https://vedprashnavali.com. Verses quoted are traditional texts; explanations and translations are the site's own.
+- The answers are a devotional practice offered for reflection, not predictions or professional advice.
