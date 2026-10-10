@@ -5,7 +5,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hanuman Prashnavali online with all 49 answers in yes or no form. Choose a number on the chakra and read Lord Hanuman's verse and message, in Hindi and English. Free.">
-        content="Hanuman Prashnavali YES No, Hanuman YES NO answers, answers hanuman prashnavali, Shre Hanuman Prashnavali Yes NO, Bajrangbali Answers, Hanuman Prashnavali answers, Hindu Prediction, Hanuman Chakra, Ask Hanuman ji, Hindu oracle">
     <title>Hanuman Prashnavali with Answers (Yes or No) | हनुमान प्रश्नावली</title>
     <link rel="canonical" href="https://vedprashnavali.com/hanumanprash" />
     <link rel="alternate" hreflang="en" href="https://vedprashnavali.com/hanumanprash" />
@@ -173,15 +172,14 @@
         }
 
         /* Media Queries */
-        @media screen and (max-height: 700px) {
+        /* short screens wider than a phone (landscape, small laptops): the height binds */
+        @media screen and (max-height: 700px) and (min-width: 481px) {
             .chakra-container {
                 padding: 0;
                 width: 95%;
             }
 
             svg {
-                transform: scale(1);
-                transform-origin: center;
                 width: 95vw;
                 height: 65vh;
             }
@@ -191,7 +189,7 @@
             }
         }
 
-        @media screen and (max-height: 600px) {
+        @media screen and (max-height: 600px) and (min-width: 481px) {
             svg {
                 height: 55vh;
             }
@@ -206,18 +204,20 @@
                 width: 100%;
             }
 
+            /* phones in portrait: the width binds, so the triangle takes the
+               whole width at the viewBox's own aspect ratio - no scale-down and
+               no height cap (it used to render at 80 % inside a 50 vh box) */
             svg {
-                transform: scale(0.8);
-                margin: -10% 0;
-                /* Compensate for scale */
                 width: 100%;
-                height: 50vh;
-                transform-origin: center;
+                max-width: none;
+                height: auto;
+                aspect-ratio: 420 / 380;
+                transform: none;
                 margin: 0 auto;
             }
 
             svg text {
-                font-size: 10px;
+                font-size: 12px;
             }
 
             .message-display {
@@ -237,7 +237,7 @@
 
         @media screen and (max-width: 360px) {
             svg text {
-                font-size: 9px;
+                font-size: 12px;
             }
 
             .chakra-container {
@@ -246,11 +246,12 @@
             }
 
             svg {
-                width: 98vw;
-                transform: scale(0.7);
-                margin: -15% 0;
-                /* Compensate for scale */
-                height: 45vh;
+                width: 100%;
+                max-width: none;
+                height: auto;
+                aspect-ratio: 420 / 380;
+                transform: none;
+                margin: 0 auto;
             }
 
             h1 {
