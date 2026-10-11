@@ -1,0 +1,19 @@
+{
+  "_about": "Query families for tools/seo_report.py. A query belongs to a family when it contains any of the words, in Latin or Devanagari. Pages are the URLs whose titles, headings and FAQs the report checks the queries against.",
+  "shiv": {
+    "words": ["shiv", "shiva", "mahadev", "bholenath", "shankar", "rudrashtak", "शिव", "महादेव", "भोलेनाथ", "शंकर", "रुद्राष्टक"],
+    "pages": ["/shivprash", "/hi/shivprash", "/rudrashtakam-with-meaning", "/hi/rudrashtakam-with-meaning"]
+  },
+  "ganesh": {
+    "words": ["ganesh", "ganesha", "ganpati", "ganapati", "vinayak", "bappa", "sankat nashan", "sankatnashan", "गणेश", "गणपति", "विनायक", "बप्पा", "संकटनाशन"],
+    "pages": ["/ganeshprash", "/hi/ganeshprash", "/sankat-nashan-ganesh-stotra", "/hi/sankat-nashan-ganesh-stotra"]
+  },
+  "durga": {
+    "words": ["durga", "navadurga", "navdurga", "mata", "devi", "navratri", "दुर्गा", "नवदुर्गा", "माता", "देवी", "नवरात्रि"],
+    "pages": ["/durgaprash", "/hi/durgaprash", "/navadurga-nine-forms-mantras", "/hi/navadurga-nine-forms-mantras"]
+  },
+  "khatushyam": {
+    "words": ["khatu", "shyam", "barbarik", "barbareek", "haare ka sahara", "hare ka sahara", "खाटू", "श्याम", "बर्बरीक", "हारे का सहारा"],
+    "pages": ["/khatushyamprash", "/hi/khatushyamprash", "/khatu-shyam-story", "/hi/khatu-shyam-story"]
+  }
+}
