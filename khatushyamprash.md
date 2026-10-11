@@ -10,6 +10,10 @@ Khatu Shyam Ji is Barbarik, grandson of Bhima, who gave his head to Shri Krishna
 
 This prashnavali is built on eleven of those names. The chart has 44 numbers, and the number you choose leads to one of the eleven names, each appearing four times, so every answer has an equal chance. Each name is shown with the story behind it and a reading of whether your matter is favourable. Devotees ask here especially on the Ekadashi of each month and in the Phalgun mela.
 
+It is also searched for as the Shyam Baba Prashnavali, Baba Shyam Prashnavali or Khatu Wale Shyam Prashnavali; it is the same chart. With every name explained, the page also serves as the eleven names of Khatu Shyam Ji with their meaning.
+
+[Read the story of Barbarik and the names of Shyam Baba](https://vedprashnavali.com/khatu-shyam-story)
+
 ## The Eleven Names and Their Answers
 
 1. बर्बरीक Barbarik. Barbarik, his birth name. Son of Ghatotkacha and Maurvi, grandson of Bhima, he had vowed to fight only on the side that was losing. That vow is why Krishna asked for his head: with him in the field, no side could lose. He stands with the weaker side. If your cause is honest, it does not matter that it looks weak today. Yes. (Yes)
@@ -41,6 +45,10 @@ Yes. It is free, with no sign-up and no login.
 
 They are the names by which devotees address Shyam Baba, each tied to a part of the story of Barbarik: the gift of his head, the three arrows, the blue horse, the boon of Shri Krishna.
 
+### Is this the Shyam Baba prashnavali?
+
+Yes. Khatu Shyam Ji, Shyam Baba, Baba Shyam and Haare ka Sahara are names of the same deity, and this is the one prashnavali for all of them.
+
 ### Does it give a yes or no answer?
 
 Each answer ends with Yes, Wait or Not now, along with the name and its story.
@@ -52,6 +60,15 @@ By tradition, not on the same day. Ask once, with faith, and reflect on the answ
 ### Are the answers true?
 
 A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome.
+
+## More prashnavalis on this site
+
+- Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais https://vedprashnavali.com/prash
+- Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer https://vedprashnavali.com/hanumanprash
+- Sai Baba Prashnavali: 720 numbered answers https://vedprashnavali.com/saibabaprash
+- Shiv Prashnavali: the nine verses of the Rudrashtakam https://vedprashnavali.com/shivprash
+- Ganesh Prashnavali: the twelve names of Ganesha https://vedprashnavali.com/ganeshprash
+- Durga Prashnavali: the nine forms of Navadurga https://vedprashnavali.com/durgaprash
 
 A prashnavali is a devotional practice. For important decisions use your own judgment and take qualified advice. [Privacy Policy](https://vedprashnavali.com/privacy).
 

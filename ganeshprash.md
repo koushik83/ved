@@ -10,6 +10,10 @@ Ganesha is remembered before every beginning, so a Ganesh Prashnavali is the nat
 
 The chart has 36 numbers. The number you choose leads to one of the twelve names, each appearing three times among the numbers, so every answer has an equal chance. Each name is shown with the line of the stotra it comes from, what the name means, and a reading of whether your matter is favourable.
 
+It is also searched for as the Ganpati Prashnavali, Vinayak Prashnavali or Bappa Prashnavali; it is the same chart. With every name explained, the page also serves as the twelve names of the Sankat Nashan Ganesh Stotra with their meaning.
+
+[Read the Sankat Nashan Ganesh Stotra with meaning](https://vedprashnavali.com/sankat-nashan-ganesh-stotra)
+
 ## The Twelve Names and Their Answers
 
 1. वक्रतुण्ड प्रथमं वक्रतुण्डं च. Vakratunda, the one with the curved trunk: first of the twelve names. He bends what is crooked back to the straight path. Begin. The crooked road straightens for those who start with his name. Yes. (Yes)
@@ -42,6 +46,10 @@ Yes. It is free, with no sign-up and no login.
 
 From the Sankat Nashan Ganesh Stotra of the Narada Purana, which lists them in order from Vakratunda to Gajanana.
 
+### Is this the Ganpati prashnavali?
+
+Yes. Ganesh, Ganpati, Vinayak and Bappa are names of the same Lord, and this is the one prashnavali for all of them.
+
 ### Does it give a yes or no answer?
 
 Each answer ends with Yes, Wait or Not now, along with the name and its meaning.
@@ -53,6 +61,15 @@ By tradition, not on the same day. Ask once, with faith, and reflect on the answ
 ### Are the answers true?
 
 A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome.
+
+## More prashnavalis on this site
+
+- Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais https://vedprashnavali.com/prash
+- Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer https://vedprashnavali.com/hanumanprash
+- Sai Baba Prashnavali: 720 numbered answers https://vedprashnavali.com/saibabaprash
+- Shiv Prashnavali: the nine verses of the Rudrashtakam https://vedprashnavali.com/shivprash
+- Durga Prashnavali: the nine forms of Navadurga https://vedprashnavali.com/durgaprash
+- Khatu Shyam Prashnavali: eleven names of Shyam Baba https://vedprashnavali.com/khatushyamprash
 
 A prashnavali is a devotional practice. For important decisions use your own judgment and take qualified advice. [Privacy Policy](https://vedprashnavali.com/privacy).
 

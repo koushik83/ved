@@ -10,6 +10,10 @@ This Shiv Prashnavali is built on the Rudrashtakam, the hymn of eight verses to 
 
 The chart has 36 numbers. The number you choose leads to one of the eight verses or to the closing verse, nine answers in all. Each verse appears four times among the numbers, so every answer has an equal chance, and the chart is simply a way of choosing without choosing. The verse is shown in Sanskrit with its meaning and a reading of whether your matter is favourable.
 
+Devotees also call this the Mahadev Prashnavali, Bholenath Prashnavali or Shankar Prashnavali; it is the same chart. Because every verse is shown with its meaning, the page also serves as the complete Rudrashtakam with meaning in English.
+
+[Read the full Rudrashtakam with meaning](https://vedprashnavali.com/rudrashtakam-with-meaning)
+
 ## The Nine Verses and Their Answers
 
 1. नमामीशमीशान निर्वाणरूपम्। विभुम् व्यापकम् ब्रह्मवेदस्वरूपम्। निजम् निर्गुणम् निर्विकल्पम् निरीहम्। चिदाकाशमाकाशवासम् भजेऽहम्॥१॥. I bow to the Lord, the very form of liberation, all-pervading, the Brahman the Vedas speak of. Resting in himself, beyond qualities and divisions, desiring nothing, the sky of consciousness clothed in the sky itself: him I worship. The matter rests on firm ground. Begin with a clear and quiet mind and it will hold. Nothing is asked of you here that you cannot give. (Yes)
@@ -39,6 +43,10 @@ Yes. It is free, with no sign-up and no login.
 
 From the Rudrashtakam in the Uttarkand of Shri Ramcharitmanas by Goswami Tulsidas: its eight verses and the closing verse.
 
+### Is this the Mahadev or Bholenath prashnavali?
+
+Yes. Shiv, Mahadev, Bholenath and Shankar are names of the same Lord, and this is the one prashnavali for all of them.
+
 ### Does it give a yes or no answer?
 
 Each answer ends with Yes, Wait or Not now, along with the verse and its meaning.
@@ -50,6 +58,15 @@ By tradition, not on the same day. Ask once, with faith, and reflect on the answ
 ### Are the answers true?
 
 A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome.
+
+## More prashnavalis on this site
+
+- Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais https://vedprashnavali.com/prash
+- Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer https://vedprashnavali.com/hanumanprash
+- Sai Baba Prashnavali: 720 numbered answers https://vedprashnavali.com/saibabaprash
+- Ganesh Prashnavali: the twelve names of Ganesha https://vedprashnavali.com/ganeshprash
+- Durga Prashnavali: the nine forms of Navadurga https://vedprashnavali.com/durgaprash
+- Khatu Shyam Prashnavali: eleven names of Shyam Baba https://vedprashnavali.com/khatushyamprash
 
 A prashnavali is a devotional practice. For important decisions use your own judgment and take qualified advice. [Privacy Policy](https://vedprashnavali.com/privacy).
 

@@ -78,6 +78,44 @@ RULES = {
     "hi": ["एक समय में एक ही प्रश्न पूछें।", "एक ही प्रश्न को बार-बार न पूछें।", "दिन में तीन से अधिक प्रश्न न पूछें।",
            "उत्तर को श्रद्धा से पढ़ें और उस पर विचार करें। महत्वपूर्ण निर्णयों में अपने विवेक का भी उपयोग करें।"],
 }
+# The other tools, for the cross-link card on every tool page: slug -> (English href, text, Hindi href, text)
+OTHERS = [
+    ("prash", "/prash", "Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais",
+     "/hi/prash", "राम शलाका प्रश्नावली: श्री रामचरितमानस के 225 अक्षर, नौ चौपाइयाँ"),
+    ("hanumanprash", "/hanumanprash", "Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer",
+     "/hi/hanumanprash", "हनुमान प्रश्नावली: 49 अंकों का चक्र, हाँ या नहीं में उत्तर"),
+    ("saibabaprash", "/saibabaprash", "Sai Baba Prashnavali: 720 numbered answers",
+     "/saibabaprash", "साईं बाबा प्रश्नावली: 720 क्रमांकित उत्तर"),
+    ("shivprash", "/shivprash", "Shiv Prashnavali: the nine verses of the Rudrashtakam",
+     "/hi/shivprash", "शिव प्रश्नावली: रुद्राष्टक के नौ श्लोक"),
+    ("ganeshprash", "/ganeshprash", "Ganesh Prashnavali: the twelve names of Ganesha",
+     "/hi/ganeshprash", "गणेश प्रश्नावली: गणेश जी के बारह नाम"),
+    ("durgaprash", "/durgaprash", "Durga Prashnavali: the nine forms of Navadurga",
+     "/hi/durgaprash", "दुर्गा प्रश्नावली: नवदुर्गा के नौ रूप"),
+    ("khatushyamprash", "/khatushyamprash", "Khatu Shyam Prashnavali: eleven names of Shyam Baba",
+     "/hi/khatushyamprash", "खाटू श्याम प्रश्नावली: श्याम बाबा के ग्यारह नाम"),
+]
+
+
+def others_html(lang, exclude_slug, inline=False):
+    """The cross-link list. inline=True gives a self-styled block for pages without the card CSS."""
+    items = []
+    for slug, en_href, en_text, hi_href, hi_text in OTHERS:
+        if slug == exclude_slug:
+            continue
+        href, text = (en_href, en_text) if lang == "en" else (hi_href, hi_text)
+        name, rest = text.split(": ", 1)
+        a_style = ' style="color: #A04000;"' if inline else ""
+        items.append('<li><a href="%s"%s>%s</a>: %s</li>' % (href, a_style, name, rest))
+    heading = "More prashnavalis on this site" if lang == "en" else "इस साइट की अन्य प्रश्नावलियाँ"
+    if inline:
+        return ('<div style="max-width: 720px; margin: 24px auto; padding: 16px 20px; background: white; border-radius: 12px; '
+                'box-shadow: 0 3px 12px rgba(0,0,0,0.08); text-align: left; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; box-sizing: border-box;">'
+                '<h2 style="color: #D35400; font-size: 21px; margin: 0 0 10px;">%s</h2><ul style="margin: 0; padding-left: 22px;">%s</ul></div>'
+                % (heading, "".join(items)))
+    return '<section class="card"><h2>%s</h2><ul class="others">%s</ul></section>' % (heading, "".join(items))
+
+
 LABELS = {
     "en": {"rules": "Rules of the Prashnavali", "faq": "Frequently Asked Questions", "share": "Share on WhatsApp",
            "again": "Ask a new question", "switch": "हिंदी में पढ़ें", "home": "Home", "all": "All %d answers",
@@ -101,6 +139,8 @@ STYLE = """        body { font-family: Arial, sans-serif; background-color: #FDF
         .card li { margin-bottom: 6px; }
         .lang-switch { text-align: center; margin: 10px 0 0; font-size: 15px; }
         .lang-switch a { color: #A04000; }
+        .hero { display: block; width: 160px; height: 160px; border-radius: 50%%; object-fit: cover; margin: 14px auto 0; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12); }
+        .others li { margin-bottom: 8px; }
         .steps-card { background: #fff8e1; border-left: 5px solid #ff9800; border-radius: 8px; padding: 14px 16px; margin: 16px 0; }
         .steps-card ol { margin: 0; padding-left: 22px; }
         .steps-card li { padding: 3px 0; }
@@ -208,6 +248,9 @@ def page(tool, lang):
     faq_html = "".join("<h3>%s</h3>\n            <p>%s</p>\n            " % (html.escape(q), html.escape(a)) for q, a in t["faq"])
     steps = "".join("<li>%s</li>" % html.escape(s) for s in t["steps"])
     what = "".join("<p>%s</p>\n            " % html.escape(p) for p in t["what"])
+    art = tool.get("article_link", {}).get(lang)
+    if art:
+        what += '<p><a href="%s"><strong>%s</strong></a></p>\n            ' % (art["href"], html.escape(art["text"]))
     rules = "".join("<li>%s</li>" % html.escape(r) for r in RULES[lang])
 
     labels_js = {"verse": t["verse_label"], "meaning": t["meaning_label"], "answer": t["answer_label"],
@@ -263,6 +306,7 @@ def page(tool, lang):
     <main class="wrap">
         <h1>{html.escape(t["h1"])}<span style="display: block; font-size: 0.68em; margin-top: 4px;">{html.escape(t["subtitle"])}</span></h1>
         <p class="lang-switch"><a href="{switch_href}">{L["read_in"]}</a></p>
+        <img class="hero" src="{tool["image"]}" alt="{html.escape(tool.get("image_alt", {}).get(lang, ""), quote=True)}" width="160" height="160">
         <div class="steps-card"><ol>{steps}</ol></div>
         <div class="grid-wrap">{grid_html(cells)}</div>
         <div class="answer" id="result"></div>
@@ -284,6 +328,7 @@ def page(tool, lang):
         <section class="card">
             <h2>{L["faq"]}</h2>
             {faq_html}</section>
+        {others_html(lang, slug)}
         <section class="card note">
             <p style="font-size: 14px; color: #666; margin: 0 0 8px;">{L["note"]} <a href="/privacy">{L["privacy"]}</a>.</p>
             <p style="font-size: 13px; color: #777; margin: 0;">{html.escape(tool["image_credit"][lang])}</p>
@@ -341,12 +386,21 @@ def markdown(tool, lang):
              "## " + t["what_heading"], ""]
     for p in t["what"]:
         lines += [p, ""]
+    art = tool.get("article_link", {}).get(lang)
+    if art:
+        lines += ["[%s](%s%s)" % (art["text"], SITE, art["href"]), ""]
     lines += ["## " + t["answers_heading"], ""]
     for i, a in enumerate(tool["answers"], 1):
         lines.append("%d. %s. %s %s (%s)" % (i, strip_tags(a["verse"]), a[lang]["meaning"], a[lang]["result"], a[lang]["tag"]))
     lines += ["", "## " + L["rules"], ""] + ["- " + r for r in RULES[lang]] + ["", "## " + L["faq"], ""]
     for q, a in t["faq"]:
         lines += ["### " + q, "", a, ""]
+    lines += ["## " + ("More prashnavalis on this site" if lang == "en" else "इस साइट की अन्य प्रश्नावलियाँ"), ""]
+    for o_slug, en_href, en_text, hi_href, hi_text in OTHERS:
+        if o_slug != slug:
+            href, text = (en_href, en_text) if lang == "en" else (hi_href, hi_text)
+            lines.append("- %s %s" % (text, SITE + href))
+    lines.append("")
     lines += [L["note"] + " [%s](%s/privacy)." % (L["privacy"], SITE), "", tool["image_credit"][lang], ""]
     return "\n".join(lines)
 

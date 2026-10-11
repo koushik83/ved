@@ -10,6 +10,10 @@ This Durga Prashnavali is built on the Navadurga, the nine forms of the Goddess 
 
 The chart has 36 numbers. The number you choose leads to one of the nine forms, each appearing four times among the numbers, so every answer has an equal chance. The verse is shown in Sanskrit with its meaning and a reading of whether your matter is favourable. Devotees ask here especially during the two Navratris, in Chaitra and in Ashwin.
 
+It is also searched for as the Mata Prashnavali, Devi Prashnavali or Navratri Prashnavali; it is the same chart. With every form's mantra explained, the page also serves as the nine Navadurga mantras with their meaning.
+
+[Read about the nine forms of Navadurga and their mantras](https://vedprashnavali.com/navadurga-nine-forms-mantras)
+
 ## The Nine Forms and Their Answers
 
 1. शैलपुत्री वन्दे वाञ्छितलाभाय चन्द्रार्धकृतशेखराम्। वृषारूढां शूलधरां शैलपुत्रीं यशस्विनीम्॥. Shailaputri, daughter of the mountain, the first form. I bow, for the gain of what is wished for, to the glorious one who wears the half-moon on her crown, rides the bull and holds the trident. The verse itself is a prayer for the gain of what is wished, and the first form is the firmest. A strong beginning, like the mountain she comes from. Yes. (Yes)
@@ -39,6 +43,10 @@ Yes. It is free, with no sign-up and no login.
 
 They are the traditional dhyana verses of the nine Navadurga forms, recited on the nine days of Navratri along with the Durga Saptashati.
 
+### Is this the Mata or Devi prashnavali?
+
+Yes. Durga, Mata Rani, Devi and the nine Navadurga forms are one Goddess, and this is the one prashnavali for all of them.
+
 ### Does it give a yes or no answer?
 
 Each answer ends with Yes, Wait or Not now, along with the verse and its meaning.
@@ -50,6 +58,15 @@ By tradition, not on the same day. Ask once, with faith, and reflect on the answ
 ### Are the answers true?
 
 A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome.
+
+## More prashnavalis on this site
+
+- Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais https://vedprashnavali.com/prash
+- Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer https://vedprashnavali.com/hanumanprash
+- Sai Baba Prashnavali: 720 numbered answers https://vedprashnavali.com/saibabaprash
+- Shiv Prashnavali: the nine verses of the Rudrashtakam https://vedprashnavali.com/shivprash
+- Ganesh Prashnavali: the twelve names of Ganesha https://vedprashnavali.com/ganeshprash
+- Khatu Shyam Prashnavali: eleven names of Shyam Baba https://vedprashnavali.com/khatushyamprash
 
 A prashnavali is a devotional practice. For important decisions use your own judgment and take qualified advice. [Privacy Policy](https://vedprashnavali.com/privacy).
 
