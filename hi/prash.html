@@ -206,16 +206,25 @@
   ]
 }
     </script>
+    <style id="ved-nav-css">
+        .ved-nav { border-bottom: 2px solid #ff9933; padding: 8px 8px 6px; background: #FDF4E7; }
+        .ved-nav-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 10px; margin: 0 0 8px; }
+        .ved-nav-row:last-child { margin-bottom: 0; }
+        .ved-nav a { text-decoration: none; color: #333; padding: 6px 12px; font-size: 14px; white-space: nowrap; border-radius: 20px; background: white; border: 1px solid #ff9933; line-height: 1.4; }
+        .ved-nav a.home { font-weight: bold; }
+        .ved-nav a[aria-current="page"] { background: #ff9933; color: white; border-color: #ff9933; }
+        @media (max-width: 600px) {
+            .ved-nav-row.tools { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -8px; padding: 2px 12px 6px; }
+            .ved-nav-row.tools::-webkit-scrollbar { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="top-nav">
-        <a href="/" class="home">🏠 होम</a>
-        <a href="/today">🌅 आज</a>
-        <a href="/jaap">📿 जप</a>
-        <a href="/hi/prash">🕉️ राम शलाका</a>
-        <a href="/hi/hanumanprash">⚡ हनुमान</a>
-        <a href="/saibabaprash">🙏 साईं बाबा</a>
+    <nav class="ved-nav" aria-label="साइट">
+        <div class="ved-nav-row"><a href="/" class="home">🏠 होम</a><a href="/today">🌅 आज</a><a href="/jaap">📿 जप</a><a href="/prash" lang="en">English</a></div>
+        <div class="ved-nav-row tools"><a href="/hi/prash" aria-current="page">🕉️ राम शलाका</a><a href="/hi/hanumanprash">⚡ हनुमान</a><a href="/saibabaprash">🙏 साईं बाबा</a><a href="/hi/shivprash">🔱 शिव</a><a href="/hi/ganeshprash">🐘 गणेश</a><a href="/hi/durgaprash">🌺 दुर्गा</a><a href="/hi/khatushyamprash">🏹 खाटू श्याम</a></div>
     </nav>
+    <script>(function(){var a=document.querySelector(".ved-nav .tools a[aria-current]");if(a&&a.scrollIntoView){try{a.scrollIntoView({inline:"center",block:"nearest"});}catch(e){}}})();</script>
 
     <main class="wrap">
         <h1>श्री राम शलाका प्रश्नावली<span style="display: block; font-size: 0.68em; margin-top: 4px;">श्री रामचरितमानस प्रश्नावली - दिव्य मार्गदर्शन</span></h1>

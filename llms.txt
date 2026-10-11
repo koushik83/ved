@@ -1,6 +1,6 @@
 # Ved Prashnavali
 
-> Free devotional tools in English and Hindi: the Ram Shalaka, Hanuman and Sai Baba prashnavalis (traditional question-and-answer charts), a daily reading, and a naam jaap counter. Run from Delhi, India. No login, no fees.
+> Free devotional tools in English and Hindi: the Ram Shalaka, Hanuman, Sai Baba, Shiv, Ganesh, Durga and Khatu Shyam prashnavalis (traditional question-and-answer charts), a daily reading, and a naam jaap counter. Run from Delhi, India. No login, no fees.
 
 A prashnavali is a Hindu practice for seeking guidance on a question: the seeker prays, holds the question in mind, and chooses a letter or number from a sacred chart; the chart leads to a verse or saying read as the answer.
 
@@ -9,6 +9,10 @@ A prashnavali is a Hindu practice for seeking guidance on a question: the seeker
 - [Ram Shalaka Prashnavali](https://vedprashnavali.com/prash): a 225-letter chart from Shri Ramcharitmanas leading to one of nine chaupais, each with its source, meaning and whether it is favourable. Hindi version: https://vedprashnavali.com/hi/prash
 - [Hanuman Prashnavali](https://vedprashnavali.com/hanumanprash): a chakra of 49 numbers, each with a verse and a yes-or-no answer. Hindi version: https://vedprashnavali.com/hi/hanumanprash
 - [Sai Baba Prashnavali](https://vedprashnavali.com/saibabaprash): 720 numbered answers for devotees of Shirdi Sai Baba.
+- [Shiv Prashnavali](https://vedprashnavali.com/shivprash): a chart of 36 numbers leading to one of the nine verses of Tulsidas's Rudrashtakam (Ramcharitmanas, Uttarkand), each with its meaning and a yes, wait or not-now answer. Hindi version: https://vedprashnavali.com/hi/shivprash
+- [Ganesh Prashnavali](https://vedprashnavali.com/ganeshprash): 36 numbers leading to one of the twelve names of Ganesha from the Sankat Nashan Ganesh Stotra (Narada Purana), each with its meaning and answer. Hindi version: https://vedprashnavali.com/hi/ganeshprash
+- [Durga Prashnavali](https://vedprashnavali.com/durgaprash): 36 numbers leading to the dhyana verse of one of the nine Navadurga forms, each with its meaning and answer. Hindi version: https://vedprashnavali.com/hi/durgaprash
+- [Khatu Shyam Prashnavali](https://vedprashnavali.com/khatushyamprash): 44 numbers leading to one of eleven names of Shyam Baba (Barbarik), each with its story and answer. Hindi version: https://vedprashnavali.com/hi/khatushyamprash
 - [Today's Guidance](https://vedprashnavali.com/today): one reading a day from Shri Ram or Hanuman Ji.
 - [Naam Jaap Counter](https://vedprashnavali.com/jaap): a digital mala of 108 for counting jaap, with an explanation of the practice.
 

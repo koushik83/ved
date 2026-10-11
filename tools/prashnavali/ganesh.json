@@ -1,0 +1,148 @@
+{
+  "slug": "ganeshprash",
+  "tool": "ganesh",
+  "image": "/images/ganesh.webp",
+  "image_credit": {
+    "en": "Image: Shri Mangalmurti, Ravi Varma Press lithograph (public domain), recoloured in the site's palette.",
+    "hi": "चित्र: श्री मंगलमूर्ति, रवि वर्मा प्रेस का चित्र (सार्वजनिक अधिकार क्षेत्र), साइट के रंग में ढाला गया।"
+  },
+  "cells": 36,
+  "en": {
+    "title": "Ganesh Prashnavali with Answers | Twelve Names of Ganesha Online",
+    "description": "Free Ganesh Prashnavali online: choose a number and read one of the twelve names of Ganesha from the Sankat Nashan Ganesh Stotra, with its meaning and a clear answer. In English and Hindi.",
+    "h1": "श्री गणेश प्रश्नावली",
+    "subtitle": "Ganesh Prashnavali from the twelve names of the Sankat Nashan Ganesh Stotra",
+    "nav_label": "🐘 Ganesh",
+    "breadcrumb": "Ganesh Prashnavali",
+    "steps": [
+      "Remember Lord Ganesha, the remover of obstacles, and pray with a sincere heart",
+      "Hold one clear question in your mind, especially about something you wish to begin",
+      "Touch the number in the chart below that you feel drawn to",
+      "Read the name and your answer below"
+    ],
+    "verse_label": "Name",
+    "meaning_label": "Meaning",
+    "answer_label": "Answer",
+    "what_heading": "What Is the Ganesh Prashnavali?",
+    "what": [
+      "Ganesha is remembered before every beginning, so a Ganesh Prashnavali is the natural place to ask about something you are about to start. This one is built on the Sankat Nashan Ganesh Stotra from the Narada Purana, the short hymn that names Ganesha twelve times and promises that whoever recites the twelve names morning, noon and evening will have no fear of obstacles.",
+      "The chart has 36 numbers. The number you choose leads to one of the twelve names, each appearing three times among the numbers, so every answer has an equal chance. Each name is shown with the line of the stotra it comes from, what the name means, and a reading of whether your matter is favourable."
+    ],
+    "answers_heading": "The Twelve Names and Their Answers",
+    "faq": [
+      ["Is the Ganesh Prashnavali free?", "Yes. It is free, with no sign-up and no login."],
+      ["Where do the twelve names come from?", "From the Sankat Nashan Ganesh Stotra of the Narada Purana, which lists them in order from Vakratunda to Gajanana."],
+      ["Does it give a yes or no answer?", "Each answer ends with Yes, Wait or Not now, along with the name and its meaning."],
+      ["Can I ask the same question again?", "By tradition, not on the same day. Ask once, with faith, and reflect on the answer."],
+      ["Are the answers true?", "A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome."]
+    ],
+    "share_title": "Ganesh Prashnavali",
+    "share_text": "🐘 Guidance from the Ganesh Prashnavali:"
+  },
+  "hi": {
+    "title": "गणेश प्रश्नावली उत्तर सहित | गणेश जी के बारह नाम ऑनलाइन",
+    "description": "गणेश प्रश्नावली ऑनलाइन, निःशुल्क। एक अंक चुनें और संकटनाशन गणेश स्तोत्र के बारह नामों में से एक, उसका अर्थ और स्पष्ट उत्तर हिंदी में पढ़ें।",
+    "h1": "श्री गणेश प्रश्नावली",
+    "subtitle": "संकटनाशन गणेश स्तोत्र के बारह नामों पर आधारित",
+    "nav_label": "🐘 गणेश",
+    "breadcrumb": "श्री गणेश प्रश्नावली",
+    "steps": [
+      "विघ्नहर्ता श्री गणेश का स्मरण कर सच्चे हृदय से प्रार्थना करें",
+      "अपना प्रश्न मन में स्पष्ट रूप से सोचें, विशेषकर किसी नए आरम्भ के बारे में",
+      "नीचे चक्र में जिस अंक पर मन जाए, उसे स्पर्श करें",
+      "नीचे नाम और अपना उत्तर पढ़ें"
+    ],
+    "verse_label": "नाम",
+    "meaning_label": "अर्थ",
+    "answer_label": "उत्तर",
+    "what_heading": "गणेश प्रश्नावली क्या है?",
+    "what": [
+      "हर शुभ कार्य के आरम्भ में गणेश जी का स्मरण किया जाता है, इसलिए किसी नए काम के बारे में पूछने के लिए गणेश प्रश्नावली सबसे स्वाभाविक स्थान है। यह प्रश्नावली नारद पुराण के संकटनाशन गणेश स्तोत्र पर आधारित है, वह छोटा स्तोत्र जिसमें गणेश जी के बारह नाम हैं और जो कहता है कि इन बारह नामों का तीनों संध्याओं में पाठ करने वाले को विघ्न का भय नहीं रहता।",
+      "चक्र में 36 अंक हैं। आप जो अंक चुनते हैं, वह बारह नामों में से किसी एक तक ले जाता है। हर नाम 36 अंकों में तीन बार आता है, इसलिए हर उत्तर की संभावना बराबर है। हर नाम के साथ स्तोत्र की वह पंक्ति, नाम का अर्थ और आपके प्रश्न के लिए उसका फल दिखाई देता है।"
+    ],
+    "answers_heading": "बारह नाम और उनके उत्तर",
+    "faq": [
+      ["क्या गणेश प्रश्नावली निःशुल्क है?", "हाँ। यह पूरी तरह निःशुल्क है, न कोई पंजीकरण, न कोई लॉगिन।"],
+      ["बारह नाम कहाँ से लिए गए हैं?", "नारद पुराण के संकटनाशन गणेश स्तोत्र से, जिसमें वक्रतुण्ड से गजानन तक बारह नाम क्रम से आते हैं।"],
+      ["क्या उत्तर हाँ या नहीं में मिलता है?", "हर उत्तर के अंत में हाँ, प्रतीक्षा या अभी नहीं लिखा है, साथ में नाम और उसका अर्थ।"],
+      ["क्या एक ही प्रश्न दोबारा पूछ सकते हैं?", "परम्परा के अनुसार एक ही प्रश्न उसी दिन दोबारा नहीं पूछना चाहिए।"],
+      ["क्या यह उत्तर सत्य होते हैं?", "प्रश्नावली एक भक्ति-साधना है। भक्त श्रद्धा से उत्तर पढ़ते हैं और उसमें मार्गदर्शन पाते हैं। यह किसी परिणाम की गारंटी नहीं है।"]
+    ],
+    "share_title": "गणेश प्रश्नावली",
+    "share_text": "🐘 श्री गणेश प्रश्नावली से प्राप्त मार्गदर्शन:"
+  },
+  "answers": [
+    {
+      "verse": "वक्रतुण्ड<br><span class=\"sub\">प्रथमं वक्रतुण्डं च</span>",
+      "tone": "good",
+      "en": {"meaning": "Vakratunda, the one with the curved trunk: first of the twelve names. He bends what is crooked back to the straight path.", "result": "Begin. The crooked road straightens for those who start with his name. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "वक्रतुण्ड, टेढ़ी सूँड वाले: बारह नामों में पहला। जो टेढ़े को सीधे मार्ग पर ले आते हैं।", "result": "आरम्भ करें। जो उनके नाम से शुरू करते हैं, उनके लिए टेढ़ा रास्ता सीधा हो जाता है। हाँ।", "tag": "हाँ"}
+    },
+    {
+      "verse": "एकदन्त<br><span class=\"sub\">एकदन्तं द्वितीयकम्</span>",
+      "tone": "wait",
+      "en": {"meaning": "Ekadanta, the one with a single tusk: the second name. He broke his own tusk to write the Mahabharata, the sign of one-pointed effort and of a sacrifice made for a greater work.", "result": "The task needs one-pointed attention and a small sacrifice. Decide what you are willing to give up for it; then it goes through. Wait until you have.", "tag": "Wait"},
+      "hi": {"meaning": "एकदन्त, एक दाँत वाले: दूसरा नाम। महाभारत लिखने के लिए उन्होंने अपना ही दाँत तोड़ा, यह एकाग्र प्रयास और बड़े कार्य के लिए किए गए त्याग का प्रतीक है।", "result": "इस कार्य में एकाग्रता और एक छोटा त्याग चाहिए। तय करें कि इसके लिए आप क्या छोड़ सकते हैं; फिर यह पूरा होगा। तब तक प्रतीक्षा करें।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "कृष्णपिङ्गाक्ष<br><span class=\"sub\">तृतीयं कृष्णपिङ्गाक्षं</span>",
+      "tone": "caution",
+      "en": {"meaning": "Krishnapingaksha, the one with dark, tawny eyes: the third name. Eyes that see through appearances to what lies behind them.", "result": "Something is not as it appears. Look at the matter again, and at the people in it, before you commit. Not now.", "tag": "Not now"},
+      "hi": {"meaning": "कृष्णपिंगाक्ष, श्याम और पिंगल नेत्रों वाले: तीसरा नाम। वे नेत्र जो दिखावे के पार, पीछे की सच्चाई देखते हैं।", "result": "कुछ वैसा नहीं है जैसा दिख रहा है। वचन देने से पहले इस बात को, और इसमें जुड़े लोगों को, एक बार फिर देखें। अभी नहीं।", "tag": "अभी नहीं"}
+    },
+    {
+      "verse": "गजवक्त्र<br><span class=\"sub\">गजवक्त्रं चतुर्थकम्</span>",
+      "tone": "good",
+      "en": {"meaning": "Gajavaktra, the elephant-faced: the fourth name. The elephant stands for strength that is patient and a memory that forgets nothing.", "result": "Strength and patience together. Yes; carry it through the long way, and remember what you learnt the last time.", "tag": "Yes"},
+      "hi": {"meaning": "गजवक्त्र, हाथी के मुख वाले: चौथा नाम। हाथी धैर्यवान बल और कभी न भूलने वाली स्मृति का प्रतीक है।", "result": "बल और धैर्य साथ-साथ। हाँ; लम्बे मार्ग से इसे पूरा करें, और पिछली बार जो सीखा था उसे याद रखें।", "tag": "हाँ"}
+    },
+    {
+      "verse": "लम्बोदर<br><span class=\"sub\">लम्बोदरं पञ्चमं च</span>",
+      "tone": "good",
+      "en": {"meaning": "Lambodara, the one with the great belly: the fifth name. The belly that holds the whole universe and digests everything, sweet and bitter alike.", "result": "Whatever comes will be absorbed and turned to good. Accept the whole of it, not only the pleasant part. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "लम्बोदर, बड़े उदर वाले: पाँचवाँ नाम। वह उदर जिसमें सारा ब्रह्माण्ड समाया है और जो मीठा-कड़वा सब पचा लेता है।", "result": "जो भी आएगा, वह पच जाएगा और भला ही निकलेगा। इसे पूरा स्वीकार करें, केवल सुखद हिस्सा नहीं। हाँ।", "tag": "हाँ"}
+    },
+    {
+      "verse": "विकट<br><span class=\"sub\">षष्ठं विकटमेव च</span>",
+      "tone": "caution",
+      "en": {"meaning": "Vikata, the formidable one, of fearsome form: the sixth name. The face he shows when the way is hard.", "result": "The road is harder than you think it is. Not now; prepare more, gather what you lack, and ask again.", "tag": "Not now"},
+      "hi": {"meaning": "विकट, विकराल और भयानक रूप वाले: छठा नाम। वह रूप जो वे तब दिखाते हैं जब मार्ग कठिन हो।", "result": "मार्ग जितना आप समझ रहे हैं उससे कठिन है। अभी नहीं; और तैयारी करें, जो कमी है उसे पूरा करें, और फिर पूछें।", "tag": "अभी नहीं"}
+    },
+    {
+      "verse": "विघ्नराज<br><span class=\"sub\">सप्तमं विघ्नराजेन्द्रं</span>",
+      "tone": "wait",
+      "en": {"meaning": "Vighnaraja, the king of obstacles: the seventh name. He places obstacles and he removes them; both are his.", "result": "An obstacle stands here, and it stands on purpose. Do not fight it. Wait, and it will be lifted by the same hand that placed it.", "tag": "Wait"},
+      "hi": {"meaning": "विघ्नराज, विघ्नों के राजा: सातवाँ नाम। विघ्न रखना और विघ्न हटाना, दोनों उन्हीं के हाथ में है।", "result": "यहाँ एक विघ्न खड़ा है, और वह किसी कारण से खड़ा है। उससे लड़ें नहीं। प्रतीक्षा करें, जिस हाथ ने उसे रखा है वही उसे हटाएगा।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "धूम्रवर्ण<br><span class=\"sub\">धूम्रवर्णं तथाष्टमम्</span>",
+      "tone": "wait",
+      "en": {"meaning": "Dhumravarna, the smoke-coloured one: the eighth name. A form seen as if through haze, where the outlines are not yet clear.", "result": "Things are hazy and the shape of the matter is not yet clear. Wait for the smoke to clear before you act; it will.", "tag": "Wait"},
+      "hi": {"meaning": "धूम्रवर्ण, धुएँ के रंग वाले: आठवाँ नाम। वह रूप जो मानो धुंध के पार दिखता है, जहाँ रेखाएँ अभी स्पष्ट नहीं हैं।", "result": "अभी धुंध है और बात का स्वरूप स्पष्ट नहीं है। कुछ करने से पहले धुआँ छँटने दें; वह छँटेगा।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "भालचन्द्र<br><span class=\"sub\">नवमं भालचन्द्रं च</span>",
+      "tone": "good",
+      "en": {"meaning": "Bhalachandra, the one with the moon on his brow: the ninth name. The moon is coolness, a mind that stays calm.", "result": "Keep a cool head and it is yours. Decide calmly, speak calmly, and say yes.", "tag": "Yes"},
+      "hi": {"meaning": "भालचन्द्र, मस्तक पर चन्द्रमा धारण करने वाले: नौवाँ नाम। चन्द्रमा शीतलता का, शांत रहने वाले मन का प्रतीक है।", "result": "मन शांत रखें, तो यह आपका है। शांति से निर्णय लें, शांति से बोलें, और हाँ कहें।", "tag": "हाँ"}
+    },
+    {
+      "verse": "विनायक<br><span class=\"sub\">दशमं तु विनायकम्</span>",
+      "tone": "good",
+      "en": {"meaning": "Vinayaka, the supreme leader, the one with no master above him: the tenth name.", "result": "Take the lead yourself. Yes; do not wait for someone else's permission to do what is yours to do.", "tag": "Yes"},
+      "hi": {"meaning": "विनायक, सर्वोच्च नायक, जिनके ऊपर कोई स्वामी नहीं: दसवाँ नाम।", "result": "स्वयं नेतृत्व करें। हाँ; जो काम आपका है उसे करने के लिए किसी और की अनुमति की प्रतीक्षा न करें।", "tag": "हाँ"}
+    },
+    {
+      "verse": "गणपति<br><span class=\"sub\">एकादशं गणपतिं</span>",
+      "tone": "good",
+      "en": {"meaning": "Ganapati, lord of the ganas, of the hosts and groups: the eleventh name. Work that is done together.", "result": "Not alone. With the right people beside you, yes. Choose them well and share the work.", "tag": "Yes"},
+      "hi": {"meaning": "गणपति, गणों के स्वामी, समूहों के अधिपति: ग्यारहवाँ नाम। वह काम जो मिलकर किया जाता है।", "result": "अकेले नहीं। सही लोग साथ हों तो हाँ। उन्हें सोच-समझकर चुनें और काम बाँटें।", "tag": "हाँ"}
+    },
+    {
+      "verse": "गजानन<br><span class=\"sub\">द्वादशं तु गजाननम्</span>",
+      "tone": "good",
+      "en": {"meaning": "Gajanana, the elephant-faced one: the twelfth and last name. Here the stotra ends and promises that whoever recites the twelve names has no fear of obstacles and gains what he seeks.", "result": "The full round is complete. Success, with the obstacles gone. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "गजानन, गज के मुख वाले: बारहवाँ और अंतिम नाम। यहाँ स्तोत्र पूरा होता है और कहता है कि बारह नामों का पाठ करने वाले को विघ्न का भय नहीं रहता और वह अपना अभीष्ट पाता है।", "result": "पूरा चक्र पूर्ण हुआ। विघ्न दूर, सफलता निश्चित। हाँ।", "tag": "हाँ"}
+    }
+  ]
+}

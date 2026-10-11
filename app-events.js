@@ -34,7 +34,11 @@
   }
 
   var path = location.pathname.replace(/\.html$/, '') || '/';
-  var TOOLS = { '/prash': 'ram', '/hanumanprash': 'hanuman', '/saibabaprash': 'sai' };
+  var TOOLS = { '/prash': 'ram', '/hanumanprash': 'hanuman', '/saibabaprash': 'sai',
+    '/shivprash': 'shiv', '/ganeshprash': 'ganesh', '/durgaprash': 'durga', '/khatushyamprash': 'khatushyam',
+    '/hi/shivprash': 'shiv', '/hi/ganeshprash': 'ganesh', '/hi/durgaprash': 'durga', '/hi/khatushyamprash': 'khatushyam' };
+  // The Hindi Ram and Hanuman pages report their own events and are deliberately not listed here:
+  // listing hi/hanumanprash would wrap displayMessage and count every answer twice.
   var tool = TOOLS[path] || null;
 
   // Installed app (opened from the home screen) or an ordinary browser tab

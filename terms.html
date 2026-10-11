@@ -123,16 +123,25 @@
             margin-bottom: 6px;
         }
     </style>
+    <style id="ved-nav-css">
+        .ved-nav { border-bottom: 2px solid #ff9933; padding: 8px 8px 6px; background: #FDF4E7; }
+        .ved-nav-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 10px; margin: 0 0 8px; }
+        .ved-nav-row:last-child { margin-bottom: 0; }
+        .ved-nav a { text-decoration: none; color: #333; padding: 6px 12px; font-size: 14px; white-space: nowrap; border-radius: 20px; background: white; border: 1px solid #ff9933; line-height: 1.4; }
+        .ved-nav a.home { font-weight: bold; }
+        .ved-nav a[aria-current="page"] { background: #ff9933; color: white; border-color: #ff9933; }
+        @media (max-width: 600px) {
+            .ved-nav-row.tools { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -8px; padding: 2px 12px 6px; }
+            .ved-nav-row.tools::-webkit-scrollbar { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="top-nav">
-        <a href="/" class="home">🏠 Home</a>
-        <a href="/today">🌅 Today</a>
-        <a href="/jaap">📿 Jaap</a>
-        <a href="/prash">🕉️ Ram Shalaka</a>
-        <a href="/hanumanprash">⚡ Hanuman</a>
-        <a href="/saibabaprash">🙏 Sai Baba</a>
+    <nav class="ved-nav" aria-label="Site">
+        <div class="ved-nav-row"><a href="/" class="home">🏠 Home</a><a href="/today">🌅 Today</a><a href="/jaap">📿 Jaap</a></div>
+        <div class="ved-nav-row tools"><a href="/prash">🕉️ Ram</a><a href="/hanumanprash">⚡ Hanuman</a><a href="/saibabaprash">🙏 Sai Baba</a><a href="/shivprash">🔱 Shiv</a><a href="/ganeshprash">🐘 Ganesh</a><a href="/durgaprash">🌺 Durga</a><a href="/khatushyamprash">🏹 Khatu Shyam</a></div>
     </nav>
+    <script>(function(){var a=document.querySelector(".ved-nav .tools a[aria-current]");if(a&&a.scrollIntoView){try{a.scrollIntoView({inline:"center",block:"nearest"});}catch(e){}}})();</script>
 
     <main class="wrap">
         <h1>Terms of Use</h1>

@@ -1,0 +1,130 @@
+{
+  "slug": "durgaprash",
+  "tool": "durga",
+  "image": "/images/durga.webp",
+  "image_credit": {
+    "en": "Image: Durga, after Raja Ravi Varma (public domain), recoloured in the site's palette.",
+    "hi": "चित्र: दुर्गा, राजा रवि वर्मा की कृति पर आधारित (सार्वजनिक अधिकार क्षेत्र), साइट के रंग में ढाला गया।"
+  },
+  "cells": 36,
+  "en": {
+    "title": "Durga Prashnavali with Answers | Navadurga Prashnavali Online",
+    "description": "Free Durga Prashnavali online: choose a number and read the verse of one of the nine forms of Navadurga, with its meaning and a clear answer. In English and Hindi.",
+    "h1": "श्री दुर्गा प्रश्नावली",
+    "subtitle": "Durga Prashnavali from the nine forms of Navadurga",
+    "nav_label": "🌺 Durga",
+    "breadcrumb": "Durga Prashnavali",
+    "steps": [
+      "Remember Maa Durga and pray with a sincere heart",
+      "Hold one clear question in your mind",
+      "Touch the number in the chart below that you feel drawn to",
+      "Read the verse of the form of the Goddess and your answer below"
+    ],
+    "verse_label": "Verse",
+    "meaning_label": "Meaning",
+    "answer_label": "Answer",
+    "what_heading": "What Is the Durga Prashnavali?",
+    "what": [
+      "This Durga Prashnavali is built on the Navadurga, the nine forms of the Goddess worshipped on the nine nights of Navratri: Shailaputri, Brahmacharini, Chandraghanta, Kushmanda, Skandamata, Katyayani, Kalaratri, Mahagauri and Siddhidatri. Each form has a traditional dhyana verse recited on her day, and those nine verses are the nine answers here.",
+      "The chart has 36 numbers. The number you choose leads to one of the nine forms, each appearing four times among the numbers, so every answer has an equal chance. The verse is shown in Sanskrit with its meaning and a reading of whether your matter is favourable. Devotees ask here especially during the two Navratris, in Chaitra and in Ashwin."
+    ],
+    "answers_heading": "The Nine Forms and Their Answers",
+    "faq": [
+      ["Is the Durga Prashnavali free?", "Yes. It is free, with no sign-up and no login."],
+      ["Where do the verses come from?", "They are the traditional dhyana verses of the nine Navadurga forms, recited on the nine days of Navratri along with the Durga Saptashati."],
+      ["Does it give a yes or no answer?", "Each answer ends with Yes, Wait or Not now, along with the verse and its meaning."],
+      ["Can I ask the same question again?", "By tradition, not on the same day. Ask once, with faith, and reflect on the answer."],
+      ["Are the answers true?", "A prashnavali is a devotional practice. Devotees read the answers with faith and find guidance in them. It is not a guarantee of any outcome."]
+    ],
+    "share_title": "Durga Prashnavali",
+    "share_text": "🌺 Guidance from the Durga Prashnavali:"
+  },
+  "hi": {
+    "title": "दुर्गा प्रश्नावली उत्तर सहित | नवदुर्गा प्रश्नावली ऑनलाइन",
+    "description": "दुर्गा प्रश्नावली ऑनलाइन, निःशुल्क। एक अंक चुनें और नवदुर्गा के नौ रूपों में से एक का श्लोक, उसका अर्थ और स्पष्ट उत्तर हिंदी में पढ़ें।",
+    "h1": "श्री दुर्गा प्रश्नावली",
+    "subtitle": "नवदुर्गा के नौ रूपों पर आधारित",
+    "nav_label": "🌺 दुर्गा",
+    "breadcrumb": "श्री दुर्गा प्रश्नावली",
+    "steps": [
+      "माँ दुर्गा का स्मरण कर सच्चे हृदय से प्रार्थना करें",
+      "अपना प्रश्न मन में स्पष्ट रूप से सोचें",
+      "नीचे चक्र में जिस अंक पर मन जाए, उसे स्पर्श करें",
+      "नीचे देवी के रूप का श्लोक और अपना उत्तर पढ़ें"
+    ],
+    "verse_label": "श्लोक",
+    "meaning_label": "अर्थ",
+    "answer_label": "उत्तर",
+    "what_heading": "दुर्गा प्रश्नावली क्या है?",
+    "what": [
+      "यह दुर्गा प्रश्नावली नवदुर्गा पर आधारित है, देवी के वे नौ रूप जिनकी पूजा नवरात्रि की नौ रातों में होती है: शैलपुत्री, ब्रह्मचारिणी, चन्द्रघण्टा, कूष्माण्डा, स्कन्दमाता, कात्यायनी, कालरात्रि, महागौरी और सिद्धिदात्री। हर रूप का एक पारम्परिक ध्यान-श्लोक है जो उसके दिन पढ़ा जाता है, और वही नौ श्लोक यहाँ नौ उत्तर हैं।",
+      "चक्र में 36 अंक हैं। आप जो अंक चुनते हैं, वह नौ रूपों में से किसी एक तक ले जाता है। हर रूप 36 अंकों में चार बार आता है, इसलिए हर उत्तर की संभावना बराबर है। श्लोक संस्कृत में, उसका अर्थ और आपके प्रश्न के लिए उसका फल नीचे दिखाई देता है। चैत्र और आश्विन की दोनों नवरात्रियों में भक्त विशेष रूप से यहाँ प्रश्न पूछते हैं।"
+    ],
+    "answers_heading": "नौ रूप और उनके उत्तर",
+    "faq": [
+      ["क्या दुर्गा प्रश्नावली निःशुल्क है?", "हाँ। यह पूरी तरह निःशुल्क है, न कोई पंजीकरण, न कोई लॉगिन।"],
+      ["श्लोक कहाँ से लिए गए हैं?", "ये नवदुर्गा के नौ रूपों के पारम्परिक ध्यान-श्लोक हैं, जो नवरात्रि के नौ दिनों में दुर्गा सप्तशती के साथ पढ़े जाते हैं।"],
+      ["क्या उत्तर हाँ या नहीं में मिलता है?", "हर उत्तर के अंत में हाँ, प्रतीक्षा या अभी नहीं लिखा है, साथ में श्लोक और उसका अर्थ।"],
+      ["क्या एक ही प्रश्न दोबारा पूछ सकते हैं?", "परम्परा के अनुसार एक ही प्रश्न उसी दिन दोबारा नहीं पूछना चाहिए।"],
+      ["क्या यह उत्तर सत्य होते हैं?", "प्रश्नावली एक भक्ति-साधना है। भक्त श्रद्धा से उत्तर पढ़ते हैं और उसमें मार्गदर्शन पाते हैं। यह किसी परिणाम की गारंटी नहीं है।"]
+    ],
+    "share_title": "दुर्गा प्रश्नावली",
+    "share_text": "🌺 श्री दुर्गा प्रश्नावली से प्राप्त मार्गदर्शन:"
+  },
+  "answers": [
+    {
+      "verse": "शैलपुत्री<br>वन्दे वाञ्छितलाभाय चन्द्रार्धकृतशेखराम्।<br>वृषारूढां शूलधरां शैलपुत्रीं यशस्विनीम्॥",
+      "tone": "good",
+      "en": {"meaning": "Shailaputri, daughter of the mountain, the first form. I bow, for the gain of what is wished for, to the glorious one who wears the half-moon on her crown, rides the bull and holds the trident.", "result": "The verse itself is a prayer for the gain of what is wished, and the first form is the firmest. A strong beginning, like the mountain she comes from. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "शैलपुत्री, पर्वतराज की पुत्री, पहला रूप। मनोवांछित फल की प्राप्ति के लिए मैं उन यशस्विनी शैलपुत्री को प्रणाम करता हूँ, जिनके मस्तक पर अर्धचन्द्र है, जो वृषभ पर आरूढ़ हैं और हाथ में त्रिशूल धारण किए हैं।", "result": "यह श्लोक स्वयं मनोवांछित फल की प्रार्थना है, और पहला रूप सबसे दृढ़ है। पर्वत जैसा दृढ़ आरम्भ। हाँ।", "tag": "हाँ"}
+    },
+    {
+      "verse": "ब्रह्मचारिणी<br>दधाना करपद्माभ्यामक्षमालाकमण्डलू।<br>देवी प्रसीदतु मयि ब्रह्मचारिण्यनुत्तमा॥",
+      "tone": "wait",
+      "en": {"meaning": "Brahmacharini, the second form, who holds a rosary and a water-pot in her lotus hands. May the supreme Goddess of penance be pleased with me. She won Shiva by years of austerity.", "result": "The fruit here comes through discipline and time, as her penance did. Not yet; keep at the practice and the result follows.", "tag": "Wait"},
+      "hi": {"meaning": "ब्रह्मचारिणी, दूसरा रूप, जो अपने कर-कमलों में अक्षमाला और कमण्डलु धारण करती हैं। तपस्या की वह सर्वोत्तम देवी मुझ पर प्रसन्न हों। वर्षों के तप से उन्होंने शिव को पाया।", "result": "यहाँ फल अनुशासन और समय से मिलता है, जैसे उनके तप से मिला। अभी नहीं; साधना में लगे रहें, फल पीछे-पीछे आएगा।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "चन्द्रघण्टा<br>पिण्डजप्रवरारूढा चण्डकोपास्त्रकैर्युता।<br>प्रसादं तनुते मह्यं चन्द्रघण्टेति विश्रुता॥",
+      "tone": "good",
+      "en": {"meaning": "Chandraghanta, the third form, riding the finest of lions, armed with weapons and fierce in anger, yet famed as the one who spreads grace over me.", "result": "Courage is asked for and courage is rewarded. Face the matter squarely; the one who rides the lion is on your side. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "चन्द्रघण्टा, तीसरा रूप, जो श्रेष्ठ सिंह पर आरूढ़ हैं, शस्त्रों से सुसज्जित और क्रोध में प्रचण्ड हैं, फिर भी मुझ पर कृपा बरसाने वाली के रूप में विख्यात हैं।", "result": "यहाँ साहस माँगा गया है और साहस का फल मिलता है। बात का सीधे सामना करें; सिंह पर सवार देवी आपके साथ हैं। हाँ।", "tag": "हाँ"}
+    },
+    {
+      "verse": "कूष्माण्डा<br>सुरासम्पूर्णकलशं रुधिराप्लुतमेव च।<br>दधाना हस्तपद्माभ्यां कूष्माण्डा शुभदास्तु मे॥",
+      "tone": "good",
+      "en": {"meaning": "Kushmanda, the fourth form, who holds in her lotus hands the pot brimming with nectar. May she be the giver of good to me. With her smile she brought forth the cosmic egg, the universe itself.", "result": "The verse is a blessing of abundance, and this form creates with a smile. Something new is being made in your matter. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "कूष्माण्डा, चौथा रूप, जो अपने कर-कमलों में अमृत से भरा कलश धारण करती हैं। वे मेरे लिए शुभदायिनी हों। अपनी मुस्कान से उन्होंने ब्रह्माण्ड की रचना की।", "result": "यह श्लोक समृद्धि का आशीर्वाद है, और यह रूप मुस्कान से सृजन करता है। आपकी बात में कुछ नया रचा जा रहा है। हाँ।", "tag": "हाँ"}
+    },
+    {
+      "verse": "स्कन्दमाता<br>सिंहासनगता नित्यं पद्माश्रितकरद्वया।<br>शुभदास्तु सदा देवी स्कन्दमाता यशस्विनी॥",
+      "tone": "wait",
+      "en": {"meaning": "Skandamata, the fifth form, mother of Skanda, ever seated on the lion throne with a lotus in each hand. May the glorious Goddess always be the giver of good.", "result": "The mother's answer: it grows when it is nurtured, and growing takes its own time. Good, especially in matters of family and children, but not instant. Wait and tend it.", "tag": "Wait"},
+      "hi": {"meaning": "स्कन्दमाता, पाँचवाँ रूप, स्कन्द की माता, जो सदा सिंहासन पर विराजमान हैं और दोनों हाथों में कमल धारण किए हैं। वे यशस्विनी देवी सदा शुभदायिनी हों।", "result": "माता का उत्तर: पालन-पोषण से यह बढ़ता है, और बढ़ने में समय लगता है। शुभ है, विशेषकर परिवार और संतान की बातों में, पर तुरंत नहीं। प्रतीक्षा करें और इसे सँभालते रहें।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "कात्यायनी<br>चन्द्रहासोज्ज्वलकरा शार्दूलवरवाहना।<br>कात्यायनी शुभं दद्याद्देवी दानवघातिनी॥",
+      "tone": "caution",
+      "en": {"meaning": "Katyayani, the sixth form, with the bright sword Chandrahasa in her hand, riding the finest of tigers. May the Goddess who slays the demons give good.", "result": "A demon has to fall first. There is a fight in this matter, and it is hers, not yours, to win. Not now; unless you are ready to see it through, hold back.", "tag": "Not now"},
+      "hi": {"meaning": "कात्यायनी, छठा रूप, जिनके हाथ में चन्द्रहास नामक उज्ज्वल खड्ग है और जो श्रेष्ठ व्याघ्र पर सवार हैं। दानवों का संहार करने वाली वे देवी शुभ प्रदान करें।", "result": "पहले एक दानव को गिरना है। इस बात में एक संघर्ष है, और उसे जीतना उनका काम है, आपका नहीं। अभी नहीं; जब तक अंत तक निभाने को तैयार न हों, रुके रहें।", "tag": "अभी नहीं"}
+    },
+    {
+      "verse": "कालरात्रि<br>एकवेणी जपाकर्णपूरा नग्ना खरास्थिता।<br>लम्बोष्ठी कर्णिकाकर्णी तैलाभ्यक्तशरीरिणी॥<br>वामपादोल्लसल्लोहलताकण्टकभूषणा।<br>वर्धन्मूर्धध्वजा कृष्णा कालरात्रिर्भयङ्करी॥",
+      "tone": "wait",
+      "en": {"meaning": "Kalaratri, the seventh form, the dark night: a single braid, a hibiscus at her ear, riding a donkey, her body anointed with oil, iron thorns on her feet, her hair flying like a banner, black and terrible to look upon. Yet devotees call her Shubhankari, the one who brings good.", "result": "This is the darkest of the forms, and it passes, as night does. A hard stretch lies in the matter; do not act in the middle of it. Wait for it to pass. What follows is good.", "tag": "Wait"},
+      "hi": {"meaning": "कालरात्रि, सातवाँ रूप, काली रात: एक वेणी, कान में जपापुष्प, गर्दभ पर सवार, तेल से अभिषिक्त शरीर, पैरों में लोहे के काँटों के आभूषण, ध्वजा की तरह उड़ते केश, कृष्णवर्णा और देखने में भयंकर। फिर भी भक्त उन्हें शुभंकरी कहते हैं, शुभ करने वाली।", "result": "यह रूपों में सबसे अंधकारमय है, और रात की तरह बीत जाता है। बात में एक कठिन दौर है; उसके बीच में कोई कदम न उठाएँ। उसे बीतने दें। उसके बाद जो आता है वह शुभ है।", "tag": "प्रतीक्षा"}
+    },
+    {
+      "verse": "महागौरी<br>श्वेते वृषे समारूढा श्वेताम्बरधरा शुचिः।<br>महागौरी शुभं दद्यान्महादेवप्रमोददा॥",
+      "tone": "good",
+      "en": {"meaning": "Mahagauri, the eighth form, pure, seated on a white bull and dressed in white. May the great fair Goddess, who gives joy to Mahadev, give good.", "result": "Purity and peace after hardship: the night has given way to brightness. Yes; the matter clears and settles well.", "tag": "Yes"},
+      "hi": {"meaning": "महागौरी, आठवाँ रूप, शुचि, श्वेत वृषभ पर आरूढ़ और श्वेत वस्त्र धारण किए। महादेव को आनन्द देने वाली महागौरी शुभ प्रदान करें।", "result": "कष्ट के बाद पवित्रता और शांति: रात बीतकर उजाला आ गया है। हाँ; बात साफ होती है और अच्छी तरह सँभल जाती है।", "tag": "हाँ"}
+    },
+    {
+      "verse": "सिद्धिदात्री<br>सिद्धगन्धर्वयक्षाद्यैरसुरैरमरैरपि।<br>सेव्यमाना सदा भूयात् सिद्धिदा सिद्धिदायिनी॥",
+      "tone": "good",
+      "en": {"meaning": "Siddhidatri, the ninth form, served always by siddhas, gandharvas, yakshas, asuras and gods alike. May the giver of every accomplishment grant accomplishment.", "result": "The last form is the giver of accomplishment. Completion; what you began reaches its end. Yes.", "tag": "Yes"},
+      "hi": {"meaning": "सिद्धिदात्री, नौवाँ रूप, जिनकी सेवा सिद्ध, गन्धर्व, यक्ष, असुर और देवता सभी सदा करते हैं। सब सिद्धियाँ देने वाली वे देवी सिद्धि प्रदान करें।", "result": "अंतिम रूप सिद्धि देने वाला है। पूर्णता; जो आपने आरम्भ किया था वह अपने अंत तक पहुँचता है। हाँ।", "tag": "हाँ"}
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Prashnavali with Answers: Ram Shalaka, Hanuman, Sai Baba
+# Prashnavali with Answers: Ram Shalaka, Hanuman, Sai Baba and More
 
 Source: https://vedprashnavali.com/
 
@@ -14,19 +14,35 @@ Find solutions with Lord Hanuman's grace
 
 Life guidance with Sai Baba's blessings
 
+## Shri Shiv Prashnavali
+
+Nine verses of the Rudrashtakam from Shri Ramcharitmanas. https://vedprashnavali.com/shivprash
+
+## Shri Ganesh Prashnavali
+
+Twelve names of Ganesha for anything you are about to begin. https://vedprashnavali.com/ganeshprash
+
+## Shri Durga Prashnavali
+
+The nine forms of Navadurga, each with her verse. https://vedprashnavali.com/durgaprash
+
+## Shri Khatu Shyam Prashnavali
+
+Eleven names of Shyam Baba, the refuge of the defeated. https://vedprashnavali.com/khatushyamprash
+
 ## What Is a Prashnavali?
 
 A prashnavali (प्रश्नावली) is a traditional Hindu way of seeking guidance on a question. The seeker prays, holds one question in mind, and chooses a letter or a number from a sacred chart without looking for a particular one. The chart leads to a verse or a saying, and the devotee reads it as the answer. The best known is the Ram Shalaka Prashnavali, built from nine chaupais of Shri Ramcharitmanas by Goswami Tulsidas and printed in many editions of the book. Other prashnavalis follow the same idea with other deities and texts.
 
 ## Prashnavali Online with Answers on This Site
 
-All three are free, need no login, and work on any phone. The [Today's Guidance](https://vedprashnavali.com/today) page gives one reading a day, and the [Naam Jaap Counter](https://vedprashnavali.com/jaap) is a digital mala of 108.
+All seven are free, need no login, and work on any phone. The [Today's Guidance](https://vedprashnavali.com/today) page gives one reading a day, and the [Naam Jaap Counter](https://vedprashnavali.com/jaap) is a digital mala of 108.
 
 ## How to Ask a Prashnavali
 
 ## Which Prashnavali Is Most Powerful?
 
-No prashnavali is more powerful than another. Devotees traditionally use the prashnavali of their ishta deva, the deity they worship most. The Ram Shalaka Prashnavali is the oldest and most widely used, because it comes from Ramcharitmanas itself. The Hanuman Prashnavali is preferred when a plain yes or no is wanted. Devotees of Shirdi Sai Baba use the Sai Baba Prashnavali. Whichever you choose, the sincerity of the question matters more than the chart.
+No prashnavali is more powerful than another. Devotees traditionally use the prashnavali of their ishta deva, the deity they worship most. The Ram Shalaka Prashnavali is the oldest and most widely used, because it comes from Ramcharitmanas itself. The Hanuman Prashnavali is preferred when a plain yes or no is wanted. Devotees of Shirdi Sai Baba use the Sai Baba Prashnavali. Those who worship Shiva, Ganesha, Durga or Khatu Shyam Ji now have their own on this site as well, each built on a text or a tradition of that deity. Whichever you choose, the sincerity of the question matters more than the chart.
 
 ## Rules of Prashnavali
 
@@ -38,7 +54,7 @@ Yes. Every prashnavali on this site is free, with no sign-up and no login.
 
 ### Can I use the prashnavali in Hindi?
 
-Yes. The [Ram Shalaka Prashnavali](https://vedprashnavali.com/hi/prash) and the [Hanuman Prashnavali](https://vedprashnavali.com/hi/hanumanprash) have full Hindi pages, the chaupais and verses are in Hindi everywhere, and every page has a translate button.
+Yes. The [Ram Shalaka](https://vedprashnavali.com/hi/prash), [Hanuman](https://vedprashnavali.com/hi/hanumanprash), [Shiv](https://vedprashnavali.com/hi/shivprash), [Ganesh](https://vedprashnavali.com/hi/ganeshprash), [Durga](https://vedprashnavali.com/hi/durgaprash) and [Khatu Shyam](https://vedprashnavali.com/hi/khatushyamprash) prashnavalis have full Hindi pages, and the chaupais and verses are in Hindi everywhere. Your phone's browser can translate the other pages.
 
 ### Does the prashnavali give yes or no answers?
 
