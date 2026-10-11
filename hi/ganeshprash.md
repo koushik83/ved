@@ -67,7 +67,7 @@ Source: https://vedprashnavali.com/hi/ganeshprash
 - राम शलाका प्रश्नावली: श्री रामचरितमानस के 225 अक्षर, नौ चौपाइयाँ https://vedprashnavali.com/hi/prash
 - हनुमान प्रश्नावली: 49 अंकों का चक्र, हाँ या नहीं में उत्तर https://vedprashnavali.com/hi/hanumanprash
 - साईं बाबा प्रश्नावली: 720 क्रमांकित उत्तर https://vedprashnavali.com/saibabaprash
-- शिव प्रश्नावली: रुद्राष्टक के नौ श्लोक https://vedprashnavali.com/hi/shivprash
+- शिव प्रश्नावली: रुद्राष्टक के आठ श्लोक और फलश्रुति https://vedprashnavali.com/hi/shivprash
 - दुर्गा प्रश्नावली: नवदुर्गा के नौ रूप https://vedprashnavali.com/hi/durgaprash
 - खाटू श्याम प्रश्नावली: श्याम बाबा के ग्यारह नाम https://vedprashnavali.com/hi/khatushyamprash
 

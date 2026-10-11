@@ -14,7 +14,7 @@ Devotees also call this the Mahadev Prashnavali, Bholenath Prashnavali or Shanka
 
 [Read the full Rudrashtakam with meaning](https://vedprashnavali.com/rudrashtakam-with-meaning)
 
-## The Nine Verses and Their Answers
+## The Eight Verses, the Closing Verse and Their Answers
 
 1. नमामीशमीशान निर्वाणरूपम्। विभुम् व्यापकम् ब्रह्मवेदस्वरूपम्। निजम् निर्गुणम् निर्विकल्पम् निरीहम्। चिदाकाशमाकाशवासम् भजेऽहम्॥१॥. I bow to the Lord, the very form of liberation, all-pervading, the Brahman the Vedas speak of. Resting in himself, beyond qualities and divisions, desiring nothing, the sky of consciousness clothed in the sky itself: him I worship. The matter rests on firm ground. Begin with a clear and quiet mind and it will hold. Nothing is asked of you here that you cannot give. (Yes)
 2. निराकारमोंकारमूलम् तुरीयम्। गिराज्ञानगोतीतमीशम् गिरीशम्। करालम् महाकालकालम् कृपालम्। गुणागारसंसारपारम् नतोऽहम्॥२॥. Formless, the root of Om, the fourth state beyond waking, dream and sleep; beyond speech, knowledge and the senses; lord of the mountain. Fierce, the death of death itself, and yet compassionate; the home of every virtue, beyond this world: to him I bow. What frightens you is smaller than it looks. The one who is death to death itself is called compassionate in the same breath. Go ahead without fear. (Yes)

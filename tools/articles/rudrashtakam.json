@@ -2,7 +2,10 @@
   "slug": "rudrashtakam-with-meaning",
   "tool_slug": "shivprash",
   "image": "/images/shiv.webp",
-  "image_alt": {"en": "Lord Shiva, after a Raja Ravi Varma print, in the site's orange duotone", "hi": "भगवान शिव, राजा रवि वर्मा के चित्र पर आधारित"},
+  "image_alt": {
+    "en": "Lord Shiva, after a Raja Ravi Varma print, in the site's orange duotone",
+    "hi": "भगवान शिव, राजा रवि वर्मा के चित्र पर आधारित"
+  },
   "image_credit": {
     "en": "Image: Raja Ravi Varma, The Descent of Ganga (public domain), recoloured in the site's palette.",
     "hi": "चित्र: राजा रवि वर्मा, गंगावतरण (सार्वजनिक अधिकार क्षेत्र), साइट के रंग में ढाला गया।"
@@ -11,105 +14,209 @@
   "date_published": "2026-10-11",
   "en": {
     "title": "Rudrashtakam with Meaning: Shiv Rudrashtak, Verse by Verse",
-    "description": "The full Rudrashtakam of Tulsidas from Shri Ramcharitmanas: all nine verses in Sanskrit with a clear meaning in English, where the hymn comes from, and when and how it is recited.",
+    "description": "The full Rudrashtakam of Tulsidas from Shri Ramcharitmanas: its eight verses and the closing verse in Sanskrit with a clear meaning in English, where the hymn comes from, and when and how it is recited.",
     "h1": "Rudrashtakam with Meaning",
     "breadcrumb": "Rudrashtakam with Meaning",
     "verse_word": "Verse",
     "cta": "Ask the Shiv Prashnavali",
     "intro": [
       "The Rudrashtakam, also written Rudrashtak or Shiv Rudrashtakam, is the hymn of eight verses to Lord Shiva that begins Namami Shamishan Nirvana Rupam. Goswami Tulsidas composed it in Sanskrit and placed it in the Uttarkand of Shri Ramcharitmanas, and for four centuries it has been one of the most recited Shiva hymns in North India, on Mondays, through the month of Shravan and at Mahashivratri.",
-      "This page gives the complete text, the eight verses and the closing verse, each with a plain meaning in English, followed by where the hymn comes from, what it asks for, and how it is recited. The same nine verses are the answers of the Shiv Prashnavali on this site, where a number you choose leads to one of them."
+      "This page gives the complete text, the eight verses and the closing verse, each with a plain meaning in English, followed by where the hymn comes from, what it asks for, and how it is recited. The same nine, the eight verses and the closing one, are the answers of the Shiv Prashnavali on this site, where a number you choose leads to one of them."
     ],
-    "verses_heading": "The Nine Verses with Meaning",
+    "verses_heading": "The Eight Verses and the Closing Verse, with Meaning",
     "sections": [
-      {"heading": "Where the Rudrashtakam Comes From", "paragraphs": [
-        "Tulsidas places the hymn in the Uttarkand of Shri Ramcharitmanas, inside the story of Kakbhushundi. In an earlier birth Kakbhushundi was a devotee of Shiva who slighted his own guru inside a Shiva temple, and Shiva cursed him for it. The guru, a brahmin, then prayed to Shiva to soften the curse, and the Rudrashtakam is that prayer. Its closing verse says so in one line: this hymn was spoken by the brahmin to please Hara.",
-        "The eight verses are in the Bhujangaprayata metre, four parts of twelve syllables each, which gives the hymn the rolling rhythm that makes it easy to sing and to remember. The ninth verse, the phalashruti, is in the simpler shloka metre and states the fruit of recitation."
-      ]},
-      {"heading": "What the Hymn Asks For", "paragraphs": [
-        "The first six verses are praise. They describe Shiva as beyond form and qualities, as the death of death itself and yet compassionate, as the one with the Ganga in his hair and the moon on his brow, and as the one who uproots the three sorrows, the pains that come from the body, from other beings and from fate.",
-        "The seventh verse turns to the listener: until a person worships the lotus feet of Uma's lord, there is no peace here or hereafter. The eighth is the devotee's own voice: I know no yoga, no japa, no worship, I only bow to you; burning in the flood of birth, age and sorrow, protect me. That movement, from praise to plea to surrender, is why the hymn is sung in distress as much as in celebration."
-      ]},
-      {"heading": "When and How It Is Recited", "paragraphs": [
-        "There is no restriction of day or person. By custom it is recited on Mondays, on the Mondays of Shravan, on Pradosh evenings and on Mahashivratri, in the morning after bathing or in the evening at the lamp, facing a Shivling or an image of Shiva. Many devotees offer water or bilva leaves first and recite the hymn once; some recite it eleven times.",
-        "The closing verse promises only this: Shambhu is pleased with those who recite it with devotion. Recite it slowly enough to follow the meaning, and the meaning will carry you through the Sanskrit."
-      ]}
+      {
+        "heading": "Where the Rudrashtakam Comes From",
+        "paragraphs": [
+          "Tulsidas places the hymn in the Uttarkand of Shri Ramcharitmanas, inside the story of Kakbhushundi. In an earlier birth Kakbhushundi was a devotee of Shiva who slighted his own guru inside a Shiva temple, and Shiva cursed him for it. The guru, a brahmin, then prayed to Shiva to soften the curse, and the Rudrashtakam is that prayer. Its closing verse says so in one line: this hymn was spoken by the brahmin to please Hara.",
+          "The eight verses are in the Bhujangaprayata metre, four parts of twelve syllables each, which gives the hymn the rolling rhythm that makes it easy to sing and to remember. The ninth verse, the phalashruti, is in the simpler shloka metre and states the fruit of recitation."
+        ]
+      },
+      {
+        "heading": "What the Hymn Asks For",
+        "paragraphs": [
+          "The first six verses are praise. They describe Shiva as beyond form and qualities, as the death of death itself and yet compassionate, as the one with the Ganga in his hair and the moon on his brow, and as the one who uproots the three sorrows, the pains that come from the body, from other beings and from fate.",
+          "The seventh verse turns to the listener: until a person worships the lotus feet of Uma's lord, there is no peace here or hereafter. The eighth is the devotee's own voice: I know no yoga, no japa, no worship, I only bow to you; burning in the flood of birth, age and sorrow, protect me. That movement, from praise to plea to surrender, is why the hymn is sung in distress as much as in celebration."
+        ]
+      },
+      {
+        "heading": "When and How It Is Recited",
+        "paragraphs": [
+          "There is no restriction of day or person. By custom it is recited on Mondays, on the Mondays of Shravan, on Pradosh evenings and on Mahashivratri, in the morning after bathing or in the evening at the lamp, facing a Shivling or an image of Shiva. Many devotees offer water or bilva leaves first and recite the hymn once; some recite it eleven times.",
+          "The closing verse promises only this: Shambhu is pleased with those who recite it with devotion. Recite it slowly enough to follow the meaning, and the meaning will carry you through the Sanskrit."
+        ]
+      }
     ],
     "faq": [
-      ["Who wrote the Rudrashtakam?", "Goswami Tulsidas, the author of Shri Ramcharitmanas, composed it in Sanskrit and placed it in the Uttarkand of that work."],
-      ["How many verses does the Rudrashtakam have?", "Eight verses, which is what ashtakam means, plus a closing verse that states the fruit of recitation, nine in all."],
-      ["Is the Rudrashtakam part of the Ramcharitmanas?", "Yes. It appears in the Uttarkand, in the story of Kakbhushundi, where a brahmin guru sings it to Shiva to soften a curse laid on his disciple."],
-      ["Can the Rudrashtakam be recited daily?", "Yes. It is short, takes a few minutes, and the text sets no condition other than devotion. Mondays, Shravan and Mahashivratri are the customary occasions."],
-      ["What does Namami Shamishan Nirvana Rupam mean?", "I bow to the Lord, the ruler of the north-east, the very form of liberation. It is the opening of the first verse, which goes on to describe Shiva as all-pervading, beyond qualities, and clothed in the sky itself."]
+      [
+        "Who wrote the Rudrashtakam?",
+        "Goswami Tulsidas, the author of Shri Ramcharitmanas, composed it in Sanskrit and placed it in the Uttarkand of that work."
+      ],
+      [
+        "How many verses does the Rudrashtakam have?",
+        "Eight verses, which is what ashtakam means, plus a closing verse that states the fruit of recitation, nine in all."
+      ],
+      [
+        "Is the Rudrashtakam part of the Ramcharitmanas?",
+        "Yes. It appears in the Uttarkand, in the story of Kakbhushundi, where a brahmin guru sings it to Shiva to soften a curse laid on his disciple."
+      ],
+      [
+        "Can the Rudrashtakam be recited daily?",
+        "Yes. It is short, takes a few minutes, and the text sets no condition other than devotion. Mondays, Shravan and Mahashivratri are the customary occasions."
+      ],
+      [
+        "What does Namami Shamishan Nirvana Rupam mean?",
+        "I bow to the Lord, the ruler of the north-east, the very form of liberation. It is the opening of the first verse, which goes on to describe Shiva as all-pervading, beyond qualities, and clothed in the sky itself."
+      ]
     ],
     "closing": [
-      "If you have come to the Rudrashtakam with a question of your own, the Shiv Prashnavali on this site lets you choose a number and read one of these nine verses as your answer, with its meaning and a reading of whether the matter is favourable."
+      "If you have come to the Rudrashtakam with a question of your own, the Shiv Prashnavali on this site lets you choose a number and read one of these nine as your answer, with its meaning and a reading of whether the matter is favourable."
     ]
   },
   "hi": {
     "title": "रुद्राष्टक अर्थ सहित | Rudrashtakam in Hindi",
-    "description": "तुलसीदास जी का पूरा रुद्राष्टक, श्री रामचरितमानस से: नौ श्लोक संस्कृत में सरल हिंदी अर्थ सहित, इसका प्रसंग, और इसे कब और कैसे पढ़ें।",
+    "description": "तुलसीदास जी का पूरा रुद्राष्टक, श्री रामचरितमानस से: आठ श्लोक और फलश्रुति संस्कृत में सरल हिंदी अर्थ सहित, इसका प्रसंग, और इसे कब और कैसे पढ़ें।",
     "h1": "रुद्राष्टक अर्थ सहित",
     "breadcrumb": "रुद्राष्टक अर्थ सहित",
     "verse_word": "श्लोक",
     "cta": "शिव प्रश्नावली से पूछें",
     "intro": [
       "रुद्राष्टक, जिसे शिव रुद्राष्टकम् भी कहते हैं, भगवान शिव की वह आठ श्लोकों की स्तुति है जो नमामीशमीशान निर्वाणरूपम् से आरम्भ होती है। गोस्वामी तुलसीदास जी ने इसे संस्कृत में रचा और श्री रामचरितमानस के उत्तरकाण्ड में रखा, और चार सौ वर्षों से यह उत्तर भारत की सबसे अधिक पढ़ी जाने वाली शिव-स्तुतियों में है: सोमवार को, श्रावण भर, और महाशिवरात्रि पर।",
-      "इस पृष्ठ पर पूरा पाठ है, आठ श्लोक और फलश्रुति का श्लोक, हर एक सरल हिंदी अर्थ सहित, और फिर यह स्तुति कहाँ से आई, क्या माँगती है और कैसे पढ़ी जाती है। यही नौ श्लोक इस साइट की शिव प्रश्नावली के उत्तर हैं, जहाँ आपका चुना हुआ अंक इनमें से एक तक ले जाता है।"
+      "इस पृष्ठ पर पूरा पाठ है, आठ श्लोक और फलश्रुति का श्लोक, हर एक सरल हिंदी अर्थ सहित, और फिर यह स्तुति कहाँ से आई, क्या माँगती है और कैसे पढ़ी जाती है। यही नौ, आठ श्लोक और फलश्रुति, इस साइट की शिव प्रश्नावली के उत्तर हैं, जहाँ आपका चुना हुआ अंक इनमें से एक तक ले जाता है।"
     ],
-    "verses_heading": "नौ श्लोक अर्थ सहित",
+    "verses_heading": "आठ श्लोक और फलश्रुति, अर्थ सहित",
     "sections": [
-      {"heading": "रुद्राष्टक कहाँ से आया", "paragraphs": [
-        "तुलसीदास जी ने यह स्तुति श्री रामचरितमानस के उत्तरकाण्ड में काकभुशुण्डि की कथा के भीतर रखी है। पूर्व जन्म में काकभुशुण्डि शिव के भक्त थे जिन्होंने शिव मंदिर में ही अपने गुरु का अपमान किया, और शिव ने उन्हें इसका शाप दिया। तब गुरु ने, जो एक ब्राह्मण थे, शाप को हल्का करने के लिए शिव से प्रार्थना की, और रुद्राष्टक वही प्रार्थना है। इसका अंतिम श्लोक एक पंक्ति में यही कहता है: यह स्तोत्र ब्राह्मण ने शिव को प्रसन्न करने के लिए कहा।",
-        "आठ श्लोक भुजंगप्रयात छंद में हैं, बारह-बारह अक्षरों के चार चरण, जिससे स्तुति में वह लहराती लय आती है जो इसे गाने और याद रखने में सरल बनाती है। नौवाँ श्लोक, फलश्रुति, सरल अनुष्टुप छंद में है और पाठ का फल बताता है।"
-      ]},
-      {"heading": "यह स्तुति क्या माँगती है", "paragraphs": [
-        "पहले छह श्लोक स्तुति हैं। वे शिव को रूप और गुणों से परे, काल के भी काल और फिर भी कृपालु, जटा में गंगा और मस्तक पर चन्द्रमा वाले, और तीनों तापों को जड़ से मिटाने वाले कहते हैं: वे ताप जो शरीर से, दूसरे प्राणियों से और भाग्य से आते हैं।",
-        "सातवाँ श्लोक सुनने वाले की ओर मुड़ता है: जब तक मनुष्य उमापति के चरणकमलों को नहीं भजता, उसे न यहाँ शांति है न परलोक में। आठवाँ भक्त की अपनी वाणी है: मैं न योग जानता हूँ, न जप, न पूजा, मैं केवल आपको नमन करता हूँ; जन्म, जरा और दुःख की बाढ़ में जलते हुए मेरी रक्षा करें। स्तुति से विनती और विनती से शरणागति की यह गति ही कारण है कि यह स्तुति उत्सव में जितनी गाई जाती है, संकट में उतनी ही।"
-      ]},
-      {"heading": "कब और कैसे पढ़ें", "paragraphs": [
-        "दिन या व्यक्ति का कोई बंधन नहीं है। प्रथा के अनुसार इसे सोमवार को, श्रावण के सोमवारों को, प्रदोष की संध्या को और महाशिवरात्रि पर पढ़ा जाता है, सुबह स्नान के बाद या शाम को दीप के समय, शिवलिंग या शिव जी के चित्र के सामने। बहुत से भक्त पहले जल या बिल्वपत्र चढ़ाते हैं और एक बार पाठ करते हैं; कुछ ग्यारह बार।",
-        "अंतिम श्लोक केवल इतना वचन देता है: जो इसे भक्ति से पढ़ते हैं, उन पर शम्भु प्रसन्न होते हैं। इतना धीरे पढ़ें कि अर्थ साथ चले, तो अर्थ ही संस्कृत के पार ले जाएगा।"
-      ]}
+      {
+        "heading": "रुद्राष्टक कहाँ से आया",
+        "paragraphs": [
+          "तुलसीदास जी ने यह स्तुति श्री रामचरितमानस के उत्तरकाण्ड में काकभुशुण्डि की कथा के भीतर रखी है। पूर्व जन्म में काकभुशुण्डि शिव के भक्त थे जिन्होंने शिव मंदिर में ही अपने गुरु का अपमान किया, और शिव ने उन्हें इसका शाप दिया। तब गुरु ने, जो एक ब्राह्मण थे, शाप को हल्का करने के लिए शिव से प्रार्थना की, और रुद्राष्टक वही प्रार्थना है। इसका अंतिम श्लोक एक पंक्ति में यही कहता है: यह स्तोत्र ब्राह्मण ने शिव को प्रसन्न करने के लिए कहा।",
+          "आठ श्लोक भुजंगप्रयात छंद में हैं, बारह-बारह अक्षरों के चार चरण, जिससे स्तुति में वह लहराती लय आती है जो इसे गाने और याद रखने में सरल बनाती है। नौवाँ श्लोक, फलश्रुति, सरल अनुष्टुप छंद में है और पाठ का फल बताता है।"
+        ]
+      },
+      {
+        "heading": "यह स्तुति क्या माँगती है",
+        "paragraphs": [
+          "पहले छह श्लोक स्तुति हैं। वे शिव को रूप और गुणों से परे, काल के भी काल और फिर भी कृपालु, जटा में गंगा और मस्तक पर चन्द्रमा वाले, और तीनों तापों को जड़ से मिटाने वाले कहते हैं: वे ताप जो शरीर से, दूसरे प्राणियों से और भाग्य से आते हैं।",
+          "सातवाँ श्लोक सुनने वाले की ओर मुड़ता है: जब तक मनुष्य उमापति के चरणकमलों को नहीं भजता, उसे न यहाँ शांति है न परलोक में। आठवाँ भक्त की अपनी वाणी है: मैं न योग जानता हूँ, न जप, न पूजा, मैं केवल आपको नमन करता हूँ; जन्म, जरा और दुःख की बाढ़ में जलते हुए मेरी रक्षा करें। स्तुति से विनती और विनती से शरणागति की यह गति ही कारण है कि यह स्तुति उत्सव में जितनी गाई जाती है, संकट में उतनी ही।"
+        ]
+      },
+      {
+        "heading": "कब और कैसे पढ़ें",
+        "paragraphs": [
+          "दिन या व्यक्ति का कोई बंधन नहीं है। प्रथा के अनुसार इसे सोमवार को, श्रावण के सोमवारों को, प्रदोष की संध्या को और महाशिवरात्रि पर पढ़ा जाता है, सुबह स्नान के बाद या शाम को दीप के समय, शिवलिंग या शिव जी के चित्र के सामने। बहुत से भक्त पहले जल या बिल्वपत्र चढ़ाते हैं और एक बार पाठ करते हैं; कुछ ग्यारह बार।",
+          "अंतिम श्लोक केवल इतना वचन देता है: जो इसे भक्ति से पढ़ते हैं, उन पर शम्भु प्रसन्न होते हैं। इतना धीरे पढ़ें कि अर्थ साथ चले, तो अर्थ ही संस्कृत के पार ले जाएगा।"
+        ]
+      }
     ],
     "faq": [
-      ["रुद्राष्टक किसने लिखा?", "श्री रामचरितमानस के रचयिता गोस्वामी तुलसीदास जी ने इसे संस्कृत में रचा और उसी ग्रंथ के उत्तरकाण्ड में रखा।"],
-      ["रुद्राष्टक में कितने श्लोक हैं?", "आठ श्लोक, अष्टक का यही अर्थ है, और एक फलश्रुति का श्लोक जो पाठ का फल बताता है, कुल नौ।"],
-      ["क्या रुद्राष्टक रामचरितमानस का भाग है?", "हाँ। यह उत्तरकाण्ड में काकभुशुण्डि की कथा में आता है, जहाँ एक ब्राह्मण गुरु अपने शिष्य पर लगे शाप को हल्का करने के लिए शिव को यह स्तुति सुनाते हैं।"],
-      ["क्या रुद्राष्टक रोज़ पढ़ सकते हैं?", "हाँ। यह छोटा है, कुछ मिनट लेता है, और पाठ में भक्ति के सिवा कोई शर्त नहीं है। सोमवार, श्रावण और महाशिवरात्रि प्रचलित अवसर हैं।"],
-      ["नमामीशमीशान निर्वाणरूपम् का अर्थ क्या है?", "मैं ईशान दिशा के स्वामी, मोक्षस्वरूप प्रभु को नमन करता हूँ। यह पहले श्लोक का आरम्भ है, जो आगे शिव को सर्वव्यापक, गुणों से परे और आकाश को ही वस्त्र बनाए हुए कहता है।"]
+      [
+        "रुद्राष्टक किसने लिखा?",
+        "श्री रामचरितमानस के रचयिता गोस्वामी तुलसीदास जी ने इसे संस्कृत में रचा और उसी ग्रंथ के उत्तरकाण्ड में रखा।"
+      ],
+      [
+        "रुद्राष्टक में कितने श्लोक हैं?",
+        "आठ श्लोक, अष्टक का यही अर्थ है, और एक फलश्रुति का श्लोक जो पाठ का फल बताता है, कुल नौ।"
+      ],
+      [
+        "क्या रुद्राष्टक रामचरितमानस का भाग है?",
+        "हाँ। यह उत्तरकाण्ड में काकभुशुण्डि की कथा में आता है, जहाँ एक ब्राह्मण गुरु अपने शिष्य पर लगे शाप को हल्का करने के लिए शिव को यह स्तुति सुनाते हैं।"
+      ],
+      [
+        "क्या रुद्राष्टक रोज़ पढ़ सकते हैं?",
+        "हाँ। यह छोटा है, कुछ मिनट लेता है, और पाठ में भक्ति के सिवा कोई शर्त नहीं है। सोमवार, श्रावण और महाशिवरात्रि प्रचलित अवसर हैं।"
+      ],
+      [
+        "नमामीशमीशान निर्वाणरूपम् का अर्थ क्या है?",
+        "मैं ईशान दिशा के स्वामी, मोक्षस्वरूप प्रभु को नमन करता हूँ। यह पहले श्लोक का आरम्भ है, जो आगे शिव को सर्वव्यापक, गुणों से परे और आकाश को ही वस्त्र बनाए हुए कहता है।"
+      ]
     ],
     "closing": [
-      "यदि आप रुद्राष्टक तक अपने किसी प्रश्न के साथ आए हैं, तो इस साइट की शिव प्रश्नावली में एक अंक चुनें और इन्हीं नौ श्लोकों में से एक को अपने उत्तर के रूप में पढ़ें, अर्थ और फल सहित।"
+      "यदि आप रुद्राष्टक तक अपने किसी प्रश्न के साथ आए हैं, तो इस साइट की शिव प्रश्नावली में एक अंक चुनें और इन्हीं नौ में से एक को अपने उत्तर के रूप में पढ़ें, अर्थ और फल सहित।"
     ]
   },
   "verses": [
-    {"text": "नमामीशमीशान निर्वाणरूपम्। विभुम् व्यापकम् ब्रह्मवेदस्वरूपम्।<br>निजम् निर्गुणम् निर्विकल्पम् निरीहम्। चिदाकाशमाकाशवासम् भजेऽहम्॥१॥",
-     "en": {"meaning": "I bow to the Lord, the ruler of the north-east, the very form of liberation, all-pervading, the Brahman the Vedas speak of. Resting in himself, beyond qualities and divisions, desiring nothing, the sky of consciousness clothed in the sky itself: him I worship."},
-     "hi": {"meaning": "मोक्षस्वरूप, ईशान दिशा के स्वामी, सर्वव्यापक, वेदों के कहे ब्रह्म, सबके स्वामी शिव को मैं नमन करता हूँ। जो अपने ही स्वरूप में स्थित हैं, गुणों और भेदों से परे हैं, जिन्हें कोई कामना नहीं, जो चेतन आकाश हैं और आकाश को ही वस्त्र बनाए हैं, उन्हें मैं भजता हूँ।"}},
-    {"text": "निराकारमोंकारमूलम् तुरीयम्। गिराज्ञानगोतीतमीशम् गिरीशम्।<br>करालम् महाकालकालम् कृपालम्। गुणागारसंसारपारम् नतोऽहम्॥२॥",
-     "en": {"meaning": "Formless, the root of Om, the fourth state beyond waking, dream and sleep; beyond speech, knowledge and the senses; lord of the mountain. Fierce, the death of death itself, and yet compassionate; the home of every virtue, beyond this world: to him I bow."},
-     "hi": {"meaning": "निराकार, ओंकार के मूल, तीनों अवस्थाओं से परे तुरीय, वाणी, ज्ञान और इन्द्रियों से अतीत, कैलासपति शिव; जो विकराल हैं, महाकाल के भी काल हैं और फिर भी कृपालु हैं; जो गुणों के धाम हैं और संसार से परे हैं, उन्हें मैं नमन करता हूँ।"}},
-    {"text": "तुषाराद्रिसंकाशगौरम् गभीरम्। मनोभूतकोटि प्रभाश्रीशरीरम्।<br>स्फुरन्मौलि कल्लोलिनी चारुगंगा। लसद्भालबालेन्दु कण्ठे भुजंगा॥३॥",
-     "en": {"meaning": "White as the snow mountain and deep as the sea; a body radiant beyond ten million gods of love. The lovely Ganga leaps in his matted hair, the young moon shines on his brow, and a serpent rests at his throat."},
-     "hi": {"meaning": "जो हिमालय के समान गौर और सागर के समान गम्भीर हैं, जिनके शरीर की शोभा करोड़ों कामदेवों से बढ़कर है; जिनकी जटाओं में सुंदर गंगा लहराती है, ललाट पर बाल चन्द्रमा चमकता है और कण्ठ में सर्प विराजता है।"}},
-    {"text": "चलत्कुण्डलम् भ्रूसुनेत्रम् विशालम्। प्रसन्नाननम् नीलकण्ठम् दयालम्।<br>मृगाधीश चर्माम्बरम् मुण्डमालम्। प्रियम् शंकरम् सर्वनाथम् भजामि॥४॥",
-     "en": {"meaning": "Earrings swinging, fine brows and wide eyes, a cheerful face, a blue throat, and kind. Clothed in the lion's skin, wearing a garland of skulls: the beloved Shankar, lord of all, I worship."},
-     "hi": {"meaning": "जिनके कानों में कुण्डल हिलते हैं, जिनकी भौंहें सुंदर और नेत्र विशाल हैं, जिनका मुख प्रसन्न है, कण्ठ नीला है और जो दयालु हैं; जो सिंहचर्म पहने और मुण्डमाला धारण किए हैं, उन सबके प्रिय, सबके नाथ शंकर को मैं भजता हूँ।"}},
-    {"text": "प्रचण्डम् प्रकृष्टम् प्रगल्भम् परेशम्। अखण्डम् अजम् भानुकोटिप्रकाशम्।<br>त्रयः शूलनिर्मूलनम् शूलपाणिम्। भजेऽहम् भवानीपतिम् भावगम्यम्॥५॥",
-     "en": {"meaning": "Fierce, supreme, bold, the highest lord; undivided, unborn, bright as ten million suns. With the trident in his hand he uproots the three sorrows. Husband of Bhavani, reached only through love: him I worship."},
-     "hi": {"meaning": "जो प्रचण्ड हैं, श्रेष्ठ हैं, तेजस्वी हैं, परमेश्वर हैं; अखण्ड, अजन्मा और करोड़ों सूर्यों के समान प्रकाशमान हैं; जो हाथ में त्रिशूल लिए तीनों तापों को जड़ से मिटाते हैं; जो केवल भाव से मिलते हैं, उन भवानीपति को मैं भजता हूँ।"}},
-    {"text": "कलातीत कल्याण कल्पान्तकारी। सदा सज्जनानन्ददाता पुरारि।<br>चिदानन्द सन्दोह मोहापहारि। प्रसीद प्रसीद प्रभो मन्मथारि॥६॥",
-     "en": {"meaning": "Beyond the divisions of time, all-auspicious, the one who ends the age; the constant giver of joy to the good, destroyer of the three cities. Mass of consciousness and bliss, remover of delusion: be pleased, be pleased, Lord, conqueror of desire."},
-     "hi": {"meaning": "जो काल की कलाओं से परे हैं, कल्याणस्वरूप हैं, कल्प का अंत करने वाले हैं; जो सज्जनों को सदा आनन्द देते हैं, त्रिपुर के शत्रु हैं; जो चिदानन्द के समूह और मोह को हरने वाले हैं, हे कामदेव के शत्रु प्रभु, प्रसन्न हों, प्रसन्न हों।"}},
-    {"text": "न यावद् उमानाथपादारविन्दम्। भजन्तीह लोके परे वा नराणाम्।<br>न तावत्सुखम् शान्ति सन्तापनाशम्। प्रसीद प्रभो सर्वभूताधिवासम्॥७॥",
-     "en": {"meaning": "As long as people do not worship the lotus feet of Uma's lord, there is no happiness and no peace for them, in this world or the next, and no end to their burning. Be pleased, Lord, you who dwell in every living being."},
-     "hi": {"meaning": "जब तक मनुष्य उमापति के चरणकमलों को नहीं भजते, तब तक उन्हें न इस लोक में सुख-शांति मिलती है, न परलोक में, और न उनके तापों का नाश होता है। हे समस्त प्राणियों में बसने वाले प्रभु, प्रसन्न हों।"}},
-    {"text": "न जानामि योगम् जपम् नैव पूजाम्। नतोऽहम् सदा सर्वदा शम्भु तुभ्यम्।<br>जराजन्मदुःखौघ तातप्यमानम्। प्रभो पाहि आपन्नमामीश शम्भो॥८॥",
-     "en": {"meaning": "I know no yoga, no japa, no worship. I only bow to you, Shambhu, always and in every way. Burning in the flood of birth, old age and sorrow, protect me, Lord; I come to you in distress."},
-     "hi": {"meaning": "मैं न योग जानता हूँ, न जप, न पूजा। हे शम्भु, मैं तो सदा-सर्वदा केवल आपको नमन करता हूँ। जन्म, जरा और दुःखों की बाढ़ में जलते हुए मुझ शरणागत की, हे प्रभु, रक्षा करें।"}},
-    {"text": "रुद्राष्टकमिदम् प्रोक्तम् विप्रेण हरतोषये।<br>ये पठन्ति नरा भक्त्या तेषाम् शम्भुः प्रसीदति॥",
-     "en": {"title": "Closing verse", "meaning": "This hymn of eight verses to Rudra was spoken by the brahmin to please Hara. Those who recite it with devotion, with them Shambhu is pleased."},
-     "hi": {"title": "फलश्रुति", "meaning": "रुद्र का यह अष्टक ब्राह्मण ने भगवान शिव को प्रसन्न करने के लिए कहा। जो मनुष्य इसे भक्ति से पढ़ते हैं, उन पर शम्भु प्रसन्न होते हैं।"}}
+    {
+      "text": "नमामीशमीशान निर्वाणरूपम्। विभुम् व्यापकम् ब्रह्मवेदस्वरूपम्।<br>निजम् निर्गुणम् निर्विकल्पम् निरीहम्। चिदाकाशमाकाशवासम् भजेऽहम्॥१॥",
+      "en": {
+        "meaning": "I bow to the Lord, the ruler of the north-east, the very form of liberation, all-pervading, the Brahman the Vedas speak of. Resting in himself, beyond qualities and divisions, desiring nothing, the sky of consciousness clothed in the sky itself: him I worship."
+      },
+      "hi": {
+        "meaning": "मोक्षस्वरूप, ईशान दिशा के स्वामी, सर्वव्यापक, वेदों के कहे ब्रह्म, सबके स्वामी शिव को मैं नमन करता हूँ। जो अपने ही स्वरूप में स्थित हैं, गुणों और भेदों से परे हैं, जिन्हें कोई कामना नहीं, जो चेतन आकाश हैं और आकाश को ही वस्त्र बनाए हैं, उन्हें मैं भजता हूँ।"
+      }
+    },
+    {
+      "text": "निराकारमोंकारमूलम् तुरीयम्। गिराज्ञानगोतीतमीशम् गिरीशम्।<br>करालम् महाकालकालम् कृपालम्। गुणागारसंसारपारम् नतोऽहम्॥२॥",
+      "en": {
+        "meaning": "Formless, the root of Om, the fourth state beyond waking, dream and sleep; beyond speech, knowledge and the senses; lord of the mountain. Fierce, the death of death itself, and yet compassionate; the home of every virtue, beyond this world: to him I bow."
+      },
+      "hi": {
+        "meaning": "निराकार, ओंकार के मूल, तीनों अवस्थाओं से परे तुरीय, वाणी, ज्ञान और इन्द्रियों से अतीत, कैलासपति शिव; जो विकराल हैं, महाकाल के भी काल हैं और फिर भी कृपालु हैं; जो गुणों के धाम हैं और संसार से परे हैं, उन्हें मैं नमन करता हूँ।"
+      }
+    },
+    {
+      "text": "तुषाराद्रिसंकाशगौरम् गभीरम्। मनोभूतकोटि प्रभाश्रीशरीरम्।<br>स्फुरन्मौलि कल्लोलिनी चारुगंगा। लसद्भालबालेन्दु कण्ठे भुजंगा॥३॥",
+      "en": {
+        "meaning": "White as the snow mountain and deep as the sea; a body radiant beyond ten million gods of love. The lovely Ganga leaps in his matted hair, the young moon shines on his brow, and a serpent rests at his throat."
+      },
+      "hi": {
+        "meaning": "जो हिमालय के समान गौर और सागर के समान गम्भीर हैं, जिनके शरीर की शोभा करोड़ों कामदेवों से बढ़कर है; जिनकी जटाओं में सुंदर गंगा लहराती है, ललाट पर बाल चन्द्रमा चमकता है और कण्ठ में सर्प विराजता है।"
+      }
+    },
+    {
+      "text": "चलत्कुण्डलम् भ्रूसुनेत्रम् विशालम्। प्रसन्नाननम् नीलकण्ठम् दयालम्।<br>मृगाधीश चर्माम्बरम् मुण्डमालम्। प्रियम् शंकरम् सर्वनाथम् भजामि॥४॥",
+      "en": {
+        "meaning": "Earrings swinging, fine brows and wide eyes, a cheerful face, a blue throat, and kind. Clothed in the lion's skin, wearing a garland of skulls: the beloved Shankar, lord of all, I worship."
+      },
+      "hi": {
+        "meaning": "जिनके कानों में कुण्डल हिलते हैं, जिनकी भौंहें सुंदर और नेत्र विशाल हैं, जिनका मुख प्रसन्न है, कण्ठ नीला है और जो दयालु हैं; जो सिंहचर्म पहने और मुण्डमाला धारण किए हैं, उन सबके प्रिय, सबके नाथ शंकर को मैं भजता हूँ।"
+      }
+    },
+    {
+      "text": "प्रचण्डम् प्रकृष्टम् प्रगल्भम् परेशम्। अखण्डम् अजम् भानुकोटिप्रकाशम्।<br>त्रयः शूलनिर्मूलनम् शूलपाणिम्। भजेऽहम् भवानीपतिम् भावगम्यम्॥५॥",
+      "en": {
+        "meaning": "Fierce, supreme, bold, the highest lord; undivided, unborn, bright as ten million suns. With the trident in his hand he uproots the three sorrows. Husband of Bhavani, reached only through love: him I worship."
+      },
+      "hi": {
+        "meaning": "जो प्रचण्ड हैं, श्रेष्ठ हैं, तेजस्वी हैं, परमेश्वर हैं; अखण्ड, अजन्मा और करोड़ों सूर्यों के समान प्रकाशमान हैं; जो हाथ में त्रिशूल लिए तीनों तापों को जड़ से मिटाते हैं; जो केवल भाव से मिलते हैं, उन भवानीपति को मैं भजता हूँ।"
+      }
+    },
+    {
+      "text": "कलातीत कल्याण कल्पान्तकारी। सदा सज्जनानन्ददाता पुरारि।<br>चिदानन्द सन्दोह मोहापहारि। प्रसीद प्रसीद प्रभो मन्मथारि॥६॥",
+      "en": {
+        "meaning": "Beyond the divisions of time, all-auspicious, the one who ends the age; the constant giver of joy to the good, destroyer of the three cities. Mass of consciousness and bliss, remover of delusion: be pleased, be pleased, Lord, conqueror of desire."
+      },
+      "hi": {
+        "meaning": "जो काल की कलाओं से परे हैं, कल्याणस्वरूप हैं, कल्प का अंत करने वाले हैं; जो सज्जनों को सदा आनन्द देते हैं, त्रिपुर के शत्रु हैं; जो चिदानन्द के समूह और मोह को हरने वाले हैं, हे कामदेव के शत्रु प्रभु, प्रसन्न हों, प्रसन्न हों।"
+      }
+    },
+    {
+      "text": "न यावद् उमानाथपादारविन्दम्। भजन्तीह लोके परे वा नराणाम्।<br>न तावत्सुखम् शान्ति सन्तापनाशम्। प्रसीद प्रभो सर्वभूताधिवासम्॥७॥",
+      "en": {
+        "meaning": "As long as people do not worship the lotus feet of Uma's lord, there is no happiness and no peace for them, in this world or the next, and no end to their burning. Be pleased, Lord, you who dwell in every living being."
+      },
+      "hi": {
+        "meaning": "जब तक मनुष्य उमापति के चरणकमलों को नहीं भजते, तब तक उन्हें न इस लोक में सुख-शांति मिलती है, न परलोक में, और न उनके तापों का नाश होता है। हे समस्त प्राणियों में बसने वाले प्रभु, प्रसन्न हों।"
+      }
+    },
+    {
+      "text": "न जानामि योगम् जपम् नैव पूजाम्। नतोऽहम् सदा सर्वदा शम्भु तुभ्यम्।<br>जराजन्मदुःखौघ तातप्यमानम्। प्रभो पाहि आपन्नमामीश शम्भो॥८॥",
+      "en": {
+        "meaning": "I know no yoga, no japa, no worship. I only bow to you, Shambhu, always and in every way. Burning in the flood of birth, old age and sorrow, protect me, Lord; I come to you in distress."
+      },
+      "hi": {
+        "meaning": "मैं न योग जानता हूँ, न जप, न पूजा। हे शम्भु, मैं तो सदा-सर्वदा केवल आपको नमन करता हूँ। जन्म, जरा और दुःखों की बाढ़ में जलते हुए मुझ शरणागत की, हे प्रभु, रक्षा करें।"
+      }
+    },
+    {
+      "text": "रुद्राष्टकमिदम् प्रोक्तम् विप्रेण हरतोषये।<br>ये पठन्ति नरा भक्त्या तेषाम् शम्भुः प्रसीदति॥",
+      "en": {
+        "title": "Closing verse",
+        "meaning": "This hymn of eight verses to Rudra was spoken by the brahmin to please Hara. Those who recite it with devotion, with them Shambhu is pleased."
+      },
+      "hi": {
+        "title": "फलश्रुति",
+        "meaning": "रुद्र का यह अष्टक ब्राह्मण ने भगवान शिव को प्रसन्न करने के लिए कहा। जो मनुष्य इसे भक्ति से पढ़ते हैं, उन पर शम्भु प्रसन्न होते हैं।"
+      }
+    }
   ]
 }

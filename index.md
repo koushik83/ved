@@ -16,7 +16,7 @@ Life guidance with Sai Baba's blessings
 
 ## Shri Shiv Prashnavali
 
-Nine verses of the Rudrashtakam from Shri Ramcharitmanas. https://vedprashnavali.com/shivprash
+The Rudrashtakam from Shri Ramcharitmanas: eight verses and the closing verse. https://vedprashnavali.com/shivprash
 
 ## Shri Ganesh Prashnavali
 

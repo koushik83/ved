@@ -5,11 +5,11 @@ Source: https://vedprashnavali.com/rudrashtakam-with-meaning
 [Read in Hindi](https://vedprashnavali.com/hi/rudrashtakam-with-meaning)
 
 The Rudrashtakam, also written Rudrashtak or Shiv Rudrashtakam, is the hymn of eight verses to Lord Shiva that begins Namami Shamishan Nirvana Rupam. Goswami Tulsidas composed it in Sanskrit and placed it in the Uttarkand of Shri Ramcharitmanas, and for four centuries it has been one of the most recited Shiva hymns in North India, on Mondays, through the month of Shravan and at Mahashivratri.
-This page gives the complete text, the eight verses and the closing verse, each with a plain meaning in English, followed by where the hymn comes from, what it asks for, and how it is recited. The same nine verses are the answers of the Shiv Prashnavali on this site, where a number you choose leads to one of them.
+This page gives the complete text, the eight verses and the closing verse, each with a plain meaning in English, followed by where the hymn comes from, what it asks for, and how it is recited. The same nine, the eight verses and the closing one, are the answers of the Shiv Prashnavali on this site, where a number you choose leads to one of them.
 
 [Ask the Shiv Prashnavali](https://vedprashnavali.com/shivprash)
 
-## The Nine Verses with Meaning
+## The Eight Verses and the Closing Verse, with Meaning
 
 ### Verse 1
 
@@ -105,7 +105,7 @@ Yes. It is short, takes a few minutes, and the text sets no condition other than
 
 I bow to the Lord, the ruler of the north-east, the very form of liberation. It is the opening of the first verse, which goes on to describe Shiva as all-pervading, beyond qualities, and clothed in the sky itself.
 
-If you have come to the Rudrashtakam with a question of your own, the Shiv Prashnavali on this site lets you choose a number and read one of these nine verses as your answer, with its meaning and a reading of whether the matter is favourable.
+If you have come to the Rudrashtakam with a question of your own, the Shiv Prashnavali on this site lets you choose a number and read one of these nine as your answer, with its meaning and a reading of whether the matter is favourable.
 
 [Ask the Shiv Prashnavali](https://vedprashnavali.com/shivprash)
 

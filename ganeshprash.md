@@ -67,7 +67,7 @@ A prashnavali is a devotional practice. Devotees read the answers with faith and
 - Ram Shalaka Prashnavali: 225 letters from Shri Ramcharitmanas leading to nine chaupais https://vedprashnavali.com/prash
 - Hanuman Prashnavali: a chakra of 49 numbers with a yes or no answer https://vedprashnavali.com/hanumanprash
 - Sai Baba Prashnavali: 720 numbered answers https://vedprashnavali.com/saibabaprash
-- Shiv Prashnavali: the nine verses of the Rudrashtakam https://vedprashnavali.com/shivprash
+- Shiv Prashnavali: the eight verses of the Rudrashtakam and its closing verse https://vedprashnavali.com/shivprash
 - Durga Prashnavali: the nine forms of Navadurga https://vedprashnavali.com/durgaprash
 - Khatu Shyam Prashnavali: eleven names of Shyam Baba https://vedprashnavali.com/khatushyamprash
 

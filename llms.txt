@@ -9,7 +9,7 @@ A prashnavali is a Hindu practice for seeking guidance on a question: the seeker
 - [Ram Shalaka Prashnavali](https://vedprashnavali.com/prash): a 225-letter chart from Shri Ramcharitmanas leading to one of nine chaupais, each with its source, meaning and whether it is favourable. Hindi version: https://vedprashnavali.com/hi/prash
 - [Hanuman Prashnavali](https://vedprashnavali.com/hanumanprash): a chakra of 49 numbers, each with a verse and a yes-or-no answer. Hindi version: https://vedprashnavali.com/hi/hanumanprash
 - [Sai Baba Prashnavali](https://vedprashnavali.com/saibabaprash): 720 numbered answers for devotees of Shirdi Sai Baba.
-- [Shiv Prashnavali](https://vedprashnavali.com/shivprash): a chart of 36 numbers leading to one of the nine verses of Tulsidas's Rudrashtakam (Ramcharitmanas, Uttarkand), each with its meaning and a yes, wait or not-now answer. Hindi version: https://vedprashnavali.com/hi/shivprash
+- [Shiv Prashnavali](https://vedprashnavali.com/shivprash): a chart of 36 numbers leading to one of the eight verses of Tulsidas's Rudrashtakam (Ramcharitmanas, Uttarkand) or its closing verse, each with its meaning and a yes, wait or not-now answer. Hindi version: https://vedprashnavali.com/hi/shivprash
 - [Ganesh Prashnavali](https://vedprashnavali.com/ganeshprash): 36 numbers leading to one of the twelve names of Ganesha from the Sankat Nashan Ganesh Stotra (Narada Purana), each with its meaning and answer. Hindi version: https://vedprashnavali.com/hi/ganeshprash
 - [Durga Prashnavali](https://vedprashnavali.com/durgaprash): 36 numbers leading to the dhyana verse of one of the nine Navadurga forms, each with its meaning and answer. Hindi version: https://vedprashnavali.com/hi/durgaprash
 - [Khatu Shyam Prashnavali](https://vedprashnavali.com/khatushyamprash): 44 numbers leading to one of eleven names of Shyam Baba (Barbarik), each with its story and answer. Hindi version: https://vedprashnavali.com/hi/khatushyamprash
@@ -19,7 +19,7 @@ A prashnavali is a Hindu practice for seeking guidance on a question: the seeker
 ## Articles
 
 - [What a prashnavali is and how to ask](https://vedprashnavali.com/)
-- [Rudrashtakam with meaning](https://vedprashnavali.com/rudrashtakam-with-meaning): all nine verses of Tulsidas's hymn to Shiva with their meaning, where it comes from and how it is recited. Hindi: https://vedprashnavali.com/hi/rudrashtakam-with-meaning
+- [Rudrashtakam with meaning](https://vedprashnavali.com/rudrashtakam-with-meaning): the eight verses of Tulsidas's hymn to Shiva and its closing verse, with their meaning, where it comes from and how it is recited. Hindi: https://vedprashnavali.com/hi/rudrashtakam-with-meaning
 - [Sankat Nashan Ganesh Stotra with meaning](https://vedprashnavali.com/sankat-nashan-ganesh-stotra): the eight verses from the Narada Purana and the twelve names of Ganesha explained. Hindi: https://vedprashnavali.com/hi/sankat-nashan-ganesh-stotra
 - [Navadurga, the nine forms of Durga with mantras](https://vedprashnavali.com/navadurga-nine-forms-mantras): each form with her dhyana verse and meaning, and the nine days of Navratri. Hindi: https://vedprashnavali.com/hi/navadurga-nine-forms-mantras
 - [Khatu Shyam story](https://vedprashnavali.com/khatu-shyam-story): Barbarik, the gift of his head, how the head came to Khatu, the names of Shyam Baba, the fairs and Ekadashi. Hindi: https://vedprashnavali.com/hi/khatu-shyam-story

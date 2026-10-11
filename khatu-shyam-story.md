@@ -11,67 +11,67 @@ This page tells the story as the tradition tells it, from Barbarik's birth to th
 
 ## The Names of Shyam Baba and What They Mean
 
-### Barbarik
+### Name 1
 
 बर्बरीक Barbarik
 
 His birth name. Son of Ghatotkacha and Maurvi, grandson of Bhima, bound by his vow to fight only for the side that was losing.
 
-### Sheesh ke Daani
+### Name 2
 
 शीश के दानी Sheesh ke Daani
 
 The giver of his head, which he gave to Krishna before the war without hesitation, asking only to watch it to its end.
 
-### Haare ka Sahara
+### Name 3
 
 हारे का सहारा Haare ka Sahara
 
 The refuge of the defeated: Krishna's boon that whoever comes to him after losing everything will find support.
 
-### Teen Baan Dhaari
+### Name 4
 
 तीन बाण धारी Teen Baan Dhaari
 
 The bearer of three arrows that could not miss, with which he could have ended the war in moments.
 
-### Lakhdatar
+### Name 5
 
 लखदातार Lakhdatar
 
 The giver of lakhs: devotees say what he gives he gives in abundance, asking nothing but faith.
 
-### Khatu Naresh
+### Name 6
 
 खाटू नरेश Khatu Naresh
 
 The king of Khatu, where his head appeared and where the temple has stood since 1027.
 
-### Morvi Nandan
+### Name 7
 
 मोर्वी नंदन Morvi Nandan
 
 Son of Maurvi, who taught him the art of war and took the vow from him.
 
-### Leele ka Asvaar
+### Name 8
 
 लीले का असवार Leele ka Asvaar
 
 The rider of the blue horse, whose figure flies on the temple's nishan.
 
-### Morchhadi Wala
+### Name 9
 
 मोरछड़ी वाला Morchhadi Wala
 
 The one with the peacock-feather whisk, Krishna's own mark, carried as the sign that he is Krishna's by name and by grace.
 
-### Kaliyug ka Avtaar
+### Name 10
 
 कलियुग का अवतार Kaliyug ka Avtaar
 
 The deity of this age, placed in the age of Kali by Krishna's boon for the people of this time.
 
-### Shyam
+### Name 11
 
 श्याम Shyam
 
