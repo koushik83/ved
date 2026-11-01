@@ -14,7 +14,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_prashnavali import FOOTER, INSTALL, SITE, jsonld, nav_css, nav_html, strip_tags  # noqa: E402
+from build_prashnavali import FOOTER, GROW, INSTALL, SITE, jsonld, nav_css, nav_html, strip_tags  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "tools" / "articles"
@@ -139,6 +139,8 @@ def page(a, lang):
     <script type="application/ld+json">
 {jsonld(faq_ld)}
     </script>
+    <!-- Grow by Mediavine -->
+    {GROW}
 </head>
 <body>
 {nav_html(lang, a["tool_slug"], (switch_href, "हिंदी" if lang == "en" else "English"))}

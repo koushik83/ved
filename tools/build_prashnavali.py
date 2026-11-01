@@ -18,6 +18,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "tools" / "prashnavali"
 SITE = "https://vedprashnavali.com"
 TOOLS = ["shiv", "ganesh", "durga", "khatushyam"]
+# Grow by Mediavine's loader, exactly as Grow issued it for this site. Journey ads need it on every page.
+GROW = '<script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo4YzlhNDVkYy02ODg2LTQ3NjYtOGFiMy1iMmI1MDg3ZDY5NDY=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>'
 
 # ----------------------------------------------------------------- navigation
 
@@ -300,6 +302,8 @@ def page(tool, lang):
     <script type="application/ld+json">
 {jsonld(faq_ld)}
     </script>
+    <!-- Grow by Mediavine -->
+    {GROW}
 </head>
 <body>
 {nav_html(lang, slug, (switch_href, "हिंदी" if lang == "en" else "English"))}

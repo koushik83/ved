@@ -6,7 +6,7 @@ Source: https://vedprashnavali.com/privacy
 
 Ved Prashnavali (vedprashnavali.com) is a free website. You do not need an account, and we do not ask for your name, email address or phone number. Your question is never typed into the site, so it is never collected.
 
-Like most websites, this site uses services from Google to count visits and to show advertising. These services use cookies. The sections below explain what that means and what choices you have.
+Like most websites, this site uses services from Google to count visits and to show advertising, and Grow from Mediavine to understand its audience. These services use cookies. The sections below explain what that means and what choices you have.
 
 ## Information Collected When You Visit
 
@@ -25,6 +25,12 @@ This site uses Google AdSense to show advertising. Third-party vendors, includin
 You may opt out of personalized advertising by visiting [Google Ads Settings](https://adssettings.google.com). You can also opt out of some third-party vendors' use of cookies for personalized advertising at [www.aboutads.info](https://www.aboutads.info/choices/).
 
 If you visit from the European Economic Area, the United Kingdom or Switzerland, a message from Google asks for your consent before advertising cookies are used. You can change your choice at any time with the "Privacy and cookie settings" link at the bottom of the page.
+
+### Grow by Mediavine
+
+This site uses Grow, a reader tool from Mediavine, to understand its audience. When a page loads, your browser connects to Mediavine to load the tool. Mediavine may use cookies and may collect usage information, such as the pages you view and the links you click.
+
+Grow may offer to save pages for you. If you sign in to Grow to do that, Mediavine holds the details you give it. You do not need to sign in to use this site. You can read [Mediavine's privacy notices](https://mediavine.com/privacy-policy/), and you can ask to see or delete your Grow information at its [Privacy Center](https://privacy.mediavine.com/).
 
 ### Google Translate
 
