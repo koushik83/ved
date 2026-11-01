@@ -14,7 +14,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_prashnavali import FOOTER, GROW, INSTALL, SITE, jsonld, nav_css, nav_html, strip_tags  # noqa: E402
+from build_prashnavali import FOOTER, GROW, INSTALL, JOURNEY, SITE, jsonld, nav_css, nav_html, strip_tags  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "tools" / "articles"
@@ -130,10 +130,6 @@ def page(a, lang):
     <script type="application/ld+json">
     {jsonld(article_ld)}
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4804498427753837"
-     crossorigin="anonymous"></script>
-    <script src="/anchor-ad.js" defer></script>
-    <script src="/side-ads.js" defer></script>
     <style>
 {STYLE % {}}{nav_css()}    </style>
     <script type="application/ld+json">
@@ -141,6 +137,8 @@ def page(a, lang):
     </script>
     <!-- Grow by Mediavine -->
     {GROW}
+    <!-- Journey by Mediavine -->
+    {JOURNEY}
 </head>
 <body>
 {nav_html(lang, a["tool_slug"], (switch_href, "हिंदी" if lang == "en" else "English"))}

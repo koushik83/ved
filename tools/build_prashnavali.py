@@ -18,8 +18,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "tools" / "prashnavali"
 SITE = "https://vedprashnavali.com"
 TOOLS = ["shiv", "ganesh", "durga", "khatushyam"]
-# Grow by Mediavine's loader, exactly as Grow issued it for this site. Journey ads need it on every page.
+# Grow by Mediavine's loader, exactly as Grow issued it for this site. Optional for Journey, which recommends it.
 GROW = '<script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo4YzlhNDVkYy02ODg2LTQ3NjYtOGFiMy1iMmI1MDg3ZDY5NDY=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>'
+# Journey's ad script, exactly as the dashboard issued it. Just before </head>; never defer or combine it.
+JOURNEY = '<script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/1789f8d0-11ac-4621-a9b7-f74f7fc615ab.js"></script>'
 
 # ----------------------------------------------------------------- navigation
 
@@ -293,10 +295,6 @@ def page(tool, lang):
     <script type="application/ld+json">
     {jsonld(crumbs)}
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4804498427753837"
-     crossorigin="anonymous"></script>
-    <script src="/anchor-ad.js" defer></script>
-    <script src="/side-ads.js" defer></script>
     <style>
 {STYLE % {"image": tool["image"]}}{nav_css()}    </style>
     <script type="application/ld+json">
@@ -304,6 +302,8 @@ def page(tool, lang):
     </script>
     <!-- Grow by Mediavine -->
     {GROW}
+    <!-- Journey by Mediavine -->
+    {JOURNEY}
 </head>
 <body>
 {nav_html(lang, slug, (switch_href, "हिंदी" if lang == "en" else "English"))}

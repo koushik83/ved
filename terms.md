@@ -16,7 +16,7 @@ The verses quoted on the site are traditional texts. The explanations, translati
 
 ## Advertising and Privacy
 
-The site may show advertising through Google AdSense to cover its running costs. What the site collects, and the cookies that advertising uses, are described in the [Privacy Policy](https://vedprashnavali.com/privacy).
+The site may show advertising through Journey by Mediavine to cover its running costs. What the site collects, and the cookies that advertising uses, are described in the [Privacy Policy](https://vedprashnavali.com/privacy).
 
 ## Availability and Changes
 
