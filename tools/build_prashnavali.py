@@ -26,8 +26,8 @@ JOURNEY = '<script type="text/javascript" async="async" data-noptimize="1" data-
 # ----------------------------------------------------------------- navigation
 
 SITE_LINKS = {
-    "en": [("/", "🏠 Home", "home"), ("/today", "🌅 Today", ""), ("/jaap", "📿 Jaap", "")],
-    "hi": [("/", "🏠 होम", "home"), ("/today", "🌅 आज", ""), ("/jaap", "📿 जप", "")],
+    "en": [("/", "🏠 Home", "home"), ("/today", "🌅 Today", ""), ("/jaap", "📿 Jaap", ""), ("/panchang", "🗓️ Panchang", "")],
+    "hi": [("/", "🏠 होम", "home"), ("/today", "🌅 आज", ""), ("/jaap", "📿 जप", ""), ("/hi/panchang", "🗓️ पंचांग", "")],
 }
 # (slug, English href, English label, Hindi href, Hindi label)
 TOOL_LINKS = [
@@ -197,6 +197,7 @@ FOOTER = """    <footer style="text-align: center; padding: 25px 15px; margin-to
             <a href="/" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Home</a>
             <a href="/today" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Today's Guidance</a>
             <a href="/jaap" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Jaap Counter</a>
+            <a href="/panchang" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Panchang</a>
             <a href="/about" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">About</a>
             <a href="/contact" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Contact</a>
             <a href="/privacy" style="color: #A04000; text-decoration: none; margin: 0 8px; display: inline-block; white-space: nowrap;">Privacy Policy</a>

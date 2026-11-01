@@ -1,0 +1,5 @@
+# The panchang data files are read by the pages, not pages themselves: crawlers may fetch them to render a page
+# but must not list them in results. (robots.txt must not block them, or Google renders an empty panchang.)
+/panchang/data/*
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=3600

@@ -38,7 +38,7 @@ A prashnavali (प्रश्नावली) is a traditional Hindu way of see
 
 To read the texts behind the new prashnavalis: [the Rudrashtakam with meaning](https://vedprashnavali.com/rudrashtakam-with-meaning), [the Sankat Nashan Ganesh Stotra with meaning](https://vedprashnavali.com/sankat-nashan-ganesh-stotra), [the nine forms of Navadurga with their mantras](https://vedprashnavali.com/navadurga-nine-forms-mantras), and [the story of Khatu Shyam Ji and the names of Shyam Baba](https://vedprashnavali.com/khatu-shyam-story).
 
-All seven are free, need no login, and work on any phone. The [Today's Guidance](https://vedprashnavali.com/today) page gives one reading a day, and the [Naam Jaap Counter](https://vedprashnavali.com/jaap) is a digital mala of 108.
+All seven are free, need no login, and work on any phone. The [Today's Guidance](https://vedprashnavali.com/today) page gives one reading a day, the [Naam Jaap Counter](https://vedprashnavali.com/jaap) is a digital mala of 108, and the [Panchang](https://vedprashnavali.com/panchang) gives the day's tithi, nakshatra, Rahu Kaal and Choghadiya for your own city.
 
 ## How to Ask a Prashnavali
 

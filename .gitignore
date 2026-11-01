@@ -1,0 +1,7 @@
+# the tools' own Python environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# the JPL planetary ephemeris the panchang generator reads (17 MB, downloaded by tools/panchang/compute.py)
+tools/panchang/ephem/

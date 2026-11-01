@@ -1,6 +1,6 @@
 # Ved Prashnavali
 
-> Free devotional tools in English and Hindi: the Ram Shalaka, Hanuman, Sai Baba, Shiv, Ganesh, Durga and Khatu Shyam prashnavalis (traditional question-and-answer charts), a daily reading, and a naam jaap counter. Run from Delhi, India. No login, no fees.
+> Free devotional tools in English and Hindi: the Ram Shalaka, Hanuman, Sai Baba, Shiv, Ganesh, Durga and Khatu Shyam prashnavalis (traditional question-and-answer charts), a daily reading, a naam jaap counter, and a daily panchang for cities in India and abroad. Run from Delhi, India. No login, no fees.
 
 A prashnavali is a Hindu practice for seeking guidance on a question: the seeker prays, holds the question in mind, and chooses a letter or number from a sacred chart; the chart leads to a verse or saying read as the answer.
 
@@ -15,6 +15,7 @@ A prashnavali is a Hindu practice for seeking guidance on a question: the seeker
 - [Khatu Shyam Prashnavali](https://vedprashnavali.com/khatushyamprash): 44 numbers leading to one of eleven names of Shyam Baba (Barbarik), each with its story and answer. Hindi version: https://vedprashnavali.com/hi/khatushyamprash
 - [Today's Guidance](https://vedprashnavali.com/today): one reading a day from Shri Ram or Hanuman Ji.
 - [Naam Jaap Counter](https://vedprashnavali.com/jaap): a digital mala of 108 for counting jaap, with an explanation of the practice.
+- [Panchang](https://vedprashnavali.com/panchang): today's tithi, nakshatra, yoga and karana with their end times, sunrise, moonrise, Rahu Kaal, Abhijit Muhurat and Choghadiya for thirty cities in India, the United States, Canada, the United Kingdom, Australia, the UAE and Singapore, each in its own local time, with any date up to the end of next year. Computed from the JPL ephemeris with the Lahiri ayanamsa. Hindi version: https://vedprashnavali.com/hi/panchang
 
 ## Articles
 
