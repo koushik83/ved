@@ -12,9 +12,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <meta name="description" content="भारत, अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, संयुक्त अरब अमीरात और सिंगापुर के शहरों का आज का हिन्दू पंचांग: तिथि, नक्षत्र, सूर्योदय, राहु काल और चौघड़िया, हर शहर के अपने स्थानीय समय में।">
+    <meta name="description" content="भारत, अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, न्यूज़ीलैंड, यूरोप, संयुक्त अरब अमीरात और सिंगापुर के शहरों का आज का हिन्दू पंचांग: तिथि, नक्षत्र, सूर्योदय, राहु काल और चौघड़िया, हर शहर के अपने स्थानीय समय में, वर्ष के व्रत-त्योहारों के साथ।">
     <meta property="og:title" content="आज का पंचांग, अपने शहर का | तिथि, नक्षत्र, राहु काल, चौघड़िया">
-    <meta property="og:description" content="भारत, अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, संयुक्त अरब अमीरात और सिंगापुर के शहरों का आज का हिन्दू पंचांग: तिथि, नक्षत्र, सूर्योदय, राहु काल और चौघड़िया, हर शहर के अपने स्थानीय समय में।">
+    <meta property="og:description" content="भारत, अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, न्यूज़ीलैंड, यूरोप, संयुक्त अरब अमीरात और सिंगापुर के शहरों का आज का हिन्दू पंचांग: तिथि, नक्षत्र, सूर्योदय, राहु काल और चौघड़िया, हर शहर के अपने स्थानीय समय में, वर्ष के व्रत-त्योहारों के साथ।">
     <meta property="og:url" content="https://vedprashnavali.com/hi/panchang">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://vedprashnavali.com/images/og-default.jpg">
@@ -96,17 +96,24 @@
         .limb { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #F3E7D3; font-size: 17px; }
         .limb:last-child { border-bottom: 0; } .limb .k { color: #666; font-size: 14px; min-width: 84px; }
         .limb .v b { color: #5D2E00; } .limb .v .till { color: #666; font-size: 15px; }
-        table.chogh { width: 100%; border-collapse: collapse; font-size: 15px; }
-        table.chogh td { padding: 6px 8px; border-bottom: 1px solid #F3E7D3; }
+        table.chogh, table.pan { width: 100%; border-collapse: collapse; font-size: 15px; }
+        table.chogh td, table.pan td, table.pan th { padding: 6px 8px; border-bottom: 1px solid #F3E7D3; text-align: left; vertical-align: top; }
+        table.pan th { color: #666; font-weight: normal; font-size: 13px; }
         table.chogh td:first-child { font-weight: bold; }
+        table.pan td.d { white-space: nowrap; color: #5D2E00; }
         .tone-good { color: #2E7D32; } .tone-bad { color: #C62828; } .tone-neutral { color: #8a5a2b; }
         .spans .limb .v { text-align: right; }
         .pan-cities { columns: 2; column-gap: 24px; } .pan-cities li { break-inside: avoid; }
         .pan-cities h3 { column-span: all; }
-        @media (max-width: 480px) { .pan-grid { grid-template-columns: 1fr; } .pan-cities { columns: 1; } }
+        .vrat { padding: 7px 0; border-bottom: 1px solid #F3E7D3; } .vrat:last-child { border-bottom: 0; }
+        .vrat .d { color: #5D2E00; font-weight: bold; } .vrat .x { color: #666; font-size: 14px; display: block; }
+        .months a { display: inline-block; margin: 3px 8px 3px 0; white-space: nowrap; }
+        details.pan summary { cursor: pointer; color: #A04000; font-weight: bold; padding: 6px 0; }
+        .scroll { overflow-x: auto; }
+        @media (max-width: 480px) { .pan-grid { grid-template-columns: 1fr; } .pan-cities { columns: 1; } table.pan { font-size: 13px; } }
     </style>
     <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "व्रत के लिए कौन-सी तिथि मानें?", "acceptedAnswer": {"@type": "Answer", "text": "अधिकतर व्रतों में वह तिथि जो आपके स्थान के सूर्योदय पर चल रही हो। कुछ व्रत किसी विशेष क्षण से तय होते हैं, जैसे चंद्रोदय या मध्यरात्रि, और उनके नियम अलग हैं। यह पृष्ठ समय देता है; नियम आपकी परंपरा का है।"}}, {"@type": "Question", "name": "राहु काल क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "दिन का आठवाँ भाग, हर वार को अलग भाग, जिसमें परंपरा नया काम आरंभ करने से बचती है। यह स्थानीय सूर्योदय से गिना जाता है, इसलिए ऋतु और स्थान के साथ बदलता है।"}}, {"@type": "Question", "name": "\"तक\" का क्या अर्थ है?", "acceptedAnswer": {"@type": "Answer", "text": "वह समय जब वह तिथि या नक्षत्र समाप्त होता है। उसके बाद अगले सूर्योदय तक अगला नाम चलता है।"}}, {"@type": "Question", "name": "क्या यह राशिफल है?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं। पंचांग एक कालगणना है: सूर्य और चंद्र की स्थितियाँ और दिन के विभाग। यह कोई भविष्यवाणी नहीं करता।"}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "राहु काल क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "दिन का आठवाँ भाग, हर वार को अलग भाग, जिसमें परंपरा नया काम आरंभ करने से बचती है। यह स्थानीय सूर्योदय से गिना जाता है, इसलिए ऋतु और स्थान के साथ बदलता है।"}}, {"@type": "Question", "name": "\"तक\" का क्या अर्थ है?", "acceptedAnswer": {"@type": "Answer", "text": "वह समय जब वह तिथि या नक्षत्र समाप्त होता है। उसके बाद अगले सूर्योदय तक अगला नाम चलता है।"}}, {"@type": "Question", "name": "क्या यह राशिफल है?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं। पंचांग एक कालगणना है: सूर्य और चंद्र की स्थितियाँ और दिन के विभाग। यह कोई भविष्यवाणी नहीं करता।"}}]}
     </script>
     <!-- Grow by Mediavine -->
     <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo4YzlhNDVkYy02ODg2LTQ3NjYtOGFiMy1iMmI1MDg3ZDY5NDY=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
@@ -125,7 +132,7 @@
         <p class="pan-head" id="remembered" hidden><a href="#" id="rememberedLink"></a></p>
         <section class="card">
             <p>पंचांग हिन्दू कालगणना है: दिन की तिथि, नक्षत्र, योग और करण, वार, और दिन के वे समय जिन्हें परंपरा रखती या छोड़ती है। यह सब स्थानीय सूर्योदय पर टिका है, इसलिए न्यू जर्सी या सिडनी के भक्त को न्यू जर्सी या सिडनी का पंचांग चाहिए, दिल्ली का नहीं।</p>
-            <p>अपना शहर चुनें। हर पृष्ठ आज का पंचांग दिखाता है और 31 दिसंबर 2027 तक किसी भी तारीख का, उस शहर की अपनी घड़ी में, डेलाइट सेविंग सहित।</p>
+            <p>अपना शहर चुनें। हर पृष्ठ आज का पंचांग दिखाता है और 31 दिसंबर 2027 तक किसी भी तारीख का, उस शहर की अपनी घड़ी में, डेलाइट सेविंग सहित, और शहर के वर्ष भर के व्रत-त्योहार देता है।</p>
             
         </section>
         <section class="card pan-cities">
@@ -133,26 +140,36 @@
             <h3>भारत</h3>
             <ul><li><a href="/hi/panchang/delhi">दिल्ली</a></li><li><a href="/hi/panchang/mumbai">मुंबई</a></li><li><a href="/hi/panchang/bengaluru">बेंगलुरु</a></li><li><a href="/hi/panchang/kolkata">कोलकाता</a></li><li><a href="/hi/panchang/chennai">चेन्नई</a></li><li><a href="/hi/panchang/hyderabad">हैदराबाद</a></li><li><a href="/hi/panchang/ahmedabad">अहमदाबाद</a></li><li><a href="/hi/panchang/jaipur">जयपुर</a></li><li><a href="/hi/panchang/pune">पुणे</a></li><li><a href="/hi/panchang/lucknow">लखनऊ</a></li><li><a href="/hi/panchang/varanasi">वाराणसी</a></li></ul>
             <h3>अमेरिका</h3>
-            <ul><li><a href="/hi/panchang/new-york">न्यूयॉर्क</a></li><li><a href="/hi/panchang/new-jersey">न्यू जर्सी (एडिसन)</a></li><li><a href="/hi/panchang/chicago">शिकागो</a></li><li><a href="/hi/panchang/dallas">डैलस</a></li><li><a href="/hi/panchang/houston">ह्यूस्टन</a></li><li><a href="/hi/panchang/atlanta">अटलांटा</a></li><li><a href="/hi/panchang/san-francisco">सैन फ़्रांसिस्को (बे एरिया)</a></li><li><a href="/hi/panchang/los-angeles">लॉस एंजेलेस</a></li><li><a href="/hi/panchang/seattle">सिएटल</a></li></ul>
+            <ul><li><a href="/hi/panchang/new-york">न्यूयॉर्क</a></li><li><a href="/hi/panchang/new-jersey">न्यू जर्सी (एडिसन)</a></li><li><a href="/hi/panchang/san-francisco">सैन फ़्रांसिस्को (बे एरिया)</a></li><li><a href="/hi/panchang/san-jose">सैन होज़े (साउथ बे)</a></li><li><a href="/hi/panchang/chicago">शिकागो</a></li><li><a href="/hi/panchang/washington-dc">वॉशिंगटन डी.सी.</a></li><li><a href="/hi/panchang/dallas">डैलस</a></li><li><a href="/hi/panchang/los-angeles">लॉस एंजेलेस</a></li><li><a href="/hi/panchang/houston">ह्यूस्टन</a></li><li><a href="/hi/panchang/philadelphia">फ़िलाडेल्फ़िया</a></li><li><a href="/hi/panchang/atlanta">अटलांटा</a></li><li><a href="/hi/panchang/boston">बोस्टन</a></li><li><a href="/hi/panchang/seattle">सिएटल</a></li><li><a href="/hi/panchang/detroit">डेट्रॉइट</a></li><li><a href="/hi/panchang/austin">ऑस्टिन</a></li><li><a href="/hi/panchang/phoenix">फ़ीनिक्स</a></li><li><a href="/hi/panchang/sacramento">सैक्रामेंटो</a></li><li><a href="/hi/panchang/raleigh">रैले</a></li><li><a href="/hi/panchang/columbus">कोलंबस</a></li><li><a href="/hi/panchang/charlotte">शार्लट</a></li><li><a href="/hi/panchang/minneapolis">मिनियापोलिस</a></li><li><a href="/hi/panchang/denver">डेनवर</a></li><li><a href="/hi/panchang/orlando">ऑरलैंडो</a></li><li><a href="/hi/panchang/tampa">टैम्पा</a></li><li><a href="/hi/panchang/san-diego">सैन डिएगो</a></li><li><a href="/hi/panchang/portland">पोर्टलैंड</a></li></ul>
             <h3>कनाडा</h3>
-            <ul><li><a href="/hi/panchang/toronto">टोरंटो</a></li><li><a href="/hi/panchang/vancouver">वैंकूवर</a></li><li><a href="/hi/panchang/calgary">कैलगरी</a></li></ul>
+            <ul><li><a href="/hi/panchang/toronto">टोरंटो</a></li><li><a href="/hi/panchang/brampton">ब्रैम्पटन</a></li><li><a href="/hi/panchang/mississauga">मिसिसॉगा</a></li><li><a href="/hi/panchang/vancouver">वैंकूवर</a></li><li><a href="/hi/panchang/surrey">सरे</a></li><li><a href="/hi/panchang/calgary">कैलगरी</a></li><li><a href="/hi/panchang/edmonton">एडमंटन</a></li><li><a href="/hi/panchang/montreal">मॉन्ट्रियल</a></li><li><a href="/hi/panchang/winnipeg">विनिपेग</a></li><li><a href="/hi/panchang/ottawa">ओटावा</a></li></ul>
             <h3>ब्रिटेन</h3>
-            <ul><li><a href="/hi/panchang/london">लंदन</a></li><li><a href="/hi/panchang/leicester">लेस्टर</a></li><li><a href="/hi/panchang/birmingham">बर्मिंघम</a></li></ul>
+            <ul><li><a href="/hi/panchang/london">लंदन</a></li><li><a href="/hi/panchang/leicester">लेस्टर</a></li><li><a href="/hi/panchang/birmingham">बर्मिंघम</a></li><li><a href="/hi/panchang/wolverhampton">वॉल्वरहैम्पटन</a></li><li><a href="/hi/panchang/coventry">कोवेंट्री</a></li><li><a href="/hi/panchang/slough">स्लाउ</a></li><li><a href="/hi/panchang/manchester">मैनचेस्टर</a></li><li><a href="/hi/panchang/leeds">लीड्स</a></li><li><a href="/hi/panchang/glasgow">ग्लासगो</a></li></ul>
             <h3>ऑस्ट्रेलिया</h3>
-            <ul><li><a href="/hi/panchang/sydney">सिडनी</a></li><li><a href="/hi/panchang/melbourne">मेलबर्न</a></li></ul>
+            <ul><li><a href="/hi/panchang/sydney">सिडनी</a></li><li><a href="/hi/panchang/melbourne">मेलबर्न</a></li><li><a href="/hi/panchang/brisbane">ब्रिस्बेन</a></li><li><a href="/hi/panchang/perth">पर्थ</a></li><li><a href="/hi/panchang/adelaide">एडिलेड</a></li><li><a href="/hi/panchang/canberra">कैनबरा</a></li></ul>
+            <h3>न्यूज़ीलैंड</h3>
+            <ul><li><a href="/hi/panchang/auckland">ऑकलैंड</a></li></ul>
+            <h3>आयरलैंड</h3>
+            <ul><li><a href="/hi/panchang/dublin">डबलिन</a></li></ul>
+            <h3>जर्मनी</h3>
+            <ul><li><a href="/hi/panchang/frankfurt">फ़्रैंकफ़र्ट</a></li><li><a href="/hi/panchang/berlin">बर्लिन</a></li><li><a href="/hi/panchang/munich">म्यूनिख</a></li></ul>
+            <h3>नीदरलैंड</h3>
+            <ul><li><a href="/hi/panchang/amsterdam">एम्स्टर्डम</a></li><li><a href="/hi/panchang/the-hague">द हेग</a></li></ul>
+            <h3>स्विट्ज़रलैंड</h3>
+            <ul><li><a href="/hi/panchang/zurich">ज़्यूरिख</a></li></ul>
             <h3>संयुक्त अरब अमीरात</h3>
-            <ul><li><a href="/hi/panchang/dubai">दुबई</a></li></ul>
+            <ul><li><a href="/hi/panchang/dubai">दुबई</a></li><li><a href="/hi/panchang/abu-dhabi">अबू धाबी</a></li></ul>
             <h3>सिंगापुर</h3>
             <ul><li><a href="/hi/panchang/singapore">सिंगापुर</a></li></ul>
         </section>
+        <section class="card"><h2>त्योहारों की तारीखें, शहर के अनुसार</h2><ul><li><a href="/hi/panchang/karwa-chauth-2027">करवा चौथ 2027: हर शहर में तारीख और चंद्रोदय</a></li><li><a href="/hi/panchang/diwali-2026">दीपावली 2026: हर शहर में लक्ष्मी पूजा की तारीख और समय</a></li><li><a href="/hi/panchang/diwali-2027">दीपावली 2027: हर शहर में लक्ष्मी पूजा की तारीख और समय</a></li><li><a href="/hi/panchang/sankashti-chaturthi-2027">संकष्टी चतुर्थी 2027: शहर के अनुसार तारीखें और चंद्रोदय</a></li><li><a href="/hi/panchang/ekadashi-2027">एकादशी 2027: शहर के अनुसार तारीखें और पारण</a></li></ul></section>
         <section class="card">
             <h2>ये समय कैसे निकाले गए हैं</h2>
             <ul><li>सूर्य और चंद्र की स्थितियाँ JPL DE421 ग्रह-पंचांग से ली गई हैं, वही आँकड़े जो खगोलशास्त्री उपयोग करते हैं।</li><li>सूर्योदय और सूर्यास्त वह क्षण हैं जब सूर्य का ऊपरी किनारा क्षितिज पर आता है, वायु में प्रकाश के मुड़ने सहित, जैसा अधिकतर पंचांग छापते हैं। चंद्रोदय और चंद्रास्त चंद्र के केंद्र के लिए हैं।</li><li>नक्षत्र, योग और राशियाँ लाहिरी (चित्रपक्ष) अयनांश से निकाली गई हैं, जो भारत के राष्ट्रीय पंचांग का मानक है। तिथि को अयनांश की आवश्यकता नहीं: वह चंद्र और सूर्य के बीच का कोण है।</li><li>राहु काल, यमगंड और गुलिक सूर्योदय से सूर्यास्त तक के दिन के आठवें भाग हैं। अभिजित दिन के पंद्रह मुहूर्तों में आठवाँ है, और ब्रह्म मुहूर्त रात का दूसरा अंतिम मुहूर्त।</li><li>समय निकटतम मिनट तक लिखे गए हैं। किसी अन्य पंचांग से एक-दो मिनट का अंतर हो सकता है, जहाँ उसकी परंपरा भिन्न हो।</li></ul>
+            <p><a href="/hi/panchang/how-it-works">यह पंचांग कैसे बनता है</a></p>
         </section>
         <section class="card">
             <h2>अक्सर पूछे जाने वाले प्रश्न</h2>
-            <h3>व्रत के लिए कौन-सी तिथि मानें?</h3>
-            <p>अधिकतर व्रतों में वह तिथि जो आपके स्थान के सूर्योदय पर चल रही हो। कुछ व्रत किसी विशेष क्षण से तय होते हैं, जैसे चंद्रोदय या मध्यरात्रि, और उनके नियम अलग हैं। यह पृष्ठ समय देता है; नियम आपकी परंपरा का है।</p>
             <h3>राहु काल क्या है?</h3>
             <p>दिन का आठवाँ भाग, हर वार को अलग भाग, जिसमें परंपरा नया काम आरंभ करने से बचती है। यह स्थानीय सूर्योदय से गिना जाता है, इसलिए ऋतु और स्थान के साथ बदलता है।</p>
             <h3>&quot;तक&quot; का क्या अर्थ है?</h3>
@@ -161,7 +178,7 @@
             <p>नहीं। पंचांग एक कालगणना है: सूर्य और चंद्र की स्थितियाँ और दिन के विभाग। यह कोई भविष्यवाणी नहीं करता।</p>
             
         </section>
-        <section class="card"><h2>इस साइट पर और</h2><ul><li><a href="/today">आज का मार्गदर्शन</a>: श्री राम या हनुमान जी से दिन का एक संदेश</li><li><a href="/jaap">नाम जप काउंटर</a>: 108 की डिजिटल माला</li></ul></section>
+        <section class="card"><h2>इस साइट पर और</h2><ul><li><a href="/today">आज का मार्गदर्शन</a>: श्री राम या हनुमान जी से दिन का एक संदेश</li><li><a href="/jaap">नाम जप काउंटर</a>: 108 की डिजिटल माला</li><li><a href="/hi/panchang/how-it-works">यह पंचांग कैसे बनता है</a></li></ul></section>
         <section class="card"><h2>इस साइट की अन्य प्रश्नावलियाँ</h2><ul class="others"><li><a href="/hi/prash">राम शलाका प्रश्नावली</a>: श्री रामचरितमानस के 225 अक्षर, नौ चौपाइयाँ</li><li><a href="/hi/hanumanprash">हनुमान प्रश्नावली</a>: 49 अंकों का चक्र, हाँ या नहीं में उत्तर</li><li><a href="/saibabaprash">साईं बाबा प्रश्नावली</a>: 720 क्रमांकित उत्तर</li><li><a href="/hi/shivprash">शिव प्रश्नावली</a>: रुद्राष्टक के आठ श्लोक और फलश्रुति</li><li><a href="/hi/ganeshprash">गणेश प्रश्नावली</a>: गणेश जी के बारह नाम</li><li><a href="/hi/durgaprash">दुर्गा प्रश्नावली</a>: नवदुर्गा के नौ रूप</li><li><a href="/hi/khatushyamprash">खाटू श्याम प्रश्नावली</a>: श्याम बाबा के ग्यारह नाम</li></ul></section>
     </main>
     <footer style="text-align: center; padding: 25px 15px; margin-top: 40px; background-color: #FDF4E7; border-top: 2px solid #ff9933; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.9; color: #555;">
@@ -180,7 +197,7 @@
 
     <script>
     (function () {
-        var names = {"delhi": "दिल्ली", "mumbai": "मुंबई", "bengaluru": "बेंगलुरु", "kolkata": "कोलकाता", "chennai": "चेन्नई", "hyderabad": "हैदराबाद", "ahmedabad": "अहमदाबाद", "jaipur": "जयपुर", "pune": "पुणे", "lucknow": "लखनऊ", "varanasi": "वाराणसी", "new-york": "न्यूयॉर्क", "new-jersey": "न्यू जर्सी (एडिसन)", "chicago": "शिकागो", "dallas": "डैलस", "houston": "ह्यूस्टन", "atlanta": "अटलांटा", "san-francisco": "सैन फ़्रांसिस्को (बे एरिया)", "los-angeles": "लॉस एंजेलेस", "seattle": "सिएटल", "toronto": "टोरंटो", "vancouver": "वैंकूवर", "calgary": "कैलगरी", "london": "लंदन", "leicester": "लेस्टर", "birmingham": "बर्मिंघम", "sydney": "सिडनी", "melbourne": "मेलबर्न", "dubai": "दुबई", "singapore": "सिंगापुर"};
+        var names = {"delhi": "दिल्ली", "mumbai": "मुंबई", "bengaluru": "बेंगलुरु", "kolkata": "कोलकाता", "chennai": "चेन्नई", "hyderabad": "हैदराबाद", "ahmedabad": "अहमदाबाद", "jaipur": "जयपुर", "pune": "पुणे", "lucknow": "लखनऊ", "varanasi": "वाराणसी", "new-york": "न्यूयॉर्क", "new-jersey": "न्यू जर्सी (एडिसन)", "san-francisco": "सैन फ़्रांसिस्को (बे एरिया)", "san-jose": "सैन होज़े (साउथ बे)", "chicago": "शिकागो", "washington-dc": "वॉशिंगटन डी.सी.", "dallas": "डैलस", "los-angeles": "लॉस एंजेलेस", "houston": "ह्यूस्टन", "philadelphia": "फ़िलाडेल्फ़िया", "atlanta": "अटलांटा", "boston": "बोस्टन", "seattle": "सिएटल", "detroit": "डेट्रॉइट", "austin": "ऑस्टिन", "phoenix": "फ़ीनिक्स", "sacramento": "सैक्रामेंटो", "raleigh": "रैले", "columbus": "कोलंबस", "charlotte": "शार्लट", "minneapolis": "मिनियापोलिस", "denver": "डेनवर", "orlando": "ऑरलैंडो", "tampa": "टैम्पा", "san-diego": "सैन डिएगो", "portland": "पोर्टलैंड", "toronto": "टोरंटो", "brampton": "ब्रैम्पटन", "mississauga": "मिसिसॉगा", "vancouver": "वैंकूवर", "surrey": "सरे", "calgary": "कैलगरी", "edmonton": "एडमंटन", "montreal": "मॉन्ट्रियल", "winnipeg": "विनिपेग", "ottawa": "ओटावा", "london": "लंदन", "leicester": "लेस्टर", "birmingham": "बर्मिंघम", "wolverhampton": "वॉल्वरहैम्पटन", "coventry": "कोवेंट्री", "slough": "स्लाउ", "manchester": "मैनचेस्टर", "leeds": "लीड्स", "glasgow": "ग्लासगो", "sydney": "सिडनी", "melbourne": "मेलबर्न", "brisbane": "ब्रिस्बेन", "perth": "पर्थ", "adelaide": "एडिलेड", "canberra": "कैनबरा", "auckland": "ऑकलैंड", "dublin": "डबलिन", "frankfurt": "फ़्रैंकफ़र्ट", "berlin": "बर्लिन", "munich": "म्यूनिख", "amsterdam": "एम्स्टर्डम", "the-hague": "द हेग", "zurich": "ज़्यूरिख", "dubai": "दुबई", "abu-dhabi": "अबू धाबी", "singapore": "सिंगापुर"};
         var slug = null;
         try { slug = localStorage.getItem('ved_panchang_city'); } catch (e) { /* storage blocked */ }
         if (slug && names[slug]) {

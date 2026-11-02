@@ -6,6 +6,79 @@ This page gives the Hindu almanac for Mumbai for today, and for any date up to 3
 
 The day's figures are computed in the page for the date it is opened on.
 
+In Mumbai the Sun rises between 06:00 AM (30 May) and 07:15 AM (14 January) and sets between 05:59 PM (19 November) and 07:20 PM (26 June). The longest day, 22 June, lasts 13 h 17 min; the shortest, 21 December, 10 h 59 min. Rahu Kaal, an eighth of the day, is therefore 1 h 22 min long in midwinter and 1 h 40 min in midsummer.
+
+Mumbai keeps the same clock all year, so no tithi's end time ever jumps by an hour. Times are in IST (Asia/Kolkata), the clock Mumbai keeps.
+
+## Festivals in Mumbai: 1 November 2026 – 31 December 2027
+
+- Sunday, 1 November 2026: Ahoi Ashtami (puja window 06:05 PM to 08:29 PM)
+- Friday, 6 November 2026: Dhanteras (puja window 06:03 PM to 08:27 PM)
+- Sunday, 8 November 2026: Diwali (puja window 06:02 PM to 08:26 PM)
+- Sunday, 8 November 2026: Narak Chaturdashi (tithi ends 11:28 AM)
+- Tuesday, 10 November 2026: Govardhan Puja (tithi ends 02:01 PM)
+- Wednesday, 11 November 2026: Bhai Dooj (tithi ends 03:54 PM)
+- Sunday, 15 November 2026: Chhath Puja (tithi ends 02:02 AM, 16 November)
+- Tuesday, 17 November 2026: Gopashtami (tithi ends 06:06 AM, 18 November)
+- Wednesday, 18 November 2026: Akshaya Navami (tithi ends 07:07 AM, 19 November)
+- Saturday, 21 November 2026: Tulsi Vivah (tithi ends 04:57 AM, 22 November)
+- Tuesday, 24 November 2026: Kartik Purnima / Dev Deepawali (tithi ends 08:24 PM)
+- Sunday, 20 December 2026: Gita Jayanti (parana 07:07 AM to 09:19 AM)
+- Wednesday, 23 December 2026: Dattatreya Jayanti (puja window 06:07 PM to 08:31 PM)
+- Thursday, 14 January 2027: Lohri
+- Friday, 15 January 2027: Makar Sankranti / Pongal (the Sun enters the sign at 09:17 PM, 14 January)
+- Thursday, 11 February 2027: Vasant Panchami (tithi ends 03:19 AM, 12 February)
+- Saturday, 13 February 2027: Ratha Saptami (tithi ends 02:07 AM, 14 February)
+- Saturday, 20 February 2027: Magha Purnima (tithi ends 04:54 AM, 21 February)
+- Saturday, 6 March 2027: Maha Shivaratri (puja window 12:25 AM, 7 March to 01:14 AM, 7 March)
+- Sunday, 21 March 2027: Holika Dahan (puja window 06:50 PM to 09:14 PM)
+- Monday, 22 March 2027: Holi
+- Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 04:29 AM, 8 April)
+- Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 04:29 AM, 8 April)
+- Friday, 9 April 2027: Gangaur (tithi ends 01:32 AM, 10 April)
+- Wednesday, 14 April 2027: Baisakhi / Mesha Sankranti (the Sun enters the sign at 03:35 PM)
+- Thursday, 15 April 2027: Ram Navami (puja window 11:23 AM to 01:21 PM)
+- Tuesday, 20 April 2027: Hanuman Jayanti (tithi ends 03:57 AM, 21 April)
+- Sunday, 9 May 2027: Akshaya Tritiya (tithi ends 09:04 AM)
+- Tuesday, 18 May 2027: Narasimha Jayanti (tithi ends 04:03 PM, 19 May)
+- Thursday, 20 May 2027: Buddha Purnima (tithi ends 04:29 PM)
+- Friday, 4 June 2027: Vat Savitri Vrat (tithi ends 01:10 AM, 5 June)
+- Sunday, 13 June 2027: Ganga Dussehra (tithi ends 02:13 AM, 14 June)
+- Friday, 18 June 2027: Vat Purnima Vrat (tithi ends 06:14 AM, 19 June)
+- Monday, 5 July 2027: Jagannath Rath Yatra (tithi ends 01:14 AM, 6 July)
+- Sunday, 18 July 2027: Guru Purnima (tithi ends 09:15 PM)
+- Wednesday, 4 August 2027: Hariyali Teej (tithi ends 05:09 AM, 5 August)
+- Friday, 6 August 2027: Nag Panchami (tithi ends 12:23 AM, 7 August)
+- Tuesday, 17 August 2027: Raksha Bandhan (tithi ends 12:59 PM)
+- Friday, 20 August 2027: Kajari Teej (tithi ends 06:54 PM)
+- Tuesday, 24 August 2027: Krishna Janmashtami (puja window 12:18 AM, 25 August to 01:04 AM, 25 August)
+- Friday, 3 September 2027: Hartalika Teej (tithi ends 02:20 PM)
+- Saturday, 4 September 2027: Ganesh Chaturthi (puja window 11:23 AM to 12:26 PM)
+- Saturday, 4 September 2027: Rishi Panchami (puja window 12:26 PM to 01:52 PM)
+- Wednesday, 8 September 2027: Radha Ashtami (puja window 11:22 AM to 12:45 PM)
+- Tuesday, 14 September 2027: Anant Chaturdashi (tithi ends 02:49 AM, 15 September)
+- Wednesday, 15 September 2027: Pitru Paksha begins (tithi ends 04:34 AM, 16 September)
+- Wednesday, 29 September 2027: Sarva Pitru Amavasya (tithi ends 08:06 AM, 30 September)
+- Thursday, 30 September 2027: Sharad Navratri begins (tithi ends 05:36 AM, 1 October)
+- Thursday, 7 October 2027: Durga Ashtami (tithi ends 06:28 AM, 8 October)
+- Friday, 8 October 2027: Maha Navami (tithi ends 09:02 AM, 9 October)
+- Saturday, 9 October 2027: Dussehra (tithi ends 11:41 AM, 10 October)
+- Thursday, 14 October 2027: Sharad Purnima (puja window 12:00 AM, 15 October to 12:49 AM, 15 October)
+- Monday, 18 October 2027: Karwa Chauth (moonrise 08:15 PM)
+- Friday, 22 October 2027: Ahoi Ashtami (puja window 06:11 PM to 08:35 PM)
+- Wednesday, 27 October 2027: Dhanteras (puja window 06:08 PM to 08:32 PM)
+- Thursday, 28 October 2027: Narak Chaturdashi (tithi ends 08:49 PM)
+- Friday, 29 October 2027: Diwali (puja window 06:07 PM to 07:07 PM)
+- Saturday, 30 October 2027: Govardhan Puja (tithi ends 05:52 PM)
+- Sunday, 31 October 2027: Bhai Dooj (tithi ends 05:14 PM)
+- Thursday, 4 November 2027: Chhath Puja (tithi ends 09:38 PM)
+- Saturday, 6 November 2027: Gopashtami (tithi ends 02:51 AM, 7 November)
+- Sunday, 7 November 2027: Akshaya Navami (tithi ends 05:24 AM, 8 November)
+- Thursday, 11 November 2027: Tulsi Vivah (tithi ends 10:08 AM)
+- Sunday, 14 November 2027: Kartik Purnima / Dev Deepawali (tithi ends 08:56 AM)
+- Thursday, 9 December 2027: Gita Jayanti (parana 09:14 AM to 02:54 AM, 11 December)
+- Monday, 13 December 2027: Dattatreya Jayanti (puja window 06:02 PM to 08:26 PM)
+
 ## How to read the panchang
 
 The Hindu day runs from one sunrise to the next. The tithi, nakshatra, yoga and karana named first are the ones in force at sunrise; "till" gives the moment each ends, after which the next one named begins. A time marked "next day" falls after midnight, before the following sunrise.
@@ -28,7 +101,7 @@ Tithi and nakshatra change at the same instant everywhere, but the clock time di
 
 ### Which tithi do I follow for a fast?
 
-For most observances, the tithi in force at sunrise where you are. Some fasts turn on a particular moment instead, such as moonrise or midnight, and their rules differ. This page gives the times; the rule belongs to the tradition you follow.
+For most observances, the tithi in force at sunrise where you are. Some fasts turn on a particular moment instead, such as moonrise or midnight, and their rules differ. The fasts and festivals listed on this page already apply each rule for Mumbai.
 
 ### What is Rahu Kaal?
 

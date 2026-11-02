@@ -12,9 +12,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-    <meta name="description" content="Today&#x27;s Hindu panchang for cities in India, the United States, Canada, the United Kingdom, Australia, the UAE and Singapore: tithi, nakshatra, sunrise, Rahu Kaal and Choghadiya in each city&#x27;s own local time.">
+    <meta name="description" content="Today&#x27;s Hindu panchang for cities in India, the United States, Canada, the United Kingdom, Australia, New Zealand, Europe, the UAE and Singapore: tithi, nakshatra, sunrise, Rahu Kaal and Choghadiya in each city&#x27;s own local time, with the year&#x27;s fasts and festivals.">
     <meta property="og:title" content="Panchang Today for Your City | Tithi, Nakshatra, Rahu Kaal, Choghadiya">
-    <meta property="og:description" content="Today&#x27;s Hindu panchang for cities in India, the United States, Canada, the United Kingdom, Australia, the UAE and Singapore: tithi, nakshatra, sunrise, Rahu Kaal and Choghadiya in each city&#x27;s own local time.">
+    <meta property="og:description" content="Today&#x27;s Hindu panchang for cities in India, the United States, Canada, the United Kingdom, Australia, New Zealand, Europe, the UAE and Singapore: tithi, nakshatra, sunrise, Rahu Kaal and Choghadiya in each city&#x27;s own local time, with the year&#x27;s fasts and festivals.">
     <meta property="og:url" content="https://vedprashnavali.com/panchang">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://vedprashnavali.com/images/og-default.jpg">
@@ -96,17 +96,24 @@
         .limb { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #F3E7D3; font-size: 17px; }
         .limb:last-child { border-bottom: 0; } .limb .k { color: #666; font-size: 14px; min-width: 84px; }
         .limb .v b { color: #5D2E00; } .limb .v .till { color: #666; font-size: 15px; }
-        table.chogh { width: 100%; border-collapse: collapse; font-size: 15px; }
-        table.chogh td { padding: 6px 8px; border-bottom: 1px solid #F3E7D3; }
+        table.chogh, table.pan { width: 100%; border-collapse: collapse; font-size: 15px; }
+        table.chogh td, table.pan td, table.pan th { padding: 6px 8px; border-bottom: 1px solid #F3E7D3; text-align: left; vertical-align: top; }
+        table.pan th { color: #666; font-weight: normal; font-size: 13px; }
         table.chogh td:first-child { font-weight: bold; }
+        table.pan td.d { white-space: nowrap; color: #5D2E00; }
         .tone-good { color: #2E7D32; } .tone-bad { color: #C62828; } .tone-neutral { color: #8a5a2b; }
         .spans .limb .v { text-align: right; }
         .pan-cities { columns: 2; column-gap: 24px; } .pan-cities li { break-inside: avoid; }
         .pan-cities h3 { column-span: all; }
-        @media (max-width: 480px) { .pan-grid { grid-template-columns: 1fr; } .pan-cities { columns: 1; } }
+        .vrat { padding: 7px 0; border-bottom: 1px solid #F3E7D3; } .vrat:last-child { border-bottom: 0; }
+        .vrat .d { color: #5D2E00; font-weight: bold; } .vrat .x { color: #666; font-size: 14px; display: block; }
+        .months a { display: inline-block; margin: 3px 8px 3px 0; white-space: nowrap; }
+        details.pan summary { cursor: pointer; color: #A04000; font-weight: bold; padding: 6px 0; }
+        .scroll { overflow-x: auto; }
+        @media (max-width: 480px) { .pan-grid { grid-template-columns: 1fr; } .pan-cities { columns: 1; } table.pan { font-size: 13px; } }
     </style>
     <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which tithi do I follow for a fast?", "acceptedAnswer": {"@type": "Answer", "text": "For most observances, the tithi in force at sunrise where you are. Some fasts turn on a particular moment instead, such as moonrise or midnight, and their rules differ. This page gives the times; the rule belongs to the tradition you follow."}}, {"@type": "Question", "name": "What is Rahu Kaal?", "acceptedAnswer": {"@type": "Answer", "text": "One eighth of the daytime, a different eighth on each weekday, which tradition avoids for beginning new work. It is counted from the local sunrise, so it shifts with the season and the place."}}, {"@type": "Question", "name": "What does \"till\" mean?", "acceptedAnswer": {"@type": "Answer", "text": "The time at which that tithi or nakshatra ends. From then until the next sunrise, the next one named is in force."}}, {"@type": "Question", "name": "Is this a horoscope?", "acceptedAnswer": {"@type": "Answer", "text": "No. A panchang is a calendar: the positions of the Sun and the Moon and the divisions of the day. It predicts nothing."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Rahu Kaal?", "acceptedAnswer": {"@type": "Answer", "text": "One eighth of the daytime, a different eighth on each weekday, which tradition avoids for beginning new work. It is counted from the local sunrise, so it shifts with the season and the place."}}, {"@type": "Question", "name": "What does \"till\" mean?", "acceptedAnswer": {"@type": "Answer", "text": "The time at which that tithi or nakshatra ends. From then until the next sunrise, the next one named is in force."}}, {"@type": "Question", "name": "Is this a horoscope?", "acceptedAnswer": {"@type": "Answer", "text": "No. A panchang is a calendar: the positions of the Sun and the Moon and the divisions of the day. It predicts nothing."}}]}
     </script>
     <!-- Grow by Mediavine -->
     <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo4YzlhNDVkYy02ODg2LTQ3NjYtOGFiMy1iMmI1MDg3ZDY5NDY=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
@@ -125,7 +132,7 @@
         <p class="pan-head" id="remembered" hidden><a href="#" id="rememberedLink"></a></p>
         <section class="card">
             <p>A panchang is the Hindu almanac: the day&#x27;s tithi, nakshatra, yoga and karana, the weekday, and the times of the day that tradition keeps or avoids. All of it hangs on the local sunrise, so a devotee in New Jersey or Sydney needs a panchang for New Jersey or Sydney, not for Delhi.</p>
-            <p>Choose your city. Each page shows today and lets you look up any date up to 31 December 2027, in that city&#x27;s own clock, with daylight saving taken care of.</p>
+            <p>Choose your city. Each page shows today and lets you look up any date up to 31 December 2027, in that city&#x27;s own clock, with daylight saving taken care of, and lists the city&#x27;s fasts and festivals for the year.</p>
             
         </section>
         <section class="card pan-cities">
@@ -133,26 +140,36 @@
             <h3>India</h3>
             <ul><li><a href="/panchang/delhi">Delhi</a></li><li><a href="/panchang/mumbai">Mumbai</a></li><li><a href="/panchang/bengaluru">Bengaluru</a></li><li><a href="/panchang/kolkata">Kolkata</a></li><li><a href="/panchang/chennai">Chennai</a></li><li><a href="/panchang/hyderabad">Hyderabad</a></li><li><a href="/panchang/ahmedabad">Ahmedabad</a></li><li><a href="/panchang/jaipur">Jaipur</a></li><li><a href="/panchang/pune">Pune</a></li><li><a href="/panchang/lucknow">Lucknow</a></li><li><a href="/panchang/varanasi">Varanasi</a></li></ul>
             <h3>United States</h3>
-            <ul><li><a href="/panchang/new-york">New York</a></li><li><a href="/panchang/new-jersey">New Jersey (Edison)</a></li><li><a href="/panchang/chicago">Chicago</a></li><li><a href="/panchang/dallas">Dallas</a></li><li><a href="/panchang/houston">Houston</a></li><li><a href="/panchang/atlanta">Atlanta</a></li><li><a href="/panchang/san-francisco">San Francisco (Bay Area)</a></li><li><a href="/panchang/los-angeles">Los Angeles</a></li><li><a href="/panchang/seattle">Seattle</a></li></ul>
+            <ul><li><a href="/panchang/new-york">New York</a></li><li><a href="/panchang/new-jersey">New Jersey (Edison)</a></li><li><a href="/panchang/san-francisco">San Francisco (Bay Area)</a></li><li><a href="/panchang/san-jose">San Jose (South Bay)</a></li><li><a href="/panchang/chicago">Chicago</a></li><li><a href="/panchang/washington-dc">Washington, D.C.</a></li><li><a href="/panchang/dallas">Dallas</a></li><li><a href="/panchang/los-angeles">Los Angeles</a></li><li><a href="/panchang/houston">Houston</a></li><li><a href="/panchang/philadelphia">Philadelphia</a></li><li><a href="/panchang/atlanta">Atlanta</a></li><li><a href="/panchang/boston">Boston</a></li><li><a href="/panchang/seattle">Seattle</a></li><li><a href="/panchang/detroit">Detroit</a></li><li><a href="/panchang/austin">Austin</a></li><li><a href="/panchang/phoenix">Phoenix</a></li><li><a href="/panchang/sacramento">Sacramento</a></li><li><a href="/panchang/raleigh">Raleigh</a></li><li><a href="/panchang/columbus">Columbus</a></li><li><a href="/panchang/charlotte">Charlotte</a></li><li><a href="/panchang/minneapolis">Minneapolis</a></li><li><a href="/panchang/denver">Denver</a></li><li><a href="/panchang/orlando">Orlando</a></li><li><a href="/panchang/tampa">Tampa</a></li><li><a href="/panchang/san-diego">San Diego</a></li><li><a href="/panchang/portland">Portland</a></li></ul>
             <h3>Canada</h3>
-            <ul><li><a href="/panchang/toronto">Toronto</a></li><li><a href="/panchang/vancouver">Vancouver</a></li><li><a href="/panchang/calgary">Calgary</a></li></ul>
+            <ul><li><a href="/panchang/toronto">Toronto</a></li><li><a href="/panchang/brampton">Brampton</a></li><li><a href="/panchang/mississauga">Mississauga</a></li><li><a href="/panchang/vancouver">Vancouver</a></li><li><a href="/panchang/surrey">Surrey</a></li><li><a href="/panchang/calgary">Calgary</a></li><li><a href="/panchang/edmonton">Edmonton</a></li><li><a href="/panchang/montreal">Montreal</a></li><li><a href="/panchang/winnipeg">Winnipeg</a></li><li><a href="/panchang/ottawa">Ottawa</a></li></ul>
             <h3>United Kingdom</h3>
-            <ul><li><a href="/panchang/london">London</a></li><li><a href="/panchang/leicester">Leicester</a></li><li><a href="/panchang/birmingham">Birmingham</a></li></ul>
+            <ul><li><a href="/panchang/london">London</a></li><li><a href="/panchang/leicester">Leicester</a></li><li><a href="/panchang/birmingham">Birmingham</a></li><li><a href="/panchang/wolverhampton">Wolverhampton</a></li><li><a href="/panchang/coventry">Coventry</a></li><li><a href="/panchang/slough">Slough</a></li><li><a href="/panchang/manchester">Manchester</a></li><li><a href="/panchang/leeds">Leeds</a></li><li><a href="/panchang/glasgow">Glasgow</a></li></ul>
             <h3>Australia</h3>
-            <ul><li><a href="/panchang/sydney">Sydney</a></li><li><a href="/panchang/melbourne">Melbourne</a></li></ul>
+            <ul><li><a href="/panchang/sydney">Sydney</a></li><li><a href="/panchang/melbourne">Melbourne</a></li><li><a href="/panchang/brisbane">Brisbane</a></li><li><a href="/panchang/perth">Perth</a></li><li><a href="/panchang/adelaide">Adelaide</a></li><li><a href="/panchang/canberra">Canberra</a></li></ul>
+            <h3>New Zealand</h3>
+            <ul><li><a href="/panchang/auckland">Auckland</a></li></ul>
+            <h3>Ireland</h3>
+            <ul><li><a href="/panchang/dublin">Dublin</a></li></ul>
+            <h3>Germany</h3>
+            <ul><li><a href="/panchang/frankfurt">Frankfurt</a></li><li><a href="/panchang/berlin">Berlin</a></li><li><a href="/panchang/munich">Munich</a></li></ul>
+            <h3>Netherlands</h3>
+            <ul><li><a href="/panchang/amsterdam">Amsterdam</a></li><li><a href="/panchang/the-hague">The Hague</a></li></ul>
+            <h3>Switzerland</h3>
+            <ul><li><a href="/panchang/zurich">Zurich</a></li></ul>
             <h3>United Arab Emirates</h3>
-            <ul><li><a href="/panchang/dubai">Dubai</a></li></ul>
+            <ul><li><a href="/panchang/dubai">Dubai</a></li><li><a href="/panchang/abu-dhabi">Abu Dhabi</a></li></ul>
             <h3>Singapore</h3>
             <ul><li><a href="/panchang/singapore">Singapore</a></li></ul>
         </section>
+        <section class="card"><h2>Festival dates by city</h2><ul><li><a href="/panchang/karwa-chauth-2027">Karwa Chauth 2027: date and moonrise in every city</a></li><li><a href="/panchang/diwali-2026">Diwali 2026: Lakshmi Puja date and time in every city</a></li><li><a href="/panchang/diwali-2027">Diwali 2027: Lakshmi Puja date and time in every city</a></li><li><a href="/panchang/sankashti-chaturthi-2027">Sankashti Chaturthi 2027: dates and moonrise by city</a></li><li><a href="/panchang/ekadashi-2027">Ekadashi 2027: dates and parana time by city</a></li></ul></section>
         <section class="card">
             <h2>How these times are worked out</h2>
             <ul><li>The positions of the Sun and the Moon come from the JPL DE421 planetary ephemeris, the data astronomers use.</li><li>Sunrise and sunset are the moments the upper edge of the Sun crosses the horizon, allowing for the bending of light in the air, as most panchangs print them. Moonrise and moonset are for the centre of the Moon.</li><li>Nakshatra, yoga and the rashis use the Lahiri (Chitrapaksha) ayanamsa, the standard of India&#x27;s national calendar. The tithi needs no ayanamsa: it is the angle between the Moon and the Sun.</li><li>Rahu Kaal, Yamaganda and Gulika are eighths of the day from sunrise to sunset. Abhijit is the eighth of the day&#x27;s fifteen muhurtas, and Brahma Muhurta the second-last muhurta of the night.</li><li>Times are rounded to the nearest minute. Another panchang may differ by a minute or two where its conventions differ.</li></ul>
+            <p><a href="/panchang/how-it-works">How this panchang is calculated</a></p>
         </section>
         <section class="card">
             <h2>Frequently Asked Questions</h2>
-            <h3>Which tithi do I follow for a fast?</h3>
-            <p>For most observances, the tithi in force at sunrise where you are. Some fasts turn on a particular moment instead, such as moonrise or midnight, and their rules differ. This page gives the times; the rule belongs to the tradition you follow.</p>
             <h3>What is Rahu Kaal?</h3>
             <p>One eighth of the daytime, a different eighth on each weekday, which tradition avoids for beginning new work. It is counted from the local sunrise, so it shifts with the season and the place.</p>
             <h3>What does &quot;till&quot; mean?</h3>
@@ -161,7 +178,7 @@
             <p>No. A panchang is a calendar: the positions of the Sun and the Moon and the divisions of the day. It predicts nothing.</p>
             
         </section>
-        <section class="card"><h2>More on this site</h2><ul><li><a href="/today">Today&#x27;s Guidance</a>: one reading a day from Shri Ram or Hanuman Ji</li><li><a href="/jaap">Naam Jaap Counter</a>: a digital mala of 108</li></ul></section>
+        <section class="card"><h2>More on this site</h2><ul><li><a href="/today">Today&#x27;s Guidance</a>: one reading a day from Shri Ram or Hanuman Ji</li><li><a href="/jaap">Naam Jaap Counter</a>: a digital mala of 108</li><li><a href="/panchang/how-it-works">How this panchang is calculated</a></li></ul></section>
         <section class="card"><h2>More prashnavalis on this site</h2><ul class="others"><li><a href="/prash">Ram Shalaka Prashnavali</a>: 225 letters from Shri Ramcharitmanas leading to nine chaupais</li><li><a href="/hanumanprash">Hanuman Prashnavali</a>: a chakra of 49 numbers with a yes or no answer</li><li><a href="/saibabaprash">Sai Baba Prashnavali</a>: 720 numbered answers</li><li><a href="/shivprash">Shiv Prashnavali</a>: the eight verses of the Rudrashtakam and its closing verse</li><li><a href="/ganeshprash">Ganesh Prashnavali</a>: the twelve names of Ganesha</li><li><a href="/durgaprash">Durga Prashnavali</a>: the nine forms of Navadurga</li><li><a href="/khatushyamprash">Khatu Shyam Prashnavali</a>: eleven names of Shyam Baba</li></ul></section>
     </main>
     <footer style="text-align: center; padding: 25px 15px; margin-top: 40px; background-color: #FDF4E7; border-top: 2px solid #ff9933; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.9; color: #555;">
@@ -180,7 +197,7 @@
 
     <script>
     (function () {
-        var names = {"delhi": "Delhi", "mumbai": "Mumbai", "bengaluru": "Bengaluru", "kolkata": "Kolkata", "chennai": "Chennai", "hyderabad": "Hyderabad", "ahmedabad": "Ahmedabad", "jaipur": "Jaipur", "pune": "Pune", "lucknow": "Lucknow", "varanasi": "Varanasi", "new-york": "New York", "new-jersey": "New Jersey (Edison)", "chicago": "Chicago", "dallas": "Dallas", "houston": "Houston", "atlanta": "Atlanta", "san-francisco": "San Francisco (Bay Area)", "los-angeles": "Los Angeles", "seattle": "Seattle", "toronto": "Toronto", "vancouver": "Vancouver", "calgary": "Calgary", "london": "London", "leicester": "Leicester", "birmingham": "Birmingham", "sydney": "Sydney", "melbourne": "Melbourne", "dubai": "Dubai", "singapore": "Singapore"};
+        var names = {"delhi": "Delhi", "mumbai": "Mumbai", "bengaluru": "Bengaluru", "kolkata": "Kolkata", "chennai": "Chennai", "hyderabad": "Hyderabad", "ahmedabad": "Ahmedabad", "jaipur": "Jaipur", "pune": "Pune", "lucknow": "Lucknow", "varanasi": "Varanasi", "new-york": "New York", "new-jersey": "New Jersey (Edison)", "san-francisco": "San Francisco (Bay Area)", "san-jose": "San Jose (South Bay)", "chicago": "Chicago", "washington-dc": "Washington, D.C.", "dallas": "Dallas", "los-angeles": "Los Angeles", "houston": "Houston", "philadelphia": "Philadelphia", "atlanta": "Atlanta", "boston": "Boston", "seattle": "Seattle", "detroit": "Detroit", "austin": "Austin", "phoenix": "Phoenix", "sacramento": "Sacramento", "raleigh": "Raleigh", "columbus": "Columbus", "charlotte": "Charlotte", "minneapolis": "Minneapolis", "denver": "Denver", "orlando": "Orlando", "tampa": "Tampa", "san-diego": "San Diego", "portland": "Portland", "toronto": "Toronto", "brampton": "Brampton", "mississauga": "Mississauga", "vancouver": "Vancouver", "surrey": "Surrey", "calgary": "Calgary", "edmonton": "Edmonton", "montreal": "Montreal", "winnipeg": "Winnipeg", "ottawa": "Ottawa", "london": "London", "leicester": "Leicester", "birmingham": "Birmingham", "wolverhampton": "Wolverhampton", "coventry": "Coventry", "slough": "Slough", "manchester": "Manchester", "leeds": "Leeds", "glasgow": "Glasgow", "sydney": "Sydney", "melbourne": "Melbourne", "brisbane": "Brisbane", "perth": "Perth", "adelaide": "Adelaide", "canberra": "Canberra", "auckland": "Auckland", "dublin": "Dublin", "frankfurt": "Frankfurt", "berlin": "Berlin", "munich": "Munich", "amsterdam": "Amsterdam", "the-hague": "The Hague", "zurich": "Zurich", "dubai": "Dubai", "abu-dhabi": "Abu Dhabi", "singapore": "Singapore"};
         var slug = null;
         try { slug = localStorage.getItem('ved_panchang_city'); } catch (e) { /* storage blocked */ }
         if (slug && names[slug]) {

@@ -17,11 +17,12 @@
   var L = P.labels, N = P.names, TZ = P.tz;
   var LOCALE = P.lang === 'hi' ? 'hi-IN' : 'en-IN';
   var byDate = {};
+  var vrats = [];              // the fasts and festivals, in date order
 
   // the day rows live in one file per city, shared by both languages; their seconds are offsets from a base
   function absorb(data) {
     var base = data.base;
-    function abs(v) { return v === null ? null : base + v; }
+    function abs(v) { return (v === null || v === undefined) ? null : base + v; }
     for (var i = 0; i < data.rows.length; i++) {
       var r = data.rows[i];
       r.sr = abs(r.sr); r.ss = abs(r.ss); r.nsr = abs(r.nsr); r.mr = abs(r.mr); r.ms = abs(r.ms);
@@ -33,6 +34,46 @@
       }
       byDate[r.d] = r;
     }
+    vrats = data.vrats || [];
+    for (var v = 0; v < vrats.length; v++) {
+      var o = vrats[v];
+      o.mr = abs(o.mr); o.te = abs(o.te);
+      if (o.fast) { o.fast = [abs(o.fast[0]), abs(o.fast[1])]; }
+      if (o.win) { o.win = [abs(o.win[0]), abs(o.win[1])]; }
+      if (o.pr) { o.pr = [abs(o.pr[0]), abs(o.pr[1])]; }
+    }
+  }
+
+  // one fast or festival as a line: its name, and the moment that matters for it
+  function vratLine(o, row, withDate) {
+    var name = (P.lang === 'hi' ? o.hi : o.en) + (o.ang ? ' (' + L.angarki + ')' : '');
+    var extra = [];
+    if (o.mr !== null && o.mr !== undefined) { extra.push(L.moonriseAt + ' ' + when(o.mr, row)); }
+    if (o.fast) { extra.push(L.fastTill + ' ' + clock(o.fast[0]) + ' ' + L.to + ' ' + when(o.fast[1], row)); }
+    if (o.win) { extra.push(L.pujaTime + ' ' + span(o.win[0], o.win[1], row)); }
+    if (o.pr) { extra.push(L.parana + ' ' + clock(o.pr[0]) + ' ' + L.to + ' ' + clock(o.pr[1]) + ' (' + L.nextDay + ')'); }
+    if (!extra.length && o.te !== null && o.te !== undefined) { extra.push(L.tithiEnds + ' ' + when(o.te, row)); }
+    var dateText = withDate ? longFmt.format(new Date(Date.UTC(+o.d.slice(0, 4), +o.d.slice(5, 7) - 1, +o.d.slice(8, 10), 12))) : '';
+    return '<div class="vrat">' + (dateText ? '<span class="d">' + esc(dateText) + '</span> · ' : '') + '<b>' + esc(name) + '</b>'
+      + (extra.length ? '<span class="x">' + esc(extra.join(' · ')) + '</span>' : '') + '</div>';
+  }
+
+  function renderVrats(row) {
+    var today = [], next = [];
+    for (var i = 0; i < vrats.length; i++) {
+      var o = vrats[i];
+      if (o.d === row.d) { today.push(o); }
+      else if (o.d > row.d && next.length < 6) {
+        var days = (Date.parse(o.d) - Date.parse(row.d)) / 86400000;
+        if (days <= 45) { next.push(o); }
+      }
+    }
+    var html = '<h3 style="margin-top:0">' + esc(L.vratToday) + '</h3>';
+    html += today.length ? today.map(function (o) { return vratLine(o, row, false); }).join('') : '<p class="x" style="color:#666">' + esc(L.vratNone) + '</p>';
+    if (next.length) {
+      html += '<h3>' + esc(L.vratNext) + '</h3>' + next.map(function (o) { return vratLine(o, byDate[o.d] || row, true); }).join('');
+    }
+    $('panVrats').innerHTML = html;
   }
 
   function $(id) { return document.getElementById(id); }
@@ -177,6 +218,7 @@
 
     $('panChoghDay').innerHTML = choghTable(choghadiya(row.sr, row.ss, DAY_FIRST[row.w]), row);
     $('panChoghNight').innerHTML = choghTable(choghadiya(row.ss, row.nsr, NIGHT_FIRST[row.w]), row);
+    if ($('panVrats')) { renderVrats(row); }
 
     $('panShare').onclick = function () {
       track('share', { method: 'whatsapp', content_type: 'panchang', city: P.slug, lang: P.lang });

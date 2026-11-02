@@ -3,5 +3,7 @@
 __pycache__/
 *.pyc
 
-# the JPL planetary ephemeris the panchang generator reads (17 MB, downloaded by tools/panchang/compute.py)
+# the JPL planetary ephemeris the panchang generator reads (17 MB, see tools/panchang/README.md) and its
+# cache of computed days, both rebuilt from the generator
 tools/panchang/ephem/
+tools/panchang/cache/
