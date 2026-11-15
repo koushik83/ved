@@ -311,6 +311,244 @@ FESTIVALS = {
             ],
         },
     },
+    "navratri": {
+        "slug": "navratri",
+        "en": {
+            "title": "Navratri {year}: Chaitra and Sharad Navratri Dates by City (USA, Canada, UK, Australia, India)",
+            "h1": "Navratri {year}: Chaitra and Sharad Navratri dates in your city",
+            "description": "Navratri {year}: when Chaitra and Sharad Navratri begin, and Ram Navami, for {n} cities in the "
+                           "USA, Canada, UK, Australia and India.",
+            "intro": [
+                "Navratri, the nine nights of the Goddess, comes twice a year. Chaitra Navratri begins on Chaitra Shukla "
+                "Pratipada in spring and ends with Ram Navami; Sharad Navratri begins on Ashwin Shukla Pratipada in "
+                "autumn and is followed by Dussehra. Each begins on the day Pratipada is in force at the local sunrise, "
+                "with Ghatasthapana that morning, so the first day can differ between India and a city abroad.",
+                "The table gives, for each city, the day each Navratri begins and the day of Ram Navami, the Navami "
+                "whose midday Navami covers more. The Ashtami, Navami and Dussehra of the autumn Navratri follow rules "
+                "about the tithi in force at two sunrises that calendars apply differently, so follow your temple for "
+                "those days.",
+            ],
+            "cols": ["City", "Chaitra Navratri begins", "Ram Navami", "Sharad Navratri begins"],
+            "note": "Where Pratipada is in force at neither sunrise, Navratri begins on the day it starts; where a tithi "
+                    "is lost or repeated, the nine nights can be eight or ten days.",
+            "faq": [
+                ("Why does Navratri begin on a different day in {example_city} than in India?",
+                 "Pratipada begins at one instant worldwide, but each city meets its own sunrise. When Pratipada begins "
+                 "after sunrise in India and before sunrise in a city far to the west, or the other way round, the first "
+                 "day differs."),
+                ("Is Ram Navami on the same day everywhere?",
+                 "No. It is the day whose midday Navami covers, and midday comes at a different moment of the tithi in "
+                 "each city: in 2027 several cities in North America and the UK keep it a day before India."),
+                ("When is Dussehra?",
+                 "After the autumn Navratri, on the Dashami that holds the afternoon. Each city's own page lists it; for "
+                 "the Ashtami and Navami days, follow your temple."),
+            ],
+        },
+        "hi": {
+            "title": "नवरात्रि {year}: चैत्र और शारदीय नवरात्रि की तारीखें, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "नवरात्रि {year}: आपके शहर में चैत्र और शारदीय नवरात्रि की तारीखें",
+            "description": "नवरात्रि {year}: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों में चैत्र और शारदीय नवरात्रि "
+                           "कब आरंभ होती है, और राम नवमी।",
+            "intro": [
+                "नवरात्रि, देवी की नौ रातें, वर्ष में दो बार आती है। चैत्र नवरात्रि वसंत में चैत्र शुक्ल प्रतिपदा से आरंभ होकर राम नवमी पर "
+                "पूरी होती है; शारदीय नवरात्रि शरद में आश्विन शुक्ल प्रतिपदा से आरंभ होती है और उसके बाद दशहरा आता है। हर नवरात्रि उस "
+                "दिन आरंभ होती है जिस दिन स्थानीय सूर्योदय पर प्रतिपदा हो, और उसी सुबह घटस्थापना होती है, इसलिए भारत और विदेश के किसी "
+                "शहर में पहला दिन अलग हो सकता है।",
+                "तालिका हर शहर के लिए दोनों नवरात्रियों के आरंभ का दिन और राम नवमी का दिन देती है, वह नवमी जिसके मध्याह्न का अधिक भाग "
+                "नवमी ढकती है। शारदीय नवरात्रि की अष्टमी, नवमी और दशहरा दो सूर्योदयों पर चल रही तिथि के उन नियमों पर चलते हैं जिन्हें "
+                "पंचांग अलग-अलग ढंग से लगाते हैं, इसलिए उन दिनों के लिए अपने मंदिर को मानें।",
+            ],
+            "cols": ["शहर", "चैत्र नवरात्रि आरंभ", "राम नवमी", "शारदीय नवरात्रि आरंभ"],
+            "note": "जहाँ प्रतिपदा किसी भी सूर्योदय पर न हो, वहाँ नवरात्रि उसी दिन आरंभ होती है जिस दिन वह शुरू होती है; जहाँ कोई "
+                    "तिथि क्षय या वृद्धि हो, वहाँ नौ रातें आठ या दस दिन की हो सकती हैं।",
+            "faq": [
+                ("{example_city} में नवरात्रि भारत से अलग दिन क्यों आरंभ होती है?",
+                 "प्रतिपदा पूरे संसार में एक ही क्षण आरंभ होती है, पर हर शहर का सूर्योदय अपना है। जब प्रतिपदा भारत में सूर्योदय के बाद "
+                 "और पश्चिम के किसी दूर शहर में सूर्योदय से पहले आरंभ हो, या इसके उलट, तो पहला दिन अलग हो जाता है।"),
+                ("क्या राम नवमी हर जगह एक ही दिन है?",
+                 "नहीं। यह वह दिन है जिसके मध्याह्न को नवमी ढकती है, और मध्याह्न हर शहर में तिथि के अलग क्षण पर आता है: 2027 में उत्तर "
+                 "अमेरिका और ब्रिटेन के कई शहर इसे भारत से एक दिन पहले मनाते हैं।"),
+                ("दशहरा कब है?",
+                 "शारदीय नवरात्रि के बाद, उस दशमी को जो अपराह्न में हो। हर शहर का अपना पृष्ठ इसे देता है; अष्टमी और नवमी के दिनों के "
+                 "लिए अपने मंदिर को मानें।"),
+            ],
+        },
+    },
+    "raksha_bandhan": {
+        "slug": "raksha-bandhan",
+        "en": {
+            "title": "Raksha Bandhan {year}: Date and Rakhi Time by City (USA, Canada, UK, Australia, India)",
+            "h1": "Raksha Bandhan {year}: date and rakhi time in your city",
+            "description": "When is Raksha Bandhan {year}? The date and the time to tie rakhi after Bhadra, for {n} cities "
+                           "in the USA, Canada, UK, Australia and India.",
+            "intro": [
+                "Raksha Bandhan falls on Shravana Purnima: the day is the one whose forenoon Purnima holds, or holds more "
+                "of where it touches two. The first half of Purnima is Bhadra, which tradition avoids, so rakhi is tied "
+                "after Bhadra ends and while Purnima lasts, in daylight or in the evening hours after sunset. Purnima "
+                "begins and ends at one instant worldwide, but each city's day is its own, so the date and the time "
+                "differ between India and a city abroad.",
+                "The table gives, for each city, the day of Raksha Bandhan, the time to tie rakhi (from the end of "
+                "Bhadra, or sunrise, until Purnima ends or the evening hours close), the end of Bhadra and the end of "
+                "Purnima. All times are local, with daylight saving allowed for.",
+            ],
+            "cols": ["City", "Raksha Bandhan", "Time to tie rakhi", "Bhadra ends", "Purnima ends"],
+            "note": "Where no time is shown, Bhadra lasts until Purnima ends that day: families then follow their "
+                    "temple's time.",
+            "faq": [
+                ("Why is Raksha Bandhan on a different date in {example_city} than in India?",
+                 "The day is set by where Purnima falls in each city's own day. For a city many hours behind India, "
+                 "Purnima can hold the forenoon of the earlier date, so the festival comes a day before India's."),
+                ("What is Bhadra and why is it avoided?",
+                 "Bhadra is Vishti karana, the first half of Purnima. Tradition holds it unlucky for tying rakhi, so the "
+                 "time given starts when it ends."),
+                ("Can rakhi be tied after sunset?",
+                 "Yes, in the evening hours after sunset (pradosh kaal) while Purnima lasts, which the time given includes "
+                 "when Bhadra ends late in the day."),
+            ],
+        },
+        "hi": {
+            "title": "रक्षा बंधन {year}: तारीख और राखी बाँधने का समय, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "रक्षा बंधन {year}: आपके शहर में तारीख और राखी बाँधने का समय",
+            "description": "रक्षा बंधन {year} कब है? अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों के लिए तारीख और भद्रा "
+                           "के बाद राखी बाँधने का समय।",
+            "intro": [
+                "रक्षा बंधन श्रावण पूर्णिमा को होता है: दिन वह है जिसके पूर्वाह्न में पूर्णिमा हो, और दो दिनों को छूने पर जिसका अधिक भाग "
+                "वह ढके। पूर्णिमा का पहला आधा भाग भद्रा है, जिसे परंपरा टालती है, इसलिए राखी भद्रा समाप्त होने के बाद और पूर्णिमा रहते "
+                "बाँधी जाती है, दिन में या सूर्यास्त के बाद की शाम में। पूर्णिमा पूरे संसार में एक ही क्षण आरंभ और समाप्त होती है, पर हर "
+                "शहर का दिन अपना है, इसलिए भारत और विदेश के किसी शहर में तारीख और समय अलग होते हैं।",
+                "तालिका हर शहर के लिए रक्षा बंधन का दिन, राखी बाँधने का समय (भद्रा समाप्ति या सूर्योदय से, पूर्णिमा समाप्ति या शाम के "
+                "प्रदोष काल के अंत तक), भद्रा की समाप्ति और पूर्णिमा की समाप्ति देती है। सभी समय स्थानीय हैं, डेलाइट सेविंग सहित।",
+            ],
+            "cols": ["शहर", "रक्षा बंधन", "राखी बाँधने का समय", "भद्रा समाप्त", "पूर्णिमा समाप्त"],
+            "note": "जहाँ समय नहीं दिया गया, वहाँ उस दिन भद्रा पूर्णिमा समाप्त होने तक रहती है: तब परिवार अपने मंदिर का समय मानते हैं।",
+            "faq": [
+                ("{example_city} में रक्षा बंधन भारत से अलग तारीख को क्यों है?",
+                 "दिन इस बात से तय होता है कि पूर्णिमा हर शहर के अपने दिन में कहाँ पड़ती है। भारत से कई घंटे पीछे के शहर में पूर्णिमा "
+                 "पिछली तारीख के पूर्वाह्न में हो सकती है, इसलिए पर्व भारत से एक दिन पहले आता है।"),
+                ("भद्रा क्या है और इसे क्यों टालते हैं?",
+                 "भद्रा विष्टि करण है, पूर्णिमा का पहला आधा भाग। परंपरा इसे राखी बाँधने के लिए अशुभ मानती है, इसलिए दिया गया समय इसके "
+                 "समाप्त होने से आरंभ होता है।"),
+                ("क्या सूर्यास्त के बाद राखी बाँध सकते हैं?",
+                 "हाँ, सूर्यास्त के बाद की शाम (प्रदोष काल) में जब तक पूर्णिमा हो; जब भद्रा दिन में देर से समाप्त हो, तो दिया गया समय "
+                 "इसे भी शामिल करता है।"),
+            ],
+        },
+    },
+    "janmashtami": {
+        "slug": "janmashtami",
+        "en": {
+            "title": "Janmashtami {year}: Date and Midnight Puja Time by City (USA, Canada, UK, Australia, India)",
+            "h1": "Krishna Janmashtami {year}: date and midnight puja time in your city",
+            "description": "Janmashtami {year}: the night of the fast and the nishita puja time at midnight for {n} cities "
+                           "in the USA, Canada, UK, Australia and India.",
+            "intro": [
+                "Krishna Janmashtami is kept on the Ashtami of the dark fortnight of Bhadrapada, with a fast through the "
+                "day and the worship of Krishna's birth at nishita kaal, the muhurta at the middle of the night. The "
+                "night is the one whose midnight muhurta Ashtami holds; where it holds both, the later. Because the "
+                "puja hour falls after midnight, it belongs to the next calendar date, which is why some calendars print "
+                "that date.",
+                "The table gives, for each city, the night of Janmashtami, the nishita puja time, and the time Ashtami "
+                "ends. This is the date most households and Smarta calendars keep; Vaishnava and ISKCON temples often "
+                "keep the following day, so follow your temple if you belong to one.",
+            ],
+            "cols": ["City", "Janmashtami (night of)", "Nishita puja", "Ashtami ends"],
+            "note": "Where Ashtami holds the midnight muhurta of neither night, the later day it touches is taken.",
+            "faq": [
+                ("Is Janmashtami on the 24th or the 25th?",
+                 "The fast and the midnight puja belong to one night. The puja hour falls just after midnight, so "
+                 "calendars that print the date of the puja show the next date. The table gives the night, with the puja "
+                 "time beside it. Vaishnava and ISKCON temples may keep the next day."),
+                ("Why is Janmashtami on a different date in {example_city} than in India?",
+                 "Midnight comes to each city at a different point of the Ashtami tithi, so the night it holds can differ "
+                 "from Delhi's."),
+                ("When is the fast broken?",
+                 "Traditionally after the midnight puja, or the next morning after sunrise; follow your family's practice."),
+            ],
+        },
+        "hi": {
+            "title": "जन्माष्टमी {year}: तारीख और मध्यरात्रि पूजा का समय, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "कृष्ण जन्माष्टमी {year}: आपके शहर में तारीख और मध्यरात्रि पूजा का समय",
+            "description": "जन्माष्टमी {year}: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों के लिए व्रत की रात और "
+                           "मध्यरात्रि की निशीथ पूजा का समय।",
+            "intro": [
+                "कृष्ण जन्माष्टमी भाद्रपद कृष्ण अष्टमी को रखी जाती है, दिन भर व्रत और निशीथ काल में, रात के मध्य के मुहूर्त में, कृष्ण "
+                "जन्म की पूजा के साथ। रात वह है जिसके मध्य मुहूर्त में अष्टमी हो; दोनों रातों में हो तो बाद वाली। पूजा का समय आधी रात "
+                "के बाद पड़ता है, इसलिए वह अगली तारीख में आता है, और इसीलिए कुछ पंचांग वही तारीख छापते हैं।",
+                "तालिका हर शहर के लिए जन्माष्टमी की रात, निशीथ पूजा का समय और अष्टमी की समाप्ति देती है। यह वह तारीख है जो अधिकांश "
+                "परिवार और स्मार्त पंचांग मानते हैं; वैष्णव और इस्कॉन मंदिर प्रायः अगला दिन मानते हैं, इसलिए यदि आप किसी से जुड़े हैं तो "
+                "अपने मंदिर को मानें।",
+            ],
+            "cols": ["शहर", "जन्माष्टमी (रात)", "निशीथ पूजा", "अष्टमी समाप्त"],
+            "note": "जहाँ अष्टमी किसी भी रात के मध्य मुहूर्त में न हो, वहाँ वह बाद वाला दिन लिया गया है जिसे वह छूती है।",
+            "faq": [
+                ("जन्माष्टमी 24 को है या 25 को?",
+                 "व्रत और मध्यरात्रि पूजा एक ही रात के हैं। पूजा का समय आधी रात के ठीक बाद पड़ता है, इसलिए जो पंचांग पूजा की तारीख "
+                 "छापते हैं, वे अगली तारीख दिखाते हैं। तालिका रात देती है, साथ में पूजा का समय। वैष्णव और इस्कॉन मंदिर अगला दिन मान "
+                 "सकते हैं।"),
+                ("{example_city} में जन्माष्टमी भारत से अलग तारीख को क्यों है?",
+                 "हर शहर की आधी रात अष्टमी तिथि के अलग बिंदु पर आती है, इसलिए जिस रात को वह ढकती है वह दिल्ली से अलग हो सकती है।"),
+                ("व्रत कब खोलें?",
+                 "परंपरा से मध्यरात्रि पूजा के बाद, या अगली सुबह सूर्योदय के बाद; अपने परिवार की रीति मानें।"),
+            ],
+        },
+    },
+    "ganesh_chaturthi": {
+        "slug": "ganesh-chaturthi",
+        "en": {
+            "title": "Ganesh Chaturthi {year}: Date, Puja Time and Visarjan by City (USA, Canada, UK, Australia, India)",
+            "h1": "Ganesh Chaturthi {year}: date, puja time and visarjan in your city",
+            "description": "Ganesh Chaturthi {year}: the date, the midday puja time and the Anant Chaturdashi visarjan for "
+                           "{n} cities in the USA, Canada, UK, Australia and India.",
+            "intro": [
+                "Ganesh Chaturthi is kept on the Chaturthi of the bright fortnight of Bhadrapada, with the installation "
+                "and worship of Ganesha at madhyahna, the middle part of the day. The day is the one whose madhyahna "
+                "Chaturthi holds, or holds more of where it touches two. The festival closes with the visarjan on "
+                "Anant Chaturdashi, ten days later.",
+                "The table gives, for each city, the day of Ganesh Chaturthi, the part of madhyahna in which Chaturthi "
+                "is still in force, and the day of Anant Chaturdashi. Many calendars print the whole madhyahna, which "
+                "can run past the end of Chaturthi. All times are local, with daylight saving allowed for.",
+            ],
+            "cols": ["City", "Ganesh Chaturthi", "Madhyahna puja", "Visarjan (Anant Chaturdashi)"],
+            "note": "Where Chaturthi holds the madhyahna of both days, the day it covers more of is taken.",
+            "faq": [
+                ("Why is Ganesh Chaturthi on a different date in {example_city} than in India?",
+                 "The puja belongs to the middle of the day, and midday comes to each city at a different point of the "
+                 "Chaturthi tithi. In 2027 cities in North America keep it a day before India."),
+                ("Why should the moon not be seen on Ganesh Chaturthi?",
+                 "By tradition, seeing the moon that night brings a false accusation (mithya dosha). The moonrise for "
+                 "each night is on the city's page."),
+                ("When is the visarjan?",
+                 "On Anant Chaturdashi, the Chaturdashi of the same fortnight. Families who keep Ganesha for one and a "
+                 "half, three, five or seven days immerse him earlier."),
+            ],
+        },
+        "hi": {
+            "title": "गणेश चतुर्थी {year}: तारीख, पूजा का समय और विसर्जन, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "गणेश चतुर्थी {year}: आपके शहर में तारीख, पूजा का समय और विसर्जन",
+            "description": "गणेश चतुर्थी {year}: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों के लिए तारीख, मध्याह्न पूजा "
+                           "का समय और अनंत चतुर्दशी का विसर्जन।",
+            "intro": [
+                "गणेश चतुर्थी भाद्रपद शुक्ल चतुर्थी को रखी जाती है, मध्याह्न में, दिन के मध्य भाग में, गणेश जी की स्थापना और पूजा के "
+                "साथ। दिन वह है जिसके मध्याह्न में चतुर्थी हो, और दो दिनों को छूने पर जिसका अधिक भाग वह ढके। पर्व दस दिन बाद अनंत "
+                "चतुर्दशी के विसर्जन से पूरा होता है।",
+                "तालिका हर शहर के लिए गणेश चतुर्थी का दिन, मध्याह्न का वह भाग जिसमें चतुर्थी अभी चल रही हो, और अनंत चतुर्दशी का दिन देती "
+                "है। कई पंचांग पूरा मध्याह्न छापते हैं, जो चतुर्थी समाप्त होने के बाद तक जा सकता है। सभी समय स्थानीय हैं, डेलाइट सेविंग "
+                "सहित।",
+            ],
+            "cols": ["शहर", "गणेश चतुर्थी", "मध्याह्न पूजा", "विसर्जन (अनंत चतुर्दशी)"],
+            "note": "जहाँ चतुर्थी दोनों दिनों के मध्याह्न में हो, वहाँ वह दिन लिया गया है जिसका अधिक भाग वह ढकती है।",
+            "faq": [
+                ("{example_city} में गणेश चतुर्थी भारत से अलग तारीख को क्यों है?",
+                 "पूजा दिन के मध्य की है, और मध्याह्न हर शहर में चतुर्थी तिथि के अलग बिंदु पर आता है। 2027 में उत्तर अमेरिका के शहर इसे "
+                 "भारत से एक दिन पहले मनाते हैं।"),
+                ("गणेश चतुर्थी पर चंद्रमा क्यों नहीं देखना चाहिए?",
+                 "परंपरा के अनुसार उस रात चंद्र दर्शन से झूठा कलंक (मिथ्या दोष) लगता है। हर रात का चंद्रोदय शहर के पृष्ठ पर है।"),
+                ("विसर्जन कब है?",
+                 "अनंत चतुर्दशी को, उसी पक्ष की चतुर्दशी। जो परिवार गणेश जी को डेढ़, तीन, पाँच या सात दिन रखते हैं, वे पहले विसर्जन "
+                 "करते हैं।"),
+            ],
+        },
+    },
     "sankashti": {
         "slug": "sankashti-chaturthi",
         "en": {

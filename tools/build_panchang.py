@@ -61,6 +61,10 @@ T = {
             ("makar-sankranti", "Makar Sankranti, Pongal and Lohri: date and time in every city"),
             ("maha-shivratri", "Maha Shivratri: date and nishita puja time in every city"),
             ("holi", "Holi and Holika Dahan: date and time in every city"),
+            ("navratri", "Navratri: Chaitra and Sharad Navratri dates in every city"),
+            ("raksha-bandhan", "Raksha Bandhan: date and rakhi time in every city"),
+            ("janmashtami", "Janmashtami: date and midnight puja time in every city"),
+            ("ganesh-chaturthi", "Ganesh Chaturthi: date, puja time and visarjan in every city"),
             ("karwa-chauth", "Karwa Chauth: date and moonrise in every city"),
             ("diwali", "Diwali: Lakshmi Puja date and time in every city"),
             ("ekadashi", "Ekadashi dates and parana time by city"),
@@ -203,6 +207,10 @@ T = {
             ("makar-sankranti", "मकर संक्रांति, पोंगल और लोहड़ी: हर शहर में तारीख और समय"),
             ("maha-shivratri", "महाशिवरात्रि: हर शहर में तारीख और निशीथ पूजा का समय"),
             ("holi", "होली और होलिका दहन: हर शहर में तारीख और समय"),
+            ("navratri", "नवरात्रि: हर शहर में चैत्र और शारदीय नवरात्रि की तारीखें"),
+            ("raksha-bandhan", "रक्षा बंधन: हर शहर में तारीख और राखी बाँधने का समय"),
+            ("janmashtami", "जन्माष्टमी: हर शहर में तारीख और मध्यरात्रि पूजा का समय"),
+            ("ganesh-chaturthi", "गणेश चतुर्थी: हर शहर में तारीख, पूजा का समय और विसर्जन"),
             ("karwa-chauth", "करवा चौथ: हर शहर में तारीख और चंद्रोदय"),
             ("diwali", "दीपावली: हर शहर में लक्ष्मी पूजा की तारीख और समय"),
             ("ekadashi", "एकादशी: शहर के अनुसार तारीखें और पारण"),
@@ -705,7 +713,10 @@ COUNTRY_KEYS = ("ekadashi", "ekadashi_vaishnava", "purnima", "amavasya", "sankas
                 "shivaratri")
 KEY_PAGES = {"makar_sankranti": "makar-sankranti", "maha_shivaratri": "maha-shivratri", "holika_dahan": "holi",
              "holi": "holi", "karwa_chauth": "karwa-chauth", "diwali": "diwali", "ekadashi": "ekadashi",
-             "ekadashi_vaishnava": "ekadashi", "sankashti": "sankashti-chaturthi"}
+             "ekadashi_vaishnava": "ekadashi", "sankashti": "sankashti-chaturthi",
+             "chaitra_navratri": "navratri", "ram_navami": "navratri", "sharad_navratri": "navratri",
+             "raksha_bandhan": "raksha-bandhan", "janmashtami": "janmashtami",
+             "ganesh_chaturthi": "ganesh-chaturthi", "anant_chaturdashi": "ganesh-chaturthi"}
 
 
 def short_day(d: dt.date) -> str:
@@ -1122,14 +1133,22 @@ def month_page(place, lang, year, month, rows, obs, first, last):
 # ------------------------------------------------------------------ the festival pages
 
 # the festival pages that list every city by country, one occurrence each, with the words of their at-a-glance box
-COUNTRY_TABLES = ("makar_sankranti", "maha_shivaratri", "holi", "karwa_chauth", "diwali")
+COUNTRY_TABLES = ("makar_sankranti", "maha_shivaratri", "holi", "navratri", "raksha_bandhan", "janmashtami",
+                  "ganesh_chaturthi", "karwa_chauth", "diwali")
+# pages whose rows carry several observances: the next of each key, in this order
+MULTI = {"navratri": ("chaitra_navratri", "ram_navami", "sharad_navratri"),
+         "ganesh_chaturthi": ("ganesh_chaturthi", "anant_chaturdashi")}
 GLANCE = {
     "en": {"h": "The date at a glance", "all": "in every city listed", "of": "in {k} of {n} cities",
            "more": "and {m} more", "after_bhadra": "after Bhadra, from {t}",
-           "past_midnight": "Bhadra lasts past midnight: your temple's time", "holika": "Holika Dahan", "holi": "Holi"},
+           "past_midnight": "Bhadra lasts past midnight: your temple's time", "holika": "Holika Dahan", "holi": "Holi",
+           "chaitra": "Chaitra Navratri from", "sharad": "Sharad Navratri from", "night": "the night of",
+           "visarjan": "visarjan"},
     "hi": {"h": "एक नज़र में तारीख", "all": "सूची के सभी शहरों में", "of": "{n} में से {k} शहरों में",
            "more": "और {m} अन्य", "after_bhadra": "भद्रा के बाद, {t} से",
-           "past_midnight": "भद्रा आधी रात के बाद तक: अपने मंदिर का समय", "holika": "होलिका दहन", "holi": "होली"},
+           "past_midnight": "भद्रा आधी रात के बाद तक: अपने मंदिर का समय", "holika": "होलिका दहन", "holi": "होली",
+           "chaitra": "चैत्र नवरात्रि", "sharad": "शारदीय नवरात्रि", "night": "रात",
+           "visarjan": "विसर्जन"},
 }
 
 
@@ -1161,21 +1180,36 @@ def glance_html(per_city, lang, key=""):
     the date is Holika Dahan's, and both days are named."""
     g = GLANCE[lang]
 
-    def day(d):
+    def when(items):
+        """The dates that matter on this page for one city, as a key cities are grouped by."""
+        by = {o.key: o.date for o in items}
+        if key == "navratri":
+            return (by.get("chaitra_navratri"), by.get("sharad_navratri"))
+        if key == "ganesh_chaturthi":
+            return (by.get("ganesh_chaturthi"), by.get("anant_chaturdashi"))
+        return (items[0].date,)
+
+    def day(t):
+        wd = lambda d: weekday_date(d, lang) if d else "-"  # noqa: E731
         if key == "holi":
-            return "%s %s, %s %s" % (g["holika"], weekday_date(d, lang), g["holi"],
-                                     weekday_date(d + dt.timedelta(days=1), lang))
-        return weekday_date(d, lang)
+            return "%s %s, %s %s" % (g["holika"], wd(t[0]), g["holi"], wd(t[0] + dt.timedelta(days=1)))
+        if key == "navratri":
+            return "%s %s; %s %s" % (g["chaitra"], wd(t[0]), g["sharad"], wd(t[1]))
+        if key == "ganesh_chaturthi":
+            return "%s, %s %s" % (wd(t[0]), g["visarjan"], wd(t[1]))
+        if key == "janmashtami":
+            return "%s %s" % (g["night"], wd(t[0]))
+        return wd(t[0])
     out = []
     for country in COUNTRY_ORDER:
         dates: dict = {}
         for place in CITIES:
             if place.country_en == country and place.slug in per_city:
-                dates.setdefault(per_city[place.slug][2][0].date, []).append(city_name(place, lang))
+                dates.setdefault(when(per_city[place.slug][2]), []).append(city_name(place, lang))
         if not dates:
             continue
         n = sum(len(v) for v in dates.values())
-        ordered = sorted(dates.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+        ordered = sorted(dates.items(), key=lambda kv: (-len(kv[1]), str(kv[0])))
         main_date, main_cities = ordered[0]
         if len(ordered) == 1:
             text = "%s %s" % (day(main_date), g["all"] if n > 1 else "")
@@ -1206,9 +1240,14 @@ def festival_row(key, o, zone, lang, link):
     elif key == "makar_sankranti":
         cells = [esc(clock_dated(dd.get("sankranti"), zone, o.date, lang)),
                  esc(weekday_date(o.date - dt.timedelta(days=1), lang))]
-    elif key == "maha_shivaratri":
+    elif key in ("maha_shivaratri", "janmashtami"):
         w = dd.get("window")
         cells = [esc(span_text(w[0], w[1], zone, o.date, lang) if w else "-"),
+                 esc(clock_dated(dd.get("tithi_ends"), zone, o.date, lang))]
+    elif key == "raksha_bandhan":
+        r = dd.get("rakhi")
+        cells = [esc(span_text(r[0], r[1], zone, o.date, lang) if r else "-"),
+                 esc(clock_dated(dd.get("bhadra_ends"), zone, o.date, lang)),
                  esc(clock_dated(dd.get("tithi_ends"), zone, o.date, lang))]
     else:  # holi: the row is Holika Dahan's, and Holi is the day after
         light = dd.get("light")
@@ -1218,6 +1257,20 @@ def festival_row(key, o, zone, lang, link):
                  esc(weekday_date(o.date + dt.timedelta(days=1), lang))]
     return '<tr><td>%s</td><td class="d">%s</td>%s</tr>' % (link, esc(weekday_date(o.date, lang)),
                                                            "".join(cell % c for c in cells))
+
+
+def multi_row(key, items, zone, lang, link):
+    """One city's row on a page whose rows carry several observances (MULTI)."""
+    by = {o.key: o for o in items}
+    day = lambda k: esc(weekday_date(by[k].date, lang)) if k in by else "-"  # noqa: E731
+    if key == "navratri":
+        cells = [day("chaitra_navratri"), day("ram_navami"), day("sharad_navratri")]
+    else:  # ganesh_chaturthi
+        gc = by.get("ganesh_chaturthi")
+        w = gc.details.get("window") if gc else None
+        cells = [day("ganesh_chaturthi"), esc(span_text(w[0], w[1], zone, gc.date, lang)) if w and gc else "-",
+                 day("anant_chaturdashi")]
+    return '<tr><td>%s</td>%s</tr>' % (link, "".join('<td class="d">%s</td>' % c for c in cells))
 
 
 def festival_page(key, lang, year, per_city):
@@ -1244,7 +1297,8 @@ def festival_page(key, lang, year, per_city):
                     continue
                 _, zone, items = per_city[place.slug]
                 link = '<a href="%s/panchang/%s">%s</a>' % (prefix(lang), place.slug, esc(city_name(place, lang)))
-                rows += "".join(festival_row(key, o, zone, lang, link) for o in items)
+                rows += multi_row(key, items, zone, lang, link) if key in MULTI else \
+                    "".join(festival_row(key, o, zone, lang, link) for o in items)
             if rows:
                 head_country = country_name(next(p for p in CITIES if p.country_en == country), lang)
                 sections += "<h3>%s</h3>%s" % (esc(head_country), table(t["cols"], rows))
@@ -1506,6 +1560,16 @@ def build(first: dt.date, last: dt.date, only=None, today: dt.date | None = None
                     o.details["window"] = (int(o.details["light"][1]), int(o.details["light"][2]))
                 else:
                     o.details.pop("window", None)
+            elif o.key == "raksha_bandhan":
+                # rakhi is tied after Bhadra (the first half of Purnima) and while Purnima lasts, from sunrise until
+                # the evening's pradosh kaal closes
+                b = bhadra_end(rows, o.details["tithi_begins"], o.details["tithi_ends"])
+                o.details["bhadra_ends"] = b
+                day = next((r for r in rows if r["d"] == o.date.isoformat()), None)
+                if day:
+                    start = max(day["sr"], b or day["sr"])
+                    end = min(o.details["tithi_ends"], day["ss"] + vrats.PRADOSH_LENGTH)
+                    o.details["rakhi"] = (int(start), int(end)) if end > start else None
         base, rel_rows = relativize(rows)
         data = {"slug": place.slug, "tz": place.tz, "first": first.isoformat(), "last": last.isoformat(),
                 "base": base, "rows": rel_rows, "vrats": encode_vrats(obs, base),
@@ -1528,13 +1592,17 @@ def build(first: dt.date, last: dt.date, only=None, today: dt.date | None = None
     # the festival pages, on permanent addresses since 15 Nov 2026: the next occurrence on or after `today` in each
     # city (Ekadashi and Sankashti: every one still to come), the year of it in the title
     keys = {"makar_sankranti": ("makar_sankranti",), "maha_shivaratri": ("maha_shivaratri",), "holi": ("holika_dahan",),
+            "navratri": MULTI["navratri"], "raksha_bandhan": ("raksha_bandhan",), "janmashtami": ("janmashtami",),
+            "ganesh_chaturthi": MULTI["ganesh_chaturthi"],
             "karwa_chauth": ("karwa_chauth",), "diwali": ("diwali",), "sankashti": ("sankashti",),
             "ekadashi": ("ekadashi", "ekadashi_vaishnava")}
     for key, wanted in keys.items():
         per_city = {}
         for slug, (place, zone, obs) in per_city_obs.items():
             items = [o for o in obs if o.key in wanted and o.date >= today]
-            if items and key in COUNTRY_TABLES:
+            if key in MULTI:   # the next of each key, in MULTI's order
+                items = [next(o for o in items if o.key == k) for k in wanted if any(o.key == k for o in items)]
+            elif items and key in COUNTRY_TABLES:
                 items = items[:1]
             if items:
                 per_city[slug] = (place, zone, items)
