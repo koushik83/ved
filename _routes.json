@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "include": ["/panchang/*"],
+  "exclude": [
+    "/panchang/data/*",
+    "/panchang/*/*",
+    "/panchang/karwa-chauth-2027",
+    "/panchang/diwali-2026",
+    "/panchang/diwali-2027",
+    "/panchang/sankashti-chaturthi-2027",
+    "/panchang/ekadashi-2027"
+  ]
+}
