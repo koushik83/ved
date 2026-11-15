@@ -21,6 +21,7 @@ import sys
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import update_sitemap  # noqa: E402
 from build_prashnavali import FOOTER, GROW, INSTALL, JOURNEY, SITE, STYLE, jsonld, nav_css, nav_html, others_html  # noqa: E402
 from panchang import engine, names, vrats  # noqa: E402
 from panchang.cities import CITIES, COUNTRY_ORDER  # noqa: E402
@@ -571,12 +572,13 @@ def city_facts(place, rows, lang, year):
 
 # ------------------------------------------------------------------ page pieces
 
-def head(lang, title, description, url, alt_en, alt_hi, crumbs, faq_ld, extra_css="", og_type="website"):
+def head(lang, title, description, url, alt_en, alt_hi, crumbs, faq_ld, extra_css="", og_type="website", robots=""):
+    robots_tag = f'\n    <meta name="robots" content="{robots}">' if robots else ""
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{robots_tag}
     <title>{esc(title)}</title>
     <link rel="canonical" href="{url}" />
     <link rel="alternate" hreflang="en" href="{alt_en}" />
@@ -946,7 +948,10 @@ def month_page(place, lang, year, month, rows, obs, first, last):
     return head(lang, t["title"].format(**kw), t["description"].format(**kw), url, alt_en, alt_hi,
                 crumbs(lang, (T[lang]["breadcrumb"], SITE + prefix(lang) + "/panchang"),
                        (city, SITE + prefix(lang) + "/panchang/" + place.slug), (f"{mname} {year}", url)),
-                faq_ld(faq), CSS) + f"""<body>
+                # kept out of search (owner, 15 Nov 2026): 2,044 month pages share their text across cities, and
+                # many near-identical pages risk the whole site's standing; visitors still reach them from the city
+                # page, and "follow" keeps their links counted. update_sitemap leaves noindex pages out.
+                faq_ld(faq), CSS, robots="noindex, follow") + f"""<body>
 {nav_html(lang, None, other)}
     <main class="wrap">
         <h1>{esc(t["h1"].format(**kw))}</h1>
@@ -1197,27 +1202,6 @@ def index_markdown(lang, last):
     return "\n".join(lines)
 
 
-# ------------------------------------------------------------------ the sitemap
-
-def add_to_sitemap(entries, today: dt.date):
-    """entries: [(url, changefreq, priority)]; adds the missing ones."""
-    path = ROOT / "sitemap.xml"
-    text = path.read_text(encoding="utf-8")
-    nl = "\r\n" if "\r\n" in text else "\n"
-    added = 0
-    new = ""
-    for url, freq, prio in entries:
-        if f"<loc>{url}</loc>" in text:
-            continue
-        new += (f"  <url>{nl}    <loc>{url}</loc>{nl}    <lastmod>{today.isoformat()}</lastmod>{nl}"
-                f"    <changefreq>{freq}</changefreq>{nl}    <priority>{prio}</priority>{nl}  </url>{nl}")
-        added += 1
-    if new:
-        text = text.replace("</urlset>", new + "</urlset>")
-        path.write_text(text, encoding="utf-8")
-    return added
-
-
 # ------------------------------------------------------------------ main
 
 def build(first: dt.date, last: dt.date, only=None):
@@ -1284,8 +1268,9 @@ def build(first: dt.date, last: dt.date, only=None):
         (root_folder / "panchang.md").write_text(index_markdown(lang, last), encoding="utf-8")
         written.append(str((root_folder / "panchang.html").relative_to(ROOT)))
         entries.insert(0, (SITE + prefix(lang) + "/panchang", "daily", "0.9"))
-    added = add_to_sitemap(entries, dt.date.today())
-    return written, added
+    # the sitemap: new pages added with these frequencies and priorities, every date moved to the page's last change
+    report = update_sitemap.update(hints={url: (freq, prio) for url, freq, prio in entries})
+    return written, report
 
 
 if __name__ == "__main__":
@@ -1295,5 +1280,5 @@ if __name__ == "__main__":
     ap.add_argument("--last", default=dt.date(today.year + 1, 12, 31).isoformat())
     ap.add_argument("--only", nargs="*", help="city slugs, for a quick run")
     a = ap.parse_args()
-    pages, added = build(dt.date.fromisoformat(a.first), dt.date.fromisoformat(a.last), a.only)
-    print(f"{len(pages)} pages, {added} sitemap entries added")
+    pages, report = build(dt.date.fromisoformat(a.first), dt.date.fromisoformat(a.last), a.only)
+    print(f"{len(pages)} pages; sitemap: {update_sitemap.describe(report)}")

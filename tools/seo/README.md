@@ -41,6 +41,12 @@ query family within four months. The families and their pages are in
        python tools/build_prashnavali.py
        python tools/build_articles.py
        python tools/check_verses.py <folder of fetched source texts>
+       python -B tools/update_sitemap.py
+
+   The last line keeps `sitemap.xml` in step with the pages (new pages in,
+   gone or noindex pages out, each date the page's last change). Run it after
+   any page is built or edited by hand, before the commit; `--check` only
+   reports. The panchang build runs it by itself.
 
 The first export, in week 2 after indexing, is the baseline; do not change
 titles on it. Position 3 is measured on the family's main query (for example
