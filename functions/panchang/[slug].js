@@ -18,24 +18,37 @@ const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
   'November', 'December'];
 
+// The page as it came, with a header saying why it was left alone (x-ved-edge), so a deploy can be checked from
+// outside with one request.
+function unchanged(res, why) {
+  try {
+    const r = new Response(res.body, res);
+    r.headers.set('x-ved-edge', why);
+    return r;
+  } catch (e) {
+    return res;
+  }
+}
+
 export async function onRequest(context) {
   const res = await context.next();
   try {
     const type = res.headers.get('content-type') || '';
-    if (res.status !== 200 || type.indexOf('text/html') === -1) { return res; }
+    if (res.status !== 200 || type.indexOf('text/html') === -1) { return unchanged(res, 'skip: ' + res.status + ' ' + type); }
     const html = await res.clone().text();
     const m = html.match(/<script>window\.PANCHANG = (\{[\s\S]*?\});<\/script>/);
-    if (!m) { return res; }
+    if (!m) { return unchanged(res, 'skip: not a city page'); }
     const P = JSON.parse(m[1]);
-    if (P.lang !== 'en' || !/^\/panchang\/data\/[a-z-]+\.json$/.test(P.data)) { return res; }
+    if (P.lang !== 'en' || !/^\/panchang\/data\/[a-z-]+\.json$/.test(P.data)) { return unchanged(res, 'skip: language or data path'); }
     const dres = await context.env.ASSETS.fetch(new URL(P.data, context.request.url));
-    if (!dres.ok) { return res; }
+    if (!dres.ok) { return unchanged(res, 'skip: data ' + dres.status); }
     const now = Date.now();
     const data = sliceData(await dres.text(), now);
-    if (!data) { return res; }
+    if (!data) { return unchanged(res, 'skip: data not sliced'); }
     const out = renderToday(html, P, data, now);
-    if (!out) { return res; }
+    if (!out) { return unchanged(res, 'skip: not rendered'); }
     const headers = new Headers(res.headers);
+    headers.set('x-ved-edge', 'filled');
     headers.delete('content-length');
     // the static file's validators describe yesterday's page too: without removing them a crawler that revalidates
     // gets a 304 and keeps an old day's figures
@@ -44,7 +57,7 @@ export async function onRequest(context) {
     headers.set('cache-control', 'public, max-age=0, must-revalidate');
     return new Response(out, { status: 200, headers });
   } catch (e) {
-    return res;
+    return unchanged(res, 'error: ' + String(e && e.message || e).slice(0, 120));
   }
 }
 
