@@ -105,3 +105,16 @@ CITIES = [
 ]
 COUNTRY_ORDER = ["India", "United States", "Canada", "United Kingdom", "Australia", "New Zealand", "Ireland", "Germany",
                  "Netherlands", "Switzerland", "United Arab Emirates", "Singapore"]
+
+# The city pages kept in search: the owner, 15 Nov 2026, "cut to top 30 cities today....why risk" and "top 30 by
+# revenue". Ranked by the Indian-origin population (rough estimates) times the country's ad rate relative to the US
+# (US 1, Canada 0.7, Australia 0.65, UK 0.6, New Zealand 0.5, Singapore 0.35, UAE 0.2, India about 0.04): the top
+# 25 abroad, and then, on the owner's word ("have atleast couple of indian cities...5 may be"), five Indian cities
+# whose English searches showed in Google's suggestions, Ahmedabad for choghadiya. English pages only ("hindi i
+# agree"). Every other city page, and every Hindi city page, carries "noindex, follow" and stays in the city list
+# for visitors. Swap a city here and rebuild; the sitemap follows.
+INDEXED = ["london", "new-york", "new-jersey", "san-francisco", "san-jose", "chicago", "toronto", "washington-dc",
+           "dallas", "brampton", "los-angeles", "dubai", "melbourne", "sydney", "houston", "seattle", "philadelphia",
+           "mississauga", "atlanta", "boston", "surrey", "singapore", "detroit", "vancouver", "austin",
+           "delhi", "mumbai", "bengaluru", "hyderabad", "ahmedabad"]
+assert len(INDEXED) == 30 and len(set(INDEXED)) == 30

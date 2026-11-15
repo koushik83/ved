@@ -6,25 +6,26 @@ FESTIVALS = {
         "en": {
             "title": "Karwa Chauth {year}: Date and Moonrise Time by City (USA, Canada, UK, Australia, India)",
             "h1": "Karwa Chauth {year}: date and moonrise time in your city",
-            "description": "Karwa Chauth {year} falls on different dates in different cities. The date, the moonrise and the "
-                           "fasting hours for {n} cities in India, the United States, Canada, the United Kingdom, Australia and "
-                           "beyond, each worked out for its own sky.",
+            "description": "Karwa Chauth {year}: the date, moonrise time and fasting hours for {n} cities in the USA, "
+                           "Canada, UK, Australia and India, in local time.",
             "intro": [
                 "Karwa Chauth is kept on Kartika Krishna Chaturthi, and the fast is broken only when the moon is seen. The "
-                "rule the panchangs follow is that the fast falls on the day Chaturthi is in force at moonrise. Because "
-                "Chaturthi begins and ends at one instant worldwide but moonrise is local, the date can differ by a day "
-                "between India and a city abroad, and the moonrise time differs everywhere.",
+                "fast falls on the day Chaturthi is in force in the evening, in pradosh kaal, the 144 minutes after sunset "
+                "when the puja is done and the moon is awaited; if Chaturthi touches both evenings, on the one it covers "
+                "more of. Because Chaturthi begins and ends at one instant worldwide but sunset is local, the date can "
+                "differ by a day between India and a city abroad. In some cities Chaturthi has ended by the time the moon "
+                "rises; the fast is still kept that day and broken at moonrise.",
                 "The table gives, for each city, the day of the fast, the moonrise that evening, and the fasting hours from "
                 "sunrise to moonrise. All times are the city's own local time, with daylight saving allowed for.",
             ],
             "cols": ["City", "Karwa Chauth", "Moonrise", "Fast from sunrise", "Chaturthi"],
-            "note": "Where the Chaturthi tithi is in force at neither evening's moonrise, the fast is kept on the later of the "
-                    "two days, as the North Indian panchangs do.",
+            "note": "Where the Chaturthi tithi is in force in neither evening's pradosh kaal, the fast is kept on the later "
+                    "of the two days, as the North Indian panchangs do.",
             "faq": [
                 ("Why is Karwa Chauth on a different date in {example_city} than in India?",
-                 "Because the fast is tied to the local moonrise. The Chaturthi tithi runs for the same stretch of time "
+                 "Because the fast is tied to the local evening. The Chaturthi tithi runs for the same stretch of time "
                  "everywhere, but in a city many hours west of India the evening falls earlier in that stretch, so the "
-                 "tithi may still be in force at moonrise a day later or earlier than in Delhi."),
+                 "tithi may be in force after sunset a day later or earlier than in Delhi."),
                 ("When can I break the fast?",
                  "After the moonrise time given for your city, once the moon is actually seen. Clouds do not move the "
                  "time; the moon is up whether or not it is visible."),
@@ -39,21 +40,23 @@ FESTIVALS = {
             "description": "करवा चौथ {year} अलग-अलग शहरों में अलग तारीख को पड़ता है। भारत, अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया "
                            "और अन्य देशों के {n} शहरों के लिए तारीख, चंद्रोदय और व्रत के घंटे, हर शहर के अपने आकाश के अनुसार।",
             "intro": [
-                "करवा चौथ कार्तिक कृष्ण चतुर्थी को रखा जाता है और व्रत चंद्र दर्शन के बाद ही खोला जाता है। पंचांगों का नियम है कि "
-                "व्रत उस दिन होता है जिस दिन चंद्रोदय के समय चतुर्थी तिथि चल रही हो। चतुर्थी पूरे संसार में एक ही क्षण आरंभ और समाप्त "
-                "होती है, पर चंद्रोदय स्थानीय है; इसलिए भारत और विदेश के किसी शहर में तारीख एक दिन अलग हो सकती है, और चंद्रोदय का "
-                "समय हर जगह अलग होता है।",
+                "करवा चौथ कार्तिक कृष्ण चतुर्थी को रखा जाता है और व्रत चंद्र दर्शन के बाद ही खोला जाता है। व्रत उस दिन होता है जिस "
+                "दिन शाम को, सूर्यास्त के बाद के 144 मिनट के प्रदोष काल में, चतुर्थी तिथि चल रही हो, जब पूजा होती है और चंद्रमा की "
+                "प्रतीक्षा होती है; यदि चतुर्थी दोनों शामों को छूती हो, तो उस शाम जिसका अधिक भाग वह ढकती है। चतुर्थी पूरे संसार में एक "
+                "ही क्षण आरंभ और समाप्त होती है, पर सूर्यास्त स्थानीय है; इसलिए भारत और विदेश के किसी शहर में तारीख एक दिन अलग हो "
+                "सकती है। कुछ शहरों में चंद्रोदय तक चतुर्थी समाप्त हो चुकी होती है; व्रत फिर भी उसी दिन रखा जाता है और चंद्रोदय पर "
+                "खोला जाता है।",
                 "तालिका हर शहर के लिए व्रत का दिन, उस शाम का चंद्रोदय और सूर्योदय से चंद्रोदय तक के व्रत के घंटे देती है। सभी समय "
                 "शहर के अपने स्थानीय समय में हैं, डेलाइट सेविंग सहित।",
             ],
             "cols": ["शहर", "करवा चौथ", "चंद्रोदय", "व्रत सूर्योदय से", "चतुर्थी"],
-            "note": "जहाँ चतुर्थी तिथि किसी भी शाम के चंद्रोदय पर नहीं होती, वहाँ व्रत दोनों में से बाद के दिन रखा जाता है, जैसा उत्तर "
-                    "भारत के पंचांग करते हैं।",
+            "note": "जहाँ चतुर्थी तिथि किसी भी शाम के प्रदोष काल में नहीं होती, वहाँ व्रत दोनों में से बाद के दिन रखा जाता है, जैसा "
+                    "उत्तर भारत के पंचांग करते हैं।",
             "faq": [
                 ("{example_city} में करवा चौथ भारत से अलग तारीख को क्यों है?",
-                 "क्योंकि व्रत स्थानीय चंद्रोदय से जुड़ा है। चतुर्थी तिथि हर जगह एक ही समय-खंड में चलती है, पर भारत से कई घंटे "
-                 "पश्चिम के शहर में शाम उस खंड में पहले पड़ती है, इसलिए वहाँ चंद्रोदय पर तिथि दिल्ली से एक दिन बाद या पहले चल रही "
-                 "हो सकती है।"),
+                 "क्योंकि व्रत स्थानीय शाम से जुड़ा है। चतुर्थी तिथि हर जगह एक ही समय-खंड में चलती है, पर भारत से कई घंटे "
+                 "पश्चिम के शहर में शाम उस खंड में पहले पड़ती है, इसलिए वहाँ सूर्यास्त के बाद तिथि दिल्ली से एक दिन बाद या पहले चल "
+                 "रही हो सकती है।"),
                 ("व्रत कब खोलें?",
                  "अपने शहर के लिए दिए चंद्रोदय समय के बाद, चंद्र दर्शन होने पर। बादल समय नहीं बदलते; चंद्र दिखे या न दिखे, वह उग "
                  "चुका होता है।"),
@@ -68,8 +71,8 @@ FESTIVALS = {
         "en": {
             "title": "Diwali {year}: Date and Lakshmi Puja Time by City (USA, Canada, UK, Australia, India)",
             "h1": "Diwali {year}: date and Lakshmi Puja time in your city",
-            "description": "Diwali {year}: the Lakshmi Puja date and the pradosh puja window for {n} cities in India, the United "
-                           "States, Canada, the United Kingdom, Australia and beyond, each in its own local time.",
+            "description": "When is Diwali {year}? The Lakshmi Puja date and time for {n} cities in the USA, Canada, UK, "
+                           "Australia and India, in local time.",
             "intro": [
                 "Lakshmi Puja is performed on the Amavasya of Kartika during pradosh kaal, the first three muhurtas after "
                 "sunset. The day is the one on which Amavasya is in force in that evening window. Amavasya begins and ends "
@@ -121,14 +124,200 @@ FESTIVALS = {
             ],
         },
     },
+    "makar_sankranti": {
+        "slug": "makar-sankranti",
+        "en": {
+            "title": "Makar Sankranti {year}: Date and Time by City (USA, Canada, UK, Australia, India)",
+            "h1": "Makar Sankranti {year}: date and time in your city",
+            "description": "Makar Sankranti {year}, Pongal and Lohri: the date and the moment the Sun enters Makara for {n} "
+                           "cities in the USA, Canada, the UK, Australia and India.",
+            "intro": [
+                "Makar Sankranti is the day the Sun enters Makara, the sidereal Capricorn. The entry is one instant "
+                "everywhere, but the day it falls on depends on the city's clock and its sunset: when the Sun enters "
+                "Makara after sunset, the festival and its punya kaal, the hours for the holy bath and for giving, move "
+                "to the next day. That is why the date can differ between India and a city abroad. Tamil families keep "
+                "the same day as Pongal, and Lohri is lit on the evening before.",
+                "The table gives, for each city, the day of Makar Sankranti, the local time the Sun enters Makara, and the "
+                "day of Lohri. All times are local, with daylight saving allowed for.",
+            ],
+            "cols": ["City", "Makar Sankranti", "Sun enters Makara", "Lohri"],
+            "note": "The Sun's place is sidereal, with the Lahiri ayanamsa. The punya kaal follows the moment of entry; when "
+                    "the entry falls after sunset, it is kept from sunrise the next day.",
+            "faq": [
+                ("Why can Makar Sankranti fall on a different date in {example_city} than in India?",
+                 "The Sun enters Makara at one instant worldwide. A city many hours behind India meets that instant "
+                 "earlier on its own clock, sometimes on the previous date, and when the entry comes after the city's "
+                 "sunset the festival moves to the next day. Either can change the date."),
+                ("Is Makar Sankranti always on 14 January?",
+                 "No. The moment of entry comes about six hours later each year and moves back with each leap day, so in "
+                 "these decades it falls on 14 or 15 January in India, drifting slowly later over the centuries."),
+                ("When is Lohri?",
+                 "Lohri is lit on the evening before Makar Sankranti, so it moves with it."),
+            ],
+        },
+        "hi": {
+            "title": "मकर संक्रांति {year}: तारीख और समय, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "मकर संक्रांति {year}: आपके शहर में तारीख और समय",
+            "description": "मकर संक्रांति {year}, पोंगल और लोहड़ी: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों में "
+                           "तारीख और सूर्य के मकर प्रवेश का स्थानीय समय।",
+            "intro": [
+                "मकर संक्रांति वह दिन है जब सूर्य निरयन मकर राशि में प्रवेश करता है। यह प्रवेश हर जगह एक ही क्षण होता है, पर वह "
+                "किस दिन पड़ता है यह शहर की घड़ी और उसके सूर्यास्त पर निर्भर है: जब सूर्य सूर्यास्त के बाद मकर में प्रवेश करता है, "
+                "तो पर्व और उसका पुण्य काल, स्नान और दान का समय, अगले दिन चला जाता है। इसीलिए भारत और विदेश के किसी शहर में "
+                "तारीख अलग हो सकती है। तमिल परिवार यही दिन पोंगल के रूप में मनाते हैं, और लोहड़ी इसकी पिछली शाम जलाई जाती है।",
+                "तालिका हर शहर के लिए मकर संक्रांति का दिन, सूर्य के मकर प्रवेश का स्थानीय समय और लोहड़ी का दिन देती है। सभी "
+                "समय स्थानीय हैं, डेलाइट सेविंग सहित।",
+            ],
+            "cols": ["शहर", "मकर संक्रांति", "सूर्य का मकर प्रवेश", "लोहड़ी"],
+            "note": "सूर्य की स्थिति निरयन है, लाहिड़ी अयनांश के साथ। पुण्य काल प्रवेश के क्षण के बाद आता है; जब प्रवेश सूर्यास्त के "
+                    "बाद हो, तो वह अगले दिन सूर्योदय से माना जाता है।",
+            "faq": [
+                ("{example_city} में मकर संक्रांति भारत से अलग तारीख को क्यों हो सकती है?",
+                 "सूर्य पूरे संसार में एक ही क्षण मकर में प्रवेश करता है। भारत से कई घंटे पीछे का शहर उस क्षण को अपनी घड़ी पर पहले "
+                 "पाता है, कभी पिछली तारीख को, और यदि प्रवेश शहर के सूर्यास्त के बाद हो तो पर्व अगले दिन चला जाता है। दोनों से "
+                 "तारीख बदल सकती है।"),
+                ("क्या मकर संक्रांति हमेशा 14 जनवरी को होती है?",
+                 "नहीं। प्रवेश का क्षण हर साल लगभग छह घंटे बाद आता है और हर लीप दिन के साथ पीछे लौटता है, इसलिए इन दशकों में भारत "
+                 "में यह 14 या 15 जनवरी को पड़ता है, और सदियों में धीरे-धीरे आगे खिसकता है।"),
+                ("लोहड़ी कब है?",
+                 "लोहड़ी मकर संक्रांति की पिछली शाम जलाई जाती है, इसलिए वह उसी के साथ खिसकती है।"),
+            ],
+        },
+    },
+    "maha_shivaratri": {
+        "slug": "maha-shivratri",
+        "en": {
+            "title": "Maha Shivratri {year}: Date and Nishita Puja Time by City (USA, Canada, UK, Australia, India)",
+            "h1": "Maha Shivratri {year}: date and nishita puja time in your city",
+            "description": "Maha Shivratri {year}: the date and the nishita kaal puja time for {n} cities in the USA, Canada, "
+                           "the UK, Australia and India, each in local time.",
+            "intro": [
+                "Maha Shivratri is kept on the Chaturdashi of the dark fortnight of Magha, which North Indian calendars "
+                "call Phalguna, and its central worship is at nishita kaal, the muhurta at the middle of the night. The "
+                "day is the one whose midnight muhurta falls while Chaturdashi is in force. Chaturdashi begins and ends at "
+                "one instant everywhere, but each city's night is its own, so the date can differ by a day between India "
+                "and a city abroad, and even between the east and west coasts of North America.",
+                "The table gives, for each city, the date of Maha Shivratri, the nishita puja time during which "
+                "Chaturdashi is in force, and the time Chaturdashi ends. The fast is broken the next morning after "
+                "sunrise. All times are local, with daylight saving allowed for.",
+            ],
+            "cols": ["City", "Maha Shivratri", "Nishita puja", "Chaturdashi ends"],
+            "note": "Where Chaturdashi holds the midnight muhurta of both nights, the first is taken; where it holds "
+                    "neither, the first day it touches.",
+            "faq": [
+                ("Why is Maha Shivratri on a different date in {example_city} than in India?",
+                 "The worship belongs to the middle of the night. Chaturdashi covers the same stretch of time everywhere, "
+                 "but midnight comes to each city at a different point in it, so the night it covers can differ from "
+                 "Delhi's."),
+                ("What is nishita kaal?",
+                 "The night is divided into fifteen muhurtas, and nishita is the eighth, the one at its middle. It is "
+                 "worked out from each city's own sunset and next sunrise, so it is rarely at midnight on the clock."),
+                ("Is this the same as the monthly Shivaratri?",
+                 "Masik Shivaratri falls on every dark-fortnight Chaturdashi; Maha Shivratri is the one in Magha "
+                 "(Phalguna in the North) and the main one of the year. Each city's page lists every Masik Shivaratri."),
+            ],
+        },
+        "hi": {
+            "title": "महाशिवरात्रि {year}: तारीख और निशीथ पूजा का समय, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "महाशिवरात्रि {year}: आपके शहर में तारीख और निशीथ पूजा का समय",
+            "description": "महाशिवरात्रि {year}: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों के लिए तारीख और निशीथ "
+                           "काल की पूजा का समय, स्थानीय समय में।",
+            "intro": [
+                "महाशिवरात्रि माघ कृष्ण चतुर्दशी को रखी जाती है, जिसे उत्तर भारत के पंचांग फाल्गुन कहते हैं, और इसकी मुख्य पूजा "
+                "निशीथ काल में होती है, रात के मध्य का मुहूर्त। दिन वह है जिसकी आधी रात के मुहूर्त में चतुर्दशी चल रही हो। "
+                "चतुर्दशी हर जगह एक ही क्षण आरंभ और समाप्त होती है, पर हर शहर की रात अपनी होती है, इसलिए भारत और विदेश के किसी "
+                "शहर में, और उत्तर अमेरिका के पूर्वी और पश्चिमी तट के बीच भी, तारीख एक दिन अलग हो सकती है।",
+                "तालिका हर शहर के लिए महाशिवरात्रि की तारीख, निशीथ पूजा का वह समय जिसमें चतुर्दशी चल रही हो, और चतुर्दशी के "
+                "समाप्त होने का समय देती है। व्रत अगली सुबह सूर्योदय के बाद खोला जाता है। सभी समय स्थानीय हैं, डेलाइट सेविंग सहित।",
+            ],
+            "cols": ["शहर", "महाशिवरात्रि", "निशीथ पूजा", "चतुर्दशी समाप्त"],
+            "note": "जहाँ चतुर्दशी दोनों रातों के मध्य मुहूर्त में हो, वहाँ पहली रात ली गई है; जहाँ किसी में नहीं, वहाँ पहला दिन "
+                    "जिसे वह छूती है।",
+            "faq": [
+                ("{example_city} में महाशिवरात्रि भारत से अलग तारीख को क्यों है?",
+                 "पूजा रात के मध्य की है। चतुर्दशी हर जगह एक ही समय-खंड में चलती है, पर हर शहर की आधी रात उस खंड के अलग बिंदु "
+                 "पर आती है, इसलिए जिस रात को वह ढकती है वह दिल्ली से अलग हो सकती है।"),
+                ("निशीथ काल क्या है?",
+                 "रात को पंद्रह मुहूर्तों में बाँटा जाता है, और निशीथ आठवाँ है, रात के मध्य वाला। यह हर शहर के अपने सूर्यास्त और "
+                 "अगले सूर्योदय से निकाला जाता है, इसलिए यह घड़ी की आधी रात पर कम ही होता है।"),
+                ("क्या यह मासिक शिवरात्रि जैसी ही है?",
+                 "मासिक शिवरात्रि हर कृष्ण पक्ष की चतुर्दशी को होती है; महाशिवरात्रि माघ (उत्तर में फाल्गुन) वाली है और वर्ष की "
+                 "मुख्य शिवरात्रि है। हर शहर का पृष्ठ हर मासिक शिवरात्रि देता है।"),
+            ],
+        },
+    },
+    "holi": {
+        "slug": "holi",
+        "en": {
+            "title": "Holi {year}: Date and Holika Dahan Time by City (USA, Canada, UK, Australia, India)",
+            "h1": "Holi {year}: Holika Dahan date and time in your city",
+            "description": "Holi {year}: the Holika Dahan date and time, the end of Bhadra and the day of colours for {n} "
+                           "cities in the USA, Canada, the UK, Australia and India.",
+            "intro": [
+                "Holika Dahan, the bonfire, is lit on the evening of Phalguna Purnima, in pradosh kaal after sunset while "
+                "Purnima is in force, and Holi, the day of colours, is the next day. The first half of Purnima is Bhadra, "
+                "which tradition avoids for the bonfire, so it is lit after Bhadra ends. Purnima begins and ends at one "
+                "instant worldwide, but sunset is local, so the date and the time can differ between India and a city "
+                "abroad.",
+                "The table gives, for each city, the day of Holika Dahan, the part of that evening's pradosh kaal when "
+                "Purnima is in force and Bhadra is over, the time Bhadra ends, and the day of Holi. All times are local, "
+                "with daylight saving allowed for.",
+            ],
+            "cols": ["City", "Holika Dahan", "Time to light", "Bhadra ends", "Holi"],
+            "note": "Where Purnima is in force in both evenings, the evening it covers more of is taken. Where Bhadra ends "
+                    "after pradosh kaal but before midnight, the time is given from the end of Bhadra. Where it lasts past "
+                    "midnight, tradition lights the fire in the tail of Bhadra or in pradosh kaal, and practice varies, so "
+                    "follow your temple's time.",
+            "faq": [
+                ("Why is Holi on a different date in {example_city} than in India?",
+                 "The bonfire belongs to the evening, and the evening comes to each city at a different point in the "
+                 "Purnima tithi. When Purnima begins after sunset in one city and before it in another, the date "
+                 "differs, and Holi, the next day, moves with it."),
+                ("What is Bhadra and why is it avoided?",
+                 "Bhadra is Vishti karana, which falls in the first half of Purnima. Tradition holds it unlucky for "
+                 "beginnings, so the bonfire is lit after it ends. When it runs late into the night, communities follow "
+                 "the time their temple gives."),
+                ("Which day are colours played?",
+                 "The morning after Holika Dahan. In many places the day is also called Dhulandi or Rangwali Holi."),
+            ],
+        },
+        "hi": {
+            "title": "होली {year}: तारीख और होलिका दहन का समय, शहर के अनुसार (अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया, भारत)",
+            "h1": "होली {year}: आपके शहर में होलिका दहन की तारीख और समय",
+            "description": "होली {year}: अमेरिका, कनाडा, ब्रिटेन, ऑस्ट्रेलिया और भारत के {n} शहरों के लिए होलिका दहन की तारीख और "
+                           "समय, भद्रा की समाप्ति और रंगों का दिन।",
+            "intro": [
+                "होलिका दहन फाल्गुन पूर्णिमा की शाम को, सूर्यास्त के बाद के प्रदोष काल में, पूर्णिमा रहते होता है, और रंगों की "
+                "होली अगले दिन। पूर्णिमा का पहला आधा भाग भद्रा है, जिसे परंपरा दहन के लिए टालती है, इसलिए दहन भद्रा समाप्त होने "
+                "के बाद होता है। पूर्णिमा पूरे संसार में एक ही क्षण आरंभ और समाप्त होती है, पर सूर्यास्त स्थानीय है, इसलिए भारत "
+                "और विदेश के किसी शहर में तारीख और समय अलग हो सकते हैं।",
+                "तालिका हर शहर के लिए होलिका दहन का दिन, उस शाम के प्रदोष काल का वह भाग जिसमें पूर्णिमा चल रही हो और भद्रा बीत "
+                "चुकी हो, भद्रा समाप्ति का समय और होली का दिन देती है। सभी समय स्थानीय हैं, डेलाइट सेविंग सहित।",
+            ],
+            "cols": ["शहर", "होलिका दहन", "दहन का समय", "भद्रा समाप्त", "होली"],
+            "note": "जहाँ पूर्णिमा दोनों शामों के प्रदोष काल में हो, वहाँ वह शाम ली गई है जिसका अधिक भाग वह ढकती है। जहाँ भद्रा "
+                    "प्रदोष काल के बाद पर आधी रात से पहले समाप्त हो, वहाँ समय भद्रा समाप्ति से दिया गया है। जहाँ वह आधी रात के बाद "
+                    "तक चले, परंपरा दहन भद्रा पुच्छ में या प्रदोष काल में करती है, और प्रथा अलग-अलग है, इसलिए अपने मंदिर का समय "
+                    "मानें।",
+            "faq": [
+                ("{example_city} में होली भारत से अलग तारीख को क्यों है?",
+                 "दहन शाम का है, और शाम हर शहर में पूर्णिमा तिथि के अलग बिंदु पर आती है। जब पूर्णिमा एक शहर में सूर्यास्त के बाद "
+                 "और दूसरे में उससे पहले आरंभ होती है, तारीख अलग हो जाती है, और अगले दिन की होली भी उसके साथ खिसकती है।"),
+                ("भद्रा क्या है और इसे क्यों टालते हैं?",
+                 "भद्रा विष्टि करण है, जो पूर्णिमा के पहले आधे भाग में पड़ता है। परंपरा इसे शुभ आरंभ के लिए अशुभ मानती है, इसलिए "
+                 "दहन इसके समाप्त होने के बाद होता है। जब यह रात में देर तक चले, समुदाय अपने मंदिर का बताया समय मानते हैं।"),
+                ("रंग किस दिन खेले जाते हैं?",
+                 "होलिका दहन के अगले दिन, सुबह। कई जगह इस दिन को धुलंडी या रंगवाली होली भी कहते हैं।"),
+            ],
+        },
+    },
     "sankashti": {
         "slug": "sankashti-chaturthi",
         "en": {
             "title": "Sankashti Chaturthi {year} Dates and Moonrise Times by City",
             "h1": "Sankashti Chaturthi {year}: dates and moonrise in your city",
-            "description": "Every Sankashti Chaturthi of {year} with the moonrise time, for {n} cities in India, the United States, "
-                           "Canada, the United Kingdom, Australia and beyond, including the Angarki Chaturthis that fall on a "
-                           "Tuesday.",
+            "description": "Sankashti Chaturthi {year}: every date with the moonrise time for {n} cities in the USA, "
+                           "Canada, UK, Australia and India, Angarki included.",
             "intro": [
                 "Sankashti Chaturthi is the Chaturthi of each dark fortnight, kept with a fast that ends at moonrise. The day "
                 "is the one on which Chaturthi is in force at moonrise, so both the date and the time to break the fast "
@@ -174,8 +363,8 @@ FESTIVALS = {
         "en": {
             "title": "Ekadashi {year} Dates by City, with Parana Time",
             "h1": "Ekadashi {year}: dates and parana time in your city",
-            "description": "All Ekadashi fasting dates of {year}, with the parana time for breaking the fast, for {n} cities in "
-                           "India, the United States, Canada, the United Kingdom, Australia and beyond, each in local time.",
+            "description": "Is today Ekadashi? Every Ekadashi of {year} with the parana time to break the fast, for {n} "
+                           "cities in the USA, Canada, UK, Australia and India.",
             "intro": [
                 "Ekadashi is kept twice a lunar month, and the fast is broken the next morning, in Dwadashi, after sunrise "
                 "and after the first quarter of the Dwadashi tithi (Hari Vasara) has passed. The fast day is the one on "
@@ -269,9 +458,8 @@ METHODS = {
     "en": {
         "title": "How This Panchang Is Calculated: Ephemeris, Ayanamsa, Sunrise and the Hindu Day",
         "h1": "How this panchang is calculated",
-        "description": "What goes into the panchang on this site: the JPL ephemeris behind the Sun and Moon, the Lahiri "
-                       "ayanamsa, the definition of sunrise, the Hindu day, the muhurtas, and the rules by which fasts and "
-                       "festivals are placed on a date.",
+        "description": "How this panchang is worked out: the JPL ephemeris, the Lahiri ayanamsa, sunrise, the Hindu day, "
+                       "the muhurtas and the rules that date each festival.",
         "sections": [
             ("The Sun and the Moon",
              ["The positions of the Sun and the Moon come from the JPL DE421 planetary ephemeris, the numerical model of "

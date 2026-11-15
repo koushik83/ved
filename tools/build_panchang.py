@@ -22,9 +22,10 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import update_sitemap  # noqa: E402
-from build_prashnavali import FOOTER, GROW, INSTALL, JOURNEY, SITE, STYLE, jsonld, nav_css, nav_html, others_html  # noqa: E402
+from build_prashnavali import (AD_ZONE, AD_ZONE_END, FOOTER, GROW, INSTALL, JOURNEY, SITE, STYLE, jsonld,  # noqa: E402
+                               nav_css, nav_html, others_html)
 from panchang import engine, names, vrats  # noqa: E402
-from panchang.cities import CITIES, COUNTRY_ORDER  # noqa: E402
+from panchang.cities import CITIES, COUNTRY_ORDER, INDEXED  # noqa: E402
 from panchang.texts import FESTIVALS, METHODS  # noqa: E402
 from panchang.texts import MONTH as MONTH_TEXT  # noqa: E402
 
@@ -42,9 +43,9 @@ T = {
     "en": {
         "index_title": "Panchang Today for Your City | Tithi, Nakshatra, Rahu Kaal, Choghadiya",
         "index_h1": "Today's Panchang",
-        "index_description": "Today's Hindu panchang for cities in India, the United States, Canada, the United Kingdom, "
-                             "Australia, New Zealand, Europe, the UAE and Singapore: tithi, nakshatra, sunrise, Rahu Kaal "
-                             "and Choghadiya in each city's own local time, with the year's fasts and festivals.",
+        # descriptions kept near 155 characters, the length Google shows, with the words people type
+        "index_description": "Today's panchang for your city in the USA, Canada, UK, Australia and India: tithi, Rahu "
+                             "Kalam, Choghadiya and the next fast, in local time.",
         "index_intro": [
             "A panchang is the Hindu almanac: the day's tithi, nakshatra, yoga and karana, the weekday, and the times "
             "of the day that tradition keeps or avoids. All of it hangs on the local sunrise, so a devotee in New Jersey "
@@ -55,18 +56,20 @@ T = {
         "choose": "Choose your city",
         "remembered": "Open the panchang for {city}",
         "festival_pages_h": "Festival dates by city",
+        # permanent addresses since 15 Nov 2026: each page shows the next occurrence, the year in its title
         "festival_pages": [
-            ("karwa-chauth-2027", "Karwa Chauth 2027: date and moonrise in every city"),
-            ("diwali-2026", "Diwali 2026: Lakshmi Puja date and time in every city"),
-            ("diwali-2027", "Diwali 2027: Lakshmi Puja date and time in every city"),
-            ("sankashti-chaturthi-2027", "Sankashti Chaturthi 2027: dates and moonrise by city"),
-            ("ekadashi-2027", "Ekadashi 2027: dates and parana time by city"),
+            ("makar-sankranti", "Makar Sankranti, Pongal and Lohri: date and time in every city"),
+            ("maha-shivratri", "Maha Shivratri: date and nishita puja time in every city"),
+            ("holi", "Holi and Holika Dahan: date and time in every city"),
+            ("karwa-chauth", "Karwa Chauth: date and moonrise in every city"),
+            ("diwali", "Diwali: Lakshmi Puja date and time in every city"),
+            ("ekadashi", "Ekadashi dates and parana time by city"),
+            ("sankashti-chaturthi", "Sankashti Chaturthi dates and moonrise by city"),
         ],
         "methods_link": "How this panchang is calculated",
         "title": "Panchang for {city} Today | Tithi, Nakshatra, Rahu Kaal, Choghadiya",
-        "description": "Today's panchang for {city}, {country}: sunrise and moonrise, tithi, nakshatra, yoga and karana "
-                       "with the time each ends, Rahu Kaal, Abhijit Muhurat and Choghadiya, worked out for the city's "
-                       "own sky and shown in local time, with the fasts and festivals of {year} in {city}.",
+        "description": "Today's panchang (panchangam) for {city}: tithi, nakshatra, Rahu Kalam, Choghadiya and the "
+                       "next Ekadashi, in local time.",
         "h1": "Panchang for {city}",
         "sub": "{country} · local time",
         "breadcrumb": "Panchang",
@@ -197,11 +200,13 @@ T = {
         "remembered": "{city} का पंचांग खोलें",
         "festival_pages_h": "त्योहारों की तारीखें, शहर के अनुसार",
         "festival_pages": [
-            ("karwa-chauth-2027", "करवा चौथ 2027: हर शहर में तारीख और चंद्रोदय"),
-            ("diwali-2026", "दीपावली 2026: हर शहर में लक्ष्मी पूजा की तारीख और समय"),
-            ("diwali-2027", "दीपावली 2027: हर शहर में लक्ष्मी पूजा की तारीख और समय"),
-            ("sankashti-chaturthi-2027", "संकष्टी चतुर्थी 2027: शहर के अनुसार तारीखें और चंद्रोदय"),
-            ("ekadashi-2027", "एकादशी 2027: शहर के अनुसार तारीखें और पारण"),
+            ("makar-sankranti", "मकर संक्रांति, पोंगल और लोहड़ी: हर शहर में तारीख और समय"),
+            ("maha-shivratri", "महाशिवरात्रि: हर शहर में तारीख और निशीथ पूजा का समय"),
+            ("holi", "होली और होलिका दहन: हर शहर में तारीख और समय"),
+            ("karwa-chauth", "करवा चौथ: हर शहर में तारीख और चंद्रोदय"),
+            ("diwali", "दीपावली: हर शहर में लक्ष्मी पूजा की तारीख और समय"),
+            ("ekadashi", "एकादशी: शहर के अनुसार तारीखें और पारण"),
+            ("sankashti-chaturthi", "संकष्टी चतुर्थी: शहर के अनुसार तारीखें और चंद्रोदय"),
         ],
         "methods_link": "यह पंचांग कैसे बनता है",
         "title": "{city} का आज का पंचांग | तिथि, नक्षत्र, राहु काल, चौघड़िया",
@@ -580,10 +585,10 @@ def head(lang, title, description, url, alt_en, alt_hi, crumbs, faq_ld, extra_cs
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">{robots_tag}
     <title>{esc(title)}</title>
-    <link rel="canonical" href="{url}" />
+    <link rel="canonical" href="{url}" />{"" if alt_hi is None else f'''
     <link rel="alternate" hreflang="en" href="{alt_en}" />
     <link rel="alternate" hreflang="hi" href="{alt_hi}" />
-    <link rel="alternate" hreflang="x-default" href="{alt_en}" />
+    <link rel="alternate" hreflang="x-default" href="{alt_en}" />'''}
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -677,7 +682,133 @@ def festival_links_html(lang):
     t = T[lang]
     items = "".join('<li><a href="%s/panchang/%s">%s</a></li>' % (prefix(lang), slug, esc(text))
                     for slug, text in t["festival_pages"])
-    return '<section class="card"><h2>%s</h2><ul>%s</ul></section>' % (esc(t["festival_pages_h"]), items)
+    countries = " · ".join('<a href="/panchang/%s">%s</a>' % (slug, esc(short)) for slug, _, short, _, _ in COUNTRY_PAGES)
+    return '<section class="card"><h2>%s</h2><ul>%s</ul><p>%s %s</p></section>' % (
+        esc(t["festival_pages_h"]), items, esc(COUNTRY_LINE[lang]), countries)
+
+
+# ------------------------------------------------------------------ the country pages (English only)
+
+# one column per main city, the first the reference; a time-zone label where the country has several
+COUNTRY_PAGES = [
+    ("usa", "United States", "USA", "the USA", [("new-york", "Eastern"), ("chicago", "Central"),
+                                                ("denver", "Mountain"), ("los-angeles", "Pacific")]),
+    ("canada", "Canada", "Canada", "Canada", [("toronto", "Eastern"), ("winnipeg", "Central"),
+                                              ("calgary", "Mountain"), ("vancouver", "Pacific")]),
+    ("uk", "United Kingdom", "UK", "the UK", [("london", ""), ("birmingham", ""), ("manchester", ""),
+                                              ("glasgow", "")]),
+    ("australia", "Australia", "Australia", "Australia", [("sydney", ""), ("melbourne", ""), ("brisbane", ""),
+                                                          ("adelaide", ""), ("perth", "")]),
+]
+COUNTRY_LINE = {"en": "Hindu calendar by country:", "hi": "देश के अनुसार हिन्दू कैलेंडर (अंग्रेज़ी में):"}
+COUNTRY_KEYS = ("ekadashi", "ekadashi_vaishnava", "purnima", "amavasya", "sankashti", "pradosh_s", "pradosh_k",
+                "shivaratri")
+KEY_PAGES = {"makar_sankranti": "makar-sankranti", "maha_shivaratri": "maha-shivratri", "holika_dahan": "holi",
+             "holi": "holi", "karwa_chauth": "karwa-chauth", "diwali": "diwali", "ekadashi": "ekadashi",
+             "ekadashi_vaishnava": "ekadashi", "sankashti": "sankashti-chaturthi"}
+
+
+def short_day(d: dt.date) -> str:
+    return f"{WEEKDAY_SHORT['en'][d.weekday()]} {d.day} {MONTHS_CIVIL['en'][d.month - 1][:3]}"
+
+
+def country_page(slug, country, short, in_name, columns, per_city_obs, today, years):
+    """The year's festivals and main fasts for a country, dated in each column city; dates that differ from the first
+    column in bold. Rows follow the first city; the same observance elsewhere is the one of the same kind and name
+    within two days. A Vaishnava Ekadashi row appears when any column city keeps it on another day than the Smarta
+    one; a city that keeps both on one day shows its Smarta date there."""
+    cities = [per_city_obs[c][0] for c, _ in columns]
+    head_cells = ["Festival or fast"] + ["%s%s" % (p.en, " (%s)" % z if z else "") for p, (_, z) in zip(cities, columns)]
+    all_obs = [[o for o in per_city_obs[c][2] if o.date >= today - dt.timedelta(days=3)] for c, _ in columns]
+    ref_obs = [o for o in all_obs[0] if o.date >= today and o.key != "ekadashi_vaishnava"
+               and (o.kind == "festival" or o.key in COUNTRY_KEYS)]
+
+    def find(obs, key, name, near):
+        match = [x for x in obs if x.key == key and x.en == name and abs((x.date - near).days) <= 2]
+        return min(match, key=lambda x: abs((x.date - near).days)).date if match else None
+
+    def row(name_html, dates):
+        first = dates[0]
+        cells = []
+        for d in dates:
+            text = esc(short_day(d)) if d else "-"
+            cells.append('<td class="d">%s</td>' % (("<b>%s</b>" % text) if d and d != first else text))
+        return "<tr><td>%s</td>%s</tr>" % (name_html, "".join(cells))
+
+    body, month = "", None
+    for o in ref_obs:
+        if (o.date.year, o.date.month) != month:
+            if month:
+                body += "</tbody></table></div>"
+            month = (o.date.year, o.date.month)
+            body += '<h3>%s %d</h3><div class="scroll"><table class="pan"><thead><tr>%s</tr></thead><tbody>' % (
+                MONTHS_CIVIL["en"][o.date.month - 1], o.date.year, "".join("<th>%s</th>" % esc(c) for c in head_cells))
+        name = esc(obs_name(o, "en"))
+        if o.key in KEY_PAGES:
+            name = '<a href="/panchang/%s">%s</a>' % (KEY_PAGES[o.key], name)
+        smarta = [o.date] + [find(obs, o.key, o.en, o.date) for obs in all_obs[1:]]
+        body += row(name, smarta)
+        if o.key == "ekadashi":
+            vname = "Vaishnava " + o.en
+            vaish = [find(obs, "ekadashi_vaishnava", vname, o.date) for obs in all_obs]
+            if any(vaish):
+                vrow = [v or s for v, s in zip(vaish, smarta)]
+                body += row('<a href="/panchang/ekadashi">%s</a>' % esc(vname), vrow)
+    if month:
+        body += "</tbody></table></div>"
+    names = ", ".join(p.en for p in cities[:-1]) + " and " + cities[-1].en
+    zones = [z for _, z in columns if z]
+    split = (" and sometimes between its time zones" if zones else " and sometimes between its cities")
+    title = "Hindu Calendar %s %s: Festivals, Ekadashi, Purnima and Amavasya by %s" % (
+        years, short, "Time Zone" if zones else "City")
+    description = ("Hindu festivals and fasts in %s, %s: Ekadashi, Purnima, Amavasya and every festival, dated "
+                   "for %s." % (in_name, years, names))
+    url = SITE + "/panchang/" + slug
+    intro = [
+        "Hindu festivals and fasts are set by the tithi in force at the time of day each tradition names: sunrise for "
+        "most fasts, moonrise for Sankashti, the evening for Diwali and Karwa Chauth, midnight for Maha Shivratri. "
+        "The tithi changes at one instant worldwide, but each city meets it at its own hour, so a date in %s can "
+        "differ from India's%s." % (in_name, split),
+        "The table gives each date for %s, worked out for each city's own sunrise, sunset and moonrise. A date in "
+        "bold differs from the first column. Ekadashi is the Smarta date; where the Vaishnava date differs it has its "
+        "own row. Every city below has its own page with the times." % names,
+    ]
+    faq = [
+        ("Why is a festival on a different date in %s than in India?" % in_name,
+         "The deciding moment, a sunrise, a moonrise or an evening, comes to each city at a different point in the "
+         "tithi. When the tithi begins or ends close to that moment, the date moves by a day."),
+        ("Which date should I follow if I live between two of these cities?",
+         "The nearest city's, or your own city's page if it has one. The date differs between cities only when the "
+         "deciding moment falls close to the local sunrise, sunset or moonrise."),
+    ]
+    city_links = " · ".join('<a href="/panchang/%s">%s</a>' % (p.slug, esc(p.en))
+                            for p in CITIES if p.country_en == country)
+    return head("en", title, description, url, url, None,
+                crumbs("en", (T["en"]["breadcrumb"], SITE + "/panchang"), ("Hindu calendar, " + short, url)),
+                faq_ld(faq), CSS, og_type="article") + f"""<body>
+{nav_html("en", None, None)}
+    <main class="wrap">
+        <h1>{esc("Hindu calendar %s for %s" % (years, in_name))}</h1>
+        <section class="card">
+            {"".join("<p>%s</p>" % esc(p) for p in intro)}
+            <p>{city_links}</p>
+        </section>
+        <section class="card">
+            {body}
+        </section>
+        {AD_ZONE}
+        <section class="card">
+            <h2>{esc(T["en"]["faq_h"])}</h2>
+            {faq_html(faq)}
+        </section>
+        {AD_ZONE_END}
+        {festival_links_html("en")}
+        {more_html("en")}
+    </main>
+{FOOTER}
+{INSTALL}</body>
+</html>
+"""
 
 
 def table(cols, rows_html, cls="pan"):
@@ -693,6 +824,8 @@ def moment_text(o, zone, lang) -> str:
     dd = o.details
     if dd.get("moonrise") is not None:
         return f"{t['moonrise_word']} {clock_dated(dd['moonrise'], zone, o.date, lang)}"
+    if o.key == "holika_dahan" and dd.get("light"):
+        return holika_text(dd["light"], zone, o.date, lang)
     if dd.get("window"):
         return f"{t['window_word']} {span_text(dd['window'][0], dd['window'][1], zone, o.date, lang)}"
     if dd.get("parana"):
@@ -784,9 +917,11 @@ def city_page(place, lang, first, last, rows, obs, facts, year):
     labels = t["labels"]
     span = f"{short_date(first, lang)} {first.year} – {long_date(last, lang)}" if lang == "en" else \
         f"{short_date(first, lang)} {first.year} – {long_date(last, lang)}"
+    # only the English pages of the 30 cities in INDEXED are in search; the rest serve visitors who pick them
+    robots = "" if lang == "en" and place.slug in INDEXED else "noindex, follow"
     return head(lang, t["title"].format(**kw), t["description"].format(**kw), url, alt_en, alt_hi,
                 crumbs(lang, (t["breadcrumb"], SITE + prefix(lang) + "/panchang"), (city, url)),
-                faq_ld(faq_items), CSS) + f"""<body>
+                faq_ld(faq_items), CSS, robots=robots) + f"""<body>
 {nav_html(lang, None, switch)}
     <main class="wrap">
         <h1>{esc(t["h1"].format(**kw))}</h1>
@@ -876,10 +1011,12 @@ def city_page(place, lang, first, last, rows, obs, facts, year):
             <p><a href="{prefix(lang)}/panchang/how-it-works">{esc(t["methods_link"])}</a></p>
         </section>
 
+        {AD_ZONE}
         <section class="card">
             <h2>{esc(t["faq_h"])}</h2>
             {faq_html(faq_items)}
         </section>
+        {AD_ZONE_END}
         {festival_links_html(lang)}
         <section class="card pan-cities">
             <h2>{esc(t["cities_h"])}</h2>
@@ -984,11 +1121,112 @@ def month_page(place, lang, year, month, rows, obs, first, last):
 
 # ------------------------------------------------------------------ the festival pages
 
+# the festival pages that list every city by country, one occurrence each, with the words of their at-a-glance box
+COUNTRY_TABLES = ("makar_sankranti", "maha_shivaratri", "holi", "karwa_chauth", "diwali")
+GLANCE = {
+    "en": {"h": "The date at a glance", "all": "in every city listed", "of": "in {k} of {n} cities",
+           "more": "and {m} more", "after_bhadra": "after Bhadra, from {t}",
+           "past_midnight": "Bhadra lasts past midnight: your temple's time", "holika": "Holika Dahan", "holi": "Holi"},
+    "hi": {"h": "एक नज़र में तारीख", "all": "सूची के सभी शहरों में", "of": "{n} में से {k} शहरों में",
+           "more": "और {m} अन्य", "after_bhadra": "भद्रा के बाद, {t} से",
+           "past_midnight": "भद्रा आधी रात के बाद तक: अपने मंदिर का समय", "holika": "होलिका दहन", "holi": "होली"},
+}
+
+
+def holika_light(dd):
+    """When to light the Holika fire: ("window", a, b) in pradosh kaal once Bhadra is over, ("after", b) when Bhadra
+    ends after pradosh but before midnight, ("temple", None) when it lasts past midnight, where practice varies."""
+    w, b, mid = dd.get("window"), dd.get("bhadra_ends"), dd.get("night_mid")
+    if not w:
+        return None
+    if b is None or b <= w[0]:
+        return ("window", w[0], w[1])
+    if b < w[1]:
+        return ("window", b, w[1])
+    if mid is None or b < mid:
+        return ("after", b)
+    return ("temple", None)
+
+
+def holika_text(light, zone, date, lang):
+    if light[0] == "window":
+        return f"{T[lang]['window_word']} {span_text(light[1], light[2], zone, date, lang)}"
+    if light[0] == "after":
+        return GLANCE[lang]["after_bhadra"].format(t=clock_dated(light[1], zone, date, lang))
+    return GLANCE[lang]["past_midnight"]
+
+
+def glance_html(per_city, lang, key=""):
+    """One line per country: the date in most of its cities, and any city where it differs, answer first. For Holi
+    the date is Holika Dahan's, and both days are named."""
+    g = GLANCE[lang]
+
+    def day(d):
+        if key == "holi":
+            return "%s %s, %s %s" % (g["holika"], weekday_date(d, lang), g["holi"],
+                                     weekday_date(d + dt.timedelta(days=1), lang))
+        return weekday_date(d, lang)
+    out = []
+    for country in COUNTRY_ORDER:
+        dates: dict = {}
+        for place in CITIES:
+            if place.country_en == country and place.slug in per_city:
+                dates.setdefault(per_city[place.slug][2][0].date, []).append(city_name(place, lang))
+        if not dates:
+            continue
+        n = sum(len(v) for v in dates.values())
+        ordered = sorted(dates.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+        main_date, main_cities = ordered[0]
+        if len(ordered) == 1:
+            text = "%s %s" % (day(main_date), g["all"] if n > 1 else "")
+        else:
+            parts = ["%s %s" % (day(main_date), g["of"].format(k=len(main_cities), n=n))]
+            for d, cities in ordered[1:]:
+                shown = cities[:5] + ([g["more"].format(m=len(cities) - 5)] if len(cities) > 5 else [])
+                parts.append("%s: %s" % (day(d), ", ".join(shown)))
+            text = "; ".join(parts)
+        place0 = next(p for p in CITIES if p.country_en == country)
+        out.append("<li><b>%s:</b> %s</li>" % (esc(country_name(place0, lang)), esc(text.strip())))
+    return '<section class="card"><h2>%s</h2><ul>%s</ul></section>' % (esc(g["h"]), "".join(out))
+
+
+def festival_row(key, o, zone, lang, link):
+    """One city's row of a country table."""
+    dd = o.details
+    L = T[lang]["labels"]
+    cell = '<td>%s</td>'
+    if key == "karwa_chauth":
+        fast = span_text(dd["fast"][0], dd["fast"][1], zone, o.date, lang) if dd.get("fast") else "-"
+        cells = [esc(clock_dated(dd.get("moonrise"), zone, o.date, lang)), esc(fast),
+                 esc(L["tithiEnds"] + " " + clock_dated(dd.get("tithi_ends"), zone, o.date, lang))]
+    elif key == "diwali":
+        w = dd.get("window")
+        cells = [esc(span_text(w[0], w[1], zone, o.date, lang) if w else "-"),
+                 esc(L["tithiEnds"] + " " + clock_dated(dd.get("tithi_ends"), zone, o.date, lang))]
+    elif key == "makar_sankranti":
+        cells = [esc(clock_dated(dd.get("sankranti"), zone, o.date, lang)),
+                 esc(weekday_date(o.date - dt.timedelta(days=1), lang))]
+    elif key == "maha_shivaratri":
+        w = dd.get("window")
+        cells = [esc(span_text(w[0], w[1], zone, o.date, lang) if w else "-"),
+                 esc(clock_dated(dd.get("tithi_ends"), zone, o.date, lang))]
+    else:  # holi: the row is Holika Dahan's, and Holi is the day after
+        light = dd.get("light")
+        text = span_text(light[1], light[2], zone, o.date, lang) if light and light[0] == "window" else \
+            (holika_text(light, zone, o.date, lang) if light else "-")
+        cells = [esc(text), esc(clock_dated(dd.get("bhadra_ends"), zone, o.date, lang)),
+                 esc(weekday_date(o.date + dt.timedelta(days=1), lang))]
+    return '<tr><td>%s</td><td class="d">%s</td>%s</tr>' % (link, esc(weekday_date(o.date, lang)),
+                                                           "".join(cell % c for c in cells))
+
+
 def festival_page(key, lang, year, per_city):
-    """per_city: slug -> (place, zone, [observances of that key in that year])."""
+    """per_city: slug -> (place, zone, [observances of that key]): for the country tables the next occurrence in
+    each city, for the Ekadashi and Sankashti lists every one still to come. The address is permanent; the year is
+    in the title."""
     f = FESTIVALS[key]
     t = f[lang]
-    slug = f"{f['slug']}-{year}"
+    slug = f["slug"]
     n = len(per_city)
     kw = dict(year=year, n=n, example_city=EXAMPLE_CITY[lang])
     url = SITE + prefix(lang) + "/panchang/" + slug
@@ -996,26 +1234,17 @@ def festival_page(key, lang, year, per_city):
     other = ("/hi/panchang/" + slug, "हिंदी") if lang == "en" else ("/panchang/" + slug, "English")
     L = T[lang]["labels"]
     sections = ""
-    if key in ("karwa_chauth", "diwali"):
+    glance = ""
+    if key in COUNTRY_TABLES:
+        glance = glance_html(per_city, lang, key)
         for country in COUNTRY_ORDER:
             rows = ""
             for place in CITIES:
                 if place.country_en != country or place.slug not in per_city:
                     continue
                 _, zone, items = per_city[place.slug]
-                for o in items:
-                    dd = o.details
-                    link = '<a href="%s/panchang/%s">%s</a>' % (prefix(lang), place.slug, esc(city_name(place, lang)))
-                    if key == "karwa_chauth":
-                        fast = span_text(dd["fast"][0], dd["fast"][1], zone, o.date, lang) if dd.get("fast") else "-"
-                        rows += '<tr><td>%s</td><td class="d">%s</td><td>%s</td><td>%s</td><td>%s %s</td></tr>' % (
-                            link, esc(weekday_date(o.date, lang)), esc(clock_dated(dd.get("moonrise"), zone, o.date, lang)),
-                            esc(fast), esc(L["tithiEnds"]), esc(clock_dated(dd.get("tithi_ends"), zone, o.date, lang)))
-                    else:
-                        w = dd.get("window")
-                        rows += '<tr><td>%s</td><td class="d">%s</td><td>%s</td><td>%s %s</td></tr>' % (
-                            link, esc(weekday_date(o.date, lang)), esc(span_text(w[0], w[1], zone, o.date, lang) if w else "-"),
-                            esc(L["tithiEnds"]), esc(clock_dated(dd.get("tithi_ends"), zone, o.date, lang)))
+                link = '<a href="%s/panchang/%s">%s</a>' % (prefix(lang), place.slug, esc(city_name(place, lang)))
+                rows += "".join(festival_row(key, o, zone, lang, link) for o in items)
             if rows:
                 head_country = country_name(next(p for p in CITIES if p.country_en == country), lang)
                 sections += "<h3>%s</h3>%s" % (esc(head_country), table(t["cols"], rows))
@@ -1060,6 +1289,7 @@ def festival_page(key, lang, year, per_city):
 {nav_html(lang, None, other)}
     <main class="wrap">
         <h1>{esc(t["h1"].format(**kw))}</h1>
+        {glance}
         <section class="card">
             {paragraphs(t["intro"], **kw)}
         </section>
@@ -1068,10 +1298,12 @@ def festival_page(key, lang, year, per_city):
             {sections}
             <p style="margin-top: 12px; color: #666; font-size: 14px;">{esc(t["note"])}</p>
         </section>
+        {AD_ZONE}
         <section class="card">
             <h2>{esc(T[lang]["faq_h"])}</h2>
             {faq_html(faq)}
         </section>
+        {AD_ZONE_END}
         {festival_links_html(lang)}
         {more_html(lang)}
     </main>
@@ -1097,7 +1329,7 @@ def methods_page(lang):
 {nav_html(lang, None, other)}
     <main class="wrap">
         <h1>{esc(t["h1"])}</h1>
-        {body}
+        {AD_ZONE}{body}{AD_ZONE_END}
         {festival_links_html(lang)}
         {more_html(lang)}
     </main>
@@ -1131,6 +1363,7 @@ def index_page(lang, last):
             {cities_list(lang)}
         </section>
         {festival_links_html(lang)}
+        {AD_ZONE}
         <section class="card">
             <h2>{esc(t["how_h"])}</h2>
             <ul>{"".join("<li>%s</li>" % esc(p) for p in t["how"])}</ul>
@@ -1140,6 +1373,7 @@ def index_page(lang, last):
             <h2>{esc(t["faq_h"])}</h2>
             {faq_html(generic)}
         </section>
+        {AD_ZONE_END}
         {more_html(lang)}
         {others_html(lang, None)}
     </main>
@@ -1204,7 +1438,45 @@ def index_markdown(lang, last):
 
 # ------------------------------------------------------------------ main
 
-def build(first: dt.date, last: dt.date, only=None):
+def zone_offsets(tz: str, first: dt.date, last: dt.date):
+    """[[utc_epoch, offset_seconds], ...]: the city's UTC offset from each instant on, over the data's span and a
+    margin. The edge function (functions/panchang/[slug].js) uses it to show local times without Intl, which costs
+    more than the free plan's CPU allowance on a cold start; tools/check_edge.mjs proves it agrees with Intl."""
+    zone = ZoneInfo(tz)
+    utc = dt.timezone.utc
+    t = int(dt.datetime.combine(first - dt.timedelta(days=2), dt.time(), utc).timestamp())
+    end = int(dt.datetime.combine(last + dt.timedelta(days=3), dt.time(), utc).timestamp())
+
+    def off(s):
+        return int((dt.datetime.fromtimestamp(s, zone).utcoffset() or dt.timedelta(0)).total_seconds())
+
+    out = [[t, off(t)]]
+    while t < end:
+        nxt = t + 3600
+        if off(nxt) != out[-1][1]:
+            lo, hi = t, nxt                         # the change lies in (lo, hi]: narrow it to the second
+            while hi - lo > 1:
+                mid = (lo + hi) // 2
+                if off(mid) == out[-1][1]:
+                    lo = mid
+                else:
+                    hi = mid
+            out.append([hi, off(hi)])
+        t = nxt
+    return out
+
+
+def bhadra_end(rows, begin, end):
+    """When Bhadra ends on a Purnima: the end of Vishti karana, the first half of the tithi (half-tithi index 28)."""
+    for r in rows:
+        for index, finish in r["k"]:
+            if index == 28 and finish is not None and begin < finish <= end:
+                return finish
+    return None
+
+
+def build(first: dt.date, last: dt.date, only=None, today: dt.date | None = None):
+    today = today or dt.date.today()
     places = [p for p in CITIES if not only or p.slug in only]
     sky_holder: dict = {}
     sky_json = None
@@ -1221,9 +1493,23 @@ def build(first: dt.date, last: dt.date, only=None):
         obs = vrats.observances(alm, first, last)
         per_city_obs[place.slug] = (place, ZoneInfo(place.tz), obs)
         rows = payload["rows"]
+        for o in obs:
+            if o.key == "holika_dahan":
+                o.details["bhadra_ends"] = bhadra_end(rows, o.details["tithi_begins"], o.details["tithi_ends"])
+                day = next((r for r in rows if r["d"] == o.date.isoformat()), None)
+                if day and day["nsr"]:
+                    o.details["night_mid"] = day["ss"] + (day["nsr"] - day["ss"]) / 2
+                # one decision for every page: the Holi page, the city's festival table and its card (the window
+                # the card reads is the one after Bhadra, or none when the time is not a pradosh window)
+                o.details["light"] = holika_light(o.details)
+                if o.details["light"] and o.details["light"][0] == "window":
+                    o.details["window"] = (int(o.details["light"][1]), int(o.details["light"][2]))
+                else:
+                    o.details.pop("window", None)
         base, rel_rows = relativize(rows)
         data = {"slug": place.slug, "tz": place.tz, "first": first.isoformat(), "last": last.isoformat(),
-                "base": base, "rows": rel_rows, "vrats": encode_vrats(obs, base)}
+                "base": base, "rows": rel_rows, "vrats": encode_vrats(obs, base),
+                "zoff": zone_offsets(place.tz, first, last)}
         (data_dir / f"{place.slug}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")),
                                                      encoding="utf-8")
         for lang in ("en", "hi"):
@@ -1239,25 +1525,63 @@ def build(first: dt.date, last: dt.date, only=None):
                     month_page(place, lang, y, m, rows, obs, first, last), encoding="utf-8")
                 written.append(str((folder / place.slug / f"{y:04d}-{m:02d}.html").relative_to(ROOT)))
                 entries.append((SITE + prefix(lang) + f"/panchang/{place.slug}/{y:04d}-{m:02d}", "monthly", "0.6"))
-    # the festival pages: 2027 for all four, Diwali for the remainder of 2026 as well
-    festival_years = {"karwa_chauth": [year], "diwali": sorted({first.year, year}), "sankashti": [year], "ekadashi": [year]}
-    keys = {"karwa_chauth": ("karwa_chauth",), "diwali": ("diwali",), "sankashti": ("sankashti",),
+    # the festival pages, on permanent addresses since 15 Nov 2026: the next occurrence on or after `today` in each
+    # city (Ekadashi and Sankashti: every one still to come), the year of it in the title
+    keys = {"makar_sankranti": ("makar_sankranti",), "maha_shivaratri": ("maha_shivaratri",), "holi": ("holika_dahan",),
+            "karwa_chauth": ("karwa_chauth",), "diwali": ("diwali",), "sankashti": ("sankashti",),
             "ekadashi": ("ekadashi", "ekadashi_vaishnava")}
-    for key, years in festival_years.items():
-        for y in years:
-            per_city = {}
-            for slug, (place, zone, obs) in per_city_obs.items():
-                items = [o for o in obs if o.key in keys[key] and o.date.year == y]
-                if items:
-                    per_city[slug] = (place, zone, items)
-            if not per_city:
+    for key, wanted in keys.items():
+        per_city = {}
+        for slug, (place, zone, obs) in per_city_obs.items():
+            items = [o for o in obs if o.key in wanted and o.date >= today]
+            if items and key in COUNTRY_TABLES:
+                items = items[:1]
+            if items:
+                per_city[slug] = (place, zone, items)
+        if not per_city:
+            continue
+        years = sorted(o.date.year for _, _, items in per_city.values() for o in items)
+        if key in COUNTRY_TABLES:
+            y = max(set(years), key=years.count)
+        else:  # the lists run from today, so they can span two years: "2026–2027"
+            y = f"{years[0]}–{years[-1]}" if years[0] != years[-1] else years[0]
+        for lang in ("en", "hi"):
+            folder = ROOT / ("panchang" if lang == "en" else "hi/panchang")
+            fslug = FESTIVALS[key]["slug"]
+            (folder / f"{fslug}.html").write_text(festival_page(key, lang, y, per_city), encoding="utf-8")
+            written.append(str((folder / f"{fslug}.html").relative_to(ROOT)))
+            entries.append((SITE + prefix(lang) + "/panchang/" + fslug, "yearly", "0.8"))
+    # the small files the block after a prashnavali answer reads: each city's coming fasts and festivals, worded as
+    # on the city page, and a map from a browser's time zone to a city (the first city listed in that zone)
+    next_dir = ROOT / "panchang" / "data" / "next"
+    next_dir.mkdir(parents=True, exist_ok=True)
+    zones = {}
+    for slug, (place, zone, obs) in per_city_obs.items():
+        zones.setdefault(place.tz, slug)
+        items = []
+        for o in obs:
+            if o.date < today or not (o.kind == "festival" or o.key in COUNTRY_KEYS) or o.key == "ekadashi_vaishnava":
                 continue
-            for lang in ("en", "hi"):
-                folder = ROOT / ("panchang" if lang == "en" else "hi/panchang")
-                fslug = f"{FESTIVALS[key]['slug']}-{y}"
-                (folder / f"{fslug}.html").write_text(festival_page(key, lang, y, per_city), encoding="utf-8")
-                written.append(str((folder / f"{fslug}.html").relative_to(ROOT)))
-                entries.append((SITE + prefix(lang) + "/panchang/" + fslug, "yearly", "0.8"))
+            items.append({"d": o.date.isoformat(), "en": o.en, "hi": o.hi, "ten": moment_text(o, zone, "en"),
+                          "thi": moment_text(o, zone, "hi"), "p": KEY_PAGES.get(o.key, "")})
+        (next_dir / f"{slug}.json").write_text(json.dumps({"slug": slug, "en": place.en, "hi": place.hi, "tz": place.tz,
+                                                           "items": items}, ensure_ascii=False, separators=(",", ":")),
+                                               encoding="utf-8")
+    if not only:
+        # names some browsers still report for these zones (Chrome long gave India as Asia/Calcutta)
+        for old, new in (("Asia/Calcutta", "Asia/Kolkata"), ("America/Montreal", "America/Toronto")):
+            if new in zones:
+                zones[old] = zones[new]
+        (next_dir / "zones.json").write_text(json.dumps(zones, separators=(",", ":")), encoding="utf-8")
+    # the country pages, English only, from today to the end of the data
+    if not only:
+        span_years = f"{today.year}–{last.year}" if today.year != last.year else str(last.year)
+        for slug, country, short, in_name, columns in COUNTRY_PAGES:
+            path = ROOT / "panchang" / f"{slug}.html"
+            path.write_text(country_page(slug, country, short, in_name, columns, per_city_obs, today, span_years),
+                            encoding="utf-8")
+            written.append(str(path.relative_to(ROOT)))
+            entries.append((SITE + "/panchang/" + slug, "monthly", "0.8"))
     for lang in ("en", "hi"):
         folder = ROOT / ("panchang" if lang == "en" else "hi/panchang")
         (folder / "how-it-works.html").write_text(methods_page(lang), encoding="utf-8")
@@ -1279,6 +1603,8 @@ if __name__ == "__main__":
     ap.add_argument("--first", default=today.isoformat())
     ap.add_argument("--last", default=dt.date(today.year + 1, 12, 31).isoformat())
     ap.add_argument("--only", nargs="*", help="city slugs, for a quick run")
+    ap.add_argument("--today", default=today.isoformat(), help="the day the festival pages count from")
     a = ap.parse_args()
-    pages, report = build(dt.date.fromisoformat(a.first), dt.date.fromisoformat(a.last), a.only)
+    pages, report = build(dt.date.fromisoformat(a.first), dt.date.fromisoformat(a.last), a.only,
+                          dt.date.fromisoformat(a.today))
     print(f"{len(pages)} pages; sitemap: {update_sitemap.describe(report)}")

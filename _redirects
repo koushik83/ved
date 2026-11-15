@@ -1,3 +1,14 @@
 # Journey's ads.txt, hosted by Mediavine so it stays current
 /ads.txt    https://adstxt.journeymv.com/sites/1789f8d0-11ac-4621-a9b7-f74f7fc615ab/ads.txt    301
+# The festival pages moved to permanent addresses on 15 Nov 2026 (the year is in the title now)
+/panchang/karwa-chauth-2027           /panchang/karwa-chauth           301
+/panchang/diwali-2026                 /panchang/diwali                 301
+/panchang/diwali-2027                 /panchang/diwali                 301
+/panchang/sankashti-chaturthi-2027    /panchang/sankashti-chaturthi    301
+/panchang/ekadashi-2027               /panchang/ekadashi               301
+/hi/panchang/karwa-chauth-2027        /hi/panchang/karwa-chauth        301
+/hi/panchang/diwali-2026              /hi/panchang/diwali              301
+/hi/panchang/diwali-2027              /hi/panchang/diwali              301
+/hi/panchang/sankashti-chaturthi-2027 /hi/panchang/sankashti-chaturthi 301
+/hi/panchang/ekadashi-2027            /hi/panchang/ekadashi            301
 /*    /404.html   404

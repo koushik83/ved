@@ -31,7 +31,7 @@ Pune keeps the same clock all year, so no tithi's end time ever jumps by an hour
 - Saturday, 13 February 2027: Ratha Saptami (tithi ends 02:07 AM, 14 February)
 - Saturday, 20 February 2027: Magha Purnima (tithi ends 04:54 AM, 21 February)
 - Saturday, 6 March 2027: Maha Shivaratri (puja window 12:21 AM, 7 March to 01:10 AM, 7 March)
-- Sunday, 21 March 2027: Holika Dahan (puja window 06:46 PM to 09:10 PM)
+- Sunday, 21 March 2027: Holika Dahan (Bhadra lasts past midnight: your temple's time)
 - Monday, 22 March 2027: Holi
 - Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 04:29 AM, 8 April)
 - Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 04:29 AM, 8 April)

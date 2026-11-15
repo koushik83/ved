@@ -31,7 +31,7 @@ Abu Dhabi keeps the same clock all year, so no tithi's end time ever jumps by an
 - Saturday, 13 February 2027: Ratha Saptami (tithi ends 12:37 AM, 14 February)
 - Saturday, 20 February 2027: Magha Purnima (tithi ends 03:24 AM, 21 February)
 - Saturday, 6 March 2027: Maha Shivaratri (puja window 12:09 AM, 7 March to 12:58 AM, 7 March)
-- Sunday, 21 March 2027: Holika Dahan (puja window 06:34 PM to 08:58 PM)
+- Sunday, 21 March 2027: Holika Dahan (Bhadra lasts past midnight: your temple's time)
 - Monday, 22 March 2027: Holi
 - Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 02:59 AM, 8 April)
 - Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 02:59 AM, 8 April)

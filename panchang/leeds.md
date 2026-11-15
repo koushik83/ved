@@ -31,7 +31,7 @@ Leeds moves its clocks forward on 28 March 2027 and back on 31 October 2027 in 2
 - Saturday, 13 February 2027: Ratha Saptami (tithi ends 08:37 PM)
 - Saturday, 20 February 2027: Magha Purnima (tithi ends 11:24 PM)
 - Saturday, 6 March 2027: Maha Shivaratri (puja window 11:51 PM to 12:42 AM, 7 March)
-- Sunday, 21 March 2027: Holika Dahan (puja window 06:21 PM to 08:45 PM)
+- Sunday, 21 March 2027: Holika Dahan (after Bhadra, from 11:45 PM)
 - Monday, 22 March 2027: Holi
 - Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 11:59 PM)
 - Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 11:59 PM)

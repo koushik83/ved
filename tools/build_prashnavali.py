@@ -22,6 +22,12 @@ TOOLS = ["shiv", "ganesh", "durga", "khatushyam"]
 GROW = '<script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo4YzlhNDVkYy02ODg2LTQ3NjYtOGFiMy1iMmI1MDg3ZDY5NDY=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>'
 # Journey's ad script, exactly as the dashboard issued it. Just before </head>; never defer or combine it.
 JOURNEY = '<script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/1789f8d0-11ac-4621-a9b7-f74f7fc615ab.js"></script>'
+# Where Journey may put in-content ads: its settings name #chaupai-1 as the content area (set up on the Ram Shalaka
+# page, the only page that had it until 15 Nov 2026). The owner wants them light ("dont kill the goose for more
+# eggs"), so only the lower reading text of long pages sits inside: never a tool, an answer, the panchang card, the
+# verses of a stotra, or a legal page. AD_ZONE opens the area and AD_ZONE_END closes it; one per page at most.
+AD_ZONE = '<div id="chaupai-1" class="entry-content">'
+AD_ZONE_END = '</div>'
 
 # ----------------------------------------------------------------- navigation
 
@@ -260,6 +266,10 @@ def page(tool, lang):
 
     labels_js = {"verse": t["verse_label"], "meaning": t["meaning_label"], "answer": t["answer_label"],
                  "shareText": t["share_text"], "shareTitle": t["share_title"]}
+    # the calm next step under the answer (/next-step.js): the next fast in the reader's city and the related reading
+    next_step = '<script src="/next-step.js" defer data-watch="result" data-lang="%s"%s></script>' % (
+        lang, (' data-read-href="%s" data-read-text="%s"' % (html.escape(art["href"], quote=True),
+                                                             html.escape(art["text"], quote=True))) if art else "")
 
     out = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -293,6 +303,7 @@ def page(tool, lang):
     </script>
     <script src="/app-events.js" defer></script>
     <script src="/share-card.js" defer></script>
+    {next_step}
     <script type="application/ld+json">
     {jsonld(crumbs)}
     </script>

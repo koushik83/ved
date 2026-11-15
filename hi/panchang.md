@@ -84,11 +84,13 @@ Source: https://vedprashnavali.com/hi/panchang
 
 ## त्योहारों की तारीखें, शहर के अनुसार
 
-- [करवा चौथ 2027: हर शहर में तारीख और चंद्रोदय](https://vedprashnavali.com/hi/panchang/karwa-chauth-2027)
-- [दीपावली 2026: हर शहर में लक्ष्मी पूजा की तारीख और समय](https://vedprashnavali.com/hi/panchang/diwali-2026)
-- [दीपावली 2027: हर शहर में लक्ष्मी पूजा की तारीख और समय](https://vedprashnavali.com/hi/panchang/diwali-2027)
-- [संकष्टी चतुर्थी 2027: शहर के अनुसार तारीखें और चंद्रोदय](https://vedprashnavali.com/hi/panchang/sankashti-chaturthi-2027)
-- [एकादशी 2027: शहर के अनुसार तारीखें और पारण](https://vedprashnavali.com/hi/panchang/ekadashi-2027)
+- [मकर संक्रांति, पोंगल और लोहड़ी: हर शहर में तारीख और समय](https://vedprashnavali.com/hi/panchang/makar-sankranti)
+- [महाशिवरात्रि: हर शहर में तारीख और निशीथ पूजा का समय](https://vedprashnavali.com/hi/panchang/maha-shivratri)
+- [होली और होलिका दहन: हर शहर में तारीख और समय](https://vedprashnavali.com/hi/panchang/holi)
+- [करवा चौथ: हर शहर में तारीख और चंद्रोदय](https://vedprashnavali.com/hi/panchang/karwa-chauth)
+- [दीपावली: हर शहर में लक्ष्मी पूजा की तारीख और समय](https://vedprashnavali.com/hi/panchang/diwali)
+- [एकादशी: शहर के अनुसार तारीखें और पारण](https://vedprashnavali.com/hi/panchang/ekadashi)
+- [संकष्टी चतुर्थी: शहर के अनुसार तारीखें और चंद्रोदय](https://vedprashnavali.com/hi/panchang/sankashti-chaturthi)
 
 ## ये समय कैसे निकाले गए हैं
 

@@ -19,11 +19,11 @@
   "panchang": {
     "_goal": "set 1 Nov 2026: top 3 within six months for city queries such as 'panchang today toronto', 'tithi today new jersey', 'rahu kaal today london', not for the bare word",
     "words": ["panchang", "panchangam", "panchanga", "tithi", "nakshatra", "rahu kaal", "rahu kalam", "rahukaal", "choghadiya", "chogadia", "muhurat", "पंचांग", "तिथि", "नक्षत्र", "राहु काल", "राहुकाल", "चौघड़िया", "मुहूर्त"],
-    "pages": ["/panchang", "/hi/panchang", "/panchang/new-jersey", "/panchang/new-york", "/panchang/toronto", "/panchang/london", "/panchang/sydney", "/panchang/delhi", "/hi/panchang/delhi", "/panchang/how-it-works"]
+    "pages": ["/panchang", "/hi/panchang", "/panchang/new-jersey", "/panchang/new-york", "/panchang/toronto", "/panchang/london", "/panchang/sydney", "/panchang/san-francisco", "/panchang/chicago", "/panchang/delhi", "/panchang/how-it-works"]
   },
   "festivals": {
-    "_goal": "set 1 Nov 2026: top 3 within six months for a festival, a year and a city, such as 'karwa chauth 2027 moonrise time toronto', 'sankashti chaturthi 2027 dates new jersey', 'diwali 2027 date usa'",
-    "words": ["karwa chauth", "karva chauth", "sankashti", "sankashti chaturthi", "angarki", "ekadashi", "diwali", "deepavali", "lakshmi puja", "dhanteras", "pradosh", "moonrise", "chandrodaya", "करवा चौथ", "करवाचौथ", "संकष्टी", "अंगारकी", "एकादशी", "दीपावली", "दिवाली", "धनतेरस", "प्रदोष", "चंद्रोदय"],
-    "pages": ["/panchang/karwa-chauth-2027", "/hi/panchang/karwa-chauth-2027", "/panchang/diwali-2027", "/hi/panchang/diwali-2027", "/panchang/sankashti-chaturthi-2027", "/hi/panchang/sankashti-chaturthi-2027", "/panchang/ekadashi-2027", "/hi/panchang/ekadashi-2027"]
+    "_goal": "set 1 Nov 2026: top 3 within six months for a festival, a year and a city, such as 'karwa chauth 2027 moonrise time toronto', 'sankashti chaturthi 2027 dates new jersey', 'diwali 2027 date usa'; on permanent addresses since 15 Nov 2026 (the year in the title), with Makar Sankranti, Maha Shivratri and Holi added",
+    "words": ["makar sankranti", "sankranti", "pongal", "lohri", "shivratri", "shivaratri", "holi", "holika", "bhadra", "मकर संक्रांति", "संक्रांति", "पोंगल", "लोहड़ी", "शिवरात्रि", "होली", "होलिका", "भद्रा", "karwa chauth", "karva chauth", "sankashti", "sankashti chaturthi", "angarki", "ekadashi", "diwali", "deepavali", "lakshmi puja", "dhanteras", "pradosh", "moonrise", "chandrodaya", "करवा चौथ", "करवाचौथ", "संकष्टी", "अंगारकी", "एकादशी", "दीपावली", "दिवाली", "धनतेरस", "प्रदोष", "चंद्रोदय"],
+    "pages": ["/panchang/makar-sankranti", "/hi/panchang/makar-sankranti", "/panchang/maha-shivratri", "/hi/panchang/maha-shivratri", "/panchang/holi", "/hi/panchang/holi", "/panchang/karwa-chauth", "/hi/panchang/karwa-chauth", "/panchang/diwali", "/hi/panchang/diwali", "/panchang/sankashti-chaturthi", "/hi/panchang/sankashti-chaturthi", "/panchang/ekadashi", "/hi/panchang/ekadashi"]
   }
 }

@@ -14,11 +14,24 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_prashnavali import FOOTER, GROW, INSTALL, JOURNEY, SITE, jsonld, nav_css, nav_html, strip_tags  # noqa: E402
+from build_prashnavali import (AD_ZONE, AD_ZONE_END, FOOTER, GROW, INSTALL, JOURNEY, SITE, jsonld, nav_css,  # noqa: E402
+                               nav_html, strip_tags)
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "tools" / "articles"
 ARTICLES = ["rudrashtakam", "navadurga", "sankat-nashan", "khatu-shyam"]
+# the panchang page each article leads to: its festival's dates in the reader's own city
+RELATED = {
+    "rudrashtakam-with-meaning": ("maha-shivratri", "Maha Shivratri: date and nishita puja time in your city",
+                                  "महाशिवरात्रि: आपके शहर में तारीख और निशीथ पूजा का समय"),
+    "sankat-nashan-ganesh-stotra": ("sankashti-chaturthi", "Sankashti Chaturthi: dates and moonrise in your city",
+                                    "संकष्टी चतुर्थी: आपके शहर में तारीखें और चंद्रोदय"),
+    "navadurga-nine-forms-mantras": ("", "Today's panchang and the year's festivals for your city",
+                                     "आपके शहर का आज का पंचांग और वर्ष के त्योहार"),
+    "khatu-shyam-story": ("ekadashi", "Ekadashi dates and parana time in your city",
+                          "एकादशी: आपके शहर में तारीखें और पारण का समय"),
+}
+RELATED_LABEL = {"en": "Dates for your city", "hi": "आपके शहर की तारीखें"}
 
 LABELS = {
     "en": {"home": "Home", "faq": "Frequently Asked Questions", "read_in": "Read in Hindi", "privacy": "Privacy Policy",
@@ -65,6 +78,12 @@ def page(a, lang):
     if a.get("tool_english_only"):
         tool_href = "/" + a["tool_slug"]
     vlang = a.get("verse_lang", "sa")
+    related = ""
+    if slug in RELATED:
+        rel_slug, rel_en, rel_hi = RELATED[slug]
+        rel_href = ("/panchang" if lang == "en" else "/hi/panchang") + ("/" + rel_slug if rel_slug else "")
+        related = '<section class="card"><p>%s: <a href="%s">%s</a></p></section>' % (
+            RELATED_LABEL[lang], rel_href, html.escape(rel_en if lang == "en" else rel_hi))
     image_url = SITE + a["image"]
     alt = a.get("image_alt", {}).get(lang, "")
 
@@ -152,9 +171,12 @@ def page(a, lang):
         <section class="card">
             <h2>{html.escape(t["verses_heading"])}</h2>
 {verses_html}        </section>
+        {AD_ZONE}
 {sections}        <section class="card">
             <h2>{L["faq"]}</h2>
             {faq_html}</section>
+        {AD_ZONE_END}
+        {related}
         <div class="intro">
 {paras(t["closing"])}        </div>
         {cta}

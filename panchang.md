@@ -84,11 +84,13 @@ Choose your city. Each page shows today and lets you look up any date up to 31 D
 
 ## Festival dates by city
 
-- [Karwa Chauth 2027: date and moonrise in every city](https://vedprashnavali.com/panchang/karwa-chauth-2027)
-- [Diwali 2026: Lakshmi Puja date and time in every city](https://vedprashnavali.com/panchang/diwali-2026)
-- [Diwali 2027: Lakshmi Puja date and time in every city](https://vedprashnavali.com/panchang/diwali-2027)
-- [Sankashti Chaturthi 2027: dates and moonrise by city](https://vedprashnavali.com/panchang/sankashti-chaturthi-2027)
-- [Ekadashi 2027: dates and parana time by city](https://vedprashnavali.com/panchang/ekadashi-2027)
+- [Makar Sankranti, Pongal and Lohri: date and time in every city](https://vedprashnavali.com/panchang/makar-sankranti)
+- [Maha Shivratri: date and nishita puja time in every city](https://vedprashnavali.com/panchang/maha-shivratri)
+- [Holi and Holika Dahan: date and time in every city](https://vedprashnavali.com/panchang/holi)
+- [Karwa Chauth: date and moonrise in every city](https://vedprashnavali.com/panchang/karwa-chauth)
+- [Diwali: Lakshmi Puja date and time in every city](https://vedprashnavali.com/panchang/diwali)
+- [Ekadashi dates and parana time by city](https://vedprashnavali.com/panchang/ekadashi)
+- [Sankashti Chaturthi dates and moonrise by city](https://vedprashnavali.com/panchang/sankashti-chaturthi)
 
 ## How these times are worked out
 

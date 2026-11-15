@@ -31,7 +31,7 @@ Raleigh moves its clocks forward on 14 March 2027 and back on 7 November 2027 in
 - Saturday, 13 February 2027: Ratha Saptami (tithi ends 03:37 PM)
 - Saturday, 20 February 2027: Magha Purnima (tithi ends 06:24 PM)
 - Saturday, 6 March 2027: Maha Shivaratri (puja window 12:01 AM, 7 March to 12:50 AM, 7 March)
-- Sunday, 21 March 2027: Holika Dahan (puja window 07:27 PM to 09:51 PM)
+- Sunday, 21 March 2027: Holika Dahan (puja window 07:45 PM to 09:51 PM)
 - Monday, 22 March 2027: Holi
 - Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 06:59 PM)
 - Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 06:59 PM)

@@ -31,7 +31,7 @@ Amsterdam moves its clocks forward on 28 March 2027 and back on 31 October 2027 
 - Saturday, 13 February 2027: Ratha Saptami (tithi ends 09:37 PM)
 - Saturday, 20 February 2027: Magha Purnima (tithi ends 12:24 AM, 21 February)
 - Saturday, 6 March 2027: Maha Shivaratri (puja window 12:25 AM, 7 March to 01:17 AM, 7 March)
-- Sunday, 21 March 2027: Holika Dahan (puja window 06:55 PM to 09:19 PM)
+- Sunday, 21 March 2027: Holika Dahan (after Bhadra, from 12:45 AM, 22 March)
 - Monday, 22 March 2027: Holi
 - Wednesday, 7 April 2027: Chaitra Navratri begins (tithi ends 12:59 AM, 8 April)
 - Wednesday, 7 April 2027: Ugadi / Gudi Padwa (tithi ends 12:59 AM, 8 April)

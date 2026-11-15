@@ -53,7 +53,8 @@
     if (o.win) { extra.push(L.pujaTime + ' ' + span(o.win[0], o.win[1], row)); }
     if (o.pr) { extra.push(L.parana + ' ' + clock(o.pr[0]) + ' ' + L.to + ' ' + clock(o.pr[1]) + ' (' + L.nextDay + ')'); }
     if (!extra.length && o.te !== null && o.te !== undefined) { extra.push(L.tithiEnds + ' ' + when(o.te, row)); }
-    var dateText = withDate ? longFmt.format(new Date(Date.UTC(+o.d.slice(0, 4), +o.d.slice(5, 7) - 1, +o.d.slice(8, 10), 12))) : '';
+    // a calendar date, not an instant: formatted in UTC, or noon UTC would land on the next day east of UTC+12
+    var dateText = withDate ? dayFmt.format(new Date(Date.UTC(+o.d.slice(0, 4), +o.d.slice(5, 7) - 1, +o.d.slice(8, 10), 12))) : '';
     return '<div class="vrat">' + (dateText ? '<span class="d">' + esc(dateText) + '</span> · ' : '') + '<b>' + esc(name) + '</b>'
       + (extra.length ? '<span class="x">' + esc(extra.join(' · ')) + '</span>' : '') + '</div>';
   }
@@ -83,6 +84,7 @@
   var timeFmt = new Intl.DateTimeFormat('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: TZ });
   var keyFmt = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: TZ });
   var longFmt = new Intl.DateTimeFormat(LOCALE, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: TZ });
+  var dayFmt = new Intl.DateTimeFormat(LOCALE, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
   function dateKey(epoch) { return keyFmt.format(new Date(epoch * 1000)); }          // YYYY-MM-DD in the city
   function clock(epoch) { return timeFmt.format(new Date((epoch + 30) * 1000)).replace(/ | /g, ' ').toUpperCase(); }
