@@ -3,7 +3,8 @@
   "include": ["/panchang/*"],
   "exclude": [
     "/panchang/data/*",
-    "/panchang/*/*",
+    "/panchang/*/2*",
+    "/panchang/*/shubh-muhurat",
     "/panchang/karwa-chauth-2027",
     "/panchang/diwali-2026",
     "/panchang/diwali-2027",
