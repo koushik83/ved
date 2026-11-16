@@ -16,6 +16,7 @@ A prashnavali is a Hindu practice for seeking guidance on a question: the seeker
 - [Today's Guidance](https://vedprashnavali.com/today): one reading a day from Shri Ram or Hanuman Ji.
 - [Naam Jaap Counter](https://vedprashnavali.com/jaap): a digital mala of 108 for counting jaap, with an explanation of the practice.
 - [Panchang](https://vedprashnavali.com/panchang): today's tithi, nakshatra, yoga and karana with their end times, sunrise, moonrise, Rahu Kaal, Abhijit Muhurat and Choghadiya for thirty cities in India, the United States, Canada, the United Kingdom, Australia, the UAE and Singapore, each in its own local time, with any date up to the end of next year. Computed from the JPL ephemeris with the Lahiri ayanamsa. Hindi version: https://vedprashnavali.com/hi/panchang
+- Shubh muhurat for each panchang city, at https://vedprashnavali.com/panchang/<city>/shubh-muhurat, for example [New York](https://vedprashnavali.com/panchang/new-york/shubh-muhurat): the day's Brahma Muhurta, Abhijit Muhurat and good choghadiya, leaving out any that fall in Rahu Kaal, Yamaganda or Gulika, for today, tomorrow and the week, in the city's own time.
 
 ## Articles
 

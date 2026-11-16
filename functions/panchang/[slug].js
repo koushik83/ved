@@ -39,6 +39,8 @@ export async function onRequest(context) {
     const m = html.match(/<script>window\.PANCHANG = (\{[\s\S]*?\});<\/script>/);
     if (!m) { return unchanged(res, 'skip: not a city page'); }
     const P = JSON.parse(m[1]);
+    // the muhurat pages (P.page) read the same data but draw other boxes; only the city page is filled here
+    if (P.page) { return unchanged(res, 'skip: not a city page'); }
     if (P.lang !== 'en' || !/^\/panchang\/data\/[a-z-]+\.json$/.test(P.data)) { return unchanged(res, 'skip: language or data path'); }
     const dres = await context.env.ASSETS.fetch(new URL(P.data, context.request.url));
     if (!dres.ok) { return unchanged(res, 'skip: data ' + dres.status); }
@@ -169,12 +171,14 @@ export function todayBoxes(P, data, nowMs) {
   const YAMA = { 6: 5, 0: 4, 1: 3, 2: 2, 3: 1, 4: 7, 5: 6 };
   const GULIKA = { 6: 7, 0: 6, 1: 5, 2: 4, 3: 3, 4: 2, 5: 1 };
   const ORDER = ['udveg', 'chal', 'labh', 'amrit', 'kaal', 'shubh', 'rog'];
+  const NIGHT_ORDER = ['shubh', 'amrit', 'chal', 'rog', 'kaal', 'labh', 'udveg'];
   const DAY_FIRST = { 6: 'udveg', 0: 'amrit', 1: 'rog', 2: 'labh', 3: 'shubh', 4: 'chal', 5: 'kaal' };
   const NIGHT_FIRST = { 6: 'shubh', 0: 'chal', 1: 'kaal', 2: 'udveg', 3: 'amrit', 4: 'rog', 5: 'labh' };
+  const NO_ABHIJIT = 2;
 
-  function choghadiya(a, b, first) {
-    const start = ORDER.indexOf(first), out = [];
-    for (let k = 0; k < 8; k++) { const p = part(a, b, 8, k + 1); out.push([ORDER[(start + k) % 7], p[0], p[1]]); }
+  function choghadiya(a, b, first, order) {
+    const start = order.indexOf(first), out = [];
+    for (let k = 0; k < 8; k++) { const p = part(a, b, 8, k + 1); out.push([order[(start + k) % 7], p[0], p[1]]); }
     return out;
   }
   function hinduLine(row) {
@@ -193,6 +197,7 @@ export function todayBoxes(P, data, nowMs) {
   }
   function dd(label, value, sub) { return '<dt>' + esc(label) + '</dt><dd>' + esc(value) + (sub ? '<span class="sub">' + esc(sub) + '</span>' : '') + '</dd>'; }
   function spanRow(label, a, b, row) { return '<div class="limb"><span class="k">' + esc(label) + '</span><span class="v">' + esc(span(a, b, row)) + '</span></div>'; }
+  function noteRow(label, text) { return '<div class="limb"><span class="k">' + esc(label) + '</span><span class="v">' + esc(text) + '</span></div>'; }
   function choghTable(list, row) {
     let out = '';
     for (let i = 0; i < list.length; i++) {
@@ -272,7 +277,7 @@ export function todayBoxes(P, data, nowMs) {
   const midDay = (row.sr + row.ss) / 2;
   const sunRashi = row.sun;
   const dayMuhurta = (row.ss - row.sr) / 15;
-  const abhijit = [row.sr + dayMuhurta * 7, row.sr + dayMuhurta * 8];
+  const abhijit = row.w === NO_ABHIJIT ? null : [row.sr + dayMuhurta * 7, row.sr + dayMuhurta * 8];
   const rahu = part(row.sr, row.ss, 8, RAHU[row.w]), yama = part(row.sr, row.ss, 8, YAMA[row.w]), gul = part(row.sr, row.ss, 8, GULIKA[row.w]);
   const boxes = {
     panDate: esc(longDate(midDay)),
@@ -290,10 +295,11 @@ export function todayBoxes(P, data, nowMs) {
       + dd(L.vikram, String(row.vs)) + dd(L.shaka, String(row.sk)) + dd(L.gujarati, String(row.gs))
       + dd(L.sunRashi, N.rashi[row.sun]) + dd(L.moonRashi, N.rashi[row.moon])
       + dd(L.ritu, N.ritu[Math.floor(sunRashi / 2) % 6]) + dd(L.ayana, N.ayana[(sunRashi >= 3 && sunRashi <= 8) ? 1 : 0]),
-    panGood: spanRow(L.brahma, row.bm[0], row.bm[1], row) + spanRow(L.abhijit, abhijit[0], abhijit[1], row),
+    panGood: spanRow(L.brahma, row.bm[0], row.bm[1], row)
+      + (abhijit ? spanRow(L.abhijit, abhijit[0], abhijit[1], row) : noteRow(L.abhijit, L.abhijitWed)),
     panAvoid: spanRow(L.rahu, rahu[0], rahu[1], row) + spanRow(L.yamaganda, yama[0], yama[1], row) + spanRow(L.gulika, gul[0], gul[1], row),
-    panChoghDay: choghTable(choghadiya(row.sr, row.ss, DAY_FIRST[row.w]), row),
-    panChoghNight: choghTable(choghadiya(row.ss, row.nsr, NIGHT_FIRST[row.w]), row),
+    panChoghDay: choghTable(choghadiya(row.sr, row.ss, DAY_FIRST[row.w], ORDER), row),
+    panChoghNight: choghTable(choghadiya(row.ss, row.nsr, NIGHT_FIRST[row.w], NIGHT_ORDER), row),
     panVrats: renderVrats(row),
   };
   return boxes;

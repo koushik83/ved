@@ -90,7 +90,7 @@ Rahu Kaal, Yamaganda and Gulika are the portions of the day tradition avoids for
 - The positions of the Sun and the Moon come from the JPL DE421 planetary ephemeris, the data astronomers use.
 - Sunrise and sunset are the moments the upper edge of the Sun crosses the horizon, allowing for the bending of light in the air, as most panchangs print them. Moonrise and moonset are for the centre of the Moon.
 - Nakshatra, yoga and the rashis use the Lahiri (Chitrapaksha) ayanamsa, the standard of India's national calendar. The tithi needs no ayanamsa: it is the angle between the Moon and the Sun.
-- Rahu Kaal, Yamaganda and Gulika are eighths of the day from sunrise to sunset. Abhijit is the eighth of the day's fifteen muhurtas, and Brahma Muhurta the second-last muhurta of the night.
+- Rahu Kaal, Yamaganda and Gulika are eighths of the day from sunrise to sunset. Abhijit is the eighth of the day's fifteen muhurtas, not used on Wednesdays, when that muhurta is a Dur Muhurta; Brahma Muhurta is the second-last muhurta of the night.
 - Times are rounded to the nearest minute. Another panchang may differ by a minute or two where its conventions differ.
 
 ## Frequently Asked Questions

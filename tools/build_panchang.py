@@ -26,7 +26,7 @@ from build_prashnavali import (AD_ZONE, AD_ZONE_END, FOOTER, GROW, INSTALL, JOUR
                                nav_css, nav_html, others_html)
 from panchang import engine, names, vrats  # noqa: E402
 from panchang.cities import CITIES, COUNTRY_ORDER, INDEXED  # noqa: E402
-from panchang.texts import FESTIVALS, METHODS  # noqa: E402
+from panchang.texts import FESTIVALS, METHODS, MUHURAT  # noqa: E402
 from panchang.texts import MONTH as MONTH_TEXT  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -35,6 +35,9 @@ CACHE_DIR = ROOT / "tools" / "panchang" / "cache"
 MAIN_CITIES = ["new-jersey", "new-york", "san-francisco", "chicago", "dallas", "toronto", "london", "sydney",
                "melbourne", "delhi", "mumbai", "dubai"]
 EXAMPLE_CITY = {"en": "New Jersey", "hi": "न्यू जर्सी"}
+# The page script's address carries a version: browsers may keep /panchang.js for four hours, and a page built today
+# must not run an older script (the muhurat pages need the one of 16 Nov 2026). Change it whenever panchang.js changes.
+PANCHANG_JS = "/panchang.js?v=2026-11-16"
 
 
 # ------------------------------------------------------------------ the words
@@ -71,6 +74,13 @@ T = {
             ("sankashti-chaturthi", "Sankashti Chaturthi dates and moonrise by city"),
         ],
         "methods_link": "How this panchang is calculated",
+        # the shubh muhurat pages (16 Nov 2026), linked from each city page and from the index
+        "muhurat_link": "Shubh muhurat in {city}: the good times today, tomorrow and this week",
+        "muhurat_back": "Today's full panchang for {city}",
+        "muhurat_cities_h": "Shubh muhurat in other cities",
+        "muhurat_index_h": "Shubh muhurat today",
+        "muhurat_index": "The day's good times for your city: Brahma Muhurta, Abhijit and the good choghadiya, with "
+                         "Rahu Kaal left out, for today, tomorrow and the week.",
         "title": "Panchang for {city} Today | Tithi, Nakshatra, Rahu Kaal, Choghadiya",
         "description": "Today's panchang (panchangam) for {city}: tithi, nakshatra, Rahu Kalam, Choghadiya and the "
                        "next Ekadashi, in local time.",
@@ -96,7 +106,8 @@ T = {
             "Nakshatra, yoga and the rashis use the Lahiri (Chitrapaksha) ayanamsa, the standard of India's national "
             "calendar. The tithi needs no ayanamsa: it is the angle between the Moon and the Sun.",
             "Rahu Kaal, Yamaganda and Gulika are eighths of the day from sunrise to sunset. Abhijit is the eighth of the "
-            "day's fifteen muhurtas, and Brahma Muhurta the second-last muhurta of the night.",
+            "day's fifteen muhurtas, not used on Wednesdays, when that muhurta is a Dur Muhurta; Brahma Muhurta is the "
+            "second-last muhurta of the night.",
             "Times are rounded to the nearest minute. Another panchang may differ by a minute or two where its "
             "conventions differ.",
         ],
@@ -177,7 +188,8 @@ T = {
             "nextDay": "next day", "paksha": "Paksha", "amanta": "Amanta month", "purnimanta": "Purnimanta month",
             "vikram": "Vikram Samvat", "shaka": "Shaka Samvat", "gujarati": "Gujarati Samvat",
             "sunRashi": "Sun in", "moonRashi": "Moon in", "ritu": "Ritu", "ayana": "Ayana",
-            "brahma": "Brahma Muhurta", "abhijit": "Abhijit Muhurat", "rahu": "Rahu Kaal", "yamaganda": "Yamaganda",
+            "brahma": "Brahma Muhurta", "abhijit": "Abhijit Muhurat", "abhijitWed": "not used on Wednesdays",
+            "rahu": "Rahu Kaal", "yamaganda": "Yamaganda",
             "gulika": "Gulika Kaal", "good": "Good times", "avoid": "Times to avoid",
             "day": "Day choghadiya", "night": "Night choghadiya", "today": "Today", "pick": "Another date",
             "share": "Share on WhatsApp", "shareHead": "Panchang for {city}",
@@ -217,6 +229,12 @@ T = {
             ("sankashti-chaturthi", "संकष्टी चतुर्थी: शहर के अनुसार तारीखें और चंद्रोदय"),
         ],
         "methods_link": "यह पंचांग कैसे बनता है",
+        "muhurat_link": "{city} में शुभ मुहूर्त: आज, कल और इस सप्ताह के शुभ समय",
+        "muhurat_back": "{city} का आज का पूरा पंचांग",
+        "muhurat_cities_h": "अन्य शहरों में शुभ मुहूर्त",
+        "muhurat_index_h": "आज का शुभ मुहूर्त",
+        "muhurat_index": "आपके शहर के दिन के शुभ समय: ब्रह्म मुहूर्त, अभिजित और शुभ चौघड़िया, राहु काल छोड़कर, आज, कल और "
+                         "पूरे सप्ताह के लिए।",
         "title": "{city} का आज का पंचांग | तिथि, नक्षत्र, राहु काल, चौघड़िया",
         "description": "{city}, {country} का आज का पंचांग: सूर्योदय और चंद्रोदय, तिथि, नक्षत्र, योग और करण उनके समाप्ति समय "
                        "के साथ, राहु काल, अभिजित मुहूर्त और चौघड़िया, शहर के अपने आकाश के लिए, स्थानीय समय में, {city} के {year} "
@@ -243,7 +261,7 @@ T = {
             "नक्षत्र, योग और राशियाँ लाहिरी (चित्रपक्ष) अयनांश से निकाली गई हैं, जो भारत के राष्ट्रीय पंचांग का मानक है। "
             "तिथि को अयनांश की आवश्यकता नहीं: वह चंद्र और सूर्य के बीच का कोण है।",
             "राहु काल, यमगंड और गुलिक सूर्योदय से सूर्यास्त तक के दिन के आठवें भाग हैं। अभिजित दिन के पंद्रह मुहूर्तों में "
-            "आठवाँ है, और ब्रह्म मुहूर्त रात का दूसरा अंतिम मुहूर्त।",
+            "आठवाँ है, जो बुधवार को नहीं लिया जाता क्योंकि उस दिन वह दुर्मुहूर्त है; ब्रह्म मुहूर्त रात का दूसरा अंतिम मुहूर्त है।",
             "समय निकटतम मिनट तक लिखे गए हैं। किसी अन्य पंचांग से एक-दो मिनट का अंतर हो सकता है, जहाँ उसकी परंपरा भिन्न हो।",
         ],
         "sky_h": "सूर्योदय के समय का आकाश",
@@ -320,7 +338,8 @@ T = {
             "nextDay": "अगले दिन", "paksha": "पक्ष", "amanta": "अमांत मास", "purnimanta": "पूर्णिमांत मास",
             "vikram": "विक्रम संवत", "shaka": "शक संवत", "gujarati": "गुजराती संवत",
             "sunRashi": "सूर्य राशि", "moonRashi": "चंद्र राशि", "ritu": "ऋतु", "ayana": "अयन",
-            "brahma": "ब्रह्म मुहूर्त", "abhijit": "अभिजित मुहूर्त", "rahu": "राहु काल", "yamaganda": "यमगंड",
+            "brahma": "ब्रह्म मुहूर्त", "abhijit": "अभिजित मुहूर्त", "abhijitWed": "बुधवार को नहीं लिया जाता",
+            "rahu": "राहु काल", "yamaganda": "यमगंड",
             "gulika": "गुलिक काल", "good": "शुभ समय", "avoid": "वर्जित समय",
             "day": "दिन का चौघड़िया", "night": "रात का चौघड़िया", "today": "आज", "pick": "दूसरी तारीख",
             "share": "WhatsApp पर भेजें", "shareHead": "{city} का पंचांग",
@@ -565,6 +584,14 @@ def city_facts(place, rows, lang, year):
         short_len=length(shortest["ss"] - shortest["sr"], lang),
         rahu_short=length((shortest["ss"] - shortest["sr"]) / 8, lang),
         rahu_long=length((longest["ss"] - longest["sr"]) / 8, lang))
+    dst = dst_text(t, city, clock_changes(zone, in_year), lang, year)
+    zone_name = dt.datetime.fromtimestamp(in_year[0]["sr"], zone).tzname() or place.tz
+    return {"facts": facts, "dst": dst, "zone": t["zone"].format(zone=f"{zone_name} ({place.tz})", city=city)}
+
+
+def clock_changes(zone, in_year):
+    """The year's clock change forward and back, as the dates whose midday offset differs from the day before's,
+    or None where the clock does not change."""
     changes = []
     prev = None
     for r in in_year:
@@ -574,13 +601,38 @@ def city_facts(place, rows, lang, year):
         prev = off
     forward = [c for c, fwd in changes if fwd]
     back = [c for c, fwd in changes if not fwd]
-    if forward and back:
-        start, end = (forward[0], back[0]) if forward[0] < back[0] else (forward[0], back[-1])
-        dst = t["dst_yes"].format(city=city, start=long_date(start, lang), end=long_date(end, lang), year=year)
-    else:
-        dst = t["dst_no"].format(city=city)
-    zone_name = dt.datetime.fromtimestamp(in_year[0]["sr"], zone).tzname() or place.tz
-    return {"facts": facts, "dst": dst, "zone": t["zone"].format(zone=f"{zone_name} ({place.tz})", city=city)}
+    if not (forward and back):
+        return None
+    return (forward[0], back[0]) if forward[0] < back[0] else (forward[0], back[-1])
+
+
+def dst_text(t, city, changes, lang, year):
+    if changes:
+        return t["dst_yes"].format(city=city, start=long_date(changes[0], lang), end=long_date(changes[1], lang),
+                                   year=year)
+    return t["dst_no"].format(city=city)
+
+
+def muhurat_facts(place, rows, lang, year):
+    """The muhurat page's own sentences for a city: how early and late Brahma Muhurta and Abhijit begin in the year,
+    and its clock changes, from the city's rows."""
+    zone = ZoneInfo(place.tz)
+    m = MUHURAT[lang]
+    city = city_name(place, lang)
+    in_year = [r for r in rows if r["d"].startswith(str(year))] or rows
+    tod = lambda e: (dt.datetime.fromtimestamp(e + 30, zone).hour * 60  # noqa: E731
+                     + dt.datetime.fromtimestamp(e + 30, zone).minute)
+    abhijit = lambda r: r["sr"] + (r["ss"] - r["sr"]) * 7 / 15  # noqa: E731
+    bm_early = min(in_year, key=lambda r: tod(r["bm"][0]))
+    bm_late = max(in_year, key=lambda r: tod(r["bm"][0]))
+    ab_early = min(in_year, key=lambda r: tod(abhijit(r)))
+    ab_late = max(in_year, key=lambda r: tod(abhijit(r)))
+    d = lambda r: short_date(dt.date.fromisoformat(r["d"]), lang)  # noqa: E731
+    year_text = m["year"].format(
+        year=year, city=city, bm_early=clock(bm_early["bm"][0], zone), bm_early_d=d(bm_early),
+        bm_late=clock(bm_late["bm"][0], zone), bm_late_d=d(bm_late), ab_early=clock(abhijit(ab_early), zone),
+        ab_early_d=d(ab_early), ab_late=clock(abhijit(ab_late), zone), ab_late_d=d(ab_late))
+    return {"year": year_text, "dst": dst_text(m, city, clock_changes(zone, in_year), lang, year)}
 
 
 # ------------------------------------------------------------------ page pieces
@@ -657,14 +709,16 @@ def crumbs(lang, *items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": trail}
 
 
-def cities_list(lang, exclude=None):
+def cities_list(lang, exclude=None, suffix=""):
+    """Every city by country, linked to its panchang page, or with a suffix to another page of the city's."""
     out = []
     for country in COUNTRY_ORDER:
         places = [p for p in CITIES if p.country_en == country and p.slug != exclude]
         if not places:
             continue
         out.append("<h3>%s</h3>" % esc(country_name(places[0], lang)))
-        out.append("<ul>" + "".join('<li><a href="%s/panchang/%s">%s</a></li>' % (prefix(lang), p.slug, esc(city_name(p, lang)))
+        out.append("<ul>" + "".join('<li><a href="%s/panchang/%s%s">%s</a></li>' % (prefix(lang), p.slug, suffix,
+                                                                                    esc(city_name(p, lang)))
                                     for p in places) + "</ul>")
     return "\n            ".join(out)
 
@@ -972,6 +1026,7 @@ def city_page(place, lang, first, last, rows, obs, facts, year):
                 <div><h2>{esc(labels["good"])}</h2><div id="panGood"></div></div>
                 <div><h2>{esc(labels["avoid"])}</h2><div id="panAvoid"></div></div>
             </div>
+            <p style="margin: 12px 0 0;"><a href="{prefix(lang)}/panchang/{place.slug}/shubh-muhurat">{esc(t["muhurat_link"].format(**kw))}</a></p>
         </section>
 
         <section class="card">
@@ -1038,7 +1093,125 @@ def city_page(place, lang, first, last, rows, obs, facts, year):
     </main>
 {FOOTER}
     <script>window.PANCHANG = {json.dumps(data, ensure_ascii=False, separators=(",", ":"))};</script>
-    <script src="/panchang.js" defer></script>
+    <script src="{PANCHANG_JS}" defer></script>
+{INSTALL}</body>
+</html>
+"""
+
+
+# ------------------------------------------------------------------ the shubh muhurat page
+
+MUHURAT_CSS = """        .m-best .limb .k { flex: 0 0 46%; color: #5D2E00; font-size: 15px; }
+        .m-best .limb .v { text-align: right; } .m-best .limb .v .h { display: block; color: #666; font-size: 14px; }
+        .m-best .limb.past { opacity: 0.5; }
+        .m-note { color: #666; font-size: 14px; margin: 10px 0 0; }
+        .m-now p { margin: 4px 0; font-size: 17px; }
+        .card h3 { margin: 0 0 6px; }
+"""
+
+
+def muhurat_page(place, lang, first, last, mfacts, year):
+    """A city's shubh muhurat page: the day's good times from the city page's own muhurtas and choghadiya, the times
+    to avoid, both choghadiyas and the week, drawn by /panchang.js in the city's clock (P.page = "muhurat")."""
+    t, m = T[lang], MUHURAT[lang]
+    city, country = city_name(place, lang), country_name(place, lang)
+    kw = dict(city=city, country=country, last=long_date(last, lang), first=long_date(first, lang), year=year)
+    path = f"/panchang/{place.slug}/shubh-muhurat"
+    url = SITE + prefix(lang) + path
+    alt_en, alt_hi = SITE + path, SITE + "/hi" + path
+    switch = ("/hi" + path, "हिंदी") if lang == "en" else (path, "English")
+    faq_items = [(q.format(**kw), a.format(dst=mfacts["dst"], **kw)) for q, a in m["faq"]]
+    labels = {k: v.format(**kw) for k, v in t["labels"].items()}
+    labels.update({k: v.format(**kw) for k, v in m["labels"].items()})
+    data = {"page": "muhurat", "slug": place.slug, "city": city, "tz": place.tz, "lang": lang, "url": url,
+            "first": first.isoformat(), "last": last.isoformat(), "data": f"/panchang/data/{place.slug}.json",
+            "labels": labels, "names": names_for(lang)}
+    # in search for the same 30 cities as the city pages, English only
+    robots = "" if lang == "en" and place.slug in INDEXED else "noindex, follow"
+    city_url = prefix(lang) + "/panchang/" + place.slug
+    return head(lang, m["title"].format(**kw), m["description"].format(**kw), url, alt_en, alt_hi,
+                crumbs(lang, (t["breadcrumb"], SITE + prefix(lang) + "/panchang"), (city, SITE + city_url),
+                       (m["crumb"], url)),
+                faq_ld(faq_items), CSS + MUHURAT_CSS, robots=robots) + f"""<body>
+{nav_html(lang, None, switch)}
+    <main class="wrap">
+        <h1>{esc(m["h1"].format(**kw))}</h1>
+        <p class="pan-head">{esc(t["sub"].format(**kw))}</p>
+        <p class="pan-date" id="panDate">…</p>
+        <p class="pan-hindu" id="panHindu"></p>
+        <div class="pan-controls">
+            {city_select(lang, place.slug)}
+            <button type="button" id="todayBtn" class="on">{esc(labels["today"])}</button>
+            <button type="button" id="tomorrowBtn">{esc(labels["tomorrow"])}</button>
+            <label>{esc(labels["pick"])} <input type="date" id="pickDate" min="{first.isoformat()}" max="{last.isoformat()}"></label>
+        </div>
+        <p id="panNote" class="pan-head" hidden></p>
+
+        <section class="card m-now" id="mNowCard" hidden>
+            <h2>{esc(m["now_h"].format(**kw))}</h2>
+            <div id="mNow"></div>
+        </section>
+
+        <section class="card">
+            <h2>{esc(m["best_h"])}</h2>
+            <div id="mBest" class="m-best"></div>
+            <p class="m-note">{esc(m["best_note"])}</p>
+            <p class="m-note" id="mClash" hidden></p>
+            <p class="m-note" id="mLeftOut" hidden></p>
+        </section>
+
+        <section class="card spans">
+            <h2>{esc(labels["avoid"])}</h2>
+            <div id="mAvoid"></div>
+        </section>
+
+        <section class="card">
+            <h2>{esc(m["chogh_h"])}</h2>
+            <div class="pan-two">
+                <div><h3>{esc(labels["day"])}</h3><table class="chogh" id="mChoghDay"></table></div>
+                <div><h3>{esc(labels["night"])}</h3><table class="chogh" id="mChoghNight"></table></div>
+            </div>
+            <div class="actions" style="margin-top: 14px;"><button type="button" class="btn btn-whatsapp" id="mShare">{esc(labels["share"])}</button></div>
+        </section>
+
+        <section class="card">
+            <h2>{esc(m["week_h"].format(**kw))}</h2>
+            <div class="scroll"><table class="pan" id="mWeek"></table></div>
+        </section>
+
+        <section class="card">
+            <h2>{esc(m["year_h"].format(**kw))}</h2>
+            <p>{esc(mfacts["year"])}</p>
+            <p>{esc(mfacts["dst"])}</p>
+            <p><a href="{city_url}">{esc(t["muhurat_back"].format(**kw))}</a></p>
+        </section>
+
+        <section class="card">
+            <h2>{esc(m["explain_h"])}</h2>
+            <p>{esc(m["intro"].format(**kw))}</p>
+            <ul>{"".join("<li>%s</li>" % esc(p) for p in m["explain"])}</ul>
+            <h2 style="margin-top: 18px;">{esc(m["events_h"])}</h2>
+            <p>{esc(m["events"])}</p>
+            <p><a href="{prefix(lang)}/panchang/how-it-works">{esc(t["methods_link"])}</a></p>
+        </section>
+
+        {AD_ZONE}
+        <section class="card">
+            <h2>{esc(t["faq_h"])}</h2>
+            {faq_html(faq_items)}
+        </section>
+        {AD_ZONE_END}
+        <section class="card pan-cities">
+            <h2>{esc(t["muhurat_cities_h"])}</h2>
+            {cities_list(lang, exclude=place.slug, suffix="/shubh-muhurat")}
+        </section>
+        {festival_links_html(lang)}
+        {more_html(lang)}
+        {others_html(lang, None)}
+    </main>
+{FOOTER}
+    <script>window.PANCHANG = {json.dumps(data, ensure_ascii=False, separators=(",", ":"))};</script>
+    <script src="{PANCHANG_JS}" defer></script>
 {INSTALL}</body>
 </html>
 """
@@ -1403,6 +1576,9 @@ def index_page(lang, last):
     switch = ("/hi/panchang", "हिंदी") if lang == "en" else ("/panchang", "English")
     generic = [(q, a) for q, a in t["faq"] if "{city}" not in q + a]
     city_names = {p.slug: city_name(p, lang) for p in CITIES}
+    # the muhurat pages of the cities in search, in the cities' order
+    muhurat_links = " ".join('<a href="%s/panchang/%s/shubh-muhurat">%s</a>' % (prefix(lang), p.slug, esc(city_name(p, lang)))
+                             for p in CITIES if p.slug in INDEXED)
     return head(lang, t["index_title"], t["index_description"], url, alt_en, alt_hi,
                 crumbs(lang, (t["breadcrumb"], url)), faq_ld(generic), CSS) + f"""<body>
 {nav_html(lang, None, switch)}
@@ -1415,6 +1591,11 @@ def index_page(lang, last):
         <section class="card pan-cities">
             <h2>{esc(t["choose"])}</h2>
             {cities_list(lang)}
+        </section>
+        <section class="card">
+            <h2>{esc(t["muhurat_index_h"])}</h2>
+            <p>{esc(t["muhurat_index"])}</p>
+            <p class="months">{muhurat_links}</p>
         </section>
         {festival_links_html(lang)}
         {AD_ZONE}
@@ -1584,6 +1765,11 @@ def build(first: dt.date, last: dt.date, only=None, today: dt.date | None = None
             (folder / f"{place.slug}.md").write_text(markdown(place, lang, first, last, obs, facts), encoding="utf-8")
             written.append(str((folder / f"{place.slug}.html").relative_to(ROOT)))
             entries.append((SITE + prefix(lang) + "/panchang/" + place.slug, "daily", "0.8"))
+            mpath = folder / place.slug / "shubh-muhurat.html"
+            mpath.write_text(muhurat_page(place, lang, first, last, muhurat_facts(place, rows, lang, year), year),
+                             encoding="utf-8")
+            written.append(str(mpath.relative_to(ROOT)))
+            entries.append((SITE + prefix(lang) + f"/panchang/{place.slug}/shubh-muhurat", "daily", "0.7"))
             for y, m in month_range(first, last):
                 (folder / place.slug / f"{y:04d}-{m:02d}.html").write_text(
                     month_page(place, lang, y, m, rows, obs, first, last), encoding="utf-8")

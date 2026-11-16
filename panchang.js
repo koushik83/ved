@@ -97,18 +97,28 @@
   function part(a, b, n, k) { var d = (b - a) / n; return [a + d * (k - 1), a + d * k]; }
   function hm(seconds) { var h = Math.floor(seconds / 3600), m = Math.round((seconds - h * 3600) / 60); return h + ' ' + L.hours + ' ' + m + ' ' + L.minutes; }
 
-  // segments (1-based of 8) and the choghadiya order, by weekday Mon=0 .. Sun=6, as in the generator
+  // segments (1-based of 8) and the choghadiya order, by weekday Mon=0 .. Sun=6, as in the generator. The night
+  // runs in its own order, not the day's (until 16 Nov 2026 it ran in the day's, wrong in slots 2 to 7).
   var RAHU = { 6: 8, 0: 2, 1: 7, 2: 5, 3: 6, 4: 4, 5: 3 };
   var YAMA = { 6: 5, 0: 4, 1: 3, 2: 2, 3: 1, 4: 7, 5: 6 };
   var GULIKA = { 6: 7, 0: 6, 1: 5, 2: 4, 3: 3, 4: 2, 5: 1 };
   var ORDER = ['udveg', 'chal', 'labh', 'amrit', 'kaal', 'shubh', 'rog'];
+  var NIGHT_ORDER = ['shubh', 'amrit', 'chal', 'rog', 'kaal', 'labh', 'udveg'];
   var DAY_FIRST = { 6: 'udveg', 0: 'amrit', 1: 'rog', 2: 'labh', 3: 'shubh', 4: 'chal', 5: 'kaal' };
   var NIGHT_FIRST = { 6: 'shubh', 0: 'chal', 1: 'kaal', 2: 'udveg', 3: 'amrit', 4: 'rog', 5: 'labh' };
+  var NO_ABHIJIT = 2;          // Wednesday: the eighth muhurta is a Dur Muhurta that day, and Abhijit is not used
 
-  function choghadiya(a, b, first) {
-    var start = ORDER.indexOf(first), out = [];
-    for (var k = 0; k < 8; k++) { var p = part(a, b, 8, k + 1); out.push([ORDER[(start + k) % 7], p[0], p[1]]); }
+  function choghadiya(a, b, first, order) {
+    var start = order.indexOf(first), out = [];
+    for (var k = 0; k < 8; k++) { var p = part(a, b, 8, k + 1); out.push([order[(start + k) % 7], p[0], p[1]]); }
     return out;
+  }
+  function dayChogh(row) { return choghadiya(row.sr, row.ss, DAY_FIRST[row.w], ORDER); }
+  function nightChogh(row) { return choghadiya(row.ss, row.nsr, NIGHT_FIRST[row.w], NIGHT_ORDER); }
+  function abhijitOf(row) {
+    if (row.w === NO_ABHIJIT) { return null; }
+    var m = (row.ss - row.sr) / 15;
+    return [row.sr + m * 7, row.sr + m * 8];
   }
 
   // ---- the Hindu date line: "Kartika, Krishna Saptami · Vikram Samvat 2083 · Raviwara"
@@ -134,6 +144,9 @@
 
   function spanRow(label, a, b, row) {
     return '<div class="limb"><span class="k">' + esc(label) + '</span><span class="v">' + esc(span(a, b, row)) + '</span></div>';
+  }
+  function noteRow(label, text) {
+    return '<div class="limb"><span class="k">' + esc(label) + '</span><span class="v">' + esc(text) + '</span></div>';
   }
 
   function choghTable(list, row) {
@@ -191,6 +204,7 @@
   var shown = null;
   function render(row) {
     shown = row;
+    if (P.page === 'muhurat') { renderMuhurat(row); return; }
     var midDay = (row.sr + row.ss) / 2;
     $('panDate').textContent = longFmt.format(new Date(midDay * 1000));
     $('panHindu').textContent = hinduLine(row);
@@ -212,14 +226,14 @@
       + dd(L.sunRashi, N.rashi[row.sun]) + dd(L.moonRashi, N.rashi[row.moon])
       + dd(L.ritu, N.ritu[Math.floor(sunRashi / 2) % 6]) + dd(L.ayana, N.ayana[(sunRashi >= 3 && sunRashi <= 8) ? 1 : 0]);
 
-    var dayMuhurta = (row.ss - row.sr) / 15;
-    var abhijit = [row.sr + dayMuhurta * 7, row.sr + dayMuhurta * 8];
-    $('panGood').innerHTML = spanRow(L.brahma, row.bm[0], row.bm[1], row) + spanRow(L.abhijit, abhijit[0], abhijit[1], row);
+    var abhijit = abhijitOf(row);
+    $('panGood').innerHTML = spanRow(L.brahma, row.bm[0], row.bm[1], row)
+      + (abhijit ? spanRow(L.abhijit, abhijit[0], abhijit[1], row) : noteRow(L.abhijit, L.abhijitWed));
     var rahu = part(row.sr, row.ss, 8, RAHU[row.w]), yama = part(row.sr, row.ss, 8, YAMA[row.w]), gul = part(row.sr, row.ss, 8, GULIKA[row.w]);
     $('panAvoid').innerHTML = spanRow(L.rahu, rahu[0], rahu[1], row) + spanRow(L.yamaganda, yama[0], yama[1], row) + spanRow(L.gulika, gul[0], gul[1], row);
 
-    $('panChoghDay').innerHTML = choghTable(choghadiya(row.sr, row.ss, DAY_FIRST[row.w]), row);
-    $('panChoghNight').innerHTML = choghTable(choghadiya(row.ss, row.nsr, NIGHT_FIRST[row.w]), row);
+    $('panChoghDay').innerHTML = choghTable(dayChogh(row), row);
+    $('panChoghNight').innerHTML = choghTable(nightChogh(row), row);
     if ($('panVrats')) { renderVrats(row); }
 
     $('panShare').onclick = function () {
@@ -229,6 +243,158 @@
         + '\n' + L.nakshatra + ': ' + N.nakshatra[row.n[0][0]] + (row.n[0][1] !== null ? ' ' + L.till + ' ' + when(row.n[0][1], row) : '')
         + '\n' + L.sunrise + ' ' + clock(row.sr) + ', ' + L.sunset + ' ' + clock(row.ss)
         + '\n' + L.rahu + ' ' + span(rahu[0], rahu[1], row);
+      window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n\n' + P.url));
+    };
+  }
+
+  // ---- the shubh muhurat page (P.page "muhurat"): the day's good times, from the same muhurtas and choghadiya
+  var GOOD = { amrit: 1, shubh: 1, labh: 1 };
+  var HINT = { brahma: 'hintBrahma', abhijit: 'hintAbhijit', amrit: 'hintAmrit', shubh: 'hintShubh', labh: 'hintLabh' };
+  var weekFmt = new Intl.DateTimeFormat(LOCALE, { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+
+  function shiftKey(iso, days) { return new Date(Date.parse(iso) + days * 86400000).toISOString().slice(0, 10); }
+  // a calendar date at noon UTC, formatted in UTC: the date itself in every zone
+  function noonUTC(iso) { return new Date(Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10), 12)); }
+  function till(epoch, row) { return L.tillFmt.replace('{t}', when(epoch, row)); }
+  function avoidOf(row) {
+    return [['rahu', part(row.sr, row.ss, 8, RAHU[row.w])], ['yamaganda', part(row.sr, row.ss, 8, YAMA[row.w])],
+      ['gulika', part(row.sr, row.ss, 8, GULIKA[row.w])]];
+  }
+  // the good times of one Hindu day, in time order: its Brahma Muhurta (before its sunrise), Abhijit (none on a
+  // Wednesday), and the day's and the night's Amrit, Shubh and Labh choghadiya, leaving out any that falls in Rahu
+  // Kaal, Yamaganda or Gulika (those are eighths of the day too, so a choghadiya is either inside one or clear of it)
+  // the parts of [a, b] that the day's avoided times cover, as [key, from, to]
+  function clashes(a, b, avoid) {
+    var out = [];
+    for (var j = 0; j < avoid.length; j++) {
+      var from = Math.max(a, avoid[j][1][0]), to = Math.min(b, avoid[j][1][1]);
+      if (to - from > 60) { out.push([avoid[j][0], from, to]); }
+    }
+    return out;
+  }
+  function goodTimes(row) {
+    var list = [{ key: 'brahma', a: row.bm[0], b: row.bm[1] }], out = [], avoid = avoidOf(row);
+    var ab = abhijitOf(row);
+    // Abhijit is listed whole, as panchangs print it; on four weekdays an avoided time covers part of it, and the
+    // page says so (clash) rather than cutting it
+    if (ab) { list.push({ key: 'abhijit', a: ab[0], b: ab[1], clash: clashes(ab[0], ab[1], avoid) }); }
+    var slots = dayChogh(row).concat(nightChogh(row));
+    for (var i = 0; i < slots.length; i++) {
+      var s = slots[i];
+      if (!GOOD[s[0]]) { continue; }
+      var c = clashes(s[1], s[2], avoid), hit = c.length ? c[0][0] : null;
+      (hit ? out : list).push({ key: s[0], chogh: true, a: s[1], b: s[2], hit: hit });
+    }
+    list.sort(function (x, y) { return x.a - y.a; });
+    return { list: list, out: out };
+  }
+  // when a family that keeps Rahu Kaal, Yamaganda and Gulika can begin in a good time: its start, moved past any of
+  // them that covers it, with the one it waited for; null when they cover it to its end
+  function clearStart(it, avoid) {
+    var t = it.a, after = null;
+    for (var pass = 0; pass < avoid.length; pass++) {
+      for (var j = 0; j < avoid.length; j++) {
+        if (t >= avoid[j][1][0] && t < avoid[j][1][1]) { t = avoid[j][1][1]; after = avoid[j][0]; }
+      }
+    }
+    return t < it.b - 60 ? { t: t, after: after } : null;
+  }
+  function fill(template, map) {
+    return template.replace(/\{(\w)\}/g, function (m, k) { return map[k] !== undefined ? map[k] : m; });
+  }
+  function itemName(it) { return it.chogh ? N.choghadiya[it.key] + ' ' + L.choghWord : L[it.key]; }
+  // "4:59–5:53 AM", with "(next day)" when the time is after the date's midnight
+  function compactSpan(a, b, row) { return shortSpan(a, b) + (dateKey(b) !== row.d ? ' (' + L.nextDay + ')' : ''); }
+  function goodRow(it, row, nowS) {
+    var past = nowS !== null && it.b <= nowS;
+    return '<div class="limb' + (past ? ' past' : '') + '"><span class="k">' + esc(compactSpan(it.a, it.b, row)) + '</span>'
+      + '<span class="v"><b>' + esc(itemName(it)) + '</b><span class="h">' + esc(L[HINT[it.key]]) + '</span></span></div>';
+  }
+  function shortSpan(a, b) {        // "4:59–5:53 AM", or "11:45 AM–12:27 PM" across noon
+    var x = clock(a).replace(/^0/, ''), y = clock(b).replace(/^0/, '');
+    return x.slice(-2) === y.slice(-2) ? x.slice(0, -3) + '–' + y : x + '–' + y;
+  }
+  function weekTable(row) {
+    var html = '<tr><th>' + esc(L.colDate) + '</th><th>' + esc(L.colBrahma) + '</th><th>' + esc(L.colAbhijit) + '</th><th>'
+      + esc(L.colRahu) + '</th></tr>';
+    for (var i = 0; i < 7; i++) {
+      var r = byDate[shiftKey(row.d, i)];
+      if (!r) { break; }
+      var ab = abhijitOf(r), rahu = part(r.sr, r.ss, 8, RAHU[r.w]);
+      html += '<tr><td class="d">' + esc(weekFmt.format(noonUTC(r.d))) + '</td><td>' + esc(shortSpan(r.bm[0], r.bm[1]))
+        + '</td><td>' + esc(ab ? shortSpan(ab[0], ab[1]) : L.noneWed) + '</td><td>' + esc(shortSpan(rahu[0], rahu[1])) + '</td></tr>';
+    }
+    return html;
+  }
+  // what the clock says now: the period under way (in the Hindu day under way, which before sunrise is the previous
+  // day's night), a muhurta under way, and the next good time still to begin
+  function nowCard(row) {
+    var nowS = Math.floor(Date.now() / 1000), prev = byDate[shiftKey(row.d, -1)];
+    var day = nowS < row.sr && prev ? prev : row, i, k;
+    if (nowS < day.sr || nowS >= day.nsr) { $('mNowCard').hidden = true; return; }
+    var head = L.now + ', ' + clock(nowS) + ': ', lines = [];
+    var avoid = avoidOf(day), slots = dayChogh(day).concat(nightChogh(day)), cur = null, inAvoid = null;
+    for (i = 0; i < avoid.length && !inAvoid; i++) { if (nowS >= avoid[i][1][0] && nowS < avoid[i][1][1]) { inAvoid = avoid[i]; } }
+    for (i = 0; i < slots.length && !cur; i++) { if (nowS >= slots[i][1] && nowS < slots[i][2]) { cur = slots[i]; } }
+    if (inAvoid) {
+      lines.push('<p>' + esc(head) + '<b class="tone-bad">' + esc(L[inAvoid[0]]) + '</b>, '
+        + esc(till(inAvoid[1][1], row) + '; ' + L.nowAvoid + L.stop) + '</p>');
+    } else if (cur) {
+      var tone = N.tone[cur[0]];
+      var word = tone === 'good' ? L.nowGood : (tone === 'neutral' ? L.nowNeutral : L.nowBad);
+      lines.push('<p>' + esc(head) + '<b class="tone-' + tone + '">' + esc(N.choghadiya[cur[0]] + ' ' + L.choghWord) + '</b>, '
+        + esc(word + ', ' + till(cur[2], row) + L.stop) + '</p>');
+    }
+    // a muhurta under way, unless an avoided time is under way too: the card says one thing at a time
+    var ab = abhijitOf(day), muh = null;
+    if (nowS >= row.bm[0] && nowS < row.bm[1]) { muh = ['brahma', row.bm[1]]; } else if (!inAvoid && ab && nowS >= ab[0] && nowS < ab[1]) { muh = ['abhijit', ab[1]]; }
+    if (muh) { lines.push('<p><b class="tone-good">' + esc(L[muh[0]]) + '</b>, ' + esc(till(muh[1], row) + L.stop) + '</p>'); }
+    // the next good time a family keeping the avoided times can begin in, in this Hindu day or the next
+    var next = null, days = [day, byDate[shiftKey(day.d, 1)]];
+    for (i = 0; i < days.length; i++) {
+      if (!days[i]) { continue; }
+      var av = avoidOf(days[i]), g = goodTimes(days[i]).list;
+      for (k = 0; k < g.length; k++) {
+        var cs = clearStart(g[k], av);
+        if (cs && cs.t > nowS && (!next || cs.t < next.t)) { next = { it: g[k], t: cs.t, after: cs.after }; }
+      }
+    }
+    if (next) {
+      var from = when(next.t, row) + (next.after ? ' (' + fill(L.afterFmt, { x: L[next.after] }) + ')' : '');
+      lines.push('<p>' + esc(L.nextGood) + ': <b>' + esc(itemName(next.it)) + '</b>, '
+        + esc(from + ' ' + L.to + ' ' + when(next.it.b, row) + L.stop) + '</p>');
+    } else {
+      lines.push('<p>' + esc(L.noneLeft) + '</p>');
+    }
+    $('mNow').innerHTML = lines.join('');
+    $('mNowCard').hidden = false;
+  }
+  function renderMuhurat(row) {
+    var midDay = (row.sr + row.ss) / 2;
+    $('panDate').textContent = longFmt.format(new Date(midDay * 1000));
+    $('panHindu').textContent = hinduLine(row);
+    var isToday = row.d === todayKey(), nowS = isToday ? Math.floor(Date.now() / 1000) : null;
+    var g = goodTimes(row);
+    $('mBest').innerHTML = g.list.map(function (it) { return goodRow(it, row, nowS); }).join('');
+    $('mLeftOut').textContent = g.out.length ? L.leftOut + ' ' + g.out.map(function (it) {
+      return N.choghadiya[it.key] + ' ' + span(it.a, it.b, row) + ' (' + L[it.hit] + ')';
+    }).join('; ') + L.stop : '';
+    $('mLeftOut').hidden = !g.out.length;
+    var abItem = g.list.filter(function (it) { return it.key === 'abhijit'; })[0];
+    var clash = abItem && abItem.clash.length ? abItem.clash[0] : null;
+    $('mClash').textContent = clash ? fill(L.clashFmt, { x: L[clash[0]], a: when(clash[1], row), b: when(clash[2], row) }) : '';
+    $('mClash').hidden = !clash;
+    $('mAvoid').innerHTML = avoidOf(row).map(function (x) { return spanRow(L[x[0]], x[1][0], x[1][1], row); }).join('');
+    $('mChoghDay').innerHTML = choghTable(dayChogh(row), row);
+    $('mChoghNight').innerHTML = choghTable(nightChogh(row), row);
+    $('mWeek').innerHTML = weekTable(row);
+    if (isToday) { nowCard(row); } else { $('mNowCard').hidden = true; }
+    $('mShare').onclick = function () {
+      track('share', { method: 'whatsapp', content_type: 'muhurat', city: P.slug, lang: P.lang });
+      var rahu = part(row.sr, row.ss, 8, RAHU[row.w]);
+      var text = '🕉️ ' + L.shareHeadM + ', ' + longFmt.format(new Date(midDay * 1000)) + '\n'
+        + g.list.map(function (it) { return itemName(it) + ': ' + span(it.a, it.b, row); }).join('\n')
+        + '\n' + L.rahu + ': ' + span(rahu[0], rahu[1], row);
       window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n\n' + P.url));
     };
   }
@@ -248,15 +414,17 @@
       row = byDate[key < keys[0] ? keys[0] : keys[keys.length - 1]];
     }
     $('todayBtn').className = picked ? '' : 'on';
+    if ($('tomorrowBtn')) { $('tomorrowBtn').className = picked && picked === shiftKey(todayKey(), 1) ? 'on' : ''; }
     render(row);
   }
 
   function start() {
     try { localStorage.setItem('ved_panchang_city', P.slug); } catch (e) { /* storage blocked */ }
+    var suffix = P.page === 'muhurat' ? '/shubh-muhurat' : '';
     $('city').addEventListener('change', function () {
       var slug = this.value;
       track('panchang_city', { from: P.slug, to: slug, lang: P.lang });
-      location.href = (P.lang === 'hi' ? '/hi' : '') + '/panchang/' + slug;
+      location.href = (P.lang === 'hi' ? '/hi' : '') + '/panchang/' + slug + suffix;
     });
     $('todayBtn').addEventListener('click', function () { picked = null; $('pickDate').value = ''; show(); });
     $('pickDate').addEventListener('change', function () {
@@ -264,11 +432,24 @@
       if (picked) { track('panchang_date', { city: P.slug, lang: P.lang }); }
       show();
     });
+    if ($('tomorrowBtn')) {
+      $('tomorrowBtn').addEventListener('click', function () {
+        var k = shiftKey(todayKey(), 1);
+        picked = byDate[k] ? k : null;
+        $('pickDate').value = picked || '';
+        track('panchang_date', { city: P.slug, lang: P.lang, which: 'tomorrow' });
+        show();
+      });
+    }
     show();
-    track('panchang_view', { city: P.slug, lang: P.lang, state: byDate[todayKey()] ? 'in_range' : 'out_of_range' });
-    // the page follows the city's clock: a new day is shown when it begins or when the page is looked at again
+    track(P.page === 'muhurat' ? 'muhurat_view' : 'panchang_view',
+      { city: P.slug, lang: P.lang, state: byDate[todayKey()] ? 'in_range' : 'out_of_range' });
+    // the page follows the city's clock: a new day is shown when it begins or when the page is looked at again; the
+    // muhurat page also moves its "now" card and its past times along
     var shownKey = todayKey();
-    function tick() { if (!picked && todayKey() !== shownKey) { shownKey = todayKey(); show(); } }
+    function tick() {
+      if (!picked && todayKey() !== shownKey) { shownKey = todayKey(); show(); } else if (P.page === 'muhurat' && !picked) { show(); }
+    }
     setInterval(tick, 30000);
     document.addEventListener('visibilitychange', function () { if (!document.hidden) { tick(); } });
   }

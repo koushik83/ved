@@ -732,10 +732,12 @@ METHODS = {
               "intercalary month, adhika, is the same span in both."]),
             ("Muhurtas and Choghadiya",
              ["The day from sunrise to sunset is divided into eight parts for Rahu Kaal, Yamaganda and Gulika, a different "
-              "part on each weekday, and into fifteen muhurtas, of which Abhijit is the eighth, around midday. The night is "
-              "divided into fifteen muhurtas too, and Brahma Muhurta is the second-last before sunrise. Choghadiya divides "
-              "day and night into eight parts each, their names following the planetary order from the weekday's lord. "
-              "Because all of these are fractions of the local day, they move with the seasons and with the place."]),
+              "part on each weekday, and into fifteen muhurtas, of which Abhijit is the eighth, around midday, except on "
+              "Wednesdays, when that muhurta is a Dur Muhurta and Abhijit is not used. The night is divided into fifteen "
+              "muhurtas too, and Brahma Muhurta is the second-last before sunrise. Choghadiya divides day and night into "
+              "eight parts each: by day the names follow the order of the planetary hours from the weekday's lord; by "
+              "night they begin from the lord of the fifth weekday and follow another order. Because all of these are "
+              "fractions of the local day, they move with the seasons and with the place."]),
             ("Fasts and festivals",
              ["A fast or festival is tied to a tithi and to a part of the day in which that tithi must be in force: sunrise "
               "for most, midday for Ganesh Chaturthi, the evening after sunset for Diwali and Pradosh, midnight for "
@@ -788,9 +790,10 @@ METHODS = {
               "भारत में चलता है; और पूर्णिमांत, जो पूर्णिमा पर समाप्त होता है और उत्तर भारत में चलता है। अधिक मास दोनों में एक ही खंड है।"]),
             ("मुहूर्त और चौघड़िया",
              ["सूर्योदय से सूर्यास्त तक का दिन राहु काल, यमगंड और गुलिक के लिए आठ भागों में बाँटा जाता है, हर वार को अलग भाग, और पंद्रह "
-              "मुहूर्तों में, जिनमें अभिजित आठवाँ है, दोपहर के आसपास। रात भी पंद्रह मुहूर्तों में बँटती है, और ब्रह्म मुहूर्त सूर्योदय से पहले "
-              "का दूसरा अंतिम है। चौघड़िया दिन और रात को आठ-आठ भागों में बाँटता है, जिनके नाम वार के स्वामी से ग्रहों के क्रम में चलते हैं। "
-              "ये सब स्थानीय दिन के भाग हैं, इसलिए ऋतु और स्थान के साथ बदलते हैं।"]),
+              "मुहूर्तों में, जिनमें अभिजित आठवाँ है, दोपहर के आसपास, बुधवार को छोड़कर, जब वह मुहूर्त दुर्मुहूर्त होता है और अभिजित नहीं "
+              "लिया जाता। रात भी पंद्रह मुहूर्तों में बँटती है, और ब्रह्म मुहूर्त सूर्योदय से पहले का दूसरा अंतिम है। चौघड़िया दिन और रात को "
+              "आठ-आठ भागों में बाँटता है: दिन में नाम वार के स्वामी से होरा के क्रम में चलते हैं; रात में वे पाँचवें वार के स्वामी से आरंभ "
+              "होकर दूसरे क्रम में चलते हैं। ये सब स्थानीय दिन के भाग हैं, इसलिए ऋतु और स्थान के साथ बदलते हैं।"]),
             ("व्रत और त्योहार",
              ["व्रत या त्योहार एक तिथि से और दिन के उस भाग से जुड़ा है जिसमें वह तिथि चल रही होनी चाहिए: अधिकतर के लिए सूर्योदय, गणेश "
               "चतुर्थी के लिए मध्याह्न, दीपावली और प्रदोष के लिए सूर्यास्त के बाद की शाम, शिवरात्रि और जन्माष्टमी के लिए मध्यरात्रि, "
@@ -808,5 +811,152 @@ METHODS = {
               "Skyfield; IAU 2006 अयन और IAU 2000B विचलन मॉडल; भारत के राष्ट्रीय पंचांग के लिए परिभाषित लाहिरी अयनांश; हर शहर की घड़ी "
               "और डेलाइट सेविंग के लिए IANA समय-क्षेत्र डेटाबेस।"]),
         ],
+    },
+}
+
+# The shubh muhurat page of a city, built 16 Nov 2026: the day's general good times, from the times the city page
+# already computes, for today, tomorrow and the week. No wedding, griha pravesh or other event muhurat: those need
+# rules and checks this site has not made. Descriptions within 155 characters for the longest city name.
+MUHURAT = {
+    "en": {
+        "title": "Shubh Muhurat Today in {city} | Abhijit, Brahma Muhurta, Choghadiya",
+        "description": "Shubh muhurat today in {city}: Brahma Muhurta, Abhijit and the good choghadiya, Rahu Kaal "
+                       "left out, for today, tomorrow and the week.",
+        "h1": "Shubh Muhurat Today in {city}",
+        "crumb": "Shubh Muhurat",
+        "intro": "The good times of the day in {city}, from {city}'s own sunrise and sunset: Brahma Muhurta before "
+                 "dawn, Abhijit around midday, and the Amrit, Shubh and Labh choghadiya, leaving out any that fall in "
+                 "Rahu Kaal, Yamaganda or Gulika. Every time is on {city}'s clock, daylight saving included.",
+        "now_h": "Right now in {city}",
+        "best_h": "Good times",
+        "best_note": "Amrit, Shubh and Labh choghadiya, leaving out any that fall in Rahu Kaal, Yamaganda or Gulika. "
+                     "Abhijit is given in full, as panchangs print it.",
+        "chogh_h": "Choghadiya",
+        "week_h": "Brahma Muhurta, Abhijit and Rahu Kaal in {city} this week",
+        "year_h": "Muhurat times in {city} through the year",
+        "year": "In {year}, Brahma Muhurta in {city} begins as early as {bm_early} ({bm_early_d}) and as late as "
+                "{bm_late} ({bm_late_d}). Abhijit, the muhurta around local noon, begins between {ab_early} "
+                "({ab_early_d}) and {ab_late} ({ab_late_d}).",
+        "dst_yes": "{city} moves its clocks forward on {start} and back on {end} in {year}. The times on this page "
+                   "already allow for it: on those days every muhurat moves by an hour on the clock, with the sunrise.",
+        "dst_no": "{city} keeps the same clock all year, so its muhurat times move only with the seasons.",
+        "events_h": "Weddings, griha pravesh and other ceremonies",
+        "events": "This page gives the day's general good times. A muhurat for a wedding, a griha pravesh, a mundan "
+                  "or a new vehicle is chosen by many more rules, often with the family's own details, and is not "
+                  "given here; families usually ask their own priest.",
+        "explain_h": "What these times are",
+        "explain": [
+            "Brahma Muhurta: the second-last muhurta of the night, ending one muhurta before sunrise; the time "
+            "tradition keeps for prayer, meditation and study.",
+            "Abhijit Muhurat: the eighth of the day's fifteen muhurtas, around local noon, held good for beginning "
+            "important work. It is not used on Wednesdays, when that muhurta is a Dur Muhurta.",
+            "Choghadiya: the day and the night, each divided into eight parts. Amrit, Shubh and Labh are good, Chal "
+            "(also called Char) is neutral and traditionally used for travel, and Udveg, Kaal and Rog are avoided for "
+            "beginnings.",
+            "Rahu Kaal, Yamaganda and Gulika: eighths of the day, a different one on each weekday, that tradition "
+            "avoids for starting something new.",
+        ],
+        "faq": [
+            ("What is the shubh muhurat today in {city}?",
+             "The list at the top of this page: today's Brahma Muhurta, Abhijit Muhurat and the Amrit, Shubh and Labh "
+             "choghadiya for {city}, in local time, leaving out any choghadiya that falls in Rahu Kaal, Yamaganda or "
+             "Gulika. It changes every day with {city}'s sunrise and sunset."),
+            ("Is Abhijit Muhurat used on Wednesday?",
+             "No. On a Wednesday the eighth muhurta of the day, the one that is Abhijit on other days, is a Dur "
+             "Muhurta, so panchangs give no Abhijit that day."),
+            ("When is Brahma Muhurta tomorrow in {city}?",
+             "Press Tomorrow at the top of the page, or see the week's table. Brahma Muhurta ends one muhurta before "
+             "{city}'s sunrise, so it moves a little every day with the sunrise."),
+            ("Which choghadiya is good for travel?",
+             "Chal, also called Char, the one tradition names for travel. Amrit, Shubh and Labh are good for most work; "
+             "Udveg, Kaal and "
+             "Rog are avoided for beginnings."),
+            ("Can I begin something in Rahu Kaal if the choghadiya is good?",
+             "Many families wait for Rahu Kaal to pass even then, and this page leaves such a choghadiya out of the "
+             "good times. The choghadiya tables still show it."),
+            ("Does daylight saving change the muhurat times in {city}?", "{dst}"),
+        ],
+        "labels": {
+            "tomorrow": "Tomorrow", "now": "Now", "nowGood": "a good time",
+            "nowNeutral": "neutral, traditionally for travel", "nowBad": "avoided for beginnings",
+            "nowAvoid": "tradition avoids beginning new work now", "nextGood": "Next good time",
+            "noneLeft": "No good time is left before the next sunrise.", "choghWord": "choghadiya",
+            "leftOut": "Left out, falling in Rahu Kaal, Yamaganda or Gulika:",
+            "hintBrahma": "prayer, meditation and study", "hintAbhijit": "beginning important work",
+            "hintAmrit": "all good work", "hintShubh": "worship and ceremonies", "hintLabh": "business and education",
+            "colDate": "Date", "colBrahma": "Brahma Muhurta", "colAbhijit": "Abhijit", "colRahu": "Rahu Kaal",
+            "noneWed": "none on Wednesday", "shareHeadM": "Shubh muhurat in {city}", "shareGood": "Good choghadiya",
+            # labels pass through str.format with the city's words, so the page's own placeholder is doubled
+            "tillFmt": "till {{t}}", "stop": ".", "afterFmt": "after {{x}}",
+            "clashFmt": "Today Abhijit overlaps {{x}} from {{a}} to {{b}}; families who keep {{x}} begin after it.",
+        },
+    },
+    "hi": {
+        "title": "{city} में आज का शुभ मुहूर्त | अभिजित, ब्रह्म मुहूर्त, चौघड़िया",
+        "description": "{city} में आज का शुभ मुहूर्त: ब्रह्म मुहूर्त, अभिजित और शुभ चौघड़िया, राहु काल छोड़कर, आज, कल और "
+                       "पूरे सप्ताह के लिए, स्थानीय समय में।",
+        "h1": "{city} में आज का शुभ मुहूर्त",
+        "crumb": "शुभ मुहूर्त",
+        "intro": "{city} में दिन के शुभ समय, {city} के अपने सूर्योदय और सूर्यास्त से: भोर से पहले ब्रह्म मुहूर्त, दोपहर के "
+                 "आसपास अभिजित, और अमृत, शुभ और लाभ चौघड़िया, उन्हें छोड़कर जो राहु काल, यमगंड या गुलिक में पड़ते हैं। हर "
+                 "समय {city} की घड़ी में है, डेलाइट सेविंग सहित।",
+        "now_h": "अभी {city} में",
+        "best_h": "शुभ समय",
+        "best_note": "अमृत, शुभ और लाभ चौघड़िया, उन्हें छोड़कर जो राहु काल, यमगंड या गुलिक में पड़ते हैं। अभिजित पूरा दिया "
+                     "गया है, जैसा पंचांग छापते हैं।",
+        "chogh_h": "चौघड़िया",
+        "week_h": "{city} में इस सप्ताह ब्रह्म मुहूर्त, अभिजित और राहु काल",
+        "year_h": "{city} में वर्ष भर मुहूर्त के समय",
+        "year": "{year} में {city} में ब्रह्म मुहूर्त सबसे जल्दी {bm_early} ({bm_early_d}) और सबसे देर से {bm_late} "
+                "({bm_late_d}) आरंभ होता है। अभिजित, स्थानीय दोपहर के आसपास का मुहूर्त, {ab_early} ({ab_early_d}) से "
+                "{ab_late} ({ab_late_d}) के बीच आरंभ होता है।",
+        "dst_yes": "{city} में {year} में {start} को घड़ी एक घंटा आगे और {end} को पीछे होती है। इस पृष्ठ के समय इसे पहले "
+                   "से मानकर चलते हैं: उन दिनों हर मुहूर्त घड़ी पर एक घंटा खिसकता है, सूर्योदय के साथ।",
+        "dst_no": "{city} की घड़ी पूरे वर्ष एक-सी रहती है, इसलिए वहाँ मुहूर्त के समय केवल ऋतु के साथ बदलते हैं।",
+        "events_h": "विवाह, गृह प्रवेश और अन्य संस्कार",
+        "events": "यह पृष्ठ दिन के सामान्य शुभ समय देता है। विवाह, गृह प्रवेश, मुंडन या नए वाहन का मुहूर्त कई और नियमों से, "
+                  "प्रायः परिवार के अपने विवरण के साथ, चुना जाता है, और यहाँ नहीं दिया गया; परिवार प्रायः अपने पुरोहित से "
+                  "पूछते हैं।",
+        "explain_h": "ये समय क्या हैं",
+        "explain": [
+            "ब्रह्म मुहूर्त: रात का दूसरा अंतिम मुहूर्त, जो सूर्योदय से एक मुहूर्त पहले समाप्त होता है; परंपरा इसे पूजा, ध्यान "
+            "और अध्ययन के लिए रखती है।",
+            "अभिजित मुहूर्त: दिन के पंद्रह मुहूर्तों में आठवाँ, स्थानीय दोपहर के आसपास, महत्वपूर्ण काम आरंभ करने के लिए शुभ "
+            "माना जाता है। बुधवार को यह नहीं लिया जाता, क्योंकि उस दिन वह मुहूर्त दुर्मुहूर्त है।",
+            "चौघड़िया: दिन और रात, हर एक आठ भागों में। अमृत, शुभ और लाभ शुभ हैं, चल (जिसे चर भी कहते हैं) सम है और परंपरा से यात्रा के लिए लिया "
+            "जाता है, और उद्वेग, काल और रोग आरंभ के लिए वर्जित हैं।",
+            "राहु काल, यमगंड और गुलिक: दिन के आठवें भाग, हर वार को अलग, जिनमें परंपरा कुछ नया आरंभ करने से बचती है।",
+        ],
+        "faq": [
+            ("{city} में आज का शुभ मुहूर्त क्या है?",
+             "इस पृष्ठ के ऊपर की सूची: {city} के लिए आज का ब्रह्म मुहूर्त, अभिजित मुहूर्त और अमृत, शुभ और लाभ चौघड़िया, "
+             "स्थानीय समय में, उन चौघड़ियों को छोड़कर जो राहु काल, यमगंड या गुलिक में पड़ते हैं। यह {city} के सूर्योदय और "
+             "सूर्यास्त के साथ हर दिन बदलती है।"),
+            ("क्या बुधवार को अभिजित मुहूर्त लिया जाता है?",
+             "नहीं। बुधवार को दिन का आठवाँ मुहूर्त, जो अन्य दिनों अभिजित होता है, दुर्मुहूर्त है, इसलिए पंचांग उस दिन अभिजित "
+             "नहीं देते।"),
+            ("{city} में कल ब्रह्म मुहूर्त कब है?",
+             "पृष्ठ के ऊपर 'कल' दबाएँ, या सप्ताह की तालिका देखें। ब्रह्म मुहूर्त {city} के सूर्योदय से एक मुहूर्त पहले "
+             "समाप्त होता है, इसलिए सूर्योदय के साथ हर दिन थोड़ा खिसकता है।"),
+            ("यात्रा के लिए कौन-सा चौघड़िया शुभ है?",
+             "चल, जिसे चर भी कहते हैं और परंपरा यात्रा के लिए बताती है। अमृत, शुभ और लाभ अधिकतर कामों के लिए शुभ हैं; उद्वेग, काल और रोग "
+             "आरंभ के लिए वर्जित हैं।"),
+            ("चौघड़िया शुभ हो तो क्या राहु काल में कोई काम आरंभ कर सकते हैं?",
+             "बहुत-से परिवार तब भी राहु काल बीतने की प्रतीक्षा करते हैं, और यह पृष्ठ ऐसे चौघड़िया को शुभ समय से छोड़ देता है। "
+             "चौघड़िया की तालिकाएँ उसे फिर भी दिखाती हैं।"),
+            ("क्या डेलाइट सेविंग से {city} में मुहूर्त के समय बदलते हैं?", "{dst}"),
+        ],
+        "labels": {
+            "tomorrow": "कल", "now": "अभी", "nowGood": "शुभ समय", "nowNeutral": "सम, परंपरा से यात्रा के लिए",
+            "nowBad": "आरंभ के लिए वर्जित", "nowAvoid": "परंपरा अभी नया काम आरंभ करने से बचती है",
+            "nextGood": "अगला शुभ समय", "noneLeft": "अगले सूर्योदय से पहले कोई शुभ समय शेष नहीं।", "choghWord": "चौघड़िया",
+            "leftOut": "राहु काल, यमगंड या गुलिक में पड़ने से छोड़े गए:",
+            "hintBrahma": "पूजा, ध्यान और अध्ययन", "hintAbhijit": "महत्वपूर्ण काम का आरंभ", "hintAmrit": "सभी शुभ कार्य",
+            "hintShubh": "पूजा और संस्कार", "hintLabh": "व्यापार और शिक्षा",
+            "colDate": "तारीख", "colBrahma": "ब्रह्म मुहूर्त", "colAbhijit": "अभिजित", "colRahu": "राहु काल",
+            "noneWed": "बुधवार को नहीं", "shareHeadM": "{city} में शुभ मुहूर्त", "shareGood": "शुभ चौघड़िया",
+            "tillFmt": "{{t}} तक", "stop": "।", "afterFmt": "{{x}} के बाद",
+            "clashFmt": "आज अभिजित {{a}} से {{b}} तक {{x}} से मिलता है; जो परिवार {{x}} मानते हैं, वे उसके बाद आरंभ करते हैं।",
+        },
     },
 }

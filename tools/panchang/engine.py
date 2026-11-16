@@ -190,18 +190,23 @@ def _part(start, end, n, k):
 RAHU = {6: 8, 0: 2, 1: 7, 2: 5, 3: 6, 4: 4, 5: 3}
 YAMAGANDA = {6: 5, 0: 4, 1: 3, 2: 2, 3: 1, 4: 7, 5: 6}
 GULIKA = {6: 7, 0: 6, 1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
-# choghadiya: the cyclic order of the seven, then the first of the day and of the night by weekday
+# choghadiya: by day the seven run in the order of the planetary hours from the weekday's lord; by night they begin
+# from the lord of the fifth weekday and run in another order. Until 16 Nov 2026 the night was run in the day's
+# order, which put slots 2 to 7 wrong; checked that day against a published panchang, every weekday.
 CHOGHADIYA_ORDER = ["udveg", "chal", "labh", "amrit", "kaal", "shubh", "rog"]
+CHOGHADIYA_NIGHT_ORDER = ["shubh", "amrit", "chal", "rog", "kaal", "labh", "udveg"]
 CHOGHADIYA_DAY_FIRST = {6: "udveg", 0: "amrit", 1: "rog", 2: "labh", 3: "shubh", 4: "chal", 5: "kaal"}
 CHOGHADIYA_NIGHT_FIRST = {6: "shubh", 0: "chal", 1: "kaal", 2: "udveg", 3: "amrit", 4: "rog", 5: "labh"}
+# Abhijit is not used on a Wednesday: that day the eighth muhurta is a Dur Muhurta
+NO_ABHIJIT = 2
 
 
-def _choghadiya(start, end, first):
-    i = CHOGHADIYA_ORDER.index(first)
+def _choghadiya(start, end, first, order=CHOGHADIYA_ORDER):
+    i = order.index(first)
     out = []
     for k in range(8):
         a, b = _part(start, end, 8, k + 1)
-        out.append((CHOGHADIYA_ORDER[(i + k) % 7], a, b))
+        out.append((order[(i + k) % 7], a, b))
     return out
 
 
@@ -328,10 +333,10 @@ class Place:
             "rahu": _part(sr, ss, 8, RAHU[wd]),
             "yamaganda": _part(sr, ss, 8, YAMAGANDA[wd]),
             "gulika": _part(sr, ss, 8, GULIKA[wd]),
-            "abhijit": (sr + day_muhurta * 7, sr + day_muhurta * 8),
+            "abhijit": None if wd == NO_ABHIJIT else (sr + day_muhurta * 7, sr + day_muhurta * 8),
             "brahma": (sr - night_muhurta * 2, sr - night_muhurta),
             "choghadiya_day": _choghadiya(sr, ss, CHOGHADIYA_DAY_FIRST[wd]),
-            "choghadiya_night": _choghadiya(ss, nsr, CHOGHADIYA_NIGHT_FIRST[wd]),
+            "choghadiya_night": _choghadiya(ss, nsr, CHOGHADIYA_NIGHT_FIRST[wd], CHOGHADIYA_NIGHT_ORDER),
             "day_length": ss - sr,
             "ayanamsa": true_ayanamsa(sunrise),
             # sidereal longitudes at sunrise, for the page's drawing of the sky

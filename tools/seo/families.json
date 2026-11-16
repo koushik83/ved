@@ -16,9 +16,14 @@
     "words": ["khatu", "shyam", "barbarik", "barbareek", "haare ka sahara", "hare ka sahara", "खाटू", "श्याम", "बर्बरीक", "हारे का सहारा"],
     "pages": ["/khatushyamprash", "/hi/khatushyamprash", "/khatu-shyam-story", "/hi/khatu-shyam-story"]
   },
+  "muhurat": {
+    "_goal": "set 16 Nov 2026: top 3 within six months for city queries such as 'shubh muhurat today new jersey', 'abhijit muhurat today toronto', 'brahma muhurta time tomorrow sydney'; listed before the panchang family so that these queries are counted here",
+    "words": ["muhurat", "muhurta", "muhurtham", "mahurat", "abhijit", "auspicious time", "shubh", "मुहूर्त", "अभिजित", "शुभ"],
+    "pages": ["/panchang/new-jersey/shubh-muhurat", "/panchang/new-york/shubh-muhurat", "/panchang/toronto/shubh-muhurat", "/panchang/london/shubh-muhurat", "/panchang/sydney/shubh-muhurat", "/panchang/san-francisco/shubh-muhurat", "/panchang/chicago/shubh-muhurat", "/panchang/delhi/shubh-muhurat"]
+  },
   "panchang": {
     "_goal": "set 1 Nov 2026: top 3 within six months for city queries such as 'panchang today toronto', 'tithi today new jersey', 'rahu kaal today london', not for the bare word",
-    "words": ["panchang", "panchangam", "panchanga", "tithi", "nakshatra", "rahu kaal", "rahu kalam", "rahukaal", "choghadiya", "chogadia", "muhurat", "पंचांग", "तिथि", "नक्षत्र", "राहु काल", "राहुकाल", "चौघड़िया", "मुहूर्त"],
+    "words": ["panchang", "panchangam", "panchanga", "tithi", "nakshatra", "rahu kaal", "rahu kalam", "rahukaal", "choghadiya", "chogadia", "पंचांग", "तिथि", "नक्षत्र", "राहु काल", "राहुकाल", "चौघड़िया"],
     "pages": ["/panchang", "/hi/panchang", "/panchang/new-jersey", "/panchang/new-york", "/panchang/toronto", "/panchang/london", "/panchang/sydney", "/panchang/san-francisco", "/panchang/chicago", "/panchang/delhi", "/panchang/how-it-works"]
   },
   "festivals": {
